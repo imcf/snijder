@@ -617,6 +617,7 @@ class JobQueue(object):
         }
         """
         def format_job(job):
+            """Helper function to assemble the job dict."""
             fjob = {
                 "id" : job['uid'],
                 "file" : job['infiles'],
