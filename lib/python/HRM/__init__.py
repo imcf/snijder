@@ -739,6 +739,7 @@ class JobSpooler(object):
     gc3conf : str
     dirs : dict
     engine : gc3libs.core.Engine
+    apps : list
     status : str
     """
 
@@ -762,6 +763,7 @@ class JobSpooler(object):
         self._check_gc3conf(gc3conf)
         self.dirs = spool_dirs
         self.engine = self.setup_engine()
+        self.apps = list()
         if not self.resource_dirs_clean():
             raise RuntimeError("GC3 resource dir unclean, refusing to start!")
         # the default status is 'run' unless explicitly requested (which will
@@ -878,18 +880,17 @@ class JobSpooler(object):
 
     def _spool(self):
         """Spooler function dispatching jobs from the queues. BLOCKING!"""
-        applist = []
         while True:
             self.check_status_request()
             if self.status == 'run':
                 self.engine.progress()
-                for i, app in enumerate(applist):
+                for i, app in enumerate(self.apps):
                     new_state = app.status_changed()
                     if new_state is not None:
                         self.queue.set_jobstatus(app.job, new_state)
                     if new_state == gc3libs.Run.State.TERMINATED:
                         app.job.move_jobfile(self.dirs['done'])
-                        applist.pop(i)
+                        self.apps.pop(i)
                 stats = self._engine_status()
                 # NOTE: in theory, we could simply add all apps to the engine
                 # and let gc3 decide when to dispatch the next one, however
@@ -905,7 +906,7 @@ class JobSpooler(object):
                     logd("Current joblist: %s", self.queue.queue)
                     logi("Adding another job to the gc3pie engine.")
                     app = hucore.DeconApp(nextjob, self.gc3spooldir)
-                    applist.append(app)
+                    self.apps.append(app)
                     self.engine.add(app)
                     # as a new job is dispatched now, we also print out the
                     # human readable queue status:
