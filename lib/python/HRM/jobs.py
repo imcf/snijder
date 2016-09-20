@@ -127,7 +127,7 @@ class AbstractJobConfigParser(dict):
         config_raw = []
         for snooze in [0, 0.00001, 0.0001, 0.001, 0.01, 0.1]:
             if snooze > 0:
-                logd("Jobfile could not be read, re-trying in %is.", snooze)
+                loge("Failed reading jobfile, trying again in %ss.", snooze)
             time.sleep(snooze)
             try:
                 with open(jobfile, 'r') as jobfile:
@@ -136,9 +136,9 @@ class AbstractJobConfigParser(dict):
                 # sometimes the 'with open' statement raises a TypeError
                 # ("coercing to Unicode: need string or buffer, file found"),
                 # which is probably some race condition - just try again...
-                logd("'with open' statement resulted in error: %s", err)
+                loge("'with open' statement resulted in error: %s", err)
             if len(config_raw) > 0:
-                logd("Reading the job file succeeded after %s s!", snooze)
+                logd("Reading the job file succeeded after %ss!", snooze)
                 break
         if len(config_raw) == 0:
             raise IOError("Unable to read job config file '%s'!" % jobfile)
