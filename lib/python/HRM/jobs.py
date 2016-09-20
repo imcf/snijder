@@ -126,7 +126,7 @@ class AbstractJobConfigParser(dict):
         # levels of waiting time to avoid this race condition:
         config_raw = []
         for snooze in [0, 0.00001, 0.0001, 0.001, 0.01, 0.1]:
-            if len(config_raw) == 0 and snooze > 0:
+            if snooze > 0:
                 logd("Jobfile could not be read, re-trying in %is.", snooze)
             time.sleep(snooze)
             try:
