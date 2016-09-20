@@ -137,6 +137,7 @@ class AbstractJobConfigParser(dict):
                 # ("coercing to Unicode: need string or buffer, file found"),
                 # which is probably some race condition - just try again...
                 loge("'with open' statement resulted in error: %s", err)
+                continue
             if len(config_raw) > 0:
                 logd("Reading the job file succeeded after %ss!", snooze)
                 break
