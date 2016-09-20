@@ -130,8 +130,8 @@ class AbstractJobConfigParser(dict):
                 loge("Failed reading jobfile, trying again in %ss.", snooze)
             time.sleep(snooze)
             try:
-                with open(jobfile, 'r') as jobfile:
-                    config_raw = jobfile.read()
+                with open(jobfile, 'r') as fileobject:
+                    config_raw = fileobject.read()
             except TypeError as err:
                 # sometimes the 'with open' statement raises a TypeError
                 # ("coercing to Unicode: need string or buffer, file found"),
