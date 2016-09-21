@@ -366,3 +366,14 @@ class JobSpooler(object):
         # this is just to trigger the stats messages in debug mode:
         self.engine_status()
 
+
+# NOTE: if desired, we could implement other spooling methods than the
+# files-and-directories based one, e.g. using a DB or JSON files for tracking
+# the status. In this case, simply turn the above into an abstract spooler and
+# implement the details in its derived classes, e.g.:
+#
+# class DirectorySpooler(JobSpooler):
+#
+#     def __init__(self, spool_dirs, queue, gc3conf):
+#         super(DirectorySpooler, self).__init__(job, gc3_output)
+
