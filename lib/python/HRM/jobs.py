@@ -278,6 +278,8 @@ class HRMJobConfigParser(AbstractJobConfigParser):
         # now call the jobtype-specific parser method(s):
         if self['type'] == 'hucore':
             self.parse_job_hucore()
+        elif self['type'] == 'dummy':
+            self.parse_job_dummy()
         elif self['type'] == 'deletejobs':
             self.parse_job_deletejobs()
         else:
@@ -309,6 +311,18 @@ class HRMJobConfigParser(AbstractJobConfigParser):
             self['infiles'].append(infile)
         if not self['infiles']:
             raise ValueError("No input files defined in job config!")
+
+    def parse_job_dummy(self):
+        """Do the specific parsing of "dummy" type jobfiles."""
+        # prepare the parser-mapping for the generic 'hrmjobfile' section:
+        mapping = [
+            ['tasktype', 'tasktype'],
+            ['executable', 'exec']
+        ]
+        # now parse the section:
+        self.parse_section_entries('hucore', mapping)
+        if self['tasktype'] != 'sleep':
+            raise ValueError("Tasktype invalid: %s" % self['tasktype'])
 
     def parse_job_deletejobs(self):
         """Do the specific parsing of "deletejobs" type jobfiles."""
