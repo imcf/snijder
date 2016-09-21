@@ -21,6 +21,34 @@ from hashlib import sha1
 from . import logi, logd, logw, logc, loge, JOBFILE_VER
 
 
+def select_queue_for_job(job):
+    """Select a queue for a job, depending on its job- and tasktype.
+
+    Parameters
+    ----------
+    job : HRM.jobs.JobDescription
+    """
+    mapping = {
+        'hucore': {
+            'decon': 'hucore',
+            'preview': 'hucore'
+        },
+        'dummy': {
+            'sleep': 'hucore'
+        }
+    }
+    if job['type'] not in mapping:
+        logc("No queue found for jobtype '%s'!", job['type'])
+        return None
+    if job['tasktype'] not in mapping[job['type']]:
+        logc("No queue found for tasktype '%s'!", job['tasktype'])
+        return None
+    queuetype = mapping[job['type']][job['tasktype']]
+    logi("Selected queue for jobtype (%s) and tasktype (%s): %s",
+         job['type'], job['tasktype'], queuetype)
+    return queuetype
+
+
 def process_jobfile(fname, queues, dirs):
     """Parse a jobfile and add it to its destination queue.
 
