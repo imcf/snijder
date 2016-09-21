@@ -82,14 +82,14 @@ def process_jobfile(fname, queues, dirs):
         # we're finished, so move the jobfile and return:
         job.move_jobfile('done')
         return
-    if job['type'] not in queues:
-        logc("ERROR: no queue existing for jobtype '%s'!", job['type'])
+    selected_queue = select_queue_for_job(job)
+    if selected_queue not in queues:
+        logc("Selected queue (%s) does not exist!", selected_queue)
         job.move_jobfile('done')
         return
     job.move_jobfile('cur')
-    # TODO: have more than one queue, decide by 'tasktype' where to put a job
     try:
-        queues[job['type']].append(job)
+        queues[selected_queue].append(job)
     except ValueError as err:
         loge("Adding the new job from '%s' failed:\n    %s", fname, err)
 
