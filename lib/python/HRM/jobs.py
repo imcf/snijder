@@ -113,6 +113,7 @@ class AbstractJobConfigParser(dict):
         """
         super(AbstractJobConfigParser, self).__init__()
         self.sections = []
+        self['infiles'] = []
         if srctype == 'file':
             jobconfig = self.read_jobfile(jobconfig)
         elif srctype == 'string':
@@ -128,7 +129,6 @@ class AbstractJobConfigParser(dict):
         self['progress'] = "N/A"
         self['pid'] = "N/A"
         self['server'] = "N/A"
-        self['infiles'] = []
 
     @staticmethod
     def read_jobfile(jobfile):
