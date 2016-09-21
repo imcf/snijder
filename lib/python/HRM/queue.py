@@ -246,14 +246,11 @@ class JobQueue(object):
             ]
         }
         """
-        # FIXME: the "file" field is a list intentionally, as jobs can easily
-        # consist of multiple input files (TIFF series, ICS/IDS, etc.), so
-        # don't just use the first file (requires the PHP part to be adapted).
         def format_job(job):
             """Helper function to assemble the job dict."""
             fjob = {
                 "id"      : job['uid'],
-                "file"    : job['infiles'][0],  # TODO: see above!
+                "file"    : job['infiles'],
                 "username": job['user'],
                 "jobType" : job['type'],
                 "status"  : job['status'],
