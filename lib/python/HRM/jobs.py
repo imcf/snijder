@@ -100,6 +100,7 @@ class AbstractJobConfigParser(dict):
         self['progress'] = "N/A"
         self['pid'] = "N/A"
         self['server'] = "N/A"
+        self['infiles'] = []
 
     @staticmethod
     def read_jobfile(jobfile):
@@ -305,7 +306,6 @@ class HRMJobConfigParser(AbstractJobConfigParser):
         # TODO: can we check if this section contains nonsense values?
         if 'inputfiles' not in self.sections:
             raise ValueError("Section 'inputfiles' missing in job config!")
-        self['infiles'] = []
         for option in self.jobparser.options('inputfiles'):
             infile = self.get_option('inputfiles', option)
             self['infiles'].append(infile)
