@@ -22,7 +22,8 @@ import pprint
 import time
 
 from . import logi, logd, logw, logc, loge, JOBFILE_VER
-from .apps import hucore
+from .apps import hucore, dummy
+
 
 import gc3libs
 import gc3libs.config
@@ -273,6 +274,11 @@ class JobSpooler(object):
         print 'HRM spooler running. (Ctrl-C to abort).'
         print '*' * 80
         logi('Excpected jobfile version: %s.', JOBFILE_VER)
+        # dict with a mapping from jobtypes to app classes:
+        apptypes = dict(
+            hucore = hucore.HuDeconApp,
+            dummy = dummy.DummySleepApp
+        )
         while True:
             self.check_status_request()
             if self.status == 'run':
@@ -299,8 +305,10 @@ class JobSpooler(object):
                 nextjob = self.queue.next_job()
                 if nextjob is not None:
                     logd("Current joblist: %s", self.queue.queue)
-                    logi("Adding another job to the gc3pie engine.")
-                    app = hucore.HuDeconApp(nextjob, self.gc3cfg['spooldir'])
+                    apptype = apptypes[nextjob['type']]
+                    logw("Adding job (type '%s') to the gc3pie engine.",
+                         apptype.__name__)
+                    app = apptype(nextjob, self.gc3cfg['spooldir'])
                     self.apps.append(app)
                     self.engine.add(app)
                     # as a new job is dispatched now, we also print out the
