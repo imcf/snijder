@@ -47,7 +47,7 @@ class JobQueue(object):
             UID's of jobs to be deleted from the queue (NOTE: this list may
             contain UID's from other queues as well!)
         """
-        self.statusfile = None
+        self._statusfile = None
         self.cats = deque('')
         self.jobs = dict()
         self.processing = list()
@@ -75,7 +75,13 @@ class JobQueue(object):
         logd("num_jobs_processing = %s", numjobs)
         return numjobs
 
-    def set_statusfile(self, statusfile):
+    @property
+    def statusfile(self):
+        """Get the 'statusfile' attribute."""
+        return self._statusfile
+
+    @statusfile.setter
+    def statusfile(self, statusfile):
         """Set the file used to place the (JSON formatted) queue status in.
 
         Parameters
@@ -83,7 +89,7 @@ class JobQueue(object):
         statusfile : str
         """
         logi("Setting job queue status report file: %s", statusfile)
-        self.statusfile = statusfile
+        self._statusfile = statusfile
 
     def append(self, job):
         """Add a new job to the queue.
