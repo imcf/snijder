@@ -16,6 +16,7 @@ from collections import deque
 from . import logi, logd, logw, logc, loge
 
 import gc3libs
+import pprint
 
 
 class JobQueue(object):
@@ -307,8 +308,23 @@ class JobQueue(object):
                        (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
-        for line in msg:
-            print line
+        logi('\n%s', '\n'.join(msg))
+        logw('QUEUE STATUS\n'
+             '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
+             "statusfile: %s\n"
+             "cats: %s\n"
+             "jobs: %s\n"
+             "processing: %s\n"
+             "queue: %s\n"
+             "deletion_list: %s\n"
+             '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
+             pprint.pformat(self._statusfile),
+             pprint.pformat(self.cats),
+             pprint.pformat(self.jobs),
+             pprint.pformat(self.processing),
+             pprint.pformat(self.queue),
+             pprint.pformat(self.deletion_list))
+
 
     def queue_details(self):
         """Generate a list with the current queue details."""
