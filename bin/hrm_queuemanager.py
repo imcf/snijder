@@ -46,7 +46,7 @@ def main():
 
     # TODO:
     # [ ] init spooldirs as staticmethod of spooler
-    # [ ] remember files in 'cur' directory
+    # [x] remember files in 'cur' directory
     # [ ] let spooler then set the JobDescription class variable
     # [ ] let spooler then set the status file of each queue
     # [ ] then check exisiting files in the 'cur' dir if they belong to any of

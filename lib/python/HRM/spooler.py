@@ -88,15 +88,17 @@ def setup_rundirs(base_dir):
             full_subdirs['newfiles'].append(fname)
     logi("Runtime directories:\n%s", pprint.pformat(full_subdirs))
 
-    # check the 'cur' directory and issue a warning only if non-empty:
+    # check 'cur' dir and remember files for resuming from a queue shutdown:
+    full_subdirs['curfiles'] = list()
     cur_existing = os.listdir(full_subdirs['cur'])
     if cur_existing:
-        logw("%s WARNING %s", "=" * 60, "=" * 60)
-        logw("Spooling directory '%s' non-empty, this could be due to an "
-             "unclean shutdown of the Queue Manager!", full_subdirs['cur'])
+        logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
+        logi("Spooling directory '%s' contains files from a previous "
+             "session, will try to resume them!", full_subdirs['cur'])
         for fname in cur_existing:
-            logw("- file: %s", os.path.join(full_subdirs['cur'], fname))
-        logw("%s WARNING %s", "=" * 60, "=" * 60)
+            logi("- file: %s", fname)
+            full_subdirs['curfiles'].append(fname)
+        logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
     return full_subdirs
 
 
