@@ -83,9 +83,13 @@ def setup_rundirs(base_dir):
     full_subdirs['newfiles'] = list()
     new_existing = os.listdir(full_subdirs['new'])
     if new_existing:
+        logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
+        logw("Spooling directory '%s' contains files that were already "
+             "submitted prior to the QM startup.", full_subdirs['new'])
         for fname in new_existing:
-            logw("Found existing file in 'new' directory: %s", fname)
+            logw("- file: %s", fname)
             full_subdirs['newfiles'].append(fname)
+        logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
     logi("Runtime directories:\n%s", pprint.pformat(full_subdirs))
 
     # check 'cur' dir and remember files for resuming from a queue shutdown:
