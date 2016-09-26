@@ -45,7 +45,7 @@ def main():
     set_verbosity(args.verbosity)
 
     # TODO:
-    # [ ] init spooldirs as staticmethod of spooler
+    # [x] init spooldirs as staticmethod of spooler
     # [x] remember files in 'cur' directory
     # [ ] let spooler then set the JobDescription class variable
     # [ ] let spooler then set the status file of each queue

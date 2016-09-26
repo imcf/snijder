@@ -29,83 +29,6 @@ import gc3libs
 import gc3libs.config
 
 
-def setup_rundirs(base_dir):
-    """Check if all runtime directories exist or try to create them otherwise.
-
-    Assuming base_dir is '/run', the expected structure is like this:
-
-    /run
-        |-- queue
-        |   |-- requests
-        |   `-- status
-        `-- spool
-            |-- cur
-            |-- done
-            `-- new
-
-    Parameters
-    ----------
-    base_dir : str
-        Base path where to set up / check the run directories.
-
-    Returns
-    -------
-    full_subdirs : {
-        'new'      : '/run/spool/new',
-        'cur'      : '/run/spool/cur',
-        'done'     : '/run/spool/done',
-        'requests' : '/run/queue/requests',
-        'status'   : '/run/queue/status',
-        'newfiles' : list of existing files in the 'new' directory
-    }
-    """
-    full_subdirs = dict()
-    tree = {
-        'spool': ['new', 'cur', 'done'],
-        'queue': ['status', 'requests']
-    }
-    for run_dir in tree:
-        for sub_dir in tree[run_dir]:
-            cur = os.path.join(base_dir, run_dir, sub_dir)
-            if not os.access(cur, os.W_OK):
-                if os.path.exists(cur):
-                    raise OSError("Directory '%s' exists, but it is not "
-                                  "writable for us. Stopping!" % cur)
-                try:
-                    os.makedirs(cur)
-                    logi("Created spool directory '%s'.", cur)
-                except OSError as err:
-                    raise OSError("Error creating Queue Manager runtime "
-                                  "directory '%s': %s" % (cur, err))
-            full_subdirs[sub_dir] = cur
-
-    # pick up any existing jobfiles in the 'new' spooldir
-    full_subdirs['newfiles'] = list()
-    new_existing = os.listdir(full_subdirs['new'])
-    if new_existing:
-        logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
-        logw("Spooling directory '%s' contains files that were already "
-             "submitted prior to the QM startup.", full_subdirs['new'])
-        for fname in new_existing:
-            logw("- file: %s", fname)
-            full_subdirs['newfiles'].append(fname)
-        logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
-    logi("Runtime directories:\n%s", pprint.pformat(full_subdirs))
-
-    # check 'cur' dir and remember files for resuming from a queue shutdown:
-    full_subdirs['curfiles'] = list()
-    cur_existing = os.listdir(full_subdirs['cur'])
-    if cur_existing:
-        logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
-        logi("Spooling directory '%s' contains files from a previous "
-             "session, will try to resume them!", full_subdirs['cur'])
-        for fname in cur_existing:
-            logi("- file: %s", fname)
-            full_subdirs['curfiles'].append(fname)
-        logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
-    return full_subdirs
-
-
 class JobSpooler(object):
     """Spooler class processing the queue, dispatching jobs, etc.
 
@@ -136,7 +59,7 @@ class JobSpooler(object):
             The path to a gc3pie configuration file.
         """
         self.apps = list()
-        self.dirs = spool_dirs
+        self.dirs = self.setup_rundirs(spool_dirs)
         self.queue = queue
         # self.queues = dict()  # TODO: multi-queue logic (#136, #272)
         self._status = self._status_pre = 'run'  # the initial status is 'run'
@@ -166,6 +89,84 @@ class JobSpooler(object):
         self._status = newstatus
         logw("Received spooler status change request: %s -> %s",
              self._status_pre, self.status)
+
+    @staticmethod
+    def setup_rundirs(base_dir):
+        """Check if all runtime dirs exist or try to create them otherwise.
+
+        Assuming base_dir is '/run', the expected structure is like this:
+
+        /run
+            |-- queue
+            |   |-- requests
+            |   `-- status
+            `-- spool
+                |-- cur
+                |-- done
+                `-- new
+
+        Parameters
+        ----------
+        base_dir : str
+            Base path where to set up / check the run directories.
+
+        Returns
+        -------
+        full_subdirs : {
+            'new'      : '/run/spool/new',
+            'cur'      : '/run/spool/cur',
+            'done'     : '/run/spool/done',
+            'requests' : '/run/queue/requests',
+            'status'   : '/run/queue/status',
+            'newfiles' : list of existing files in the 'new' directory,
+            'curfiles' : list of existing files in the 'cur' directory
+        }
+        """
+        full_subdirs = dict()
+        tree = {
+            'spool': ['new', 'cur', 'done'],
+            'queue': ['status', 'requests']
+        }
+        for run_dir in tree:
+            for sub_dir in tree[run_dir]:
+                cur = os.path.join(base_dir, run_dir, sub_dir)
+                if not os.access(cur, os.W_OK):
+                    if os.path.exists(cur):
+                        raise OSError("Directory '%s' exists, but it is not "
+                                      "writable for us. Stopping!" % cur)
+                    try:
+                        os.makedirs(cur)
+                        logi("Created spool directory '%s'.", cur)
+                    except OSError as err:
+                        raise OSError("Error creating Queue Manager runtime "
+                                      "directory '%s': %s" % (cur, err))
+                full_subdirs[sub_dir] = cur
+
+        # pick up any existing jobfiles in the 'new' spooldir
+        full_subdirs['newfiles'] = list()
+        new_existing = os.listdir(full_subdirs['new'])
+        if new_existing:
+            logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
+            logw("Spooling directory '%s' contains files that were already "
+                 "submitted prior to the QM startup.", full_subdirs['new'])
+            for fname in new_existing:
+                logw("- file: %s", fname)
+                full_subdirs['newfiles'].append(fname)
+            logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
+        logi("Runtime directories:\n%s", pprint.pformat(full_subdirs))
+
+        # check 'cur' dir and remember files for resuming from a queue shutdown:
+        full_subdirs['curfiles'] = list()
+        cur_existing = os.listdir(full_subdirs['cur'])
+        if cur_existing:
+            logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
+            logi("Spooling directory '%s' contains files from a previous "
+                 "session, will try to resume them!", full_subdirs['cur'])
+            for fname in cur_existing:
+                logi("- file: %s", fname)
+                full_subdirs['curfiles'].append(fname)
+            logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
+        return full_subdirs
 
     @staticmethod
     def check_gc3conf(gc3conffile):
