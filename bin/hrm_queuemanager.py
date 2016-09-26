@@ -44,6 +44,14 @@ def main():
     # set the loglevel as requested on the commandline
     set_verbosity(args.verbosity)
 
+    # TODO:
+    # [ ] init spooldirs as staticmethod of spooler
+    # [ ] remember files in 'cur' directory
+    # [ ] let spooler then set the JobDescription class variable
+    # [ ] let spooler then set the status file of each queue
+    # [ ] then check exisiting files in the 'cur' dir if they belong to any of
+    #     our queues, warn otherwise
+    # [ ] then process files in the 'new' dir as new ones
     spool_dirs = setup_rundirs(args.spooldir)
     JobDescription.spooldirs = spool_dirs   # set the spooldirs class variable
     jobqueues = dict()
