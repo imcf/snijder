@@ -23,6 +23,7 @@ import time
 
 from . import logi, logd, logw, logc, loge, JOBFILE_VER
 from .apps import hucore, dummy
+from .jobs import JobDescription
 
 
 import gc3libs
@@ -44,7 +45,7 @@ class JobSpooler(object):
     status : str
     """
 
-    def __init__(self, spool_dirs, queue, gc3conf):
+    def __init__(self, spooldir, queue, gc3conf):
         """Prepare the spooler.
 
         Check the GC3Pie config file, set up the gc3 engine, check the resource
@@ -52,14 +53,16 @@ class JobSpooler(object):
 
         Parameters
         ----------
-        spool_dirs : dict
-            Spooling directories in a dict, as returned by setup_rundirs().
+        spooldir : str
+            Spooling directory base path.
         queue : HRM.JobQueue
         gc3conf : str
             The path to a gc3pie configuration file.
         """
         self.apps = list()
-        self.dirs = self.setup_rundirs(spool_dirs)
+        self.dirs = self.setup_rundirs(spooldir)
+        # set the JobDescription class variable for the spooldirs:
+        JobDescription.spooldirs = self.dirs
         self.queue = queue
         # self.queues = dict()  # TODO: multi-queue logic (#136, #272)
         self._status = self._status_pre = 'run'  # the initial status is 'run'

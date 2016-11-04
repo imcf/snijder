@@ -13,9 +13,9 @@ import argparse
 # pylint: disable=wrong-import-position
 import HRM
 import HRM.queue
-from HRM.jobs import JobDescription, process_jobfile
+from HRM.jobs import process_jobfile
 from HRM.logger import set_verbosity
-from HRM.spooler import JobSpooler, setup_rundirs
+from HRM.spooler import JobSpooler
 from HRM.inotify import JobFileHandler
 
 
@@ -47,31 +47,30 @@ def main():
     # TODO:
     # [x] init spooldirs as staticmethod of spooler
     # [x] remember files in 'cur' directory
-    # [ ] let spooler then set the JobDescription class variable
+    # [x] let spooler then set the JobDescription class variable
     # [ ] let spooler then set the status file of each queue
     # [ ] then check exisiting files in the 'cur' dir if they belong to any of
     #     our queues, warn otherwise
     # [ ] then process files in the 'new' dir as new ones
-    spool_dirs = setup_rundirs(args.spooldir)
-    JobDescription.spooldirs = spool_dirs   # set the spooldirs class variable
     jobqueues = dict()
     jobqueues['hucore'] = HRM.queue.JobQueue()
-    for qname, queue in jobqueues.iteritems():
-        status = os.path.join(spool_dirs['status'], qname + '.json')
-        queue.statusfile = status
 
-    job_spooler = JobSpooler(spool_dirs, jobqueues['hucore'], args.config)
+    job_spooler = JobSpooler(args.spooldir, jobqueues['hucore'], args.config)
     # select a specific resource if requested on the cmdline:
     if args.resource:
         job_spooler.engine.select_resource(args.resource)
 
+    for qname, queue in jobqueues.iteritems():
+        status = os.path.join(job_spooler.dirs['status'], qname + '.json')
+        queue.statusfile = status
+
     # process jobfiles already existing during our startup:
-    for jobfile in spool_dirs['newfiles']:
+    for jobfile in job_spooler.dirs['newfiles']:
         fname = os.path.join(spool_dirs['new'], jobfile)
         process_jobfile(fname, jobqueues, spool_dirs)
 
 
-    file_handler = JobFileHandler(jobqueues, spool_dirs)
+    file_handler = JobFileHandler(jobqueues, job_spooler.dirs)
 
     try:
         # NOTE: spool() is blocking, as it contains the main spooling loop!
