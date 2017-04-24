@@ -1,0 +1,8 @@
+# IDE project settings
+/.idea/
+
+# Python bytecode
+*.py[cod]
+
+# vim swap files
+.*.sw?
