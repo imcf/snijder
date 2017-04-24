@@ -7,12 +7,17 @@ This project provides a Python package managing one or more job-queues for
 multiple users in a simple, accessible way. Flexibility and maintainability
 have priority over performance, as the targeted jobs will run in the range of
 minutes to hours, so being able to process thousands of queue-requests per
-second is just not important.
+second is just not important here.
+
+Initially it was created to replace the queue manager of the [Huygens Remote
+Manager (HRM)](http://huygens-rm.org/) but Snijder is independent of that
+project and is actually used for other tasks as well.
 
 ## Requirements
 
-Snijder makes use of the gc3pie Python package dealing with job dispatching,
-monitoring, data transfer and cluster queueing systems.
+Snijder makes use of the [GC3Pie](https://github.com/imcf/gc3pie) Python
+package dealing with job dispatching, monitoring, data transfer and cluster
+queueing systems.
 
 ## Example
 
