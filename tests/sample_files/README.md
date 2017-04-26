@@ -8,4 +8,4 @@ a standardized place to keep them around.
 Deconvolution Images
 --------------------
 Test images for deconvolution - the basic set of images which can be downloaded
-from the SVI website (an account is required though): https://svi.nl/DemoImages
+from the [SVI website](https://svi.nl/DemoImages) (requires registration).

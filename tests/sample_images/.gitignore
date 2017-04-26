@@ -1,7 +1,0 @@
-# sample data files for deconvolution
-*.lsm
-*.h5
-
-# output files (logs and previews)
-hucore_logs/
-previews/
