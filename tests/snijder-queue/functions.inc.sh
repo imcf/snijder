@@ -2,9 +2,9 @@
 #
 # function definitions to be included in various test scripts.
 
-# run the init function immediately while we're sourced:
-init()
 
+# NOTE: the init() function is called directly when this file is being sourced,
+#       see the very bottom of the file!
 
 
 ######################### INIT #########################
@@ -306,3 +306,10 @@ strip_runtime_strings() {
     sed -s 's/wall time: [0-9\.]*s ]]/WALLTIME_STRIPPED ]]/' |
     sed -s 's/max memory: [0-9]*kB ]]/MAXMEM_STRIPPED ]]/'
 }
+
+
+
+######################### INIT #########################
+# run the init function immediately while we're sourced:
+init
+######################### INIT #########################
