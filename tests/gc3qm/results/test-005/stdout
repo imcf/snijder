@@ -1,0 +1,170 @@
+python_scripts/test-005__jobfile-parser.py
+
+>>>>>> Testing CORRECT job description files:
+
+----------------- parsing jobfiles/decon_it-3_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['tests/sample_images/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1474439782.639322,
+ 'type': 'hucore',
+ 'uid': '32be2ad29f0e7b1514d807718d7e75568c6a080f',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user01_fixed-timestamp.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01_fixed-timestamp.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['tests/sample_images/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1467979338.137427,
+ 'type': 'hucore',
+ 'uid': '327f080409fd3d1ac41aac6b25e7af74045eaeee',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user02.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user02.cfg'.
+{'email': 'user02@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['tests/sample_images/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1474439782.641002,
+ 'type': 'hucore',
+ 'uid': '32be2ad29f0e7b1514d807718d7e75568c6a080f',
+ 'user': 'user02',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-999_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-999_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['tests/sample_images/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/gc3qm/hucore_templates/decon_faba128_it-999_q-0.00000001.hgsb',
+ 'timestamp': 1474439782.641842,
+ 'type': 'hucore',
+ 'uid': '32be2ad29f0e7b1514d807718d7e75568c6a080f',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-999_user01_fixed-timestamp_45a1734.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-999_user01_fixed-timestamp_45a1734.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['tests/sample_images/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/gc3qm/hucore_templates/decon_faba128_it-999_q-0.00000001.hgsb',
+ 'timestamp': 1467979338.137427,
+ 'type': 'hucore',
+ 'uid': '45a1734541edbf9c01421116006969aaf2ab6e60',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/dummy_sleep_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/dummy_sleep_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/bin/sleep',
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'sleep',
+ 'timestamp': 1474439782.643284,
+ 'type': 'dummy',
+ 'uid': '32be2ad29f0e7b1514d807718d7e75568c6a080f',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/preview_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/preview_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['tests/sample_images/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'preview',
+ 'template': 'tests/gc3qm/hucore_templates/preview_faba128.hgsb',
+ 'timestamp': 1474439782.644073,
+ 'type': 'hucore',
+ 'uid': '32be2ad29f0e7b1514d807718d7e75568c6a080f',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/remove_job_45a1734.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_45a1734.cfg'.
+{'email': 'user01@mail.xy',
+ 'ids': ['45a1734541edbf9c01421116006969aaf2ab6e60'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'timestamp': 1435827755.2494,
+ 'type': 'deletejobs',
+ 'uid': '417a1acc4acb2c0c033673ea87ce6f815352443f',
+ 'user': 'user01',
+ 'ver': '7'}
+
+>>>>>> Testing INVALID job description files:
+----------------- parsing jobfiles/invalid/v1_broken_section-title.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v1_broken_section-title.cfg':
+   Section 'hrmjobfile' missing in job config!
+
+----------------- parsing jobfiles/invalid/v2_broken_section-content_inputfiles.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v2_broken_section-content_inputfiles.cfg':
+   Option 'useremail' missing from section 'hrmjobfile'!
+
+----------------- parsing jobfiles/invalid/v7_broken_section_hrmjobfile.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hrmjobfile.cfg':
+   Option 'useremail' missing from section 'hrmjobfile'!
+
+----------------- parsing jobfiles/invalid/v7_broken_section_hucore.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hucore.cfg':
+   Option 'tasktype' missing from section 'hucore'!
+
+----------------- parsing jobfiles/invalid/v7_broken_section_hucore_unknown-option.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hucore_unknown-option.cfg':
+   Job config invalid, section 'hrmjobfile' contains unknown options: [('invalid_option', 'some-value')]
+
+----------------- parsing jobfiles/invalid/v7_broken_section_inputfiles.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_inputfiles.cfg':
+   No input files defined in job config!
+
+----------------- parsing jobfiles/invalid/v7_broken_timestamp.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_timestamp.cfg':
+   Invalid timestamp: on_parse.
+
+----------------- parsing jobfiles/invalid/v7_removejob_nojobids.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_removejob_nojobids.cfg':
+   Can't find job IDs in job config!
+
+************************* TEST FINISHED! *************************
