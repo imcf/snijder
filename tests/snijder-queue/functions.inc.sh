@@ -5,6 +5,58 @@
 # run the init function immediately while we're sourced:
 init()
 
+
+
+######################### INIT #########################
+init() {
+    # Do all that is required to be able to start the Queue Manager:
+    #   * change working the working directory to the base HRM dir
+    #   * read config file
+    #   * check if python packages are available
+    #   * check if QM executable is there
+    #
+    # If the function finishes successfully, a number of variables is set:
+    #   * CONFFILE
+    #   * QM_PY
+    #   * QM_EXEC
+    #   * QM_OPTS
+    #   * VERB
+
+    cd "$PFX/../.."
+
+    CONFFILE="config/snijder-queue.conf"
+    if ! [ -r "$CONFFILE" ] ; then
+        echo "Can't find config file, expected at '$CONFFILE'. Stopping!"
+        exit 254
+    fi
+    source "$CONFFILE"
+
+    check_python_packages
+
+    QM_PY="bin/hrm_queuemanager.py"
+    if ! [ -f "$QM_PY" ] ; then
+        echo "ERROR: can't find queue manager executable!"
+        exit 2
+    fi
+
+    # the "-u" flag requests Python to run with unbuffered stdin/stdout, which is
+    # required for testing to ensure the messages are always printed in the very
+    # order in which the program(s) were sending them:
+    QM_EXEC="python -u $QM_PY"
+
+    # verbose mode can be enabled by exporting the $VERBOSE environment var:
+    if [ -n "$VERBOSE" ] ; then
+        VERB="-vv"
+    else
+        VERB="-v"
+    fi
+
+    QM_OPTS="--spooldir $SPOOLINGDIR --config $GC3CONF $VERB"
+}
+######################### INIT #########################
+
+
+
 python_can_import() {
     if python -c "import $1" 2> /dev/null ; then
         echo "Found Python package '$1'."
@@ -95,52 +147,6 @@ qm_request() {
     touch "$SPOOLINGDIR/queue/requests/$1"
 }
 
-
-init() {
-    # Do all that is required to be able to start the Queue Manager:
-    #   * change working the working directory to the base HRM dir
-    #   * read config file
-    #   * check if python packages are available
-    #   * check if QM executable is there
-    #
-    # If the function finishes successfully, a number of variables is set:
-    #   * CONFFILE
-    #   * QM_PY
-    #   * QM_EXEC
-    #   * QM_OPTS
-    #   * VERB
-
-    cd "$PFX/../.."
-
-    CONFFILE="config/snijder-queue.conf"
-    if ! [ -r "$CONFFILE" ] ; then
-        echo "Can't find config file, expected at '$CONFFILE'. Stopping!"
-        exit 254
-    fi
-    source "$CONFFILE"
-
-    check_python_packages
-
-    QM_PY="bin/hrm_queuemanager.py"
-    if ! [ -f "$QM_PY" ] ; then
-        echo "ERROR: can't find queue manager executable!"
-        exit 2
-    fi
-
-    # the "-u" flag requests Python to run with unbuffered stdin/stdout, which is
-    # required for testing to ensure the messages are always printed in the very
-    # order in which the program(s) were sending them:
-    QM_EXEC="python -u $QM_PY"
-
-    # verbose mode can be enabled by exporting the $VERBOSE environment var:
-    if [ -n "$VERBOSE" ] ; then
-        VERB="-vv"
-    else
-        VERB="-v"
-    fi
-
-    QM_OPTS="--spooldir $SPOOLINGDIR --config $GC3CONF $VERB"
-}
 
 startup_qm() {
     # Start a fresh instance of the QM, making sure no other one is running.
