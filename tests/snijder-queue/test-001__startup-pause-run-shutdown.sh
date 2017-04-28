@@ -16,6 +16,8 @@ source "$PFX/functions.inc.sh"
 ########## TEST DESCRIPTION ##########
 
 
+prepare_qm
+
 startup_qm
 
 qm_request pause

@@ -24,6 +24,8 @@ SEP="$SEP$SEP"
 
 clean_all_spooldirs
 
+prepare_qm
+
 startup_qm
 
 submit_jobs "decon_job_"

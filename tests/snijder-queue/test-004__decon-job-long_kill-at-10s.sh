@@ -21,6 +21,8 @@ SHORT=$(parse_shortname)
 
 clean_all_spooldirs
 
+prepare_qm
+
 startup_qm
 
 qm_request pause

@@ -19,6 +19,8 @@ SHORT=$(parse_shortname)
 ########## TEST DESCRIPTION ##########
 
 
+prepare_qm
+
 startup_qm
 
 qm_request pause
