@@ -294,6 +294,9 @@ class JobSpooler(object):
             if self.status == 'run':
                 # process deletion requests before anything else
                 self.check_for_jobs_to_delete()
+                # TODO: gc3pie logs an 'UnrecoverableDataStagingError' in case
+                # one of the input files can't be found - can we somehow catch
+                # this (it doesn't seem to raise an exception)?
                 self.engine.progress()
                 for i, app in enumerate(self.apps):
                     new_state = app.status_changed()
