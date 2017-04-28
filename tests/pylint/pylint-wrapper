@@ -8,8 +8,7 @@ fi
 
 
 # detect if we were run with an absolute or relative path:
-FIRST=$(echo $0 | cut -c 1)
-if [ "$FIRST" == "/" ] ; then
+if [ "${0:0:1}" = '/' ] ; then
     BASEDIR="$(dirname $0)/../.."
 else
     BASEDIR="$(pwd)/$(dirname $0)/../.."
