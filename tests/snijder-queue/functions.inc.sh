@@ -205,7 +205,7 @@ submit_jobs() {
         exit 4
     fi
     # we are expected to be in the HRM base dir, so use the full path:
-    for jobfile in tests/gc3qm/inputs/$SHORT/${1}*.cfg ; do
+    for jobfile in tests/snijder-queue/inputs/$SHORT/${1}*.cfg ; do
         cp -v $jobfile "$SPOOLINGDIR/spool/new"
         sleep .1
     done
