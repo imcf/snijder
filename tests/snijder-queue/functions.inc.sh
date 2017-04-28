@@ -9,35 +9,35 @@
 
 ######################### INIT #########################
 init() {
-    # Do all that is required to be able to start the Queue Manager:
-    #   * change working the working directory to the base HRM dir
-    #   * read config file
-    #   * check if python packages are available
+    # Do some sanity checks and set global variables:
+    #   * check if config file is there, read it
     #   * check if QM executable is there
     #
-    # If the function finishes successfully, a number of variables is set:
+    # Upon successfull completion, a number of global variables is set:
     #   * CONFFILE
-    #   * QM_PY
+    #   * QM_BASEDIR
     #   * QM_EXEC
     #   * QM_OPTS
-    #   * VERB
 
     cd "$PFX/../.."
 
     CONFFILE="config/snijder-queue.conf"
     if ! [ -r "$CONFFILE" ] ; then
-        echo "Can't find config file, expected at '$CONFFILE'. Stopping!"
+        echo "ERROR: can't find config file, expected at '$CONFFILE'!"
         exit 254
     fi
     source "$CONFFILE"
 
-    check_python_packages
-
-    QM_PY="bin/hrm_queuemanager.py"
+    local QM_PY="bin/hrm_queuemanager.py"
     if ! [ -f "$QM_PY" ] ; then
         echo "ERROR: can't find queue manager executable!"
         exit 2
     fi
+
+    # by reaching this point we know the config and the executable is there, so
+    # we remember the directory and return to the previous one:
+    QM_BASEDIR=$(pwd)
+    cd - > /dev/null
 
     # the "-u" flag requests Python to run with unbuffered stdin/stdout, which is
     # required for testing to ensure the messages are always printed in the very
@@ -46,9 +46,9 @@ init() {
 
     # verbose mode can be enabled by exporting the $VERBOSE environment var:
     if [ -n "$VERBOSE" ] ; then
-        VERB="-vv"
+        local VERB="-vv"
     else
-        VERB="-v"
+        local VERB="-v"
     fi
 
     QM_OPTS="--spooldir $SPOOLINGDIR --config $GC3CONF $VERB"
@@ -148,8 +148,30 @@ qm_request() {
 }
 
 
+prepare_qm() {
+    # Tasks required to prepare a run of the QM that have to be done only once
+    # per test-run (unlike the stuff in startup_qm(), which could be called
+    # multiple times).
+    #
+    # change working the working directory to the base dir
+    cd "$QM_BASEDIR"
+    # check if the required python packages are available
+    check_python_packages
+    # set a global variable to determine this function was run:
+    QM_RUN_PREPARED="yes"
+}
+
+
 startup_qm() {
     # Start a fresh instance of the QM, making sure no other one is running.
+    #
+    # first check if prepare_qm() has run, but do NOT call it from here as
+    # startup_qm() could be called more than once in a single test-run, but
+    # prepare_qm() should only be run if explicitly requested
+    if [ -z "$QM_RUN_PREPARED" ] ; then
+        echo "ERROR: missing call to prepare_qm()."
+        exit 253
+    fi
     if qm_is_running ; then
         echo
         echo "****************************************************************"
