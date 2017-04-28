@@ -2,19 +2,8 @@
 #
 # function definitions to be included in various test scripts.
 
-QM_PY="bin/hrm_queuemanager.py"
-# the "-u" flag requests Python to run with unbuffered stdin/stdout, which is
-# required for testing to ensure the messages are always printed in the very
-# order in which the program(s) were sending them:
-QM_EXEC="python -u $QM_PY"
-QM_SPOOL="run"  # TODO: read this from hrm.conf once it's there!
-if [ -n "$VERBOSE" ] ; then
-    VERB="-vv"
-else
-    VERB="-v"
-fi
-QM_OPTS="--spooldir $QM_SPOOL --config config/samples/gc3pie_localhost.conf $VERB"
-
+# run the init function immediately while we're sourced:
+init()
 
 python_can_import() {
     if python -c "import $1" 2> /dev/null ; then
@@ -28,6 +17,7 @@ python_can_import() {
 
 
 check_python_packages() {
+    # test if Python can import our required packages (gc3libs, HRM)
     if ! python_can_import "gc3libs" ; then
         echo "Make sure to have the required virtualenv active, e.g."
         GC3VER=2.4.2
@@ -48,9 +38,9 @@ check_python_packages() {
 clean_all_spooldirs() {
     set +e
     rm -vf /data/gc3_resourcedir/shellcmd.d/*
-    rm -vf "../../$QM_SPOOL/spool/cur/"*
-    rm -vf "../../$QM_SPOOL/spool/new/"*
-    rm -vf "../../$QM_SPOOL/queue/requests/"*
+    rm -vf "../../$SPOOLINGDIR/spool/cur/"*
+    rm -vf "../../$SPOOLINGDIR/spool/new/"*
+    rm -vf "../../$SPOOLINGDIR/queue/requests/"*
     set -e
 }
 
@@ -72,7 +62,7 @@ spooldir_is_empty() {
         echo "ERROR No spooling dir specified to check!"
         exit 255
     fi
-    DIR="../../$QM_SPOOL/spool/$1/"
+    DIR="../../$SPOOLINGDIR/spool/$1/"
     COUNT=$(ls "$DIR" | wc -l)
     if [ $COUNT -eq 0 ] ; then
         # echo "No jobs in '$1' spooling directory!"
@@ -102,19 +92,58 @@ qm_request() {
         echo "ERROR: QM is not running! Stopping here."
         exit 3
     fi
-    touch "$QM_SPOOL/queue/requests/$1"
+    touch "$SPOOLINGDIR/queue/requests/$1"
 }
 
 
-startup_qm() {
-    # Start a fresh instance of the QM, making sure no other one is running.
-    # NOTE: this changes the working directory to the base HRM dir!
+init() {
+    # Do all that is required to be able to start the Queue Manager:
+    #   * change working the working directory to the base HRM dir
+    #   * read config file
+    #   * check if python packages are available
+    #   * check if QM executable is there
+    #
+    # If the function finishes successfully, a number of variables is set:
+    #   * CONFFILE
+    #   * QM_PY
+    #   * QM_EXEC
+    #   * QM_OPTS
+    #   * VERB
+
+    cd "$PFX/../.."
+
+    CONFFILE="config/snijder-queue.conf"
+    if ! [ -r "$CONFFILE" ] ; then
+        echo "Can't find config file, expected at '$CONFFILE'. Stopping!"
+        exit 254
+    fi
+    source "$CONFFILE"
+
     check_python_packages
-    if ! [ -f "$PFX/../../$QM_PY" ] ; then
+
+    QM_PY="bin/hrm_queuemanager.py"
+    if ! [ -f "$QM_PY" ] ; then
         echo "ERROR: can't find queue manager executable!"
         exit 2
     fi
-    cd "$PFX/../.."
+
+    # the "-u" flag requests Python to run with unbuffered stdin/stdout, which is
+    # required for testing to ensure the messages are always printed in the very
+    # order in which the program(s) were sending them:
+    QM_EXEC="python -u $QM_PY"
+
+    # verbose mode can be enabled by exporting the $VERBOSE environment var:
+    if [ -n "$VERBOSE" ] ; then
+        VERB="-vv"
+    else
+        VERB="-v"
+    fi
+
+    QM_OPTS="--spooldir $SPOOLINGDIR --config $GC3CONF $VERB"
+}
+
+startup_qm() {
+    # Start a fresh instance of the QM, making sure no other one is running.
     if qm_is_running ; then
         echo
         echo "****************************************************************"
@@ -149,7 +178,7 @@ submit_jobs() {
     fi
     # we are expected to be in the HRM base dir, so use the full path:
     for jobfile in tests/gc3qm/inputs/$SHORT/${1}*.cfg ; do
-        cp -v $jobfile "$QM_SPOOL/spool/new"
+        cp -v $jobfile "$SPOOLINGDIR/spool/new"
         sleep .1
     done
 
@@ -209,16 +238,16 @@ wait_for_qm_to_finish() {
 
 queue_is_empty() {
     # Test if the queue is empty, EXIT if the queue file doesn't exist!
-    QFILE="$QM_SPOOL/queue/status/hucore.json"
+    QFILE="$SPOOLINGDIR/queue/status/hucore.json"
     if [ -n "$1" ] ; then
-        QFILE="$QM_SPOOL/queue/status/$1.json"
+        QFILE="$SPOOLINGDIR/queue/status/$1.json"
     fi
     # the queue file *HAS TO* exist, otherwise we terminate with an error:
     if ! [ -r "$QFILE" ] ; then
         echo "ERROR: queue file '$QFILE' doesn't exist!"
         exit 100
     fi
-    # cat "$QM_SPOOL/queue/status/hucore.json"
+    # cat "$SPOOLINGDIR/queue/status/hucore.json"
     QUEUED=$(grep '"status":' "$QFILE" | wc -l)
     if [ "$QUEUED" -eq 0 ] ; then
         # echo "Queue is empty!"
