@@ -22,3 +22,15 @@ queueing systems.
 ## Example
 
 ToDo!
+
+## Testing
+
+The scripts in `tests/snijder` require some sample input files which are not
+part of this repository, as they are large binary files. Here's how to get
+them:
+
+### HuCore Test Images - `var/sample_data/hucore/`
+
+The test images for deconvolution are currently the basic set of images which
+can be downloaded from the [SVI website](https://svi.nl/DemoImages) (requires
+registration). Simply place them in
