@@ -1,50 +1,274 @@
 gc3.gc3libs: INFO: Runtime directories:
-{'cur': 'run/spool/cur',
- 'done': 'run/spool/done',
- 'new': 'run/spool/new',
+{'cur': 'var/snijder-queue/spool/cur',
+ 'done': 'var/snijder-queue/spool/done',
+ 'new': 'var/snijder-queue/spool/new',
  'newfiles': [],
- 'requests': 'run/queue/requests',
- 'status': 'run/queue/status'}
-gc3.gc3libs: INFO: Setting job queue status report file: run/queue/status/hucore.json
+ 'requests': 'var/snijder-queue/queue/requests',
+ 'status': 'var/snijder-queue/queue/status'}
 gc3.gc3libs: INFO: Using gc3pie spooldir: /data/hrm_data
-gc3.gc3libs: INFO: Creating GC3Pie engine using config file "config/samples/gc3pie_localhost.conf".
+gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
 gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /data/gc3_resourcedir/shellcmd.d
 gc3.gc3libs: INFO: Created JobSpooler.
-gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "run/spool/new".
+gc3.gc3libs: INFO: Setting job queue status report file: var/snijder-queue/queue/status/hucore.json
+gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "var/snijder-queue/spool/new".
 gc3.gc3libs: INFO: Excpected jobfile version: 7.
 gc3.gc3libs: INFO: Received spooler queue status refresh request.
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque([])
+jobs: {}
+processing: []
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: WARNING: Received spooler status change request: run -> pause
 gc3.gc3libs: INFO: New file event 'decon_job_1.cfg'
 gc3.gc3libs: INFO: Parsing jobfile 'decon_job_1.cfg'...
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: INFO: Moving file 'decon_job_1.cfg' to 'run/spool/cur/UID_STRIPPED.jobfile'.
+gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
+gc3.gc3libs: INFO: Moving file 'decon_job_1.cfg' to 'var/snijder-queue/spool/cur/UID_STRIPPED.jobfile'.
 gc3.gc3libs: INFO: Enqueueing job 'UID_STRIPPED' into category 'user01'.
 gc3.gc3libs: INFO: Adding a new queue for 'user01' to the JobQueue.
 gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['UID_STRIPPED'])}
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: []
+queue: {'user01': deque(['UID_STRIPPED'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: New file event 'decon_job_2.cfg'
 gc3.gc3libs: INFO: Parsing jobfile 'decon_job_2.cfg'...
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: INFO: Moving file 'decon_job_2.cfg' to 'run/spool/cur/UID_STRIPPED.jobfile'.
+gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
+gc3.gc3libs: INFO: Moving file 'decon_job_2.cfg' to 'var/snijder-queue/spool/cur/UID_STRIPPED.jobfile'.
 gc3.gc3libs: INFO: Enqueueing job 'UID_STRIPPED' into category 'user01'.
 gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['UID_STRIPPED', 'UID_STRIPPED'])}
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: []
+queue: {'user01': deque(['UID_STRIPPED', 'UID_STRIPPED'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: New file event 'decon_job_3.cfg'
 gc3.gc3libs: INFO: Parsing jobfile 'decon_job_3.cfg'...
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: INFO: Moving file 'decon_job_3.cfg' to 'run/spool/cur/UID_STRIPPED.jobfile'.
+gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
+gc3.gc3libs: INFO: Moving file 'decon_job_3.cfg' to 'var/snijder-queue/spool/cur/UID_STRIPPED.jobfile'.
 gc3.gc3libs: INFO: Enqueueing job 'UID_STRIPPED' into category 'user01'.
 gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['UID_STRIPPED', 'UID_STRIPPED', 'UID_STRIPPED'])}
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: []
+queue: {'user01': deque(['UID_STRIPPED', 'UID_STRIPPED', 'UID_STRIPPED'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: WARNING: Received spooler status change request: pause -> run
 gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'UID_STRIPPED'.
-gc3.gc3libs: INFO: Adding another job to the gc3pie engine.
+gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
 gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: UID_STRIPPED]]
-gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['tests/sample_images/faba128.h5', 'tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: ['UID_STRIPPED']
+queue: {'user01': deque(['UID_STRIPPED', 'UID_STRIPPED'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: Successfully submitted HuDeconApp@APPID_STRIPPED to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -57,11 +281,58 @@ gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
 gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'run/spool/done/UID_STRIPPED.jobfile'.
+gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'var/snijder-queue/spool/done/UID_STRIPPED.jobfile'.
 gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'UID_STRIPPED'.
-gc3.gc3libs: INFO: Adding another job to the gc3pie engine.
+gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
 gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: UID_STRIPPED]]
-gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['tests/sample_images/faba128.h5', 'tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: ['UID_STRIPPED']
+queue: {'user01': deque(['UID_STRIPPED'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: Successfully submitted HuDeconApp@APPID_STRIPPED to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -74,11 +345,43 @@ gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
 gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'run/spool/done/UID_STRIPPED.jobfile'.
+gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'var/snijder-queue/spool/done/UID_STRIPPED.jobfile'.
 gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'UID_STRIPPED'.
-gc3.gc3libs: INFO: Adding another job to the gc3pie engine.
+gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
 gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: UID_STRIPPED]]
-gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['tests/sample_images/faba128.h5', 'tests/gc3qm/hucore_templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): UID_STRIPPED - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque([])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: ['UID_STRIPPED']
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: Successfully submitted HuDeconApp@APPID_STRIPPED to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -91,7 +394,7 @@ gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
 gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'run/spool/done/UID_STRIPPED.jobfile'.
+gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'var/snijder-queue/spool/done/UID_STRIPPED.jobfile'.
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown
 gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
