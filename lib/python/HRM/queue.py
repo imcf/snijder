@@ -284,7 +284,7 @@ class JobQueue(object):
     def queue_details_hr(self):
         """Generate a human readable list of the queue details."""
         # FIXME: don't print the queue status, return the text instead!
-        #        this produce annoying amounts of output in a production
+        #        this produces annoying amounts of output in a production
         #        environment, therefore the generated text should be returned,
         #        so it can be handled by the logging methods (e.g. only printed
         #        when running in debug mode)
@@ -308,7 +308,7 @@ class JobQueue(object):
                        (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
-        logi('\n%s', '\n'.join(msg))
+        logi('queue_details_hr():\n%s', '\n'.join(msg))
         logw('QUEUE STATUS\n'
              '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
              "statusfile: %s\n"
