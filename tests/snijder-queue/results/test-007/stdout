@@ -1,83 +1,13 @@
-python_scripts/test-007__hrm-jobqueue.py
+scripts/python/test-007__hrm-jobqueue.py
 
 ******** adding jobs to queue: ********
 jq.joblist: []
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u000_bbb']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u000_bbb', 'u000_ccc']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u000_ccc']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u111_eee', 'u000_ccc']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_fff - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u111_eee', 'u000_ccc', 'u111_fff']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_fff - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ggg - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u111_eee', 'u000_ccc', 'u111_fff', 'u111_ggg']
 
 
@@ -97,107 +27,17 @@ jq.joblist: []
 
 ******** creating a new job queue object: ********
 **************************************************
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
 
 
 ******** adding jobs to queue: ********
 jq.joblist: []
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u000_bbb']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u000_bbb', 'u000_ccc']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u000_ccc']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u111_eee', 'u000_ccc']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_fff - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u111_eee', 'u000_ccc', 'u111_fff']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_fff - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ggg - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa', 'u111_ddd', 'u000_bbb', 'u111_eee', 'u000_ccc', 'u111_fff', 'u111_ggg']
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_bbb - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_eee - ['tests/sample_images/faba128.h5'] [queued]
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_fff - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ggg - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 
 
 ******** removing jobs from queue: ********
@@ -212,14 +52,6 @@ remove('u111_fff'): u111_fff (joblist: [])
 
 ----- no queued jobs should be left (but some processing) ----
 jq.joblist: []
-========================= queue status =========================
---- jobs retrieved for processing
-u000 (user01@mail.xy): u000_ccc - ['tests/sample_images/faba128.h5'] [queued]
-u111 (user01@mail.xy): u111_ddd - ['tests/sample_images/faba128.h5'] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
 
 
 ******** trying to removing jobs from the empty queue: ********
@@ -230,24 +62,10 @@ None
 
 ******** creating a new job queue object: ********
 **************************************************
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
 
 
 ******** trying to add duplicate jobs to queue: ********
 jq.joblist: []
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-u000 (user01@mail.xy): u000_aaa - ['tests/sample_images/faba128.h5'] [queued]
-========================= queue status =========================
 jq.joblist: ['u000_aaa']
 Adding duplicate job failed as expected (Job with uid 'u000_aaa' already in this queue!)!
 ************************* TEST FINISHED! *************************

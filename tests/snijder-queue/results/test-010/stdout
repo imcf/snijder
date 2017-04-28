@@ -1,36 +1,15 @@
 Found Python package 'gc3libs'.
 Found Python package 'HRM'.
 **** Starting Queue Manager...
-python -u bin/hrm_queuemanager.py --spooldir run --config config/samples/gc3pie_localhost.conf -v
+python -u bin/hrm_queuemanager.py --spooldir var/snijder-queue --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
 HRM spooler running. (Ctrl-C to abort).
 ********************************************************************************
 Requesting QM status change to: refresh
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
 QM process started.
 Requesting QM status change to: pause
-'tests/gc3qm/inputs/test-010/dummy_sleep_user01.cfg' -> 'run/spool/new/dummy_sleep_user01.cfg'
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 368da3fe9404847ad924296aec9b874223f814b3 - [] [queued]
-========================= queue status =========================
+'tests/snijder-queue/inputs/test-010/dummy_sleep_user01.cfg' -> 'var/snijder-queue/spool/new/dummy_sleep_user01.cfg'
 Requesting QM status change to: run
-========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): 368da3fe9404847ad924296aec9b874223f814b3 - [] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
 Queue is empty, trying to shut down the QM!
 Requesting QM status change to: shutdown
 QM is running...
