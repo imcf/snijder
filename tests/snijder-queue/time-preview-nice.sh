@@ -22,6 +22,7 @@ run_previewgen() {
     NICELEVEL=$2
     echo "******************** Running with 'nice -n $NICELEVEL'..."
     OUT="timings/nice_$NICELEVEL.log"
+    mkdir -p "timings"
     date >> $OUT
     echo "Timings stored in $OUT"
     for i in $(seq 1 $ITERATIONS) ; do
