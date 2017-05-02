@@ -41,6 +41,7 @@ class AbstractApp(gc3libs.Application):
              self.__class__.__name__, job['user'], job['uid'])
         super(AbstractApp, self).__init__(**appconfig)
         self.laststate = self.execution.state
+        # FIXME FIXME FIXME: job status has to be updated!!
 
     def new(self):
         """Called when the job state is (re)set to NEW.
@@ -109,10 +110,10 @@ class AbstractApp(gc3libs.Application):
 
     def execution_stats(self):
         """Log execution stats: cpu and walltime, maximum memory."""
-        # NOTE: as of now, the upstream gc3libs does not provide the execution
-        # stats for the "shellcmd" backend (despite what the documentation
-        # says), so we need to be careful when retrieving them and replace them
-        # with defaults if they're not available:
+        # NOTE: as of now, the upstream gc3libs (v2.4.2) does not provide the
+        # execution stats for the "shellcmd" backend (despite what the
+        # documentation says), so we need to be careful when retrieving them
+        # and replace them with defaults if they're not available:
         used_cpu_time = getattr(self.execution, 'used_cpu_time', 'N/A')
         duration = getattr(self.execution, 'duration', 'N/A')
         max_used_memory = getattr(self.execution, 'max_used_memory', 'N/A')
