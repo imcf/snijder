@@ -7,7 +7,7 @@ set -e
 PFX="$(dirname $0)"
 source "$PFX/functions.inc.sh"
 
-EXP_SCRIPT="expect_scripts/hucore__preview_faba128_abspath.exp"
+EXP_SCRIPT="scripts/expect/hucore__preview_faba128_abspath.exp"
 
 ########## TEST DESCRIPTION ##########
 # intended behaviour:
