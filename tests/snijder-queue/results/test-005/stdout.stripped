@@ -70,8 +70,8 @@ scripts/python/test-005__jobfile-parser.py
  'uid': 'UID_STRIPPED',
  'user': 'user01',
  'ver': '7'}
------------------ parsing jobfiles/decon_it-999_user01_fixed-timestamp_45a1734.cfg -----------------
- - Parsing worked without errors on 'jobfiles/decon_it-999_user01_fixed-timestamp_45a1734.cfg'.
+----------------- parsing jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg'.
 {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['var/sample_data/hucore/faba128.h5'],
@@ -120,8 +120,8 @@ scripts/python/test-005__jobfile-parser.py
  'uid': 'UID_STRIPPED',
  'user': 'user01',
  'ver': '7'}
------------------ parsing jobfiles/remove_job_45a1734.cfg -----------------
- - Parsing worked without errors on 'jobfiles/remove_job_45a1734.cfg'.
+----------------- parsing jobfiles/remove_job_c682dcd.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_c682dcd.cfg'.
 {'email': 'user01@mail.xy',
  'ids': ['UID_STRIPPED'],
  'infiles': [],
