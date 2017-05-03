@@ -10,3 +10,6 @@ Other tasks
 -----------
 
 * clean up "var/snijder-queue/spool/" (verbosely!) after tests are run!!
+* split tests into "integration" and "unit tests"
+  * integration: full queue manager / spooler runs, parsing jobfiles etc.
+  * unit tests: Python snippets testing specific functionality
