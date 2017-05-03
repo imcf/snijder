@@ -186,7 +186,7 @@ class JobQueue(object):
         """
         logd("Trying to remove job with uid '%s'.", uid)
         if uid not in self.jobs:
-            logw("No job with uid '%s' was found!", uid)
+            loge("No job with uid '%s' was found!", uid)
             return None
         job = self.jobs[uid]   # remember the job for returning it later
         cat = job.get_category()
