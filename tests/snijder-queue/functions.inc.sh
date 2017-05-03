@@ -58,6 +58,9 @@ init() {
 
 
 python_can_import() {
+    # set +e
+    # which python
+    # echo $PYTHONPATH
     if python -c "import $1" 2> /dev/null ; then
         echo "Found Python package '$1'."
         return 0
@@ -65,6 +68,7 @@ python_can_import() {
         echo "ERROR: can't import module '$1'!"
         return -1
     fi
+    # set -e
 }
 
 
