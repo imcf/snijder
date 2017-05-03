@@ -5,7 +5,7 @@ gc3.gc3libs: INFO: Runtime directories:
  'newfiles': [],
  'requests': 'var/snijder-queue/queue/requests',
  'status': 'var/snijder-queue/queue/status'}
-gc3.gc3libs: INFO: Using gc3pie spooldir: /data/hrm_data
+gc3.gc3libs: INFO: Using gc3pie spooldir: /data/snijder_spooldir
 gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
 gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /data/gc3_resourcedir/shellcmd.d
@@ -121,7 +121,6 @@ gc3.gc3libs: WARNING: v---------------------------------------------------------
 gc3.gc3libs: WARNING: Unfinished jobs, trying to stop them:
 gc3.gc3libs: WARNING: Status of running job: RUNNING
 gc3.gc3libs: WARNING: <KILLING> [user01] HuDeconApp
-Terminated
 gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ cpu time: N/A ]]
 	[[ wall time: N/A ]]
@@ -131,6 +130,7 @@ gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: WARNING: App has terminated, removing from list of apps.
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
+Terminated
 gc3.gc3libs: WARNING: ^--------------------------------------------------------------------------------^
 gc3.gc3libs: INFO: Successfully terminated remaining jobs, none left.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.

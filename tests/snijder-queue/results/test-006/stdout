@@ -1,9 +1,9 @@
 Found Python package 'gc3libs'.
-Found Python package 'HRM'.
+Found Python package 'snijder'.
 **** Starting Queue Manager...
-python -u bin/hrm_queuemanager.py --spooldir var/snijder-queue --config resources/config/gc3pie/localhost.conf -v
+python -u bin/snijder-queue --spooldir var/snijder-queue --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
-HRM spooler running. (Ctrl-C to abort).
+snijder-queue spooler running. (Ctrl-C to abort).
 ********************************************************************************
 Requesting QM status change to: refresh
 QM process started.

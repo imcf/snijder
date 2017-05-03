@@ -5,7 +5,7 @@ gc3.gc3libs: INFO: Runtime directories:
  'newfiles': [],
  'requests': 'var/snijder-queue/queue/requests',
  'status': 'var/snijder-queue/queue/status'}
-gc3.gc3libs: INFO: Using gc3pie spooldir: /data/hrm_data
+gc3.gc3libs: INFO: Using gc3pie spooldir: /data/snijder_spooldir
 gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
 gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /data/gc3_resourcedir/shellcmd.d
@@ -224,7 +224,8 @@ statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque(['user01'])
 jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'infiles': ['var/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
                                               'pid': 'N/A',
                                               'progress': 'N/A',
                                               'server': 'N/A',
@@ -239,8 +240,7 @@ jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'ver': '7'},
  'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['var/sample_data/hucore/faba128.h5',
-                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
                                               'progress': 'N/A',
                                               'server': 'N/A',
@@ -285,7 +285,7 @@ gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ WALLTIME_STRIPPED ]]
 	[[ MAXMEM_STRIPPED ]]
 gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
+gc3.gc3libs: INFO: The output of the application is in `/data/snijder_spooldir/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
@@ -355,7 +355,7 @@ gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ WALLTIME_STRIPPED ]]
 	[[ MAXMEM_STRIPPED ]]
 gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
+gc3.gc3libs: INFO: The output of the application is in `/data/snijder_spooldir/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
@@ -410,7 +410,7 @@ gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ WALLTIME_STRIPPED ]]
 	[[ MAXMEM_STRIPPED ]]
 gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
+gc3.gc3libs: INFO: The output of the application is in `/data/snijder_spooldir/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
