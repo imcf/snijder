@@ -41,6 +41,7 @@ gc3.gc3libs: INFO: Selected queue for jobtype (dummy) and tasktype (sleep): huco
 gc3.gc3libs: INFO: Moving file 'dummy_sleep_user01.cfg' to 'var/snijder-queue/spool/cur/UID_STRIPPED.jobfile'.
 gc3.gc3libs: INFO: Enqueueing job 'UID_STRIPPED' into category 'user01'.
 gc3.gc3libs: INFO: Adding a new queue for 'user01' to the JobQueue.
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
 gc3.gc3libs: INFO: Job (type 'dummy') added. New queue: {'user01': deque(['UID_STRIPPED'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
@@ -108,8 +109,12 @@ deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: Successfully submitted DummySleepApp@APPID_STRIPPED to: localhost
 gc3.gc3libs: INFO: DummySleepApp status: 'NEW' -> 'SUBMITTED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: DummySleepApp status: 'SUBMITTED' -> 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: DummySleepApp status: 'RUNNING' -> 'TERMINATING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ CPUTIME_STRIPPED ]]
 	[[ WALLTIME_STRIPPED ]]
@@ -117,6 +122,8 @@ gc3.gc3libs: INFO: Job finished. Execution stats:
 gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
 gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: DummySleepApp status: 'TERMINATING' -> 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
 gc3.gc3libs: INFO: Moving file 'UID_STRIPPED.jobfile' to 'var/snijder-queue/spool/done/UID_STRIPPED.jobfile'.
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown

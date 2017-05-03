@@ -4,6 +4,7 @@ gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===

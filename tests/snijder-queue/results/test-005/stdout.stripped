@@ -19,6 +19,23 @@ scripts/python/test-005__jobfile-parser.py
  'uid': 'UID_STRIPPED',
  'user': 'user01',
  'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user01_abspath.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01_abspath.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['/data/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': '/data/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
 ----------------- parsing jobfiles/decon_it-3_user01_fixed-timestamp.cfg -----------------
  - Parsing worked without errors on 'jobfiles/decon_it-3_user01_fixed-timestamp.cfg'.
 {'email': 'user01@mail.xy',

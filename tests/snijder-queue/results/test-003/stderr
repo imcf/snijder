@@ -38,23 +38,24 @@ gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNIN
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
-gc3.gc3libs: INFO: Moving file 'decon_job_1.cfg' to 'var/snijder-queue/spool/cur/15f6718ff40d43b9570b601187ed966cf902de72.jobfile'.
-gc3.gc3libs: INFO: Enqueueing job '15f6718ff40d43b9570b601187ed966cf902de72' into category 'user01'.
+gc3.gc3libs: INFO: Moving file 'decon_job_1.cfg' to 'var/snijder-queue/spool/cur/aaeaab07945a043f056a4afd406188e42673b9f5.jobfile'.
+gc3.gc3libs: INFO: Enqueueing job 'aaeaab07945a043f056a4afd406188e42673b9f5' into category 'user01'.
 gc3.gc3libs: INFO: Adding a new queue for 'user01' to the JobQueue.
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['15f6718ff40d43b9570b601187ed966cf902de72'])}
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
+gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['aaeaab07945a043f056a4afd406188e42673b9f5'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 15f6718ff40d43b9570b601187ed966cf902de72 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): aaeaab07945a043f056a4afd406188e42673b9f5 - ['var/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
+jobs: {'aaeaab07945a043f056a4afd406188e42673b9f5': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -64,13 +65,13 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.604368,
+                                              'timestamp': 1493820922.356187,
                                               'type': 'hucore',
-                                              'uid': '15f6718ff40d43b9570b601187ed966cf902de72',
+                                              'uid': 'aaeaab07945a043f056a4afd406188e42673b9f5',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['15f6718ff40d43b9570b601187ed966cf902de72'])}
+queue: {'user01': deque(['aaeaab07945a043f056a4afd406188e42673b9f5'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: New file event 'decon_job_2.cfg'
@@ -79,23 +80,24 @@ gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNIN
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
-gc3.gc3libs: INFO: Moving file 'decon_job_2.cfg' to 'var/snijder-queue/spool/cur/8c57c9fade0b6100f08990f952bf98901b42a765.jobfile'.
-gc3.gc3libs: INFO: Enqueueing job '8c57c9fade0b6100f08990f952bf98901b42a765' into category 'user01'.
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['15f6718ff40d43b9570b601187ed966cf902de72', '8c57c9fade0b6100f08990f952bf98901b42a765'])}
+gc3.gc3libs: INFO: Moving file 'decon_job_2.cfg' to 'var/snijder-queue/spool/cur/de7c6dd8660c2e948a21972f3fa526cc05bd39d4.jobfile'.
+gc3.gc3libs: INFO: Enqueueing job 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4' into category 'user01'.
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
+gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['aaeaab07945a043f056a4afd406188e42673b9f5', 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 15f6718ff40d43b9570b601187ed966cf902de72 - ['var/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): 8c57c9fade0b6100f08990f952bf98901b42a765 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): aaeaab07945a043f056a4afd406188e42673b9f5 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): de7c6dd8660c2e948a21972f3fa526cc05bd39d4 - ['var/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
+jobs: {'aaeaab07945a043f056a4afd406188e42673b9f5': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -105,12 +107,12 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.604368,
+                                              'timestamp': 1493820922.356187,
                                               'type': 'hucore',
-                                              'uid': '15f6718ff40d43b9570b601187ed966cf902de72',
+                                              'uid': 'aaeaab07945a043f056a4afd406188e42673b9f5',
                                               'user': 'user01',
                                               'ver': '7'},
- '8c57c9fade0b6100f08990f952bf98901b42a765': {'email': 'user01@mail.xy',
+ 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -120,13 +122,13 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.701894,
+                                              'timestamp': 1493820922.457794,
                                               'type': 'hucore',
-                                              'uid': '8c57c9fade0b6100f08990f952bf98901b42a765',
+                                              'uid': 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['15f6718ff40d43b9570b601187ed966cf902de72', '8c57c9fade0b6100f08990f952bf98901b42a765'])}
+queue: {'user01': deque(['aaeaab07945a043f056a4afd406188e42673b9f5', 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: New file event 'decon_job_3.cfg'
@@ -135,24 +137,25 @@ gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNIN
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
-gc3.gc3libs: INFO: Moving file 'decon_job_3.cfg' to 'var/snijder-queue/spool/cur/e524747305a094eba44028308a4554d2503aed1a.jobfile'.
-gc3.gc3libs: INFO: Enqueueing job 'e524747305a094eba44028308a4554d2503aed1a' into category 'user01'.
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['15f6718ff40d43b9570b601187ed966cf902de72', '8c57c9fade0b6100f08990f952bf98901b42a765', 'e524747305a094eba44028308a4554d2503aed1a'])}
+gc3.gc3libs: INFO: Moving file 'decon_job_3.cfg' to 'var/snijder-queue/spool/cur/01496ea9db1149c3df2a9d4afbc2e848dde87692.jobfile'.
+gc3.gc3libs: INFO: Enqueueing job '01496ea9db1149c3df2a9d4afbc2e848dde87692' into category 'user01'.
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
+gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['aaeaab07945a043f056a4afd406188e42673b9f5', 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4', '01496ea9db1149c3df2a9d4afbc2e848dde87692'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 15f6718ff40d43b9570b601187ed966cf902de72 - ['var/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): 8c57c9fade0b6100f08990f952bf98901b42a765 - ['var/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): e524747305a094eba44028308a4554d2503aed1a - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): aaeaab07945a043f056a4afd406188e42673b9f5 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): de7c6dd8660c2e948a21972f3fa526cc05bd39d4 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): 01496ea9db1149c3df2a9d4afbc2e848dde87692 - ['var/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
+jobs: {'01496ea9db1149c3df2a9d4afbc2e848dde87692': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -162,12 +165,12 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.604368,
+                                              'timestamp': 1493820922.561151,
                                               'type': 'hucore',
-                                              'uid': '15f6718ff40d43b9570b601187ed966cf902de72',
+                                              'uid': '01496ea9db1149c3df2a9d4afbc2e848dde87692',
                                               'user': 'user01',
                                               'ver': '7'},
- '8c57c9fade0b6100f08990f952bf98901b42a765': {'email': 'user01@mail.xy',
+ 'aaeaab07945a043f056a4afd406188e42673b9f5': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -177,12 +180,12 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.701894,
+                                              'timestamp': 1493820922.356187,
                                               'type': 'hucore',
-                                              'uid': '8c57c9fade0b6100f08990f952bf98901b42a765',
+                                              'uid': 'aaeaab07945a043f056a4afd406188e42673b9f5',
                                               'user': 'user01',
                                               'ver': '7'},
- 'e524747305a094eba44028308a4554d2503aed1a': {'email': 'user01@mail.xy',
+ 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -192,34 +195,49 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.803839,
+                                              'timestamp': 1493820922.457794,
                                               'type': 'hucore',
-                                              'uid': 'e524747305a094eba44028308a4554d2503aed1a',
+                                              'uid': 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['15f6718ff40d43b9570b601187ed966cf902de72', '8c57c9fade0b6100f08990f952bf98901b42a765', 'e524747305a094eba44028308a4554d2503aed1a'])}
+queue: {'user01': deque(['aaeaab07945a043f056a4afd406188e42673b9f5', 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4', '01496ea9db1149c3df2a9d4afbc2e848dde87692'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: WARNING: Received spooler status change request: pause -> run
-gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid '15f6718ff40d43b9570b601187ed966cf902de72'.
+gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'aaeaab07945a043f056a4afd406188e42673b9f5'.
 gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
-gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: 15f6718ff40d43b9570b601187ed966cf902de72]]
+gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: aaeaab07945a043f056a4afd406188e42673b9f5]]
 gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): 15f6718ff40d43b9570b601187ed966cf902de72 - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): aaeaab07945a043f056a4afd406188e42673b9f5 - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 8c57c9fade0b6100f08990f952bf98901b42a765 - ['var/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): e524747305a094eba44028308a4554d2503aed1a - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): de7c6dd8660c2e948a21972f3fa526cc05bd39d4 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): 01496ea9db1149c3df2a9d4afbc2e848dde87692 - ['var/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
+jobs: {'01496ea9db1149c3df2a9d4afbc2e848dde87692': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': 1493820922.561151,
+                                              'type': 'hucore',
+                                              'uid': '01496ea9db1149c3df2a9d4afbc2e848dde87692',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'aaeaab07945a043f056a4afd406188e42673b9f5': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5',
                                                           'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
@@ -230,12 +248,12 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.604368,
+                                              'timestamp': 1493820922.356187,
                                               'type': 'hucore',
-                                              'uid': '15f6718ff40d43b9570b601187ed966cf902de72',
+                                              'uid': 'aaeaab07945a043f056a4afd406188e42673b9f5',
                                               'user': 'user01',
                                               'ver': '7'},
- '8c57c9fade0b6100f08990f952bf98901b42a765': {'email': 'user01@mail.xy',
+ 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -245,115 +263,112 @@ jobs: {'15f6718ff40d43b9570b601187ed966cf902de72': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.701894,
+                                              'timestamp': 1493820922.457794,
                                               'type': 'hucore',
-                                              'uid': '8c57c9fade0b6100f08990f952bf98901b42a765',
-                                              'user': 'user01',
-                                              'ver': '7'},
- 'e524747305a094eba44028308a4554d2503aed1a': {'email': 'user01@mail.xy',
-                                              'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
-                                              'pid': 'N/A',
-                                              'progress': 'N/A',
-                                              'server': 'N/A',
-                                              'start': 'N/A',
-                                              'status': 'queued',
-                                              'tasktype': 'decon',
-                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.803839,
-                                              'type': 'hucore',
-                                              'uid': 'e524747305a094eba44028308a4554d2503aed1a',
+                                              'uid': 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4',
                                               'user': 'user01',
                                               'ver': '7'}}
-processing: ['15f6718ff40d43b9570b601187ed966cf902de72']
-queue: {'user01': deque(['8c57c9fade0b6100f08990f952bf98901b42a765', 'e524747305a094eba44028308a4554d2503aed1a'])}
+processing: ['aaeaab07945a043f056a4afd406188e42673b9f5']
+queue: {'user01': deque(['de7c6dd8660c2e948a21972f3fa526cc05bd39d4', '01496ea9db1149c3df2a9d4afbc2e848dde87692'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f9d03c1fe90 to: localhost
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fd7b27f2e90 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
-	[[ cpu time: 1.52s ]]
+	[[ cpu time: 1.63s ]]
+	[[ wall time: 6.74s ]]
+	[[ max memory: 129744kB ]]
+gc3.gc3libs: INFO: Job 'aaeaab07945a043f056a4afd406188e42673b9f5' terminated successfully!
+gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_aaeaab07945a043f056a4afd406188e42673b9f5`.
+gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
+gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
+gc3.gc3libs: INFO: Moving file 'aaeaab07945a043f056a4afd406188e42673b9f5.jobfile' to 'var/snijder-queue/spool/done/aaeaab07945a043f056a4afd406188e42673b9f5.jobfile'.
+gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4'.
+gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
+gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: de7c6dd8660c2e948a21972f3fa526cc05bd39d4]]
+gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): de7c6dd8660c2e948a21972f3fa526cc05bd39d4 - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): 01496ea9db1149c3df2a9d4afbc2e848dde87692 - ['var/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: 'var/snijder-queue/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'01496ea9db1149c3df2a9d4afbc2e848dde87692': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': 1493820922.561151,
+                                              'type': 'hucore',
+                                              'uid': '01496ea9db1149c3df2a9d4afbc2e848dde87692',
+                                              'user': 'user01',
+                                              'ver': '7'},
+ 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['var/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+                                              'timestamp': 1493820922.457794,
+                                              'type': 'hucore',
+                                              'uid': 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: ['de7c6dd8660c2e948a21972f3fa526cc05bd39d4']
+queue: {'user01': deque(['01496ea9db1149c3df2a9d4afbc2e848dde87692'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fd7b27f2cd0 to: localhost
+gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
+gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
+gc3.gc3libs: INFO: Job finished. Execution stats:
+	[[ cpu time: 1.63s ]]
 	[[ wall time: 6.54s ]]
-	[[ max memory: 131936kB ]]
-gc3.gc3libs: INFO: Job '15f6718ff40d43b9570b601187ed966cf902de72' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_15f6718ff40d43b9570b601187ed966cf902de72`.
+	[[ max memory: 129656kB ]]
+gc3.gc3libs: INFO: Job 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4' terminated successfully!
+gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_de7c6dd8660c2e948a21972f3fa526cc05bd39d4`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file '15f6718ff40d43b9570b601187ed966cf902de72.jobfile' to 'var/snijder-queue/spool/done/15f6718ff40d43b9570b601187ed966cf902de72.jobfile'.
-gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid '8c57c9fade0b6100f08990f952bf98901b42a765'.
+gc3.gc3libs: INFO: Moving file 'de7c6dd8660c2e948a21972f3fa526cc05bd39d4.jobfile' to 'var/snijder-queue/spool/done/de7c6dd8660c2e948a21972f3fa526cc05bd39d4.jobfile'.
+gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid '01496ea9db1149c3df2a9d4afbc2e848dde87692'.
 gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
-gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: 8c57c9fade0b6100f08990f952bf98901b42a765]]
+gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: 01496ea9db1149c3df2a9d4afbc2e848dde87692]]
 gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): 8c57c9fade0b6100f08990f952bf98901b42a765 - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): e524747305a094eba44028308a4554d2503aed1a - ['var/sample_data/hucore/faba128.h5'] [queued]
-========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: 'var/snijder-queue/queue/status/hucore.json'
-cats: deque(['user01'])
-jobs: {'8c57c9fade0b6100f08990f952bf98901b42a765': {'email': 'user01@mail.xy',
-                                              'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['var/sample_data/hucore/faba128.h5',
-                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
-                                              'pid': 'N/A',
-                                              'progress': 'N/A',
-                                              'server': 'N/A',
-                                              'start': 'N/A',
-                                              'status': 'queued',
-                                              'tasktype': 'decon',
-                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.701894,
-                                              'type': 'hucore',
-                                              'uid': '8c57c9fade0b6100f08990f952bf98901b42a765',
-                                              'user': 'user01',
-                                              'ver': '7'},
- 'e524747305a094eba44028308a4554d2503aed1a': {'email': 'user01@mail.xy',
-                                              'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
-                                              'pid': 'N/A',
-                                              'progress': 'N/A',
-                                              'server': 'N/A',
-                                              'start': 'N/A',
-                                              'status': 'queued',
-                                              'tasktype': 'decon',
-                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.803839,
-                                              'type': 'hucore',
-                                              'uid': 'e524747305a094eba44028308a4554d2503aed1a',
-                                              'user': 'user01',
-                                              'ver': '7'}}
-processing: ['8c57c9fade0b6100f08990f952bf98901b42a765']
-queue: {'user01': deque(['e524747305a094eba44028308a4554d2503aed1a'])}
-deletion_list: []
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f9d03c1fcd0 to: localhost
-gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
-gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
-gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATING'
-gc3.gc3libs: INFO: Job finished. Execution stats:
-	[[ cpu time: 1.56s ]]
-	[[ wall time: 6.46s ]]
-	[[ max memory: 129844kB ]]
-gc3.gc3libs: INFO: Job '8c57c9fade0b6100f08990f952bf98901b42a765' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_8c57c9fade0b6100f08990f952bf98901b42a765`.
-gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
-gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file '8c57c9fade0b6100f08990f952bf98901b42a765.jobfile' to 'var/snijder-queue/spool/done/8c57c9fade0b6100f08990f952bf98901b42a765.jobfile'.
-gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'e524747305a094eba44028308a4554d2503aed1a'.
-gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
-gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: e524747305a094eba44028308a4554d2503aed1a]]
-gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
-gc3.gc3libs: INFO: queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): e524747305a094eba44028308a4554d2503aed1a - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): 01496ea9db1149c3df2a9d4afbc2e848dde87692 - ['var/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -362,7 +377,7 @@ gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque([])
-jobs: {'e524747305a094eba44028308a4554d2503aed1a': {'email': 'user01@mail.xy',
+jobs: {'01496ea9db1149c3df2a9d4afbc2e848dde87692': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['var/sample_data/hucore/faba128.h5',
                                                           'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'],
@@ -373,28 +388,34 @@ jobs: {'e524747305a094eba44028308a4554d2503aed1a': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'decon',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-                                              'timestamp': 1493416285.803839,
+                                              'timestamp': 1493820922.561151,
                                               'type': 'hucore',
-                                              'uid': 'e524747305a094eba44028308a4554d2503aed1a',
+                                              'uid': '01496ea9db1149c3df2a9d4afbc2e848dde87692',
                                               'user': 'user01',
                                               'ver': '7'}}
-processing: ['e524747305a094eba44028308a4554d2503aed1a']
+processing: ['01496ea9db1149c3df2a9d4afbc2e848dde87692']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f9d03c1fc90 to: localhost
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fd7b27f2c90 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
-	[[ cpu time: 1.58s ]]
-	[[ wall time: 6.55s ]]
-	[[ max memory: 129908kB ]]
-gc3.gc3libs: INFO: Job 'e524747305a094eba44028308a4554d2503aed1a' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_e524747305a094eba44028308a4554d2503aed1a`.
+	[[ cpu time: 1.53s ]]
+	[[ wall time: 6.54s ]]
+	[[ max memory: 129708kB ]]
+gc3.gc3libs: INFO: Job '01496ea9db1149c3df2a9d4afbc2e848dde87692' terminated successfully!
+gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_01496ea9db1149c3df2a9d4afbc2e848dde87692`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file 'e524747305a094eba44028308a4554d2503aed1a.jobfile' to 'var/snijder-queue/spool/done/e524747305a094eba44028308a4554d2503aed1a.jobfile'.
+gc3.gc3libs: INFO: Moving file '01496ea9db1149c3df2a9d4afbc2e848dde87692.jobfile' to 'var/snijder-queue/spool/done/01496ea9db1149c3df2a9d4afbc2e848dde87692.jobfile'.
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown
 gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.

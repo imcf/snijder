@@ -38,23 +38,24 @@ gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNIN
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: INFO: Selected queue for jobtype (dummy) and tasktype (sleep): hucore
-gc3.gc3libs: INFO: Moving file 'dummy_sleep_user01.cfg' to 'var/snijder-queue/spool/cur/939f653b33ff078b92875ec2d9f456ebc3bd1e96.jobfile'.
-gc3.gc3libs: INFO: Enqueueing job '939f653b33ff078b92875ec2d9f456ebc3bd1e96' into category 'user01'.
+gc3.gc3libs: INFO: Moving file 'dummy_sleep_user01.cfg' to 'var/snijder-queue/spool/cur/af4fa93a29370bc826f38c015d4d269cb6919b82.jobfile'.
+gc3.gc3libs: INFO: Enqueueing job 'af4fa93a29370bc826f38c015d4d269cb6919b82' into category 'user01'.
 gc3.gc3libs: INFO: Adding a new queue for 'user01' to the JobQueue.
-gc3.gc3libs: INFO: Job (type 'dummy') added. New queue: {'user01': deque(['939f653b33ff078b92875ec2d9f456ebc3bd1e96'])}
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
+gc3.gc3libs: INFO: Job (type 'dummy') added. New queue: {'user01': deque(['af4fa93a29370bc826f38c015d4d269cb6919b82'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 939f653b33ff078b92875ec2d9f456ebc3bd1e96 - [] [queued]
+user01 (user01@mail.xy): af4fa93a29370bc826f38c015d4d269cb6919b82 - [] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'939f653b33ff078b92875ec2d9f456ebc3bd1e96': {'email': 'user01@mail.xy',
+jobs: {'af4fa93a29370bc826f38c015d4d269cb6919b82': {'email': 'user01@mail.xy',
                                               'exec': '/bin/sleep',
                                               'infiles': [],
                                               'pid': 'N/A',
@@ -63,23 +64,23 @@ jobs: {'939f653b33ff078b92875ec2d9f456ebc3bd1e96': {'email': 'user01@mail.xy',
                                               'start': 'N/A',
                                               'status': 'queued',
                                               'tasktype': 'sleep',
-                                              'timestamp': 1493395064.247693,
+                                              'timestamp': 1493821191.98456,
                                               'type': 'dummy',
-                                              'uid': '939f653b33ff078b92875ec2d9f456ebc3bd1e96',
+                                              'uid': 'af4fa93a29370bc826f38c015d4d269cb6919b82',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['939f653b33ff078b92875ec2d9f456ebc3bd1e96'])}
+queue: {'user01': deque(['af4fa93a29370bc826f38c015d4d269cb6919b82'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: WARNING: Received spooler status change request: pause -> run
-gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid '939f653b33ff078b92875ec2d9f456ebc3bd1e96'.
+gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'af4fa93a29370bc826f38c015d4d269cb6919b82'.
 gc3.gc3libs: WARNING: Adding job (type 'DummySleepApp') to the gc3pie engine.
-gc3.gc3libs: WARNING: Instantiating a DummySleepApp: [[user: user01]] [[uid: 939f653b33ff078b92875ec2d9f456ebc3bd1e96]]
+gc3.gc3libs: WARNING: Instantiating a DummySleepApp: [[user: user01]] [[uid: af4fa93a29370bc826f38c015d4d269cb6919b82]]
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): 939f653b33ff078b92875ec2d9f456ebc3bd1e96 - [] [queued]
+user01 (user01@mail.xy): af4fa93a29370bc826f38c015d4d269cb6919b82 - [] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -88,7 +89,7 @@ gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: 'var/snijder-queue/queue/status/hucore.json'
 cats: deque([])
-jobs: {'939f653b33ff078b92875ec2d9f456ebc3bd1e96': {'email': 'user01@mail.xy',
+jobs: {'af4fa93a29370bc826f38c015d4d269cb6919b82': {'email': 'user01@mail.xy',
                                               'exec': '/bin/sleep',
                                               'infiles': [],
                                               'pid': 'N/A',
@@ -97,28 +98,34 @@ jobs: {'939f653b33ff078b92875ec2d9f456ebc3bd1e96': {'email': 'user01@mail.xy',
                                               'start': 'N/A',
                                               'status': 'queued',
                                               'tasktype': 'sleep',
-                                              'timestamp': 1493395064.247693,
+                                              'timestamp': 1493821191.98456,
                                               'type': 'dummy',
-                                              'uid': '939f653b33ff078b92875ec2d9f456ebc3bd1e96',
+                                              'uid': 'af4fa93a29370bc826f38c015d4d269cb6919b82',
                                               'user': 'user01',
                                               'ver': '7'}}
-processing: ['939f653b33ff078b92875ec2d9f456ebc3bd1e96']
+processing: ['af4fa93a29370bc826f38c015d4d269cb6919b82']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted DummySleepApp@7f02bbb0b050 to: localhost
+gc3.gc3libs: INFO: Successfully submitted DummySleepApp@7fae27dc0050 to: localhost
 gc3.gc3libs: INFO: DummySleepApp status: 'NEW' -> 'SUBMITTED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: DummySleepApp status: 'SUBMITTED' -> 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: DummySleepApp status: 'RUNNING' -> 'TERMINATING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ cpu time: 0.00s ]]
 	[[ wall time: 1.60s ]]
-	[[ max memory: 1892kB ]]
-gc3.gc3libs: INFO: Job '939f653b33ff078b92875ec2d9f456ebc3bd1e96' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_939f653b33ff078b92875ec2d9f456ebc3bd1e96`.
+	[[ max memory: 1980kB ]]
+gc3.gc3libs: INFO: Job 'af4fa93a29370bc826f38c015d4d269cb6919b82' terminated successfully!
+gc3.gc3libs: INFO: The output of the application is in `/data/hrm_data/results_af4fa93a29370bc826f38c015d4d269cb6919b82`.
 gc3.gc3libs: INFO: DummySleepApp status: 'TERMINATING' -> 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file '939f653b33ff078b92875ec2d9f456ebc3bd1e96.jobfile' to 'var/snijder-queue/spool/done/939f653b33ff078b92875ec2d9f456ebc3bd1e96.jobfile'.
+gc3.gc3libs: INFO: Moving file 'af4fa93a29370bc826f38c015d4d269cb6919b82.jobfile' to 'var/snijder-queue/spool/done/af4fa93a29370bc826f38c015d4d269cb6919b82.jobfile'.
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown
 gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
