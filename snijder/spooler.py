@@ -35,8 +35,8 @@ class JobSpooler(object):
 
     Instance Variables
     ------------------
-    queue : HRM.JobQueue
-    # queues : dict(HRM.JobQueue)  # TODO: multi-queue logic (#136, #272)
+    queue : snijder.JobQueue
+    # queues : dict(snijder.JobQueue)  # TODO: multi-queue logic (#136, #272)
     gc3spooldir : str
     gc3conf : str
     dirs : dict
@@ -55,7 +55,7 @@ class JobSpooler(object):
         ----------
         spooldir : str
             Spooling directory base path.
-        queue : HRM.JobQueue
+        queue : snijder.JobQueue
         gc3conf : str
             The path to a gc3pie configuration file.
         """
@@ -281,7 +281,7 @@ class JobSpooler(object):
     def _spool(self):
         """Spooler function dispatching jobs from the queues. BLOCKING!"""
         print '*' * 80
-        print 'HRM spooler running. (Ctrl-C to abort).'
+        print 'snijder-queue spooler running. (Ctrl-C to abort).'
         print '*' * 80
         logi('Excpected jobfile version: %s.', JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
@@ -309,7 +309,7 @@ class JobSpooler(object):
                 # NOTE: in theory, we could simply add all apps to the engine
                 # and let gc3 decide when to dispatch the next one, however
                 # this it is causing a lot of error messages if the engine has
-                # more tasks than available resources, see HRM ticket #421 and
+                # more tasks than available resources, see ticket #421 and
                 # upstream gc3pie ticket #359 for more details. For now we do
                 # not submit new jobs if there are any running or submitted:
                 if stats['RUNNING'] > 0 or stats['SUBMITTED'] > 0:

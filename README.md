@@ -1,7 +1,7 @@
 # Snijder
 
-Snijder is an acronym for "Single Node Inhomogeneous Job Dispatcher, Executor
-and Reporter".
+_Snijder_ is an acronym for "**S**ingle **N**ode **I**nhomogeneous **J**ob
+**D**ispatcher, **E**xecutor and **R**eporter".
 
 This project provides a Python package managing one or more job-queues for
 multiple users in a simple, accessible way. Flexibility and maintainability
@@ -10,21 +10,25 @@ minutes to hours, so being able to process thousands of queue-requests per
 second is just not important here.
 
 Initially it was created to replace the queue manager of the [Huygens Remote
-Manager (HRM)](http://huygens-rm.org/) but Snijder is independent of that
-project and is actually used for other tasks as well.
+Manager (HRM)](http://huygens-rm.org/) but from a technical perspective
+_Snijder_ is completely independent of that project and is actually used for
+other tasks as well.
+
 
 ## Requirements
 
-Snijder makes use of the [GC3Pie](https://github.com/imcf/gc3pie) Python
+_Snijder_ makes use of the [GC3Pie](https://github.com/imcf/gc3pie) Python
 package dealing with job dispatching, monitoring, data transfer and cluster
 queueing systems. Unfortunately, the latest release (2.4.2) contains a few bugs
-which prevent Snijder from operating correctly. Therefore it is recommended to
+which prevent _Snijder_ from operating correctly. Therefore it is recommended to
 set up GC3Pie from its `master` branch, following the instructions for [manual
 installation](http://gc3pie.readthedocs.io/en/master/users/install.html#manual-installation).
+
 
 ## Example
 
 ToDo!
+
 
 ## Testing
 
@@ -36,4 +40,17 @@ them:
 
 The test images for deconvolution are currently the basic set of images which
 can be downloaded from the [SVI website](https://svi.nl/DemoImages) (requires
-registration). Simply place them in
+registration). Simply place them in `var/sample_data/hucore/` to run the tests.
+
+
+## Project Structure
+
+The directory layout tries to follow the suggestions about clean Python project
+structuring found in the following online resources:
+
+* [Open Sourcing a Python Project the Right Way](https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
+* [Structuring Your Project](http://python-guide-pt-br.readthedocs.io/en/latest/writing/structure/)
+* [Structure of a Python Project](http://www.patricksoftwareblog.com/structure-of-a-python-project/)
+* [Repository Structure and Python](https://www.kennethreitz.org/essays/repository-structure-and-python)
+* [A Project Skeleton](https://learnpythonthehardway.org/book/ex46.html)
+* [SO: What is the best project structure for a Python application?](http://stackoverflow.com/questions/193161/what-is-the-best-project-structure-for-a-python-application)

@@ -28,7 +28,7 @@ init() {
     fi
     source "$CONFFILE"
 
-    local QM_PY="bin/hrm_queuemanager.py"
+    local QM_PY="bin/snijder-queue"
     if ! [ -f "$QM_PY" ] ; then
         echo "ERROR: can't find queue manager executable!"
         exit 2
@@ -69,7 +69,7 @@ python_can_import() {
 
 
 check_python_packages() {
-    # test if Python can import our required packages (gc3libs, HRM)
+    # test if Python can import our required packages (gc3libs, snijder)
     if ! python_can_import "gc3libs" ; then
         echo "Make sure to have the required virtualenv active, e.g."
         GC3VER=2.4.2
@@ -78,7 +78,7 @@ check_python_packages() {
         echo -e "\nsource $GC3HOME/bin/activate\n"
         exit 255
     fi
-    if ! python_can_import "HRM" ; then
+    if ! python_can_import "snijder" ; then
         echo "Please adjust your PYTHONPATH accordingly, e.g."
         cd ../..
         echo -e "\nexport PYTHONPATH=\"$(pwd)/lib/python:\$PYTHONPATH\"\n"
@@ -204,7 +204,7 @@ submit_jobs() {
         echo "ERROR: no jobfile prefix given for submission!"
         exit 4
     fi
-    # we are expected to be in the HRM base dir, so use the full path:
+    # we are expected to be in the snijder base dir, so use the full path:
     for jobfile in tests/snijder-queue/inputs/$SHORT/${1}*.cfg ; do
         cp -v $jobfile "$SPOOLINGDIR/spool/new"
         sleep .1

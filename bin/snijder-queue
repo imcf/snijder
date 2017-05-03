@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-#
 
 """
-Prototype of a GC3Pie-based job spooler engine.
+Job spooling engine using the SNIJDER package.
 """
 
 # stdlib imports
@@ -11,12 +11,12 @@ import os
 import argparse
 
 # pylint: disable=wrong-import-position
-import HRM
-import HRM.queue
-from HRM.jobs import process_jobfile
-from HRM.logger import set_verbosity
-from HRM.spooler import JobSpooler
-from HRM.inotify import JobFileHandler
+import snijder
+import snijder.queue
+from snijder.jobs import process_jobfile
+from snijder.logger import set_verbosity
+from snijder.spooler import JobSpooler
+from snijder.inotify import JobFileHandler
 
 
 def parse_arguments():
@@ -38,7 +38,7 @@ def parse_arguments():
 
 
 def main():
-    """Main loop of the HRM Queue Manager."""
+    """Main loop of the SNIJDER Queue Manager."""
     args = parse_arguments()
 
     # set the loglevel as requested on the commandline
@@ -53,7 +53,7 @@ def main():
     #     our queues, warn otherwise
     # [ ] then process files in the 'new' dir as new ones
     jobqueues = dict()
-    jobqueues['hucore'] = HRM.queue.JobQueue()
+    jobqueues['hucore'] = snijder.queue.JobQueue()
 
     job_spooler = JobSpooler(args.spooldir, jobqueues['hucore'], args.config)
     # select a specific resource if requested on the cmdline:

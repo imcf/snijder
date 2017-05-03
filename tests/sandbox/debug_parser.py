@@ -6,7 +6,7 @@ import gc3libs
 import pyinotify
 import pprint
 
-import HRM
+import snijder
 
 import logging
 
@@ -16,6 +16,6 @@ logw = gc3libs.log.warn
 logi = gc3libs.log.info
 logd = gc3libs.log.debug
 
-fname = '/var/www/hrm/run/spool/new/deconvolution_job.cfg'
+fname = '/path/to/some/snijderjob.cfg'
 
-job = HRM.JobDescription(fname, 'file')
+job = snijder.JobDescription(fname, 'file')

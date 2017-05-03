@@ -28,6 +28,6 @@ PYLINTRC="$(dirname $0)/pylintrc"
 if [ -n "$1" ] ; then
     SRC="$1"
 else
-    SRC="$BASEDIR/bin/hrm_queuemanager.py"
+    SRC="$BASEDIR/bin/snijder-queue"
 fi
 $PYLINT --rcfile=$PYLINTRC "$SRC"

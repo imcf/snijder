@@ -26,7 +26,7 @@ def select_queue_for_job(job):
 
     Parameters
     ----------
-    job : HRM.jobs.JobDescription
+    job : snijder.jobs.JobDescription
     """
     mapping = {
         'hucore': {
@@ -60,7 +60,7 @@ def process_jobfile(fname, queues, dirs):
         Containing the JobQueue objects for the different queues, using the
         corresponding 'type' keyword as identifier.
     dirs : dict
-        Spooling directories in a dict, as returned by HRM.setup_rundirs().
+        Spooling directories in a dict, as returned by snijder.setup_rundirs().
     """
     try:
         job = JobDescription(fname, 'file')
@@ -225,7 +225,7 @@ class AbstractJobConfigParser(dict):
                 raise ValueError("Option '%s' missing from section '%s'!" %
                                  (cfg_option, section))
         # by now the section should be fully parsed and therefore empty:
-        self.check_for_remaining_options('hrmjobfile')
+        self.check_for_remaining_options('snijderjob')
 
     def parse_jobconfig(self, cfg_raw):
         """Initialize ConfigParser and run parsing method."""
@@ -251,8 +251,8 @@ class AbstractJobConfigParser(dict):
                                   "meant to be instantiated!")
 
 
-class HRMJobConfigParser(AbstractJobConfigParser):
-    """Derived class to parse HRM type job configurations."""
+class SnijderJobConfigParser(AbstractJobConfigParser):
+    """Derived class to parse snijder job configurations."""
 
     def __init__(self, jobconfig, srctype):
         """Call the parent class constructor with the appropriate arguments.
@@ -264,17 +264,17 @@ class HRMJobConfigParser(AbstractJobConfigParser):
         srctype : str
             One of 'file' or 'string', denoting what's in 'jobconfig'.
         """
-        super(HRMJobConfigParser, self).__init__(jobconfig, srctype)
+        super(SnijderJobConfigParser, self).__init__(jobconfig, srctype)
 
     def parse_jobdescription(self):
-        """Parse details for an HRM job and check for sanity.
+        """Parse details for a snijder job and check for sanity.
 
         Use the ConfigParser object and assemble a dicitonary with the
         collected details that contains all the information for launching a new
         processing task. Raises Exceptions in case something unexpected is
         found in the given file.
         """
-        # prepare the parser-mapping for the generic 'hrmjobfile' section:
+        # prepare the parser-mapping for the generic 'snijderjob' section:
         mapping = [
             ['version', 'ver'],
             ['username', 'user'],
@@ -283,7 +283,7 @@ class HRMJobConfigParser(AbstractJobConfigParser):
             ['jobtype', 'type']
         ]
         # now parse the section:
-        self.parse_section_entries('hrmjobfile', mapping)
+        self.parse_section_entries('snijderjob', mapping)
         # sanity-check / validate the parsed options:
         if self['ver'] != JOBFILE_VER:
             raise ValueError("Unexpected jobfile version '%s'." % self['ver'])
@@ -317,10 +317,10 @@ class HRMJobConfigParser(AbstractJobConfigParser):
     def parse_job_hucore(self):
         """Do the specific parsing of "hucore" type jobfiles.
 
-        Parse the "hucore" and the "inputfiles" sections of HRM job
+        Parse the "hucore" and the "inputfiles" sections of snijder job
         configuration files.
         """
-        # prepare the parser-mapping for the generic 'hrmjobfile' section:
+        # prepare the parser-mapping for the specific 'hucore' section:
         mapping = [
             ['tasktype', 'tasktype'],
             ['executable', 'exec'],
@@ -342,7 +342,7 @@ class HRMJobConfigParser(AbstractJobConfigParser):
 
     def parse_job_dummy(self):
         """Do the specific parsing of "dummy" type jobfiles."""
-        # prepare the parser-mapping for the generic 'hrmjobfile' section:
+        # prepare the parser-mapping for the specific 'hucore' section:
         mapping = [
             ['tasktype', 'tasktype'],
             ['executable', 'exec']
@@ -367,7 +367,7 @@ class HRMJobConfigParser(AbstractJobConfigParser):
 
 
 class JobDescription(dict):
-    """Abstraction class for handling HRM job descriptions.
+    """Abstraction class for handling snijder job descriptions.
 
     Class Variables
     ---------------
@@ -400,7 +400,7 @@ class JobDescription(dict):
 
         Example
         -------
-        >>> job = HRM.JobDescription('/path/to/jobdescription.cfg', 'file')
+        >>> job = snijder.JobDescription('/path/to/jobdescription.cfg', 'file')
         """
         super(JobDescription, self).__init__()
 
@@ -412,7 +412,7 @@ class JobDescription(dict):
         else:
             self.fname = None
         try:
-            parsed_job = HRMJobConfigParser(job, srctype)
+            parsed_job = SnijderJobConfigParser(job, srctype)
         except (SyntaxError, ValueError) as err:
             logw("Ignoring job config, parsing failed: %s", err)
             if srctype == 'file':

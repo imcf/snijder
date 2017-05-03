@@ -11,7 +11,7 @@ class DummySleepApp(AbstractApp):
 
         Parameters
         ----------
-        job : HRM.jobs.JobDescription
+        job : snijder.jobs.JobDescription
         output_dir : str
         """
         gc3_output_dir = os.path.join(output_dir, 'results_%s' % job['uid'])

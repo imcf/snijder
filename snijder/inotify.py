@@ -51,7 +51,7 @@ class EventHandler(pyinotify.ProcessEvent):
             Containing the JobQueue objects for the different queues, using the
             corresponding 'type' keyword as identifier.
         dirs : dict
-            Spooling directories in a dict, as returned by HRM.setup_rundirs().
+            Spooling directories in a dict, as returned by snijder.setup_rundirs().
         """
         self.queues = queues
         self.dirs = dirs

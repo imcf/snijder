@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Queue class module for the HRM.
+Queue class module for SNIJDER.
 
 Classes
 -------
@@ -361,7 +361,7 @@ class JobQueue(object):
              'exec': '/usr/local/bin/hucore',
              'timestamp': 1437123471.579627,
              'user': 'user00',
-             'template': 'hrm_faba128_iterations-3.hgsb',
+             'template': 'decon_faba128_it-3_q-0.5.hgsb',
              'type': 'hucore',
              'email': 'user00@mail.xy',
              'uid': '2f53d7f50c22285a92c7fcda74994a69f72e1bf1'}

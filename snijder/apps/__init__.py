@@ -27,7 +27,7 @@ class AbstractApp(gc3libs.Application):
 
         Parameters
         ----------
-        job : HRM.jobs.JobDescription
+        job : snijder.jobs.JobDescription
         appconfig : dict
             A dict with at least all mandatory parameters for a
             gc3libs.Application, plus possibly extra parameters.
