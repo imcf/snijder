@@ -317,26 +317,19 @@ msg_finished() {
 }
 
 
-echo_red() {
-    local blw='\033[00m'     # black-white
-    local bred='\033[01;31m' # bold red
-    echo -e "${bred}$*${blw}"
+colr() {
+    # helper functions to colorize output
+    # TODO: check if connected to a console, print non-colored otherwise
+    local -A color
+    color[red]='\033[01;31m'
+    color[green]='\033[01;32m'
+    color[yellow]='\033[01;33m'
+    local blackwhite='\033[00m'
+    echo -ne "${color[$1]}"
+    shift
+    echo "$*"
+    echo -ne "$blackwhite"
 }
-
-
-echo_green() {
-    local blw='\033[00m'     # black-white
-    local bgrn='\033[01;32m' # bold green
-    echo -e "${bgrn}$*${blw}"
-}
-
-
-echo_yellow() {
-    local blw='\033[00m'     # black-white
-    local bylw='\033[01;33m' # bold yellow
-    echo -e "${bylw}$*${blw}"
-}
-
 
 
 parse_shortname() {

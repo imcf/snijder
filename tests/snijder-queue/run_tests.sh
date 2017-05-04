@@ -38,7 +38,7 @@ for TEST in $RUN_TESTS ; do
     rm -rf $RES
     mkdir -p $RES
     set +e
-    echo "++++++++++++++++++++ Running $SHORT ($TEST) ++++++++++++++++++++"
+    colr "yellow" "+++++++++++++++++ Running $SHORT ($TEST) +++++++++++++++++"
     clean_all_spooldirs
     STDOUT="$RES/stdout"
     STDERR="$RES/stderr"
@@ -56,6 +56,13 @@ for TEST in $RUN_TESTS ; do
     clean_all_spooldirs
     # TODO: check for running QM process and terminate it!
 
-    echo "Test '$SHORT' finished (exit code: $RET, results in '$PFX/$RES')."
+    echo
+    colr yellow "Test '$SHORT' finished."
+    colr yellow "  *  results in '$PFX/$RES'"
+    if [ $RET -gt 0 ] ; then
+        colr red   "  *  *** ERROR ***  exit code: $RET  *** ERROR ***"
+    else
+        colr green "  *  exit code: $RET"
+    fi
     echo
 done
