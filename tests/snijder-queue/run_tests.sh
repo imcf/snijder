@@ -43,8 +43,13 @@ for TEST in $RUN_TESTS ; do
     STDOUT="$RES/stdout"
     STDERR="$RES/stderr"
     EXITVAL="$RES/exitval"
+
+    # redirect stdout to file and console, stderr to file:
+    exec 3>&1 1> >(tee $STDOUT >&3) 2>$STDERR
+
     # use 'stdbuf' to disable output buffering, so output order is consistent:
-    stdbuf --input=0 --output=0 --error=0 bash $TEST >$STDOUT 2>$STDERR
+    stdbuf --input=0 --output=0 --error=0 bash $TEST ### >$STDOUT 2>$STDERR
+    exec 1>&3
     RET=$?
     echo $RET > $EXITVAL
     # generate the "stripped" version of stdout / stderr (without UID hashes):
