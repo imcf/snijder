@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 
-"""Simple test script for the SNIJDER Queue Manager class.
+"""Simple test script for the SNIJDER Queue Manager class."""
 
-Run it from this directory after setting your PYTHONPATH accordingly:
-
-export PYTHONPATH=$PYTHONPATH:../../lib/python/
-python test-007__snijder-jobqueue.py
-"""
+import os
+import sys
+# the package is supposed to be 4 levels up in the directory hierarchy:
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/..' * 4))
 
 import snijder.jobs
 import snijder.queue

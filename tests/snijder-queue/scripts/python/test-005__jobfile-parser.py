@@ -1,20 +1,16 @@
 #!/usr/bin/env python
 
-"""Simple tests for the jobfile parsing of the snijder class.
+"""Simple tests for the jobfile parsing of the snijder class."""
 
-Run it from this directory after setting your PYTHONPATH accordingly:
-
-export PYTHONPATH=$PYTHONPATH:../../lib/python/
-python test-005__jobfile-parser.py
-"""
+import os
+import sys
+# the package is supposed to be 4 levels up in the directory hierarchy:
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/..' * 4))
 
 import glob
 import pprint
 
-try:
-    import snijder.jobs
-except ImportError:
-    raise SystemExit(__doc__)
+import snijder.jobs
 
 # the reload statement is here so we can use the script in subsequent calls
 # during an interactive single IPython session:

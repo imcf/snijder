@@ -15,7 +15,6 @@ PYSCRIPT="scripts/python/$(basename $0 | sed 's,.sh$,.py,')"
 # 1) launches the Python script that does the JobQueue testing
 ########## TEST DESCRIPTION ##########
 
-export PYTHONPATH=$PYTHONPATH:../../lib/python/
 ls $PYSCRIPT
 python $PYSCRIPT
 
