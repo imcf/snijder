@@ -51,6 +51,11 @@ for TEST in $RUN_TESTS ; do
 
     RET=$?
     echo $RET > $EXITVAL
+
+    # clean up after the run:
+    clean_all_spooldirs
+    # TODO: check for running QM process and terminate it!
+
     echo "Test '$SHORT' finished (exit code: $RET, results in '$PFX/$RES')."
     echo
 done
