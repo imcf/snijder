@@ -317,6 +317,28 @@ msg_finished() {
 }
 
 
+echo_red() {
+    local blw='\033[00m'     # black-white
+    local bred='\033[01;31m' # bold red
+    echo -e "${bred}$*${blw}"
+}
+
+
+echo_green() {
+    local blw='\033[00m'     # black-white
+    local bgrn='\033[01;32m' # bold green
+    echo -e "${bgrn}$*${blw}"
+}
+
+
+echo_yellow() {
+    local blw='\033[00m'     # black-white
+    local bylw='\033[01;33m' # bold yellow
+    echo -e "${bylw}$*${blw}"
+}
+
+
+
 parse_shortname() {
     SHORT=$(basename $0 | sed 's,__.*,,')
     echo $SHORT
