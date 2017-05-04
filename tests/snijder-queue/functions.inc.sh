@@ -325,12 +325,14 @@ parse_shortname() {
 strip_runtime_strings() {
     # strips away various hashes that are runtime-specific, to make the result
     # better comparable among subsequent individual runs
-    sed -u 's/[0-9a-f]\{40\}/UID_STRIPPED/g ;
-            s/App@[0-9a-f]\{12\}/App@APPID_STRIPPED/g ;
-            s/[0-9]\{10\}\.[0-9]\{1,6\}/TIMESTAMP_STRIPPED/g ;
-            s/cpu time: [0-9\.]*s ]]/CPUTIME_STRIPPED ]]/ ;
-            s/wall time: [0-9\.]*s ]]/WALLTIME_STRIPPED ]]/ ;
-            s/max memory: [0-9]*kB ]]/MAXMEM_STRIPPED ]]/'
+    sed -u '''
+        s/[0-9a-f]\{40\}/UID_STRIPPED/g
+        s/App@[0-9a-f]\{12\}/App@APPID_STRIPPED/g
+        s/[0-9]\{10\}\.[0-9]\{1,6\}/TIMESTAMP_STRIPPED/g
+        s/cpu time: [0-9\.]*s ]]/CPUTIME_STRIPPED ]]/
+        s/wall time: [0-9\.]*s ]]/WALLTIME_STRIPPED ]]/
+        s/max memory: [0-9]*kB ]]/MAXMEM_STRIPPED ]]/
+    '''
 }
 
 
