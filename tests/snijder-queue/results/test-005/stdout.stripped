@@ -137,8 +137,8 @@ scripts/python/test-005__jobfile-parser.py
  'uid': 'UID_STRIPPED',
  'user': 'user01',
  'ver': '7'}
------------------ parsing jobfiles/remove_job_c682dcd.cfg -----------------
- - Parsing worked without errors on 'jobfiles/remove_job_c682dcd.cfg'.
+----------------- parsing jobfiles/remove_job_8598870.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_8598870.cfg'.
 {'email': 'user01@mail.xy',
  'ids': ['UID_STRIPPED'],
  'infiles': [],
@@ -156,15 +156,15 @@ scripts/python/test-005__jobfile-parser.py
 >>>>>> Testing INVALID job description files:
 ----------------- parsing jobfiles/invalid/v1_broken_section-title.cfg -----------------
  - Got the excpected ValueError from 'jobfiles/invalid/v1_broken_section-title.cfg':
-   Section 'hrmjobfile' missing in job config!
+   Section 'snijderjob' missing in job config!
 
 ----------------- parsing jobfiles/invalid/v2_broken_section-content_inputfiles.cfg -----------------
  - Got the excpected ValueError from 'jobfiles/invalid/v2_broken_section-content_inputfiles.cfg':
-   Option 'useremail' missing from section 'hrmjobfile'!
+   Option 'useremail' missing from section 'snijderjob'!
 
 ----------------- parsing jobfiles/invalid/v7_broken_section_hrmjobfile.cfg -----------------
  - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hrmjobfile.cfg':
-   Option 'useremail' missing from section 'hrmjobfile'!
+   Option 'useremail' missing from section 'snijderjob'!
 
 ----------------- parsing jobfiles/invalid/v7_broken_section_hucore.cfg -----------------
  - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hucore.cfg':
@@ -172,7 +172,7 @@ scripts/python/test-005__jobfile-parser.py
 
 ----------------- parsing jobfiles/invalid/v7_broken_section_hucore_unknown-option.cfg -----------------
  - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hucore_unknown-option.cfg':
-   Job config invalid, section 'hrmjobfile' contains unknown options: [('invalid_option', 'some-value')]
+   Job config invalid, section 'snijderjob' contains unknown options: [('invalid_option', 'some-value')]
 
 ----------------- parsing jobfiles/invalid/v7_broken_section_inputfiles.cfg -----------------
  - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_inputfiles.cfg':

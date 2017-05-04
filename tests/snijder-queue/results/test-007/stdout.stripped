@@ -1,4 +1,4 @@
-scripts/python/test-007__hrm-jobqueue.py
+scripts/python/test-007__snijder-queue.py
 
 ******** adding jobs to queue: ********
 jq.joblist: []

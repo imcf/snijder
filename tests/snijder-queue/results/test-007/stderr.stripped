@@ -3,7 +3,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -28,7 +28,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -53,7 +53,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -78,7 +78,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -103,7 +103,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -128,7 +128,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -153,7 +153,7 @@ gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
 gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['hrmjobfile', 'hucore', 'inputfiles']
+gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -2987,7 +2987,7 @@ queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: DEBUG: Trying to remove job with uid 'aaa'.
-gc3.gc3libs: WARNING: No job with uid 'aaa' was found!
+gc3.gc3libs: ERROR: No job with uid 'aaa' was found!
 gc3.gc3libs: WARNING: 
 
 
