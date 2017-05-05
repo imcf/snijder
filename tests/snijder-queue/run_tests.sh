@@ -44,7 +44,13 @@ for TEST in $RUN_TESTS ; do
     STDERR="$RES/stderr"
     EXITVAL="$RES/exitval"
 
-    # use 'stdbuf' to disable buffering, so output order is consistent:
+    # now we call the actual test script - with a few special settings:
+    #   * use 'stdbuf' to disable buffering, so output order is consistent
+    #   * redirect stdout to a file AND a subprocess filtering (stripping)
+    #     variable data that is run-specific AND to the console
+    #   * redirect stderr to a file AND a filter pipe
+    #   * NOTE the different number of 'tee' targets for STDOUT (3: file,
+    #     subprocess, stdout=console) and STDERR (2: file and stdout=pipe)
     stdbuf --input=0 --output=0 --error=0 bash $TEST \
         1> >(tee $STDOUT >(strip_runtime_strings > ${STDOUT}.stripped)) \
         2> >(tee $STDERR | strip_runtime_strings > ${STDERR}.stripped)
