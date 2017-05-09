@@ -64,11 +64,17 @@ for TEST in $RUN_TESTS ; do
 
     echo
     colr yellow "Test '$SHORT' finished."
-    colr yellow "  *  results in '$PFX/$RES'"
     if [ $RET -gt 0 ] ; then
-        colr red   "  *  *** ERROR ***  exit code: $RET  *** ERROR ***"
+        MSG="*** ERROR ***  exit code: $RET  *** ERROR ***"
+        MSG="============================= $MSG ============================="
+        colr red "$MSG"
+        colr yellow "> showing stderr log ($STDERR):"
+        cat "$STDERR"
+        colr yellow "> end of stderr log ($STDERR)"
+        colr red "$MSG"
     else
-        colr green "  *  exit code: $RET"
+        colr green "> exit code: $RET"
+        colr green "> results in '$PFX/$RES'"
     fi
     echo
 done
