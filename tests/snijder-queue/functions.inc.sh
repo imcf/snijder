@@ -84,8 +84,7 @@ check_python_packages() {
     fi
     if ! python_can_import "snijder" ; then
         echo "Please adjust your PYTHONPATH accordingly, e.g."
-        cd ../..
-        echo -e "\nexport PYTHONPATH=\"$(pwd)/lib/python:\$PYTHONPATH\"\n"
+        echo -e "\nexport PYTHONPATH=\"$(pwd)/src:\$PYTHONPATH\"\n"
         exit 255
     fi
 }
