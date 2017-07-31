@@ -12,7 +12,7 @@ gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /data/gc3_res
 gc3.gc3libs: INFO: Created JobSpooler.
 gc3.gc3libs: INFO: Setting job queue status report file: var/snijder-queue/queue/status/hucore.json
 gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "var/snijder-queue/spool/new".
-gc3.gc3libs: INFO: Excpected jobfile version: 7.
+gc3.gc3libs: INFO: Expected jobfile version: 7.
 gc3.gc3libs: INFO: Received spooler queue status refresh request.
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================

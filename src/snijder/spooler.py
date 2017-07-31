@@ -262,7 +262,7 @@ class JobSpooler(object):
             uid = app.job['uid']
             if uid in self.queue.deletion_list:
                 # TODO: we need to make sure that the calls to the engine in
-                # kill_running_job() do not accidentially submit the next job
+                # kill_running_job() do not accidentally submit the next job
                 # as it could be potentially enlisted for removal...
                 self.kill_running_job(app)
                 self.queue.deletion_list.remove(uid)
@@ -283,7 +283,7 @@ class JobSpooler(object):
         print '*' * 80
         print 'snijder-queue spooler running. (Ctrl-C to abort).'
         print '*' * 80
-        logi('Excpected jobfile version: %s.', JOBFILE_VER)
+        logi('Expected jobfile version: %s.', JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
         apptypes = dict(
             hucore = hucore.HuDeconApp,

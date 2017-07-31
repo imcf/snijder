@@ -49,7 +49,7 @@ def main():
     # [x] remember files in 'cur' directory
     # [x] let spooler then set the JobDescription class variable
     # [ ] let spooler then set the status file of each queue
-    # [ ] then check exisiting files in the 'cur' dir if they belong to any of
+    # [ ] then check existing files in the 'cur' dir if they belong to any of
     #     our queues, warn otherwise
     # [ ] then process files in the 'new' dir as new ones
     jobqueues = dict()
