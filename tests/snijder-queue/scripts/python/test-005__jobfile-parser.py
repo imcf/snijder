@@ -4,12 +4,16 @@
 
 import os
 import sys
-# the package is supposed to be 4 levels up in the directory hierarchy:
-sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/..' * 4))
-
 import glob
 import pprint
 
+try:
+    cur_dir = os.path.dirname(__file__)
+except NameError:
+    cur_dir = os.path.curdir
+
+# the package is supposed to be 4 levels up in the directory hierarchy:
+sys.path.insert(0, os.path.abspath(os.path.dirname(__file__) + '/..' * 4))
 import snijder.jobs
 
 # the reload statement is here so we can use the script in subsequent calls
