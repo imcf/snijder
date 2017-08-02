@@ -209,7 +209,7 @@ class JobSpooler(object):
         bool
         """
         for resource in engine.get_resources():
-            resourcedir = os.path.expandvars(resource.cfg_resourcedir)
+            resourcedir = os.path.expandvars(resource.resource_dir)
             logi("Checking resource dir for resource '%s': %s",
                  resource.name, resourcedir)
             if not os.path.exists(resourcedir):
