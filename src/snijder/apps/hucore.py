@@ -28,7 +28,7 @@ class HuCoreApp(AbstractApp):
     inside the current directory.
     """
 
-    def __init__(self, job, gc3_output):
+    def __init__(self, job, output_dir):
         if self.__class__.__name__ == 'HuCoreApp':
             raise TypeError("Not instantiating the virtual class 'HuCoreApp'!")
         # we need to add the template (with the local path) to the list of
@@ -38,7 +38,7 @@ class HuCoreApp(AbstractApp):
         # this string as the template file will end up in the temporary
         # processing directory together with all the images:
         templ_on_tgt = job['template'].split('/')[-1]
-        # mandatory application parameters
+        gc3_output_dir = os.path.join(output_dir, 'results_%s' % job['uid'])
         appconfig = dict(
             arguments=[job['exec'],
                        '-exitOnDone',
@@ -48,7 +48,7 @@ class HuCoreApp(AbstractApp):
             inputs=job['infiles'],
             outputs=['resultdir', 'previews'],
             # collect the results in a subfolder of GC3Pie's spooldir:
-            output_dir=os.path.join(gc3_output, 'results_%s' % job['uid'])
+            output_dir=gc3_output_dir
         )
         # extra application parameters
         appconfig.update(
