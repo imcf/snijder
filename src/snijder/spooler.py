@@ -276,7 +276,8 @@ class JobSpooler(object):
             self._spool()
         except KeyboardInterrupt:
             logi("Received keyboard interrupt, stopping queue manager.")
-        self.cleanup()
+        finally:
+            self.cleanup()
 
     def _spool(self):
         """Spooler function dispatching jobs from the queues. BLOCKING!"""
