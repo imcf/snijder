@@ -1,4 +1,4 @@
-# Snijder
+# ![Snijder logo][img_snijder_logo] Snijder
 
 _Snijder_ is an acronym for "**S**ingle **N**ode **I**nhomogeneous **J**ob
 **D**ispatcher, **E**xecutor and **R**eporter".
@@ -54,3 +54,6 @@ structuring found in the following online resources:
 * [Repository Structure and Python](https://www.kennethreitz.org/essays/repository-structure-and-python)
 * [A Project Skeleton](https://learnpythonthehardway.org/book/ex46.html)
 * [SO: What is the best project structure for a Python application?](http://stackoverflow.com/questions/193161/what-is-the-best-project-structure-for-a-python-application)
+
+
+[img_snijder_logo]: https://raw.githubusercontent.com/imcf/snijder/master/resources/artwork/snijder-logo-blue-240.png
