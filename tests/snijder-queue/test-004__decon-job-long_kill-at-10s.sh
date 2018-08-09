@@ -32,7 +32,9 @@ submit_jobs "decon_job_"
 sleep .5
 
 qm_request run
-sleep 1
+sleep 10
+
+qm_request shutdown
 
 shutdown_qm_on_empty_queue 5
 
