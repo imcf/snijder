@@ -6,3 +6,9 @@
 
 # vim swap files
 .*.sw?
+
+# configuration files
+/config/
+
+# variable data (runtime files, test files for processing, ...)
+/var/
