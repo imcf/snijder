@@ -8,7 +8,7 @@
 .*.sw?
 
 # configuration files
-/config/
+/config
 
 # variable data (runtime files, test files for processing, ...)
 /resources/sample_data/
