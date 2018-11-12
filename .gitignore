@@ -11,4 +11,4 @@
 /config/
 
 # variable data (runtime files, test files for processing, ...)
-/var/
+/resources/sample_data/
