@@ -31,6 +31,80 @@ set up GC3Pie from its `master` branch, following the instructions for [manual
 installation](http://gc3pie.readthedocs.io/en/master/users/install.html#manual-installation).
 
 
+## Installation
+
+### GC3Pie Setup
+
+To install GC3Pie a few additional packages are required. On Debian / Ubuntu
+systems, simply run this command to prepare the installation:
+
+```bash
+sudo apt install \
+    gcc \
+    make \
+    git \
+    time \
+    python-virtualenv \
+    python-dev \
+    libffi-dev \
+    libssl-dev
+```
+
+Then follow the instructions below to set up GC3Pie in a directory structure
+underneath `/opt/snijder`. 
+
+First, make sure the base directory is there and writable to the installatoin
+user. Run the following commands as `root` or use `sudo`, depending on your
+preferences:
+
+```bash
+BASE_DIR="/opt/snijder"
+SNIJDER_USER="snijder"
+SNIJDER_GROUP="snijder"
+
+mkdir -pv $BASE_DIR
+chown $SNIJDER_USER:$SNIJDER_GROUP $BASE_DIR
+```
+
+Then, as the above configured `$SNIJDER_USER` run:
+
+```bash
+BASE_DIR="/opt/snijder"
+GC3VER="2.5.0"
+GC3HOME="$BASE_DIR/venvs/gc3pie_$GC3VER"
+
+virtualenv --system-site-packages $GC3HOME
+source $GC3HOME/bin/activate
+
+pip install --upgrade pip
+pip install --upgrade pycli prettytable docutils
+
+CURDIR=$(pwd)
+
+cd $BASE_DIR
+git clone https://github.com/uzh/gc3pie.git gc3pie.git
+
+cd gc3pie.git
+git checkout -b tag-$GC3VER tags/v$GC3VER
+env CC=gcc ./setup.py install
+
+cd $CURDIR
+```
+
+### Snijder Setup
+
+* clone the snijder repo
+* create a base directory for all spooling stuff:
+  ```bash
+  SPOOL_BASE="/opt/spool"  # adapt as you like, e.g. "/scratch/spool" or similar
+  mkdir -pv "$SPOOL_BASE/snijder"
+  mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
+  cd /opt
+  git clone https://github.com/imcf/snijder.git
+  cd snijder
+  ln -s resources/config
+  ```
+
 ## Example
 
 ToDo!
