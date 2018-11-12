@@ -19,7 +19,7 @@ init() {
     #   * QM_EXEC
     #   * QM_OPTS
 
-    cd "$PFX/../.."
+    cd "../.."  # switch back to the top-level directory
 
     CONFFILE="config/snijder-queue.conf"
     if ! [ -r "$CONFFILE" ] ; then
