@@ -9,7 +9,7 @@ set +e
 
 
 if [ -z "$VIRTUAL_ENV" ] ; then
-    GC3VER=2.4.2
+    GC3VER=2.5.0
     GC3BASE=/opt/gc3pie
     GC3HOME=$GC3BASE/gc3pie_$GC3VER
     source $GC3HOME/bin/activate
