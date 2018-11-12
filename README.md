@@ -1,7 +1,13 @@
 # ![Snijder logo][img_snijder_logo] Snijder
 
-_Snijder_ is an acronym for "**S**ingle **N**ode **I**nhomogeneous **J**ob
-**D**ispatcher, **E**xecutor and **R**eporter".
+_Snijder_ is an acronym for
+* **`S`** ingle
+* **`N`** ode
+* **`I`** nhomogeneous
+* **`J`** ob
+* **`D`** ispatcher,
+* **`E`** xecutor and
+* **`R`** eporter
 
 This project provides a Python package managing one or more job-queues for
 multiple users in a simple, accessible way. Flexibility and maintainability
@@ -15,7 +21,7 @@ _Snijder_ is completely independent of that project and is actually used for
 other tasks as well.
 
 
-## Requirements
+## Under The Hood
 
 _Snijder_ makes use of the [GC3Pie](https://github.com/imcf/gc3pie) Python
 package dealing with job dispatching, monitoring, data transfer and cluster
