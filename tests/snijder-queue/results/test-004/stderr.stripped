@@ -121,7 +121,6 @@ gc3.gc3libs: WARNING: v---------------------------------------------------------
 gc3.gc3libs: WARNING: Unfinished jobs, trying to stop them:
 gc3.gc3libs: WARNING: Status of running job: RUNNING
 gc3.gc3libs: WARNING: <KILLING> [user01] HuDeconApp
-Terminated
 gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ cpu time: N/A ]]
 	[[ wall time: N/A ]]
@@ -131,6 +130,7 @@ gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: WARNING: App has terminated, removing from list of apps.
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
+Terminated
 gc3.gc3libs: WARNING: ^--------------------------------------------------------------------------------^
 gc3.gc3libs: INFO: Successfully terminated remaining jobs, none left.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.

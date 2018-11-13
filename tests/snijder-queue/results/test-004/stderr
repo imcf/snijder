@@ -108,7 +108,7 @@ processing: ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f126d6c0f90 to: localhost
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fe098c4df90 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -121,7 +121,6 @@ gc3.gc3libs: WARNING: v---------------------------------------------------------
 gc3.gc3libs: WARNING: Unfinished jobs, trying to stop them:
 gc3.gc3libs: WARNING: Status of running job: RUNNING
 gc3.gc3libs: WARNING: <KILLING> [user01] HuDeconApp
-Terminated
 gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ cpu time: N/A ]]
 	[[ wall time: N/A ]]
@@ -131,6 +130,7 @@ gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: WARNING: App has terminated, removing from list of apps.
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
+Terminated
 gc3.gc3libs: WARNING: ^--------------------------------------------------------------------------------^
 gc3.gc3libs: INFO: Successfully terminated remaining jobs, none left.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
