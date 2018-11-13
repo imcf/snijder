@@ -336,7 +336,15 @@ parse_shortname() {
     echo $SHORT
 }
 
-strip_runtime_strings() {
+strip_c() {
+    # strip away the color codes generated above so the control chars don't end
+    # up in the log files (from https://unix.stackexchange.com/questions/111899)
+    sed -u '''
+        s/\x1B\[\([0-9]\{1,2\}\(;[0-9]\{1,2\}\)\?\)\?[mGK]//g
+    '''
+}
+
+strip_rt() {
     # strips away various hashes that are runtime-specific, to make the result
     # better comparable among subsequent individual runs
     sed -u '''
@@ -346,7 +354,7 @@ strip_runtime_strings() {
         s/cpu time: [0-9\.]*s ]]/CPUTIME_STRIPPED ]]/
         s/wall time: [0-9\.]*s ]]/WALLTIME_STRIPPED ]]/
         s/max memory: [0-9]*kB ]]/MAXMEM_STRIPPED ]]/
-    '''
+    ''' | strip_c
 }
 
 

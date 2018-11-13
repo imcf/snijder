@@ -54,8 +54,8 @@ for TEST in $RUN_TESTS ; do
     #   * NOTE the different number of 'tee' targets for STDOUT (3: file,
     #     subprocess, stdout=console) and STDERR (2: file and stdout=pipe)
     stdbuf --input=0 --output=0 --error=0 bash $TEST \
-        1> >(tee $STDOUT >(strip_runtime_strings > ${STDOUT_STRIPPED})) \
-        2> >(tee $STDERR | strip_runtime_strings > ${STDERR_STRIPPED})
+        1> >(tee >(strip_c > $STDOUT) >(strip_rt > ${STDOUT_STRIPPED})) \
+        2> >(tee >(strip_c > $STDERR) | strip_rt > ${STDERR_STRIPPED})
 
     RET=$?
     echo $RET > $EXITVAL
