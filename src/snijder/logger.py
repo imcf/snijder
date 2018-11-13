@@ -10,14 +10,24 @@ __all__ = ["logw", "logi", "logd", "loge", "logc"]
 
 # we set a default loglevel and add some shortcuts for logging:
 LOGLEVEL = logging.WARN
-LOGGER_NAME = "qmgc3"
-gc3libs.configure_logger(LOGLEVEL, LOGGER_NAME)
+LOGGER_NAME = "snijder"
 
-logw = gc3libs.log.warn
-logi = gc3libs.log.info
-logd = gc3libs.log.debug
-loge = gc3libs.log.error
-logc = gc3libs.log.critical
+logger = logging.getLogger(LOGGER_NAME)
+_handler = logging.StreamHandler()
+_formatter = logging.Formatter('gc3.gc3libs: %(levelname)s: %(message)s')
+# _formatter = logging.Formatter('%(name)s [%(levelname)s]: %(message)s')
+_handler.setFormatter(_formatter)
+logger.addHandler(_handler)
+logger.setLevel(LOGLEVEL)
+
+gc3libs.log = logger
+gc3libs.log.level = LOGLEVEL
+
+logw = logger.warn
+logi = logger.info
+logd = logger.debug
+loge = logger.error
+logc = logger.critical
 
 
 def set_loglevel(level):
@@ -29,10 +39,10 @@ def set_loglevel(level):
         'error'    : logging.ERROR,
         'critical' : logging.CRITICAL
     }
-    gc3libs.configure_logger(mapping[level], LOGGER_NAME)
+    logger.setLevel(mapping[level])
 
 
 def set_verbosity(verbosity):
     """Convenience function to set loglevel from commandline arguments."""
     loglevel = logging.WARN - (verbosity * 10)
-    gc3libs.configure_logger(loglevel, LOGGER_NAME)
+    logger.setLevel(loglevel)
