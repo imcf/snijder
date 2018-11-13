@@ -23,11 +23,11 @@ logger.setLevel(LOGLEVEL)
 gc3libs.log = logger
 gc3libs.log.level = LOGLEVEL
 
-logw = gc3libs.log.warn
-logi = gc3libs.log.info
-logd = gc3libs.log.debug
-loge = gc3libs.log.error
-logc = gc3libs.log.critical
+logw = logger.warn
+logi = logger.info
+logd = logger.debug
+loge = logger.error
+logc = logger.critical
 
 
 def set_loglevel(level):
