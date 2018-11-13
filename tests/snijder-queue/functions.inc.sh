@@ -354,6 +354,7 @@ strip_rt() {
         s/cpu time: [0-9\.]*s ]]/CPUTIME_STRIPPED ]]/
         s/wall time: [0-9\.]*s ]]/WALLTIME_STRIPPED ]]/
         s/max memory: [0-9]*kB ]]/MAXMEM_STRIPPED ]]/
+        s/unclean: \[['"'"'0-9]*\]/unclean: \[RSC_STRIPPED\]/g
     ''' | strip_c
 }
 
