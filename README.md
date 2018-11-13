@@ -1,5 +1,11 @@
 # ![Snijder logo][img_snijder_logo] Snijder
 
+The _Snijder_ project provides a Python package managing one or more job-queues
+for multiple users in a simple, accessible way. Flexibility and maintainability
+have priority over performance, as the targeted jobs will run in the range of
+minutes to hours, so being able to process thousands of queue-requests per
+second is just not important here.
+
 _Snijder_ is an acronym for
 * **`S`** ingle
 * **`N`** ode
@@ -8,12 +14,6 @@ _Snijder_ is an acronym for
 * **`D`** ispatcher,
 * **`E`** xecutor and
 * **`R`** eporter
-
-This project provides a Python package managing one or more job-queues for
-multiple users in a simple, accessible way. Flexibility and maintainability
-have priority over performance, as the targeted jobs will run in the range of
-minutes to hours, so being able to process thousands of queue-requests per
-second is just not important here.
 
 Initially it was created to replace the queue manager of the [Huygens Remote
 Manager (HRM)](http://huygens-rm.org/) but from a technical perspective
