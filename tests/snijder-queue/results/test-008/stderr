@@ -1,17 +1,17 @@
 gc3.gc3libs: INFO: Runtime directories:
-{'cur': 'var/snijder-queue/spool/cur',
- 'done': 'var/snijder-queue/spool/done',
- 'new': 'var/snijder-queue/spool/new',
+{'cur': '/opt/spool/snijder/spool/cur',
+ 'done': '/opt/spool/snijder/spool/done',
+ 'new': '/opt/spool/snijder/spool/new',
  'newfiles': [],
- 'requests': 'var/snijder-queue/queue/requests',
- 'status': 'var/snijder-queue/queue/status'}
-gc3.gc3libs: INFO: Using gc3pie spooldir: /data/snijder_spooldir
+ 'requests': '/opt/spool/snijder/queue/requests',
+ 'status': '/opt/spool/snijder/queue/status'}
+gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder
 gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /data/gc3_resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
 gc3.gc3libs: INFO: Created JobSpooler.
-gc3.gc3libs: INFO: Setting job queue status report file: var/snijder-queue/queue/status/hucore.json
-gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "var/snijder-queue/spool/new".
+gc3.gc3libs: INFO: Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
+gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
 gc3.gc3libs: INFO: Expected jobfile version: 7.
 gc3.gc3libs: INFO: Received spooler queue status refresh request.
 gc3.gc3libs: INFO: queue_details_hr():
@@ -24,7 +24,7 @@ None.
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: 'var/snijder-queue/queue/status/hucore.json'
+statusfile: '/opt/spool/snijder/queue/status/hucore.json'
 cats: deque([])
 jobs: {}
 processing: []
@@ -35,26 +35,26 @@ gc3.gc3libs: WARNING: Received spooler status change request: run -> pause
 gc3.gc3libs: INFO: New file event 'decon_job_1.cfg'
 gc3.gc3libs: INFO: Parsing jobfile 'decon_job_1.cfg'...
 gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (decon): hucore
-gc3.gc3libs: INFO: Moving file 'decon_job_1.cfg' to 'var/snijder-queue/spool/cur/85988706f9845cbed5a6800c1a2da80dbccca548.jobfile'.
-gc3.gc3libs: INFO: Enqueueing job '85988706f9845cbed5a6800c1a2da80dbccca548' into category 'user01'.
+gc3.gc3libs: INFO: Moving file 'decon_job_1.cfg' to '/opt/spool/snijder/spool/cur/bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721.jobfile'.
+gc3.gc3libs: INFO: Enqueueing job 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721' into category 'user01'.
 gc3.gc3libs: INFO: Adding a new queue for 'user01' to the JobQueue.
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['85988706f9845cbed5a6800c1a2da80dbccca548'])}
+gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 85988706f9845cbed5a6800c1a2da80dbccca548 - ['var/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: 'var/snijder-queue/queue/status/hucore.json'
+statusfile: '/opt/spool/snijder/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'85988706f9845cbed5a6800c1a2da80dbccca548': {'email': 'user01@mail.xy',
+jobs: {'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['var/sample_data/hucore/faba128.h5'],
+                                              'infiles': ['resources/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
                                               'progress': 'N/A',
                                               'server': 'N/A',
@@ -64,20 +64,20 @@ jobs: {'85988706f9845cbed5a6800c1a2da80dbccca548': {'email': 'user01@mail.xy',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
                                               'timestamp': 1467979338.137427,
                                               'type': 'hucore',
-                                              'uid': '85988706f9845cbed5a6800c1a2da80dbccca548',
+                                              'uid': 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['85988706f9845cbed5a6800c1a2da80dbccca548'])}
+queue: {'user01': deque(['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: New file event 'remove_job_1.cfg'
 gc3.gc3libs: INFO: Parsing jobfile 'remove_job_1.cfg'...
-gc3.gc3libs: INFO: Request to --- DELETE --- job '85988706f9845cbed5a6800c1a2da80dbccca548'
+gc3.gc3libs: INFO: Request to --- DELETE --- job 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'
 gc3.gc3libs: WARNING: Received job deletion request(s)!
-gc3.gc3libs: INFO: Moving file 'remove_job_1.cfg' to 'var/snijder-queue/spool/done/7817b391eb61777f9a88066804fc7a7ac7aed708.jobfile.1493824567.7'.
+gc3.gc3libs: INFO: Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/3731199ca83b636626bc132803583f057d542369.jobfile'.
 gc3.gc3libs: WARNING: Received spooler status change request: pause -> run
-gc3.gc3libs: INFO: Job 85988706f9845cbed5a6800c1a2da80dbccca548 was requested for deletion
+gc3.gc3libs: INFO: Job bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 was requested for deletion
 gc3.gc3libs: INFO: Status of job to be removed: queued
 gc3.gc3libs: INFO: Job successfully removed from the queue.
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown
@@ -85,5 +85,5 @@ gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
 gc3.gc3libs: WARNING: QM shutdown: checking resource directories.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /data/gc3_resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
 gc3.gc3libs: WARNING: QM shutdown: resource directories check completed.

@@ -1,14 +1,14 @@
 Found Python package 'gc3libs'.
 Found Python package 'snijder'.
 **** Starting Queue Manager...
-python -u bin/snijder-queue --spooldir var/snijder-queue --config resources/config/gc3pie/localhost.conf -v
+python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
 snijder-queue spooler running. (Ctrl-C to abort).
 ********************************************************************************
 Requesting QM status change to: refresh
 QM process started.
 Requesting QM status change to: pause
-'tests/snijder-queue/inputs/test-010/dummy_sleep_user01.cfg' -> 'var/snijder-queue/spool/new/dummy_sleep_user01.cfg'
+‘tests/snijder-queue/inputs/test-010/dummy_sleep_user01.cfg’ -> ‘/opt/spool/snijder/spool/new/dummy_sleep_user01.cfg’
 Requesting QM status change to: run
 Queue is empty, trying to shut down the QM!
 Requesting QM status change to: shutdown

@@ -6,7 +6,7 @@ scripts/python/test-005__jobfile-parser.py
  - Parsing worked without errors on 'jobfiles/decon_it-3_user01.cfg'.
 {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
- 'infiles': ['var/sample_data/hucore/faba128.h5'],
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
  'progress': 'N/A',
  'server': 'N/A',
@@ -40,7 +40,7 @@ scripts/python/test-005__jobfile-parser.py
  - Parsing worked without errors on 'jobfiles/decon_it-3_user01_fixed-timestamp.cfg'.
 {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
- 'infiles': ['var/sample_data/hucore/faba128.h5'],
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
  'progress': 'N/A',
  'server': 'N/A',
@@ -57,7 +57,7 @@ scripts/python/test-005__jobfile-parser.py
  - Parsing worked without errors on 'jobfiles/decon_it-3_user02.cfg'.
 {'email': 'user02@mail.xy',
  'exec': '/usr/local/bin/hucore',
- 'infiles': ['var/sample_data/hucore/faba128.h5'],
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
  'progress': 'N/A',
  'server': 'N/A',
@@ -74,7 +74,7 @@ scripts/python/test-005__jobfile-parser.py
  - Parsing worked without errors on 'jobfiles/decon_it-999_user01.cfg'.
 {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
- 'infiles': ['var/sample_data/hucore/faba128.h5'],
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
  'progress': 'N/A',
  'server': 'N/A',
@@ -91,7 +91,7 @@ scripts/python/test-005__jobfile-parser.py
  - Parsing worked without errors on 'jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg'.
 {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
- 'infiles': ['var/sample_data/hucore/faba128.h5'],
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
  'progress': 'N/A',
  'server': 'N/A',
@@ -124,7 +124,7 @@ scripts/python/test-005__jobfile-parser.py
  - Parsing worked without errors on 'jobfiles/preview_user01.cfg'.
 {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
- 'infiles': ['var/sample_data/hucore/faba128.h5'],
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
  'progress': 'N/A',
  'server': 'N/A',
