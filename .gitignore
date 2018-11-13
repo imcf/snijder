@@ -1,5 +1,6 @@
 # IDE project settings
 /.idea/
+*.code-workspace
 
 # Python bytecode
 *.py[cod]
