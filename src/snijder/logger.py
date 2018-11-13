@@ -39,10 +39,10 @@ def set_loglevel(level):
         'error'    : logging.ERROR,
         'critical' : logging.CRITICAL
     }
-    gc3libs.configure_logger(mapping[level], LOGGER_NAME)
+    logger.setLevel(mapping[level])
 
 
 def set_verbosity(verbosity):
     """Convenience function to set loglevel from commandline arguments."""
     loglevel = logging.WARN - (verbosity * 10)
-    gc3libs.configure_logger(loglevel, LOGGER_NAME)
+    logger.setLevel(loglevel)
