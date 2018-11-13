@@ -93,9 +93,9 @@ check_python_packages() {
 clean_all_spooldirs() {
     set +e
     rm -vf /data/gc3_resourcedir/shellcmd.d/*
-    rm -vf "../../$SPOOLINGDIR/spool/cur/"*
-    rm -vf "../../$SPOOLINGDIR/spool/new/"*
-    rm -vf "../../$SPOOLINGDIR/queue/requests/"*
+    rm -vf "$SPOOLINGDIR/spool/cur/"*
+    rm -vf "$SPOOLINGDIR/spool/new/"*
+    rm -vf "$SPOOLINGDIR/queue/requests/"*
     set -e
 }
 
