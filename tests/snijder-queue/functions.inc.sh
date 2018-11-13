@@ -75,11 +75,9 @@ python_can_import() {
 check_python_packages() {
     # test if Python can import our required packages (gc3libs, snijder)
     if ! python_can_import "gc3libs" ; then
-        echo "Make sure to have the required virtualenv active, e.g."
-        GC3VER=2.4.2
-        GC3BASE=/opt/gc3pie
-        GC3HOME=$GC3BASE/gc3pie_$GC3VER
-        echo -e "\nsource $GC3HOME/bin/activate\n"
+        MSG="\nMake sure to have the required virtualenv active, e.g.\n"
+        MSG="$MSG\nsource /opt/snijder/venvs/gc3pie_2.5.0/bin/activate\n"
+        colr yellow "$MSG"
         exit 255
     fi
     if ! python_can_import "snijder" ; then
@@ -94,7 +92,7 @@ check_python_packages() {
 clean_all_spooldirs() {
     echo -ne '\033[01;31m'  # red
     set +e
-    rm -vf /data/gc3_resourcedir/shellcmd.d/*
+    rm -vf "$SPOOLINGDIR/gc3/resource/shellcmd.d/"*
     rm -vf "$SPOOLINGDIR/spool/cur/"*
     rm -vf "$SPOOLINGDIR/spool/new/"*
     rm -vf "$SPOOLINGDIR/queue/requests/"*
