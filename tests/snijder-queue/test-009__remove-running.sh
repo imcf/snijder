@@ -31,7 +31,7 @@ startup_qm
 submit_jobs "decon_job_"
 
 qm_request refresh
-sleep 1
+sleep 2
 
 echo
 echo $SEP
