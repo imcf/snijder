@@ -152,6 +152,21 @@ scripts/python/test-005__jobfile-parser.py
  'uid': 'UID_STRIPPED',
  'user': 'user01',
  'ver': '7'}
+----------------- parsing jobfiles/remove_job_bfbe38a.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_bfbe38a.cfg'.
+{'email': 'user01@mail.xy',
+ 'ids': ['UID_STRIPPED'],
+ 'infiles': [],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'deletejobs',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
 
 >>>>>> Testing INVALID job description files:
 ----------------- parsing jobfiles/invalid/v1_broken_section-title.cfg -----------------

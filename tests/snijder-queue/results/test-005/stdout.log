@@ -149,7 +149,22 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'timestamp': 1435827755.2494,
  'type': 'deletejobs',
- 'uid': '7817b391eb61777f9a88066804fc7a7ac7aed708',
+ 'uid': '3731199ca83b636626bc132803583f057d542369',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/remove_job_bfbe38a.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_bfbe38a.cfg'.
+{'email': 'user01@mail.xy',
+ 'ids': ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'],
+ 'infiles': [],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'timestamp': 1435827755.2494,
+ 'type': 'deletejobs',
+ 'uid': '3731199ca83b636626bc132803583f057d542369',
  'user': 'user01',
  'ver': '7'}
 
