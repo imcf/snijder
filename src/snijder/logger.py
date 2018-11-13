@@ -10,8 +10,18 @@ __all__ = ["logw", "logi", "logd", "loge", "logc"]
 
 # we set a default loglevel and add some shortcuts for logging:
 LOGLEVEL = logging.WARN
-LOGGER_NAME = "qmgc3"
-gc3libs.configure_logger(LOGLEVEL, LOGGER_NAME)
+LOGGER_NAME = "snijder"
+
+logger = logging.getLogger(LOGGER_NAME)
+_handler = logging.StreamHandler()
+_formatter = logging.Formatter('gc3.gc3libs: %(levelname)s: %(message)s')
+# _formatter = logging.Formatter('%(name)s [%(levelname)s]: %(message)s')
+_handler.setFormatter(_formatter)
+logger.addHandler(_handler)
+logger.setLevel(LOGLEVEL)
+
+gc3libs.log = logger
+gc3libs.log.level = LOGLEVEL
 
 logw = gc3libs.log.warn
 logi = gc3libs.log.info
