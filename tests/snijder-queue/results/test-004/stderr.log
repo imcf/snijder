@@ -5,10 +5,10 @@ gc3.gc3libs: INFO: Runtime directories:
  'newfiles': [],
  'requests': '/opt/spool/snijder/queue/requests',
  'status': '/opt/spool/snijder/queue/status'}
-gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder
+gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
 gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
 gc3.gc3libs: INFO: Created JobSpooler.
 gc3.gc3libs: INFO: Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
 gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
@@ -108,7 +108,7 @@ processing: ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fe098c4df90 to: localhost
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f9336422550 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -135,5 +135,5 @@ gc3.gc3libs: WARNING: ^---------------------------------------------------------
 gc3.gc3libs: INFO: Successfully terminated remaining jobs, none left.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
 gc3.gc3libs: WARNING: QM shutdown: checking resource directories.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
 gc3.gc3libs: WARNING: QM shutdown: resource directories check completed.

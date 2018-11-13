@@ -5,10 +5,10 @@ gc3.gc3libs: INFO: Runtime directories:
  'newfiles': [],
  'requests': '/opt/spool/snijder/queue/requests',
  'status': '/opt/spool/snijder/queue/status'}
-gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder
+gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
 gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
 gc3.gc3libs: INFO: Created JobSpooler.
 gc3.gc3libs: INFO: Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
 gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
@@ -116,11 +116,11 @@ gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: DummySleepApp status: 'RUNNING' -> 'TERMINATING'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
-	[[ cpu time: N/A ]]
-	[[ wall time: N/A ]]
-	[[ max memory: N/A ]]
+	[[ CPUTIME_STRIPPED ]]
+	[[ WALLTIME_STRIPPED ]]
+	[[ MAXMEM_STRIPPED ]]
 gc3.gc3libs: INFO: Job 'UID_STRIPPED' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/opt/spool/snijder/results_UID_STRIPPED`.
+gc3.gc3libs: INFO: The output of the application is in `/opt/spool/snijder/gc3/spool/results_UID_STRIPPED`.
 gc3.gc3libs: INFO: DummySleepApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
@@ -131,5 +131,5 @@ gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
 gc3.gc3libs: WARNING: QM shutdown: checking resource directories.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
 gc3.gc3libs: WARNING: QM shutdown: resource directories check completed.

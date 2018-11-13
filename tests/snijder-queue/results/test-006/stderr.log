@@ -5,10 +5,10 @@ gc3.gc3libs: INFO: Runtime directories:
  'newfiles': [],
  'requests': '/opt/spool/snijder/queue/requests',
  'status': '/opt/spool/snijder/queue/status'}
-gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder
+gc3.gc3libs: INFO: Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
 gc3.gc3libs: INFO: Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
 gc3.gc3libs: INFO: Computational resource 'localhost' initialized successfully.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
 gc3.gc3libs: INFO: Created JobSpooler.
 gc3.gc3libs: INFO: Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
 gc3.gc3libs: INFO: Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
@@ -38,24 +38,24 @@ gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNIN
 gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
 gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 gc3.gc3libs: INFO: Selected queue for jobtype (hucore) and tasktype (preview): hucore
-gc3.gc3libs: INFO: Moving file 'preview_job_1.cfg' to '/opt/spool/snijder/spool/cur/d4d6f416bc4977237fad8ed2660ac4eda698b8fe.jobfile'.
-gc3.gc3libs: INFO: Enqueueing job 'd4d6f416bc4977237fad8ed2660ac4eda698b8fe' into category 'user01'.
+gc3.gc3libs: INFO: Moving file 'preview_job_1.cfg' to '/opt/spool/snijder/spool/cur/5e1609cd65134bcb356930a31e061e99caf2170f.jobfile'.
+gc3.gc3libs: INFO: Enqueueing job '5e1609cd65134bcb356930a31e061e99caf2170f' into category 'user01'.
 gc3.gc3libs: INFO: Adding a new queue for 'user01' to the JobQueue.
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['d4d6f416bc4977237fad8ed2660ac4eda698b8fe'])}
+gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'user01': deque(['5e1609cd65134bcb356930a31e061e99caf2170f'])}
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): d4d6f416bc4977237fad8ed2660ac4eda698b8fe - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): 5e1609cd65134bcb356930a31e061e99caf2170f - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
 cats: deque(['user01'])
-jobs: {'d4d6f416bc4977237fad8ed2660ac4eda698b8fe': {'email': 'user01@mail.xy',
+jobs: {'5e1609cd65134bcb356930a31e061e99caf2170f': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['resources/sample_data/hucore/faba128.h5'],
                                               'pid': 'N/A',
@@ -65,24 +65,24 @@ jobs: {'d4d6f416bc4977237fad8ed2660ac4eda698b8fe': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'preview',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
-                                              'timestamp': 1542105633.752644,
+                                              'timestamp': 1542134177.342422,
                                               'type': 'hucore',
-                                              'uid': 'd4d6f416bc4977237fad8ed2660ac4eda698b8fe',
+                                              'uid': '5e1609cd65134bcb356930a31e061e99caf2170f',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['d4d6f416bc4977237fad8ed2660ac4eda698b8fe'])}
+queue: {'user01': deque(['5e1609cd65134bcb356930a31e061e99caf2170f'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: WARNING: Received spooler status change request: pause -> run
-gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'd4d6f416bc4977237fad8ed2660ac4eda698b8fe'.
+gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid '5e1609cd65134bcb356930a31e061e99caf2170f'.
 gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
-gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: d4d6f416bc4977237fad8ed2660ac4eda698b8fe]]
+gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: 5e1609cd65134bcb356930a31e061e99caf2170f]]
 gc3.gc3libs: WARNING: Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb']]]
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): d4d6f416bc4977237fad8ed2660ac4eda698b8fe - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb'] [queued]
+user01 (user01@mail.xy): 5e1609cd65134bcb356930a31e061e99caf2170f - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -91,7 +91,7 @@ gc3.gc3libs: WARNING: QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
 cats: deque([])
-jobs: {'d4d6f416bc4977237fad8ed2660ac4eda698b8fe': {'email': 'user01@mail.xy',
+jobs: {'5e1609cd65134bcb356930a31e061e99caf2170f': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['resources/sample_data/hucore/faba128.h5',
                                                           'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb'],
@@ -102,16 +102,16 @@ jobs: {'d4d6f416bc4977237fad8ed2660ac4eda698b8fe': {'email': 'user01@mail.xy',
                                               'status': 'queued',
                                               'tasktype': 'preview',
                                               'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
-                                              'timestamp': 1542105633.752644,
+                                              'timestamp': 1542134177.342422,
                                               'type': 'hucore',
-                                              'uid': 'd4d6f416bc4977237fad8ed2660ac4eda698b8fe',
+                                              'uid': '5e1609cd65134bcb356930a31e061e99caf2170f',
                                               'user': 'user01',
                                               'ver': '7'}}
-processing: ['d4d6f416bc4977237fad8ed2660ac4eda698b8fe']
+processing: ['5e1609cd65134bcb356930a31e061e99caf2170f']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f957ba5ff90 to: localhost
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f0840abd550 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -120,20 +120,20 @@ gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATING'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
-	[[ cpu time: N/A ]]
-	[[ wall time: N/A ]]
-	[[ max memory: N/A ]]
-gc3.gc3libs: INFO: Job 'd4d6f416bc4977237fad8ed2660ac4eda698b8fe' terminated successfully!
-gc3.gc3libs: INFO: The output of the application is in `/opt/spool/snijder/results_d4d6f416bc4977237fad8ed2660ac4eda698b8fe`.
+	[[ cpu time: 2.24s ]]
+	[[ wall time: 2.39s ]]
+	[[ max memory: 108584kB ]]
+gc3.gc3libs: INFO: Job '5e1609cd65134bcb356930a31e061e99caf2170f' terminated successfully!
+gc3.gc3libs: INFO: The output of the application is in `/opt/spool/snijder/gc3/spool/results_5e1609cd65134bcb356930a31e061e99caf2170f`.
 gc3.gc3libs: INFO: HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-gc3.gc3libs: INFO: Moving file 'd4d6f416bc4977237fad8ed2660ac4eda698b8fe.jobfile' to '/opt/spool/snijder/spool/done/d4d6f416bc4977237fad8ed2660ac4eda698b8fe.jobfile'.
+gc3.gc3libs: INFO: Moving file '5e1609cd65134bcb356930a31e061e99caf2170f.jobfile' to '/opt/spool/snijder/spool/done/5e1609cd65134bcb356930a31e061e99caf2170f.jobfile'.
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown
 gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
 gc3.gc3libs: WARNING: QM shutdown: checking resource directories.
-gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/gc3/resourcedir/shellcmd.d
+gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
 gc3.gc3libs: WARNING: QM shutdown: resource directories check completed.
