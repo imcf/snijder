@@ -187,4 +187,5 @@ gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
 gc3.gc3libs: WARNING: QM shutdown: checking resource directories.
 gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
+gc3.gc3libs: WARNING: Resource dir unclean: [RSC_STRIPPED]
 gc3.gc3libs: WARNING: QM shutdown: resource directories check completed.

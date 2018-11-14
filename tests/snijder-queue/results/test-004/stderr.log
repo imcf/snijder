@@ -108,7 +108,7 @@ processing: ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f9336422550 to: localhost
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7f40f6899550 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
 gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
@@ -130,10 +130,10 @@ gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: WARNING: App has terminated, removing from list of apps.
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-Terminated
 gc3.gc3libs: WARNING: ^--------------------------------------------------------------------------------^
 gc3.gc3libs: INFO: Successfully terminated remaining jobs, none left.
 gc3.gc3libs: INFO: QM shutdown: spooler cleanup completed.
 gc3.gc3libs: WARNING: QM shutdown: checking resource directories.
 gc3.gc3libs: INFO: Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
+gc3.gc3libs: WARNING: Resource dir unclean: ['8663']
 gc3.gc3libs: WARNING: QM shutdown: resource directories check completed.
