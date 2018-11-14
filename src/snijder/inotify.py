@@ -14,7 +14,15 @@ class JobFileHandler(object):
     """Wrapper class to set up inotify for incoming jobfiles."""
 
     def __init__(self, queues, dirs):
-        """Initialize watch-manager and notifier."""
+        """Initialize watch-manager and notifier.
+
+        Parameters
+        ----------
+        queues : dict(snijder.queue.JobQueue)
+            Dict with JobQueue objects.
+        dirs : dict
+            Spooling dirs, as returned by JobSpooler.setup_rundirs().
+        """
         self.watch_mgr = pyinotify.WatchManager()
         # mask which events to watch: pyinotify.IN_CREATE
         self.wdd = self.watch_mgr.add_watch(
@@ -52,7 +60,7 @@ class EventHandler(pyinotify.ProcessEvent):
             Containing the JobQueue objects for the different queues, using the
             corresponding 'type' keyword as identifier.
         dirs : dict
-            Spooling directories in a dict, as returned by snijder.setup_rundirs().
+            Spooling dirs, as returned by JobSpooler.setup_rundirs().
         """
         self.queues = queues
         self.dirs = dirs
