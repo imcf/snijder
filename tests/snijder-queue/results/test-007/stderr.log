@@ -1,14 +1,14 @@
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -18,22 +18,22 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.924209,
+ 'timestamp': 1542203053.258609,
  'type': 'hucore',
- 'uid': '340a5831dc5bde88d12fd9a0e0983b7c3a0c7873',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -43,22 +43,22 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.925399,
+ 'timestamp': 1542203053.259897,
  'type': 'hucore',
- 'uid': '2aa5b3410057bbd84d72c8a017ed3dcd7efb160b',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -68,22 +68,22 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.926625,
+ 'timestamp': 1542203053.261055,
  'type': 'hucore',
- 'uid': '2aa5b3410057bbd84d72c8a017ed3dcd7efb160b',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -93,22 +93,22 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.927835,
+ 'timestamp': 1542203053.262184,
  'type': 'hucore',
- 'uid': '2aa5b3410057bbd84d72c8a017ed3dcd7efb160b',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -118,22 +118,22 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.928977,
+ 'timestamp': 1542203053.263307,
  'type': 'hucore',
- 'uid': '2aa5b3410057bbd84d72c8a017ed3dcd7efb160b',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -143,22 +143,22 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.930146,
+ 'timestamp': 1542203053.264886,
  'type': 'hucore',
- 'uid': '2aa5b3410057bbd84d72c8a017ed3dcd7efb160b',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
-gc3.gc3libs: INFO: Parsing jobfile 'decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
-gc3.gc3libs: DEBUG: Reading the job file succeeded after 0s!
-gc3.gc3libs: DEBUG: Parsed job configuration.
-gc3.gc3libs: DEBUG: Job description sections: ['snijderjob', 'hucore', 'inputfiles']
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: WARNING: "timestamp = on_parsing" is meant for testing only!!!
-gc3.gc3libs: WARNING: === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-gc3.gc3libs: DEBUG: Finished initialization of JobDescription().
-gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
  'exec': '/usr/local/bin/hucore',
  'infiles': ['resources/sample_data/hucore/faba128.h5'],
  'pid': 'N/A',
@@ -168,46 +168,46 @@ gc3.gc3libs: DEBUG: {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542105690.93128,
+ 'timestamp': 1542203053.266041,
  'type': 'hucore',
- 'uid': '2aa5b3410057bbd84d72c8a017ed3dcd7efb160b',
+ 'uid': 'a76e7bdd99f7bc4e83418f5c527bd3695a78b3a1',
  'user': 'user01',
  'ver': '7'}
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u000_aaa'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u000'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u000_bbb'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u000'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u000_ccc'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u000'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u111_ddd'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u111'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u111_eee'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u111'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u111_fff'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u111'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'uid' to value 'u111_ggg'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'user' to value 'u111'
-gc3.gc3libs: WARNING: 
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u000_aaa'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u000'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u000_bbb'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u000'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u000_ccc'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u000'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_ddd'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_eee'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_fff'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_ggg'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [WARNING] 
 ******** adding jobs to queue: ********
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 0 (0 processing)
-gc3.gc3libs: DEBUG: Empty queue!
-gc3.gc3libs: INFO: Enqueueing job 'u000_aaa' into category 'u000'.
-gc3.gc3libs: INFO: Adding a new queue for 'u000' to the JobQueue.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000'])
-gc3.gc3libs: DEBUG: Changing status of job u000_aaa to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.924209, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] Enqueueing job 'u000_aaa' into category 'u000'.
+snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000'])
+snijder [DEBUG] Changing status of job u000_aaa to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.258609, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -220,11 +220,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -232,7 +232,7 @@ None.
 --- jobs queued (not yet retrieved)
 u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -246,7 +246,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -255,22 +255,22 @@ processing: []
 queue: {'u000': deque(['u000_aaa'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u000_bbb' into category 'u000'.
-gc3.gc3libs: DEBUG: Changing status of job u000_bbb to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.925399, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] Enqueueing job 'u000_bbb' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_bbb to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.259897, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -284,7 +284,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -297,11 +297,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -310,7 +310,7 @@ None.
 u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -324,7 +324,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -339,7 +339,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -348,22 +348,22 @@ processing: []
 queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u000_ccc' into category 'u000'.
-gc3.gc3libs: DEBUG: Changing status of job u000_ccc to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.926625, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] Enqueueing job 'u000_ccc' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_ccc to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.261055, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -377,7 +377,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -391,7 +391,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -404,11 +404,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -418,7 +418,7 @@ u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [q
 u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -432,7 +432,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -447,7 +447,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -462,7 +462,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -471,24 +471,24 @@ processing: []
 queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_ddd' into category 'u111'.
-gc3.gc3libs: INFO: Adding a new queue for 'u111' to the JobQueue.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000', 'u111'])
-gc3.gc3libs: DEBUG: Changing status of job u111_ddd to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.927835, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ddd' into category 'u111'.
+snijder [INFO] Adding a new queue for 'u111' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Changing status of job u111_ddd to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.262184, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -502,7 +502,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -516,7 +516,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -530,7 +530,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -543,11 +543,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -558,7 +558,7 @@ u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [q
 u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -572,7 +572,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -587,7 +587,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -602,7 +602,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -617,7 +617,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -627,22 +627,22 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_eee' into category 'u111'.
-gc3.gc3libs: DEBUG: Changing status of job u111_eee to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.928977, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] Enqueueing job 'u111_eee' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_eee to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.263307, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -656,7 +656,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -670,7 +670,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -684,7 +684,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -698,7 +698,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -711,11 +711,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -727,7 +727,7 @@ u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [q
 u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -741,7 +741,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -756,7 +756,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -771,7 +771,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -786,7 +786,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -801,7 +801,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -811,22 +811,22 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_fff' into category 'u111'.
-gc3.gc3libs: DEBUG: Changing status of job u111_fff to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.930146, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] Enqueueing job 'u111_fff' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_fff to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.264886, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -840,7 +840,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -854,7 +854,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -868,7 +868,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -882,7 +882,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -896,7 +896,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -909,11 +909,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -926,7 +926,7 @@ u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [q
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -940,7 +940,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -955,7 +955,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -970,7 +970,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -985,7 +985,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1000,7 +1000,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -1015,7 +1015,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.930146,
+              'timestamp': 1542203053.264886,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -1025,22 +1025,22 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_ggg' into category 'u111'.
-gc3.gc3libs: DEBUG: Changing status of job u111_ggg to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.93128, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ggg' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_ggg to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.266041, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1054,7 +1054,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1068,7 +1068,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1082,7 +1082,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1096,7 +1096,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1110,7 +1110,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1124,7 +1124,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.93128, 
+            "queued": 1542203053.266041, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1137,11 +1137,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1155,7 +1155,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -1169,7 +1169,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1184,7 +1184,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1199,7 +1199,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1214,7 +1214,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1229,7 +1229,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -1244,7 +1244,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.930146,
+              'timestamp': 1542203053.264886,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -1259,7 +1259,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.93128,
+              'timestamp': 1542203053.266041,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -1269,72 +1269,72 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: WARNING: 
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [WARNING] 
 
 ******** retrieving jobs from queue for processing: ********
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u000', uid 'u000_aaa'.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u111', 'u000'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u000': deque(['u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 1
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (1 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u111', uid 'u111_ddd'.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000', 'u111'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u000': deque(['u000_bbb', 'u000_ccc']), 'u111': deque(['u111_eee', 'u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (2 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u000', uid 'u000_bbb'.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u111', 'u000'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u000': deque(['u000_ccc']), 'u111': deque(['u111_eee', 'u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 3
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (3 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u111', uid 'u111_eee'.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000', 'u111'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u000': deque(['u000_ccc']), 'u111': deque(['u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 4
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (4 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u000', uid 'u000_ccc'.
-gc3.gc3libs: DEBUG: Queue for category 'u000' now empty, removing it.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u111'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u111': deque(['u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 5
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (5 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u111', uid 'u111_fff'.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u111'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u111': deque(['u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 6
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (6 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u111', uid 'u111_ggg'.
-gc3.gc3libs: DEBUG: Queue for category 'u111' now empty, removing it.
-gc3.gc3libs: DEBUG: Current queue categories: deque([])
-gc3.gc3libs: DEBUG: Current contents of all queues: {}
-gc3.gc3libs: DEBUG: num_jobs_processing = 7
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (7 processing)
-gc3.gc3libs: DEBUG: num_jobs_processing = 7
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (7 processing)
-gc3.gc3libs: WARNING: 
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_aaa'.
+snijder [DEBUG] Current queue categories: deque(['u111', 'u000'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 7 (1 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_ddd'.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_bbb', 'u000_ccc']), 'u111': deque(['u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 7 (2 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_bbb'.
+snijder [DEBUG] Current queue categories: deque(['u111', 'u000'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_ccc']), 'u111': deque(['u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 3
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 7 (3 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_eee'.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_ccc']), 'u111': deque(['u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 4
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 7 (4 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_ccc'.
+snijder [DEBUG] Queue for category 'u000' now empty, removing it.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 5
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 7 (5 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_fff'.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 6
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 7 (6 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_ggg'.
+snijder [DEBUG] Queue for category 'u111' now empty, removing it.
+snijder [DEBUG] Current queue categories: deque([])
+snijder [DEBUG] Current contents of all queues: {}
+snijder [DEBUG] num_jobs_processing = 7
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 7 (7 processing)
+snijder [DEBUG] num_jobs_processing = 7
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 7 (7 processing)
+snijder [WARNING] 
 
 
 
 ******** creating a new job queue object: ********
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 0 (0 processing)
-gc3.gc3libs: DEBUG: Empty queue!
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1342,7 +1342,7 @@ None.
 --- jobs queued (not yet retrieved)
 None.
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque([])
@@ -1351,28 +1351,28 @@ processing: []
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: WARNING: 
+snijder [WARNING] 
 
 ******** adding jobs to queue: ********
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 0 (0 processing)
-gc3.gc3libs: DEBUG: Empty queue!
-gc3.gc3libs: INFO: Enqueueing job 'u000_aaa' into category 'u000'.
-gc3.gc3libs: INFO: Adding a new queue for 'u000' to the JobQueue.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000'])
-gc3.gc3libs: DEBUG: Changing status of job u000_aaa to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.924209, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] Enqueueing job 'u000_aaa' into category 'u000'.
+snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000'])
+snijder [DEBUG] Changing status of job u000_aaa to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.258609, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1385,11 +1385,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1397,7 +1397,7 @@ None.
 --- jobs queued (not yet retrieved)
 u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -1411,7 +1411,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1420,22 +1420,22 @@ processing: []
 queue: {'u000': deque(['u000_aaa'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u000_bbb' into category 'u000'.
-gc3.gc3libs: DEBUG: Changing status of job u000_bbb to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.925399, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] Enqueueing job 'u000_bbb' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_bbb to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.259897, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1449,7 +1449,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1462,11 +1462,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1475,7 +1475,7 @@ None.
 u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -1489,7 +1489,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1504,7 +1504,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1513,22 +1513,22 @@ processing: []
 queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u000_ccc' into category 'u000'.
-gc3.gc3libs: DEBUG: Changing status of job u000_ccc to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.926625, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] Enqueueing job 'u000_ccc' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_ccc to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.261055, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1542,7 +1542,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1556,7 +1556,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1569,11 +1569,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1583,7 +1583,7 @@ u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [q
 u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -1597,7 +1597,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1612,7 +1612,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1627,7 +1627,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1636,24 +1636,24 @@ processing: []
 queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_ddd' into category 'u111'.
-gc3.gc3libs: INFO: Adding a new queue for 'u111' to the JobQueue.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000', 'u111'])
-gc3.gc3libs: DEBUG: Changing status of job u111_ddd to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.927835, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ddd' into category 'u111'.
+snijder [INFO] Adding a new queue for 'u111' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Changing status of job u111_ddd to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.262184, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1667,7 +1667,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1681,7 +1681,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1695,7 +1695,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1708,11 +1708,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1723,7 +1723,7 @@ u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [q
 u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -1737,7 +1737,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1752,7 +1752,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1767,7 +1767,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1782,7 +1782,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1792,22 +1792,22 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_eee' into category 'u111'.
-gc3.gc3libs: DEBUG: Changing status of job u111_eee to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.928977, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] Enqueueing job 'u111_eee' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_eee to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.263307, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1821,7 +1821,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1835,7 +1835,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1849,7 +1849,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1863,7 +1863,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1876,11 +1876,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -1892,7 +1892,7 @@ u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [q
 u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -1906,7 +1906,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1921,7 +1921,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1936,7 +1936,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1951,7 +1951,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1966,7 +1966,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -1976,22 +1976,22 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_fff' into category 'u111'.
-gc3.gc3libs: DEBUG: Changing status of job u111_fff to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.930146, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] Enqueueing job 'u111_fff' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_fff to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.264886, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2005,7 +2005,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2019,7 +2019,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2033,7 +2033,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2047,7 +2047,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2061,7 +2061,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2074,11 +2074,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -2091,7 +2091,7 @@ u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [q
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -2105,7 +2105,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -2120,7 +2120,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2135,7 +2135,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2150,7 +2150,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2165,7 +2165,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2180,7 +2180,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.930146,
+              'timestamp': 1542203053.264886,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2190,22 +2190,22 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: INFO: Enqueueing job 'u111_ggg' into category 'u111'.
-gc3.gc3libs: DEBUG: Changing status of job u111_ggg to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.93128, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ggg' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_ggg to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.266041, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2219,7 +2219,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2233,7 +2233,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2247,7 +2247,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2261,7 +2261,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2275,7 +2275,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2289,7 +2289,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.93128, 
+            "queued": 1542203053.266041, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2302,11 +2302,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -2320,7 +2320,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -2334,7 +2334,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -2349,7 +2349,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2364,7 +2364,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2379,7 +2379,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2394,7 +2394,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2409,7 +2409,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.930146,
+              'timestamp': 1542203053.264886,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2424,7 +2424,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.93128,
+              'timestamp': 1542203053.266041,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -2434,13 +2434,13 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -2454,7 +2454,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
 u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000', 'u111'])
@@ -2468,7 +2468,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -2483,7 +2483,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.925399,
+              'timestamp': 1542203053.259897,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2498,7 +2498,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2513,7 +2513,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2528,7 +2528,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.928977,
+              'timestamp': 1542203053.263307,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2543,7 +2543,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.930146,
+              'timestamp': 1542203053.264886,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2558,7 +2558,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.93128,
+              'timestamp': 1542203053.266041,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -2568,24 +2568,24 @@ queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
  'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: WARNING: 
+snijder [WARNING] 
 
 ******** removing jobs from queue: ********
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 7
-gc3.gc3libs: DEBUG: len(JobQueue) = 7 (0 processing)
-gc3.gc3libs: DEBUG: Trying to remove job with uid 'u000_aaa'.
-gc3.gc3libs: INFO: Status of job to be removed: queued
-gc3.gc3libs: DEBUG: Removing job 'u000_aaa' from queue 'u000'.
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] Trying to remove job with uid 'u000_aaa'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u000_aaa' from queue 'u000'.
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.925399, 
+            "queued": 1542203053.259897, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2599,7 +2599,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2613,7 +2613,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2627,7 +2627,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2641,7 +2641,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2655,7 +2655,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.93128, 
+            "queued": 1542203053.266041, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2668,21 +2668,21 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 6
-gc3.gc3libs: DEBUG: len(JobQueue) = 6 (0 processing)
-gc3.gc3libs: DEBUG: Trying to remove job with uid 'u000_bbb'.
-gc3.gc3libs: INFO: Status of job to be removed: queued
-gc3.gc3libs: DEBUG: Removing job 'u000_bbb' from queue 'u000'.
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] Trying to remove job with uid 'u000_bbb'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u000_bbb' from queue 'u000'.
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2696,7 +2696,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2710,7 +2710,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2724,7 +2724,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2738,7 +2738,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.93128, 
+            "queued": 1542203053.266041, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2751,28 +2751,28 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 5
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (0 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u000', uid 'u000_ccc'.
-gc3.gc3libs: DEBUG: Queue for category 'u000' now empty, removing it.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u111'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 1
-gc3.gc3libs: DEBUG: num_jobs_queued = 4
-gc3.gc3libs: DEBUG: len(JobQueue) = 5 (1 processing)
-gc3.gc3libs: DEBUG: Trying to remove job with uid 'u111_ggg'.
-gc3.gc3libs: INFO: Status of job to be removed: queued
-gc3.gc3libs: DEBUG: Removing job 'u111_ggg' from queue 'u111'.
-gc3.gc3libs: DEBUG: num_jobs_processing = 1
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (1 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_ccc'.
+snijder [DEBUG] Queue for category 'u000' now empty, removing it.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 5 (1 processing)
+snijder [DEBUG] Trying to remove job with uid 'u111_ggg'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u111_ggg' from queue 'u111'.
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 4 (1 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2786,7 +2786,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2800,7 +2800,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.928977, 
+            "queued": 1542203053.263307, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2814,7 +2814,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2827,27 +2827,27 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: DEBUG: num_jobs_processing = 1
-gc3.gc3libs: DEBUG: num_jobs_queued = 3
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (1 processing)
-gc3.gc3libs: INFO: Retrieving next job: category 'u111', uid 'u111_ddd'.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u111'])
-gc3.gc3libs: DEBUG: Current contents of all queues: {'u111': deque(['u111_eee', 'u111_fff'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 2
-gc3.gc3libs: DEBUG: len(JobQueue) = 4 (2 processing)
-gc3.gc3libs: DEBUG: Trying to remove job with uid 'u111_eee'.
-gc3.gc3libs: INFO: Status of job to be removed: queued
-gc3.gc3libs: DEBUG: Removing job 'u111_eee' from queue 'u111'.
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (2 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 4 (1 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_ddd'.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_eee', 'u111_fff'])}
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 4 (2 processing)
+snijder [DEBUG] Trying to remove job with uid 'u111_eee'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u111_eee' from queue 'u111'.
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 3 (2 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2861,7 +2861,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2875,7 +2875,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.930146, 
+            "queued": 1542203053.264886, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2888,22 +2888,22 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 3 (2 processing)
-gc3.gc3libs: DEBUG: Trying to remove job with uid 'u111_fff'.
-gc3.gc3libs: INFO: Status of job to be removed: queued
-gc3.gc3libs: DEBUG: Removing job 'u111_fff' from queue 'u111'.
-gc3.gc3libs: DEBUG: Queue for category 'u111' now empty, removing it.
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (2 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 3 (2 processing)
+snijder [DEBUG] Trying to remove job with uid 'u111_fff'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u111_fff' from queue 'u111'.
+snijder [DEBUG] Queue for category 'u111' now empty, removing it.
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.926625, 
+            "queued": 1542203053.261055, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2917,7 +2917,7 @@ gc3.gc3libs: DEBUG: {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1542105690.927835, 
+            "queued": 1542203053.262184, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2930,16 +2930,16 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (2 processing)
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (2 processing)
-gc3.gc3libs: DEBUG: num_jobs_processing = 2
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 2 (2 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
@@ -2948,7 +2948,7 @@ u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [q
 --- jobs queued (not yet retrieved)
 None.
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque([])
@@ -2962,7 +2962,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.926625,
+              'timestamp': 1542203053.261055,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2977,7 +2977,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.927835,
+              'timestamp': 1542203053.262184,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2986,18 +2986,18 @@ processing: ['u000_ccc', 'u111_ddd']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: Trying to remove job with uid 'aaa'.
-gc3.gc3libs: ERROR: No job with uid 'aaa' was found!
-gc3.gc3libs: WARNING: 
+snijder [DEBUG] Trying to remove job with uid 'aaa'.
+snijder [ERROR] No job with uid 'aaa' was found!
+snijder [WARNING] 
 
 
 
 ******** creating a new job queue object: ********
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 0 (0 processing)
-gc3.gc3libs: DEBUG: Empty queue!
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -3005,7 +3005,7 @@ None.
 --- jobs queued (not yet retrieved)
 None.
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque([])
@@ -3014,25 +3014,25 @@ processing: []
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 0
-gc3.gc3libs: DEBUG: len(JobQueue) = 0 (0 processing)
-gc3.gc3libs: DEBUG: Empty queue!
-gc3.gc3libs: INFO: Enqueueing job 'u000_aaa' into category 'u000'.
-gc3.gc3libs: INFO: Adding a new queue for 'u000' to the JobQueue.
-gc3.gc3libs: DEBUG: Current queue categories: deque(['u000'])
-gc3.gc3libs: DEBUG: Changing status of job u000_aaa to queued
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'queued'
-gc3.gc3libs: DEBUG: JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542105690.924209, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: DEBUG: {
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] Enqueueing job 'u000_aaa' into category 'u000'.
+snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000'])
+snijder [DEBUG] Changing status of job u000_aaa to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.258609, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] {
     "jobs": [
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1542105690.924209, 
+            "queued": 1542203053.258609, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3045,11 +3045,11 @@ gc3.gc3libs: DEBUG: {
         }
     ]
 }
-gc3.gc3libs: INFO: Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
-gc3.gc3libs: INFO: queue_details_hr():
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
@@ -3057,7 +3057,7 @@ None.
 --- jobs queued (not yet retrieved)
 u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
+snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
 cats: deque(['u000'])
@@ -3071,7 +3071,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1542105690.924209,
+              'timestamp': 1542203053.258609,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -3080,6 +3080,6 @@ processing: []
 queue: {'u000': deque(['u000_aaa'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: DEBUG: num_jobs_processing = 0
-gc3.gc3libs: DEBUG: num_jobs_queued = 1
-gc3.gc3libs: DEBUG: len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
