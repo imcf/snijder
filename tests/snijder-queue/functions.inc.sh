@@ -239,7 +239,7 @@ wait_for_qm_to_finish() {
     # otherwise try to shut it down (gracefully, using a shutdown request), or
     # try to kill it as a last resort.
     if qm_is_running ; then
-        colr green "QM is running..."
+        colr green "QM is still running..."
     fi
     for counter in $(seq 1 $1) ; do
         sleep 1
