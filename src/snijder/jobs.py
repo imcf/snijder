@@ -467,6 +467,7 @@ class JobDescription(dict):
 
         if os.path.exists(target):
             target += ".%s" % time.time()
+            logd("Adding suffix to prevent overwriting file: %s", target)
         logi("Moving file '%s' to '%s'.", os.path.basename(self.fname), target)
         logd("Full path of original file: '%s'.", self.fname)
         shutil.move(self.fname, target)
