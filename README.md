@@ -89,22 +89,36 @@ cd $CURDIR
 
 ### Snijder Setup
 
-* clone the snijder repo
-* create a base directory for all spooling stuff:
-  ```bash
-  SPOOL_BASE="/opt/spool"  # adapt as you like, e.g. "/scratch/spool" or similar
-  mkdir -pv "$SPOOL_BASE/snijder"
-  mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
-  cd /opt
-  git clone https://github.com/imcf/snijder.git
-  cd snijder
-  ln -s resources/config
-  ```
+To set up _Snijder_ you need to create a base directory where all the spooling /
+queueing will take place, then you're good to clone the repository:
+
+```bash
+SPOOL_BASE="/opt/spool"  # adapt as you like, e.g. "/scratch/spool" or similar
+mkdir -pv "$SPOOL_BASE/snijder"
+mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
+
+cd /opt/snijder
+git clone https://github.com/imcf/snijder.git
+```
+
+For testing you can simply use the configuration files provided with the repo,
+to enable them just run these commands:
+
+```bash
+cd /opt/snijder/snijder
+ln -s resources/config
+```
 
 ## Example
 
-ToDo!
+The testing scripts also serve as a very nice example to see _Snijder_ in
+action. To launch them, simply call the corresponding wrapper script from within
+the base directory like so:
 
+```bash
+cd /opt/snijder/snijder
+tests/snijder-queue/run_tests.sh
+```
 
 ## Testing
 
