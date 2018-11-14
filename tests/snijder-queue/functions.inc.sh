@@ -331,6 +331,18 @@ error() {
 }
 
 
+_wait() {
+    if [ -z "$1" ] ; then
+        return
+    fi
+    if [ "$1" == "0" ] ; then
+        return
+    fi
+    echo "Waiting $1 seconds..."
+    sleep $1
+}
+
+
 parse_shortname() {
     SHORT=$(basename $0 | sed 's,__.*,,')
     echo $SHORT
