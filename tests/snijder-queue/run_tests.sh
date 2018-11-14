@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export LC_ALL=C
+export LANG=C
+
 set -e
 # remember path prefix as called, source functions
 PFX=$(dirname $0)
