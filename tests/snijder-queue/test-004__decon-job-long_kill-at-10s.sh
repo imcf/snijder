@@ -19,17 +19,13 @@ SHORT=$(parse_shortname)
 ########## TEST DESCRIPTION ##########
 
 
-clean_all_spooldirs
-
 prepare_qm
 
 startup_qm
 
-qm_request pause
-sleep 1
+qm_request pause 1
 
 submit_jobs "decon_job_"
-sleep .5
 
 qm_request run
 sleep 10

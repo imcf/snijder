@@ -19,10 +19,6 @@ SHORT=$(parse_shortname)
 # 7) shutdown QM when queue is empty (should be IMMEDIATE!), latest after 5 SECONDS
 ########## TEST DESCRIPTION ##########
 
-SEP="#######################################"
-SEP="$SEP$SEP"
-
-clean_all_spooldirs
 
 prepare_qm
 
@@ -30,30 +26,17 @@ startup_qm
 
 submit_jobs "decon_job_"
 
-qm_request refresh
-sleep 2
+qm_request refresh 2
 
-echo
-echo $SEP
-echo $SEP >&2
-echo
+msg_sep
 
-submit_jobs "remove_job_"
-sleep 1
+submit_jobs "remove_job_" 1
 
-echo
-echo $SEP
-echo $SEP >&2
-echo
+msg_sep
 
-qm_request refresh
+qm_request refresh .6
 
-echo
-echo $SEP
-echo $SEP >&2
-echo
-
-sleep .6
+msg_sep
 
 shutdown_qm_on_empty_queue 5
 
