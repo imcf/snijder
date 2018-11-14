@@ -25,11 +25,7 @@ other tasks as well.
 
 _Snijder_ makes use of the [GC3Pie](https://github.com/imcf/gc3pie) Python
 package dealing with job dispatching, monitoring, data transfer and cluster
-queueing systems. Unfortunately, the latest release (2.4.2) contains a few bugs
-which prevent _Snijder_ from operating correctly. Therefore it is recommended to
-set up GC3Pie from its `master` branch, following the instructions for [manual
-installation](http://gc3pie.readthedocs.io/en/master/users/install.html#manual-installation).
-
+queueing systems.
 
 ## Installation
 
