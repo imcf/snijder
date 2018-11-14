@@ -202,7 +202,9 @@ startup_qm() {
 
 submit_jobs() {
     # copy jobfiles with a given prefix into the spool/new directory to submit
-    # the to a running queue manager
+    # them to a running queue manager
+    # by default wait 0.5s after submitting all jobs unless specified
+    # differently using the second parameter
     if [ -z "$1" ] ; then
         error "No jobfile prefix given for submission!"
         exit 4
@@ -212,7 +214,8 @@ submit_jobs() {
         cp -v $jobfile "$SPOOLINGDIR/spool/new"
         sleep .1
     done
-
+    WAIT=${2:-.5}  # by default wait .5s unless specified as 2nd parameter
+    _wait $WAIT
 }
 
 
