@@ -205,6 +205,8 @@ submit_jobs() {
     # them to a running queue manager
     # by default wait 0.5s after submitting all jobs unless specified
     # differently using the second parameter
+    # by default wait 0.1s after EACH job being submitted before submitting
+    # the next one, can be overridden via $3
     if [ -z "$1" ] ; then
         error "No jobfile prefix given for submission!"
         exit 4
@@ -212,7 +214,7 @@ submit_jobs() {
     # we are expected to be in the snijder base dir, so use the full path:
     for jobfile in tests/snijder-queue/inputs/$SHORT/${1}*.cfg ; do
         cp -v $jobfile "$SPOOLINGDIR/spool/new"
-        sleep .1
+        sleep ${3:-.1}
     done
     WAIT=${2:-.5}  # by default wait .5s unless specified as 2nd parameter
     _wait $WAIT
