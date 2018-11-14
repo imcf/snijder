@@ -49,7 +49,7 @@ def select_queue_for_job(job):
     return queuetype
 
 
-def process_jobfile(fname, queues, dirs):
+def process_jobfile(fname, queues):
     """Parse a jobfile and add it to its destination queue.
 
     Parameters
@@ -59,8 +59,6 @@ def process_jobfile(fname, queues, dirs):
     queues : dict
         Containing the JobQueue objects for the different queues, using the
         corresponding 'type' keyword as identifier.
-    dirs : dict
-        Spooling directories in a dict, as returned by snijder.setup_rundirs().
     """
     try:
         job = JobDescription(fname, 'file')

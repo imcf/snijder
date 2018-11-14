@@ -67,7 +67,7 @@ def main():
     # process jobfiles already existing during our startup:
     for jobfile in job_spooler.dirs['newfiles']:
         fname = os.path.join(job_spooler.dirs['new'], jobfile)
-        process_jobfile(fname, jobqueues, job_spooler.dirs)
+        process_jobfile(fname, jobqueues)
 
 
     file_handler = JobFileHandler(jobqueues, job_spooler.dirs)
