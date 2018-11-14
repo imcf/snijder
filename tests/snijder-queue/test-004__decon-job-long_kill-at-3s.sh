@@ -15,7 +15,8 @@ SHORT=$(parse_shortname)
 # 2) switch to pause mode
 # 3) place the jobs from the inputs directory in the queue
 # 4) switch to run mode
-# 5) shutdown QM when queue is empty, latest after 5 SECONDS
+# 5) request a QM shutdown after 3 seconds
+# 6) wait 5s for the QM to shut down, kill it the hard way otherwise
 ########## TEST DESCRIPTION ##########
 
 
@@ -27,12 +28,11 @@ qm_request pause 1
 
 submit_jobs "decon_job_"
 
-qm_request run
-sleep 10
+qm_request run 3
 
 qm_request shutdown
 
-shutdown_qm_on_empty_queue 5
+wait_for_qm_to_finish 5
 
 msg_finished
 
