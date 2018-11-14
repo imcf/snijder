@@ -291,6 +291,9 @@ queue_is_empty() {
 
 
 shutdown_qm_on_empty_queue() {
+    MSG="Waiting (${1}s max) for the queue to be finished / empty,"
+    MSG="$MSG then shutting down the QM."
+    colr green $MSG
     if ! qm_is_running ; then
         colr green "QM is not running, so we're done."
         return
