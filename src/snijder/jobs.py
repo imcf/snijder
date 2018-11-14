@@ -460,8 +460,11 @@ class JobDescription(dict):
         if JobDescription.spooldirs is None:
             logw("Not moving jobfile as 'spooldirs' class variable is unset!")
             return
-        target = os.path.join(JobDescription.spooldirs[target],
-                              self['uid'] + suffix)
+        
+        target = os.path.join(
+            JobDescription.spooldirs[target],       # pylint: disable=E1136
+            self['uid'] + suffix)
+
         if os.path.exists(target):
             target += ".%s" % time.time()
         logi("Moving file '%s' to '%s'.", os.path.basename(self.fname), target)
