@@ -417,7 +417,8 @@ class JobDescription(dict):
             logw("Ignoring job config, parsing failed: %s", err)
             if srctype == 'file':
                 logw("Invalid job config file: %s", job)
-                # move the unreadable file out of the way before returning:
+                # set the 'uid' key as otherwise moving the file would fail:
+                self['uid'] = os.path.basename(job)
                 self.move_jobfile('done', ".invalid")
             raise err
         self.update(parsed_job)
