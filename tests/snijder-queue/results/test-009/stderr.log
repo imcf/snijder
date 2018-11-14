@@ -70,38 +70,6 @@ processing: []
 queue: {'user01': deque(['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Received spooler queue status refresh request.
-gc3.gc3libs: INFO: queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 - ['resources/sample_data/hucore/faba128.h5'] [queued]
-========================= queue status =========================
-gc3.gc3libs: WARNING: QUEUE STATUS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque(['user01'])
-jobs: {'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721': {'email': 'user01@mail.xy',
-                                              'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['resources/sample_data/hucore/faba128.h5'],
-                                              'pid': 'N/A',
-                                              'progress': 'N/A',
-                                              'server': 'N/A',
-                                              'start': 'N/A',
-                                              'status': 'queued',
-                                              'tasktype': 'decon',
-                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
-                                              'timestamp': 1467979338.137427,
-                                              'type': 'hucore',
-                                              'uid': 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721',
-                                              'user': 'user01',
-                                              'ver': '7'}}
-processing: []
-queue: {'user01': deque(['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'])}
-deletion_list: []
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 gc3.gc3libs: INFO: Retrieving next job: category 'user01', uid 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'.
 gc3.gc3libs: WARNING: Adding job (type 'HuDeconApp') to the gc3pie engine.
 gc3.gc3libs: WARNING: Instantiating a HuDeconApp: [[user: user01]] [[uid: bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721]]
@@ -138,19 +106,52 @@ processing: ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fa21cb2af90 to: localhost
+gc3.gc3libs: INFO: Received spooler queue status refresh request.
+gc3.gc3libs: INFO: queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+gc3.gc3libs: WARNING: QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: '/opt/spool/snijder/queue/status/hucore.json'
+cats: deque([])
+jobs: {'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['resources/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'decon',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
+                                              'timestamp': 1467979338.137427,
+                                              'type': 'hucore',
+                                              'uid': 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721']
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+gc3.gc3libs: INFO: Successfully submitted HuDeconApp@7fef9ed40550 to: localhost
 gc3.gc3libs: INFO: HuDeconApp status: 'NEW' -> 'SUBMITTED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'SUBMITTED'
-##############################################################################
+gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
+######################################################################
 gc3.gc3libs: INFO: New file event 'remove_job_1.cfg'
 gc3.gc3libs: INFO: Parsing jobfile 'remove_job_1.cfg'...
 gc3.gc3libs: INFO: Request to --- DELETE --- job 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'
 gc3.gc3libs: WARNING: Received job deletion request(s)!
-gc3.gc3libs: INFO: Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/3731199ca83b636626bc132803583f057d542369.jobfile.1542151911.96'.
+gc3.gc3libs: INFO: Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/3731199ca83b636626bc132803583f057d542369.jobfile.1542193215.64'.
 gc3.gc3libs: WARNING: <KILLING> [user01] HuDeconApp
-Terminated
-gc3.gc3libs: INFO: HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
-gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'RUNNING'
 gc3.gc3libs: INFO: Job finished. Execution stats:
 	[[ cpu time: N/A ]]
 	[[ wall time: N/A ]]
@@ -160,8 +161,7 @@ gc3.gc3libs: INFO: HuDeconApp status: 'RUNNING' -> 'TERMINATED'
 gc3.gc3libs: CRITICAL: Setting JobDescription key 'status' to value 'TERMINATED'
 gc3.gc3libs: WARNING: App has terminated, removing from list of apps.
 gc3.gc3libs: INFO: Status of job to be removed: TERMINATED
-##############################################################################
-##############################################################################
+######################################################################
 gc3.gc3libs: INFO: Received spooler queue status refresh request.
 gc3.gc3libs: INFO: queue_details_hr():
 ========================= queue status =========================
@@ -180,6 +180,7 @@ processing: []
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+######################################################################
 gc3.gc3libs: WARNING: Received spooler status change request: run -> shutdown
 gc3.gc3libs: WARNING: Queue Manager shutdown initiated.
 gc3.gc3libs: INFO: QM shutdown: cleaning up spooler.
