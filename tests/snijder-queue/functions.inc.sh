@@ -310,6 +310,16 @@ msg_finished() {
 }
 
 
+msg_sep() {
+    # print a separator to stout and stderr
+    SEP="######################################################################"
+    echo
+    echo $SEP
+    echo $SEP >&2
+    echo
+}
+
+
 colr() {
     # helper functions to colorize output
     # TODO: check if connected to a console, print non-colored otherwise
