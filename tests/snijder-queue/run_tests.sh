@@ -61,9 +61,9 @@ for TEST in $RUN_TESTS ; do
     echo $RET > $EXITVAL
 
     # clean up after the run:
+    wait_for_qm_to_finish 2
     clean_all_spooldirs
-    # TODO: check for running QM process and terminate it!
-
+    
     echo
     colr yellow "Test '$SHORT' finished."
     if [ $RET -gt 0 ] ; then
