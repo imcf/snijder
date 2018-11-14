@@ -21,13 +21,12 @@ import os
 import pprint
 import time
 
+import gc3libs
+import gc3libs.config
+
 from . import logi, logd, logw, logc, loge, JOBFILE_VER
 from .apps import hucore, dummy
 from .jobs import JobDescription
-
-
-import gc3libs
-import gc3libs.config
 
 
 class JobSpooler(object):
