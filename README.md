@@ -118,18 +118,9 @@ The test images for deconvolution are a set of images which can be downloaded
 from the [SVI website](https://svi.nl/DemoImages) (requires registration).
 Simply place them in `resources/sample_data/hucore/` to run the tests.
 
+## Contributing
 
-## Project Structure
-
-The directory layout tries to follow the suggestions about clean Python project
-structuring found in the following online resources:
-
-* [Open Sourcing a Python Project the Right Way](https://jeffknupp.com/blog/2013/08/16/open-sourcing-a-python-project-the-right-way/)
-* [Structuring Your Project](http://python-guide-pt-br.readthedocs.io/en/latest/writing/structure/)
-* [Structure of a Python Project](http://www.patricksoftwareblog.com/structure-of-a-python-project/)
-* [Repository Structure and Python](https://www.kennethreitz.org/essays/repository-structure-and-python)
-* [A Project Skeleton](https://learnpythonthehardway.org/book/ex46.html)
-* [SO: What is the best project structure for a Python application?](http://stackoverflow.com/questions/193161/what-is-the-best-project-structure-for-a-python-application)
-
+Please see the details in the [Development And Contribution
+Guide](CONTRIBUTING.md).
 
 [img_snijder_logo]: https://raw.githubusercontent.com/imcf/snijder/master/resources/artwork/snijder-logo-blue-64.png
