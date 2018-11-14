@@ -143,12 +143,14 @@ hucore_is_running() {
 qm_request() {
     # send a status change request to the queue manager, making sure the actual
     # process is still alive (EXIT otherwise!)
+    # optionally wait for the amount of seconds given as $2 after the request
     colr yellow "Requesting QM status change to: $1"
     if ! qm_is_running ; then
         error "QM is not running (any more?) - stopping here!"
         exit 3
     fi
     touch "$SPOOLINGDIR/queue/requests/$1"
+    _wait $2
 }
 
 
