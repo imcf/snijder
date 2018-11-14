@@ -17,8 +17,5 @@ Requesting QM status change to: shutdown
 QM is still running...
 Cleaning up. Remaining jobs:
 {}
-Queue is empty, trying to shut down the QM!
-Requesting QM status change to: shutdown
-============================ ERROR ============================
-QM is not running (any more?) - stopping here!
-============================ ERROR ============================
+QM process terminated.
+************************* TEST FINISHED! *************************
