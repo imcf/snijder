@@ -223,8 +223,8 @@ wait_for_hucore_to_finish() {
     # try to terminate any still-running hucore processes
     if hucore_is_running ; then
         if [ -n "$1" ] ; then
-            colr yellow "WARNING: Found running HuCore processes, waiting..."
-            sleep $1
+            colr yellow "WARNING: Found running HuCore processes!"
+            _wait $1
         fi
         if hucore_is_running ; then
             colr yellow "WARNING: Found running HuCore processes, trying to kill them..."
@@ -252,8 +252,7 @@ wait_for_qm_to_finish() {
     if qm_is_running ; then
         colr yellow "WARNING: QM is STILL running after $1 seconds!"
         colr yellow "Trying to shut it down..."
-        qm_request shutdown
-        sleep 1
+        qm_request shutdown 1
     fi
     if qm_is_running ; then
         colr yellow "WARNING: QM doesn't listen to our shutdown request!"
