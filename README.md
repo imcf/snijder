@@ -47,7 +47,7 @@ sudo apt install \
 ```
 
 Then follow the instructions below to set up GC3Pie in a directory structure
-underneath `/opt/snijder`. 
+underneath `/opt/snijder`.
 
 First, make sure the base directory is there and writable to the installatoin
 user. Run the following commands as `root` or use `sudo`, depending on your
