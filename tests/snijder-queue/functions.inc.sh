@@ -288,7 +288,7 @@ queue_is_empty() {
 
 shutdown_qm_on_empty_queue() {
     if ! qm_is_running ; then
-        colr yellow "WARNING: QM is not running!"
+        colr green "QM is not running, so we're done."
         return
     fi
     for counter in $(seq 1 $1) ; do
