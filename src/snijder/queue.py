@@ -127,13 +127,13 @@ class JobQueue(object):
         status : bool
             True if the queue was empty and removed, False otherwise.
         """
-        if len(self.queue[cat]) == 0:
-            logd("Queue for category '%s' now empty, removing it.", cat)
-            self.cats.remove(cat)  # remove it from the categories list
-            del self.queue[cat]    # delete the category from the queue dict
-            return True
-        else:
+        if self.queue[cat]:
             return False
+
+        logd("Queue for category '%s' now empty, removing it.", cat)
+        self.cats.remove(cat)  # remove it from the categories list
+        del self.queue[cat]    # delete the category from the queue dict
+        return True
 
     def next_job(self):
         """Return the next job description for processing.
