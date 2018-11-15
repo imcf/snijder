@@ -150,7 +150,7 @@ class JobQueue(object):
         -------
         job : JobDescription
         """
-        if len(self.cats) == 0:
+        if not self.cats:
             return None
         cat = self.cats[0]
         jobid = self.queue[cat].popleft()

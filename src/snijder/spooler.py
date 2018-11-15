@@ -285,10 +285,10 @@ class JobSpooler(object):
         print '*' * 80
         logi('Expected jobfile version: %s.', JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
-        apptypes = dict(
-            hucore = hucore.HuDeconApp,
-            dummy = dummy.DummySleepApp
-        )
+        apptypes = {
+            'hucore': hucore.HuDeconApp,
+            'dummy': dummy.DummySleepApp,
+        }
         while True:
             self.check_status_request()
             if self.status == 'run':
@@ -397,4 +397,3 @@ class JobSpooler(object):
 #
 #     def __init__(self, spool_dirs, queue, gc3conf):
 #         super(DirectorySpooler, self).__init__(job, gc3_output)
-
