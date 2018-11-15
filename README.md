@@ -93,6 +93,8 @@ To set up _Snijder_ you need to create a base directory where all the spooling /
 queueing will take place, then you're good to clone the repository:
 
 ```bash
+sudo apt install python-pyinotify
+
 SPOOL_BASE="/opt/spool"  # adapt as you like, e.g. "/scratch/spool" or similar
 mkdir -pv "$SPOOL_BASE/snijder"
 mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
