@@ -10,7 +10,7 @@ import sys
 import os
 import argparse
 
-# pylint: disable=wrong-import-position
+
 import snijder
 import snijder.queue
 from snijder.jobs import process_jobfile
