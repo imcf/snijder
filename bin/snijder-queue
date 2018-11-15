@@ -68,7 +68,15 @@ def main():
     jobqueues = dict()
     jobqueues['hucore'] = snijder.queue.JobQueue()
 
-    job_spooler = JobSpooler(args.spooldir, jobqueues['hucore'], args.config)
+    try:
+        job_spooler = JobSpooler(
+            args.spooldir,
+            jobqueues['hucore'],
+            args.config)
+    except RuntimeError as err:
+        print '\nERROR instantiating the job spooler: %s\n' % err
+        return False
+
     # select a specific resource if requested on the cmdline:
     if args.resource:
         job_spooler.engine.select_resource(args.resource)
