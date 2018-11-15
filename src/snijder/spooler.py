@@ -84,9 +84,11 @@ class JobSpooler(object):
             self.queue.queue_details_hr()
             logd(self.queue.queue_details_json())
             return
+
         if newstatus == self.status:
             # no change required, so return immediately:
             return
+
         self._status_pre = self.status
         self._status = newstatus
         logw("Received spooler status change request: %s -> %s",
@@ -217,6 +219,7 @@ class JobSpooler(object):
             if files:
                 logw("Resource dir unclean: %s", files)
                 return False
+
         return True
 
     def setup_engine(self):
@@ -330,6 +333,7 @@ class JobSpooler(object):
                     self.queue.queue_details_hr()
             elif self.status == 'shutdown':
                 return True
+
             elif self.status == 'refresh':
                 # the actual refresh action is handled by the status.setter
                 # method, so we simply pass on:
