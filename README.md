@@ -101,6 +101,10 @@ mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
 
 cd /opt/snijder
 git clone https://github.com/imcf/snijder.git
+
+# TEMPORARY SETUP using a symlink:
+cd $VIRTUAL_ENV/lib/python2.7
+ln -s /opt/snijder/snijder/src/snijder
 ```
 
 For testing you can simply use the configuration files provided with the repo,
