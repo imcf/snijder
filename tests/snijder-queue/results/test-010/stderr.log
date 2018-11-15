@@ -25,7 +25,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque([])
+categories: deque([])
 jobs: {}
 processing: []
 queue: {}
@@ -38,24 +38,24 @@ snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING ==
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [INFO] Selected queue for jobtype (dummy) and tasktype (sleep): hucore
-snijder [INFO] Moving file 'dummy_sleep_user01.cfg' to '/opt/spool/snijder/spool/cur/03810ac6fa9c244e96a49900a1f1cb39723170b5.jobfile'.
-snijder [INFO] Enqueueing job '03810ac6fa9c244e96a49900a1f1cb39723170b5' into category 'user01'.
+snijder [INFO] Moving file 'dummy_sleep_user01.cfg' to '/opt/spool/snijder/spool/cur/64b5aec71516f718a79efaa81bbd5441e91a947c.jobfile'.
+snijder [INFO] Enqueueing job '64b5aec71516f718a79efaa81bbd5441e91a947c' into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
 snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
-snijder [INFO] Job (type 'dummy') added. New queue: {'user01': deque(['03810ac6fa9c244e96a49900a1f1cb39723170b5'])}
+snijder [INFO] Job (type 'dummy') added. New queue: {'user01': deque(['64b5aec71516f718a79efaa81bbd5441e91a947c'])}
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): 03810ac6fa9c244e96a49900a1f1cb39723170b5 - [] [queued]
+user01 (user01@mail.xy): 64b5aec71516f718a79efaa81bbd5441e91a947c - [] [queued]
 ========================= queue status =========================
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque(['user01'])
-jobs: {'03810ac6fa9c244e96a49900a1f1cb39723170b5': {'email': 'user01@mail.xy',
+categories: deque(['user01'])
+jobs: {'64b5aec71516f718a79efaa81bbd5441e91a947c': {'email': 'user01@mail.xy',
                                               'exec': '/bin/sleep',
                                               'infiles': [],
                                               'pid': 'N/A',
@@ -64,23 +64,23 @@ jobs: {'03810ac6fa9c244e96a49900a1f1cb39723170b5': {'email': 'user01@mail.xy',
                                               'start': 'N/A',
                                               'status': 'queued',
                                               'tasktype': 'sleep',
-                                              'timestamp': 1542203073.728503,
+                                              'timestamp': 1542296144.717402,
                                               'type': 'dummy',
-                                              'uid': '03810ac6fa9c244e96a49900a1f1cb39723170b5',
+                                              'uid': '64b5aec71516f718a79efaa81bbd5441e91a947c',
                                               'user': 'user01',
                                               'ver': '7'}}
 processing: []
-queue: {'user01': deque(['03810ac6fa9c244e96a49900a1f1cb39723170b5'])}
+queue: {'user01': deque(['64b5aec71516f718a79efaa81bbd5441e91a947c'])}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 snijder [WARNING] Received spooler status change request: pause -> run
-snijder [INFO] Retrieving next job: category 'user01', uid '03810ac6fa9c244e96a49900a1f1cb39723170b5'.
+snijder [INFO] Retrieving next job: category 'user01', uid '64b5aec71516f718a79efaa81bbd5441e91a947c'.
 snijder [WARNING] Adding job (type 'DummySleepApp') to the gc3pie engine.
-snijder [WARNING] Instantiating a DummySleepApp: [[user: user01]] [[uid: 03810ac6fa9c244e96a49900a1f1cb39723170b5]]
+snijder [WARNING] Instantiating a DummySleepApp: [[user: user01]] [[uid: 64b5aec71516f718a79efaa81bbd5441e91a947c]]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): 03810ac6fa9c244e96a49900a1f1cb39723170b5 - [] [queued]
+user01 (user01@mail.xy): 64b5aec71516f718a79efaa81bbd5441e91a947c - [] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -88,8 +88,8 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque([])
-jobs: {'03810ac6fa9c244e96a49900a1f1cb39723170b5': {'email': 'user01@mail.xy',
+categories: deque([])
+jobs: {'64b5aec71516f718a79efaa81bbd5441e91a947c': {'email': 'user01@mail.xy',
                                               'exec': '/bin/sleep',
                                               'infiles': [],
                                               'pid': 'N/A',
@@ -98,16 +98,16 @@ jobs: {'03810ac6fa9c244e96a49900a1f1cb39723170b5': {'email': 'user01@mail.xy',
                                               'start': 'N/A',
                                               'status': 'queued',
                                               'tasktype': 'sleep',
-                                              'timestamp': 1542203073.728503,
+                                              'timestamp': 1542296144.717402,
                                               'type': 'dummy',
-                                              'uid': '03810ac6fa9c244e96a49900a1f1cb39723170b5',
+                                              'uid': '64b5aec71516f718a79efaa81bbd5441e91a947c',
                                               'user': 'user01',
                                               'ver': '7'}}
-processing: ['03810ac6fa9c244e96a49900a1f1cb39723170b5']
+processing: ['64b5aec71516f718a79efaa81bbd5441e91a947c']
 queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-snijder [INFO] Successfully submitted DummySleepApp@7ff5e6e43290 to: localhost
+snijder [INFO] Successfully submitted DummySleepApp@7f9d4ce78410 to: localhost
 snijder [INFO] DummySleepApp status: 'NEW' -> 'SUBMITTED'
 snijder [CRITICAL] Setting JobDescription key 'status' to value 'SUBMITTED'
 snijder [INFO] DummySleepApp status: 'SUBMITTED' -> 'RUNNING'
@@ -118,14 +118,14 @@ snijder [CRITICAL] Setting JobDescription key 'status' to value 'TERMINATING'
 snijder [INFO] Job finished. Execution stats:
 	[[ cpu time: 0s ]]
 	[[ wall time: 1.6s ]]
-	[[ max memory: 1732kB ]]
-snijder [INFO] Job '03810ac6fa9c244e96a49900a1f1cb39723170b5' terminated successfully!
-snijder [INFO] The output of the application is in `/opt/spool/snijder/gc3/spool/results_03810ac6fa9c244e96a49900a1f1cb39723170b5`.
+	[[ max memory: 1380kB ]]
+snijder [INFO] Job '64b5aec71516f718a79efaa81bbd5441e91a947c' terminated successfully!
+snijder [INFO] The output of the application is in `/opt/spool/snijder/gc3/spool/results_64b5aec71516f718a79efaa81bbd5441e91a947c`.
 snijder [INFO] DummySleepApp status: 'TERMINATING' -> 'TERMINATED'
 snijder [CRITICAL] Setting JobDescription key 'status' to value 'TERMINATED'
 snijder [CRITICAL] Setting JobDescription key 'status' to value 'TERMINATED'
 snijder [INFO] Status of job to be removed: TERMINATED
-snijder [INFO] Moving file '03810ac6fa9c244e96a49900a1f1cb39723170b5.jobfile' to '/opt/spool/snijder/spool/done/03810ac6fa9c244e96a49900a1f1cb39723170b5.jobfile'.
+snijder [INFO] Moving file '64b5aec71516f718a79efaa81bbd5441e91a947c.jobfile' to '/opt/spool/snijder/spool/done/64b5aec71516f718a79efaa81bbd5441e91a947c.jobfile'.
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.

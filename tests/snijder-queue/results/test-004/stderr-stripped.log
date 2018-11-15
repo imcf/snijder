@@ -25,7 +25,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque([])
+categories: deque([])
 jobs: {}
 processing: []
 queue: {}
@@ -51,7 +51,7 @@ user01 (user01@mail.xy): UID_STRIPPED - ['resources/sample_data/hucore/faba128.h
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque(['user01'])
+categories: deque(['user01'])
 jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -87,7 +87,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque([])
+categories: deque([])
 jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['resources/sample_data/hucore/faba128.h5',
