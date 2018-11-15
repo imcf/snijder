@@ -36,7 +36,7 @@ class JobQueue(object):
         ------------------
         statusfile : str (default=None)
             file name used to write the JSON formatted queue status to
-        cats : deque
+        categories : deque
             categories (users), used by the scheduler
         jobs : dict(JobDescription)
             holding job descriptions (key: UID)
@@ -49,7 +49,7 @@ class JobQueue(object):
             contain UID's from other queues as well!)
         """
         self._statusfile = None
-        self.cats = deque('')
+        self.categories = deque('')
         self.jobs = dict()
         self.processing = list()
         self.queue = dict()
@@ -105,11 +105,11 @@ class JobQueue(object):
             raise ValueError("Job with uid '%s' already in this queue!" % uid)
         logi("Enqueueing job '%s' into category '%s'.", uid, cat)
         self.jobs[uid] = job  # store the job in the global dict
-        if cat not in self.cats:
+        if cat not in self.categories:
             logi("Adding a new queue for '%s' to the JobQueue.", cat)
-            self.cats.append(cat)
+            self.categories.append(cat)
             self.queue[cat] = deque()
-            logd("Current queue categories: %s", self.cats)
+            logd("Current queue categories: %s", self.categories)
         # else:
         #     # in case there are already jobs of this category, we don't touch
         #     # the scheduler / priority queue:
@@ -131,7 +131,7 @@ class JobQueue(object):
             return False
 
         logd("Queue for category '%s' now empty, removing it.", cat)
-        self.cats.remove(cat)  # remove it from the categories list
+        self.categories.remove(cat)  # remove it from the categories list
         del self.queue[cat]    # delete the category from the queue dict
         return True
 
@@ -150,17 +150,17 @@ class JobQueue(object):
         -------
         job : JobDescription
         """
-        if not self.cats:
+        if not self.categories:
             return None
-        cat = self.cats[0]
+        cat = self.categories[0]
         jobid = self.queue[cat].popleft()
         # put it into the list of currently processing jobs:
         self.processing.append(jobid)
         logi("Retrieving next job: category '%s', uid '%s'.", cat, jobid)
         if not self._is_queue_empty(cat):
             # push the current category to the last position in the queue:
-            self.cats.rotate(-1)
-        logd("Current queue categories: %s", self.cats)
+            self.categories.rotate(-1)
+        logd("Current queue categories: %s", self.categories)
         logd("Current contents of all queues: %s", self.queue)
         return self.jobs[jobid]
 
@@ -312,14 +312,14 @@ class JobQueue(object):
         logw('QUEUE STATUS\n'
              '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
              "statusfile: %s\n"
-             "cats: %s\n"
+             "categories: %s\n"
              "jobs: %s\n"
              "processing: %s\n"
              "queue: %s\n"
              "deletion_list: %s\n"
              '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
              pprint.pformat(self._statusfile),
-             pprint.pformat(self.cats),
+             pprint.pformat(self.categories),
              pprint.pformat(self.jobs),
              pprint.pformat(self.processing),
              pprint.pformat(self.queue),
@@ -373,7 +373,7 @@ class JobQueue(object):
             logd('Empty queue!')
             return joblist
         # put queues into a list of lists, respecting the current queue order:
-        queues = [self.queue[cat] for cat in self.cats]
+        queues = [self.queue[cat] for cat in self.categories]
         # turn into a zipped list of the queues of all users, padding with
         # 'None' to compensate the different queue lengths:
         queues = [x for x in itertools.izip_longest(*queues)]
