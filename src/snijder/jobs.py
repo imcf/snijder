@@ -165,10 +165,10 @@ class AbstractJobConfigParser(dict):
                 # which is probably some race condition - just try again...
                 loge("'with open' statement resulted in error: %s", err)
                 continue
-            if len(config_raw) > 0:
+            if config_raw:
                 logd("Reading the job file succeeded after %ss!", snooze)
                 break
-        if len(config_raw) == 0:
+        if not config_raw:
             raise IOError("Unable to read job config file '%s'!" % jobfile)
         return config_raw
 
