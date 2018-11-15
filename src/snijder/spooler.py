@@ -24,7 +24,8 @@ import time
 import gc3libs
 import gc3libs.config
 
-from . import logi, logd, logw, logc, loge, JOBFILE_VER
+from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from . import JOBFILE_VER
 from .apps import hucore, dummy
 from .jobs import JobDescription
 

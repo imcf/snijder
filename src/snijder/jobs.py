@@ -18,7 +18,8 @@ import time
 import json
 from hashlib import sha1
 
-from . import logi, logd, logw, logc, loge, JOBFILE_VER
+from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from . import JOBFILE_VER
 
 
 def select_queue_for_job(job):
