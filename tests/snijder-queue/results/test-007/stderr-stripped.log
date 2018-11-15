@@ -2987,7 +2987,7 @@ queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 snijder [DEBUG] Trying to remove job with uid 'aaa'.
-snijder [ERROR] No job with uid 'aaa' was found!
+snijder [INFO] No job with uid 'aaa' was found, discarding the request.
 snijder [WARNING] 
 
 
