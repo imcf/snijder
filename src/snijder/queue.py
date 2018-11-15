@@ -99,27 +99,27 @@ class JobQueue(object):
         job : JobDescription
             The job to be added to the queue.
         """
-        cat = job.get_category()
+        category = job.get_category()
         uid = job['uid']
         if uid in self.jobs:
             raise ValueError("Job with uid '%s' already in this queue!" % uid)
-        logi("Enqueueing job '%s' into category '%s'.", uid, cat)
+        logi("Enqueueing job '%s' into category '%s'.", uid, category)
         self.jobs[uid] = job  # store the job in the global dict
-        if cat not in self.categories:
-            logi("Adding a new queue for '%s' to the JobQueue.", cat)
-            self.categories.append(cat)
-            self.queue[cat] = deque()
+        if category not in self.categories:
+            logi("Adding a new queue for '%s' to the JobQueue.", category)
+            self.categories.append(category)
+            self.queue[category] = deque()
             logd("Current queue categories: %s", self.categories)
         # else:
         #     # in case there are already jobs of this category, we don't touch
         #     # the scheduler / priority queue:
-        #     logd("JobQueue already contains a queue for '%s'.", cat)
-        self.queue[cat].append(uid)
+        #     logd("JobQueue already contains a queue for '%s'.", category)
+        self.queue[category].append(uid)
         self.set_jobstatus(job, 'queued')
         logi("Job (type '%s') added. New queue: %s", job['type'], self.queue)
         self.queue_details_hr()
 
-    def _is_queue_empty(self, cat):
+    def _is_queue_empty(self, category):
         """Clean up if a queue of a given category is empty.
 
         Returns
@@ -127,12 +127,12 @@ class JobQueue(object):
         status : bool
             True if the queue was empty and removed, False otherwise.
         """
-        if self.queue[cat]:
+        if self.queue[category]:
             return False
 
-        logd("Queue for category '%s' now empty, removing it.", cat)
-        self.categories.remove(cat)  # remove it from the categories list
-        del self.queue[cat]    # delete the category from the queue dict
+        logd("Queue for category '%s' now empty, removing it.", category)
+        self.categories.remove(category)  # remove it from the categories list
+        del self.queue[category]    # delete the category from the queue dict
         return True
 
     def next_job(self):
@@ -152,12 +152,12 @@ class JobQueue(object):
         """
         if not self.categories:
             return None
-        cat = self.categories[0]
-        jobid = self.queue[cat].popleft()
+        category = self.categories[0]
+        jobid = self.queue[category].popleft()
         # put it into the list of currently processing jobs:
         self.processing.append(jobid)
-        logi("Retrieving next job: category '%s', uid '%s'.", cat, jobid)
-        if not self._is_queue_empty(cat):
+        logi("Retrieving next job: category '%s', uid '%s'.", category, jobid)
+        if not self._is_queue_empty(category):
             # push the current category to the last position in the queue:
             self.categories.rotate(-1)
         logd("Current queue categories: %s", self.categories)
@@ -190,13 +190,13 @@ class JobQueue(object):
             return None
 
         job = self.jobs[uid]   # remember the job for returning it later
-        cat = job.get_category()
+        category = job.get_category()
         logi("Status of job to be removed: %s", job['status'])
         del self.jobs[uid]     # remove the job from the jobs dict
-        if cat in self.queue and uid in self.queue[cat]:
-            logd("Removing job '%s' from queue '%s'.", uid, cat)
-            self.queue[cat].remove(uid)
-            self._is_queue_empty(cat)
+        if category in self.queue and uid in self.queue[category]:
+            logd("Removing job '%s' from queue '%s'.", uid, category)
+            self.queue[category].remove(uid)
+            self._is_queue_empty(category)
         elif uid in self.processing:
             logd("Removing job '%s' from currently processing jobs.", uid)
             self.processing.remove(uid)
@@ -373,7 +373,7 @@ class JobQueue(object):
             logd('Empty queue!')
             return joblist
         # put queues into a list of lists, respecting the current queue order:
-        queues = [self.queue[cat] for cat in self.categories]
+        queues = [self.queue[category] for category in self.categories]
         # turn into a zipped list of the queues of all users, padding with
         # 'None' to compensate the different queue lengths:
         queues = [x for x in itertools.izip_longest(*queues)]
