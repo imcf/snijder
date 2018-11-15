@@ -281,7 +281,7 @@ class JobSpooler(object):
     def _spool(self):
         """Spooler function dispatching jobs from the queues. BLOCKING!"""
         print '*' * 80
-        print 'snijder-queue spooler running. (Ctrl-C to abort).'
+        print 'snijder-queue spooler running, press ctrl-c to shut it down'
         print '*' * 80
         logi('Expected jobfile version: %s.', JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
