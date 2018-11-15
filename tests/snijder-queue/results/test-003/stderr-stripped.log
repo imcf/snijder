@@ -76,7 +76,6 @@ deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 snijder [INFO] New file event 'decon_job_2.cfg'
 snijder [INFO] Parsing jobfile 'decon_job_2.cfg'...
-snijder [ERROR] Failed reading jobfile, trying again in 1e-05s.
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
