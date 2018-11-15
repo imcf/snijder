@@ -12,21 +12,21 @@ __all__ = ["logw", "logi", "logd", "loge", "logc"]
 LOGLEVEL = logging.WARN
 LOGGER_NAME = "snijder"
 
-logger = logging.getLogger(LOGGER_NAME)
-_handler = logging.StreamHandler()
-_formatter = logging.Formatter('%(name)s [%(levelname)s] %(message)s')
-_handler.setFormatter(_formatter)
-logger.addHandler(_handler)
-logger.setLevel(LOGLEVEL)
+LOGGER = logging.getLogger(LOGGER_NAME)
+LOG_HANDLER = logging.StreamHandler()
+LOG_FORMATTER = logging.Formatter('%(name)s [%(levelname)s] %(message)s')
+LOG_HANDLER.setFormatter(LOG_FORMATTER)
+LOGGER.addHandler(LOG_HANDLER)
+LOGGER.setLevel(LOGLEVEL)
 
-gc3libs.log = logger
+gc3libs.log = LOGGER
 gc3libs.log.level = LOGLEVEL
 
-logw = logger.warn
-logi = logger.info
-logd = logger.debug
-loge = logger.error
-logc = logger.critical
+logw = LOGGER.warn
+logi = LOGGER.info
+logd = LOGGER.debug
+loge = LOGGER.error
+logc = LOGGER.critical
 
 
 def set_loglevel(level):
@@ -38,10 +38,10 @@ def set_loglevel(level):
         'error'    : logging.ERROR,
         'critical' : logging.CRITICAL
     }
-    logger.setLevel(mapping[level])
+    LOGGER.setLevel(mapping[level])
 
 
 def set_verbosity(verbosity):
     """Convenience function to set loglevel from commandline arguments."""
     loglevel = logging.WARN - (verbosity * 10)
-    logger.setLevel(loglevel)
+    LOGGER.setLevel(loglevel)
