@@ -5,7 +5,7 @@
 from .logger import logi, logd, logw, logc, loge
 
 __author__ = "Niko Ehrenfeuchter"
-__version__ = "7.0.1"
+__version__ = "7.0.2"
 
 # expected version for job description files:
 JOBFILE_VER = '7'
