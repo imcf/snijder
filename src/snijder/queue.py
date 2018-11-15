@@ -369,7 +369,7 @@ class JobQueue(object):
         """
         joblist = []
         # if the queue is empty, we return immediately with an empty list:
-        if len(self) == 0:
+        if len(self) == 0:                          # pylint: disable=C1801
             logd('Empty queue!')
             return joblist
         # put queues into a list of lists, respecting the current queue order:
