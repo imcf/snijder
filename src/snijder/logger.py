@@ -22,11 +22,11 @@ LOGGER.setLevel(LOGLEVEL)
 gc3libs.log = LOGGER
 gc3libs.log.level = LOGLEVEL
 
-logw = LOGGER.warn
-logi = LOGGER.info
-logd = LOGGER.debug
-loge = LOGGER.error
-logc = LOGGER.critical
+logw = LOGGER.warn                                  # pylint: disable=C0103
+logi = LOGGER.info                                  # pylint: disable=C0103
+logd = LOGGER.debug                                 # pylint: disable=C0103
+loge = LOGGER.error                                 # pylint: disable=C0103
+logc = LOGGER.critical                              # pylint: disable=C0103
 
 
 def set_loglevel(level):
