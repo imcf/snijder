@@ -302,6 +302,7 @@ class JobSpooler(object):
                     new_state = app.status_changed()
                     if new_state is not None:
                         self.queue.set_jobstatus(app.job, new_state)
+                    # pylint: disable=E1101
                     if new_state == gc3libs.Run.State.TERMINATED:
                         app.job.move_jobfile('done')
                         self.apps.pop(i)

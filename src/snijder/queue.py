@@ -228,7 +228,7 @@ class JobQueue(object):
         """Update the status of a job and trigger related actions."""
         logd("Changing status of job %s to %s", job['uid'], status)
         job['status'] = status
-        if status == gc3libs.Run.State.TERMINATED:
+        if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
             self.remove(job['uid'])
         logd(self.queue_details_json())
 
