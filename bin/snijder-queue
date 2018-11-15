@@ -10,7 +10,7 @@ import sys
 import os
 import argparse
 
-# pylint: disable=wrong-import-position
+
 import snijder
 import snijder.queue
 from snijder.jobs import process_jobfile
@@ -22,15 +22,28 @@ from snijder.inotify import JobFileHandler
 def parse_arguments():
     """Parse command line arguments."""
     argparser = argparse.ArgumentParser(description=__doc__)
-    add_arg = argparser.add_argument  # just for readability of the next lines
-    add_arg('-s', '--spooldir', required=True,
-            help='spooling directory for jobfiles (e.g. "run/spool/")')
-    add_arg('-c', '--config', required=False, default=None,
-            help='GC3Pie config file (default: ~/.gc3/gc3pie.conf)')
-    add_arg('-r', '--resource', required=False,
-            help='GC3Pie resource name')
-    add_arg('-v', '--verbosity', dest='verbosity',
-            action='count', default=0)
+    argparser.add_argument(
+        '-s',
+        '--spooldir',
+        required=True,
+        help='spooling directory for jobfiles (e.g. "run/spool/")')
+    argparser.add_argument(
+        '-c',
+        '--config',
+        required=False,
+        default=None,
+        help='GC3Pie config file (default: ~/.gc3/gc3pie.conf)')
+    argparser.add_argument(
+        '-r',
+        '--resource',
+        required=False,
+        help='GC3Pie resource name')
+    argparser.add_argument(
+        '-v',
+        '--verbosity',
+        dest='verbosity',
+        action='count',
+        default=0)
     try:
         return argparser.parse_args()
     except IOError as err:
@@ -67,7 +80,7 @@ def main():
     # process jobfiles already existing during our startup:
     for jobfile in job_spooler.dirs['newfiles']:
         fname = os.path.join(job_spooler.dirs['new'], jobfile)
-        process_jobfile(fname, jobqueues, job_spooler.dirs)
+        process_jobfile(fname, jobqueues)
 
 
     file_handler = JobFileHandler(jobqueues, job_spooler.dirs)

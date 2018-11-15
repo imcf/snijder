@@ -21,13 +21,12 @@ import os
 import pprint
 import time
 
+import gc3libs
+import gc3libs.config
+
 from . import logi, logd, logw, logc, loge, JOBFILE_VER
 from .apps import hucore, dummy
 from .jobs import JobDescription
-
-
-import gc3libs
-import gc3libs.config
 
 
 class JobSpooler(object):
@@ -85,9 +84,11 @@ class JobSpooler(object):
             self.queue.queue_details_hr()
             logd(self.queue.queue_details_json())
             return
+
         if newstatus == self.status:
             # no change required, so return immediately:
             return
+
         self._status_pre = self.status
         self._status = newstatus
         logw("Received spooler status change request: %s -> %s",
@@ -218,6 +219,7 @@ class JobSpooler(object):
             if files:
                 logw("Resource dir unclean: %s", files)
                 return False
+
         return True
 
     def setup_engine(self):
@@ -282,14 +284,14 @@ class JobSpooler(object):
     def _spool(self):
         """Spooler function dispatching jobs from the queues. BLOCKING!"""
         print '*' * 80
-        print 'snijder-queue spooler running. (Ctrl-C to abort).'
+        print 'snijder-queue spooler running, press ctrl-c to shut it down'
         print '*' * 80
         logi('Expected jobfile version: %s.', JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
-        apptypes = dict(
-            hucore = hucore.HuDeconApp,
-            dummy = dummy.DummySleepApp
-        )
+        apptypes = {
+            'hucore': hucore.HuDeconApp,
+            'dummy': dummy.DummySleepApp,
+        }
         while True:
             self.check_status_request()
             if self.status == 'run':
@@ -303,6 +305,7 @@ class JobSpooler(object):
                     new_state = app.status_changed()
                     if new_state is not None:
                         self.queue.set_jobstatus(app.job, new_state)
+                    # pylint: disable=E1101
                     if new_state == gc3libs.Run.State.TERMINATED:
                         app.job.move_jobfile('done')
                         self.apps.pop(i)
@@ -330,6 +333,7 @@ class JobSpooler(object):
                     self.queue.queue_details_hr()
             elif self.status == 'shutdown':
                 return True
+
             elif self.status == 'refresh':
                 # the actual refresh action is handled by the status.setter
                 # method, so we simply pass on:
@@ -398,4 +402,3 @@ class JobSpooler(object):
 #
 #     def __init__(self, spool_dirs, queue, gc3conf):
 #         super(DirectorySpooler, self).__init__(job, gc3_output)
-

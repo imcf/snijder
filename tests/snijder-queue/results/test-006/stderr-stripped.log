@@ -1,0 +1,140 @@
+snijder [INFO] Runtime directories:
+{'cur': '/opt/spool/snijder/spool/cur',
+ 'done': '/opt/spool/snijder/spool/done',
+ 'new': '/opt/spool/snijder/spool/new',
+ 'newfiles': [],
+ 'requests': '/opt/spool/snijder/queue/requests',
+ 'status': '/opt/spool/snijder/queue/status'}
+snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
+snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
+snijder [INFO] Computational resource 'localhost' initialized successfully.
+snijder [INFO] Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
+snijder [INFO] Created JobSpooler.
+snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
+snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
+snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] Received spooler queue status refresh request.
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: '/opt/spool/snijder/queue/status/hucore.json'
+cats: deque([])
+jobs: {}
+processing: []
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [WARNING] Received spooler status change request: run -> pause
+snijder [INFO] New file event 'preview_job_1.cfg'
+snijder [INFO] Parsing jobfile 'preview_job_1.cfg'...
+snijder [ERROR] Failed reading jobfile, trying again in 1e-05s.
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [INFO] Selected queue for jobtype (hucore) and tasktype (preview): hucore
+snijder [INFO] Moving file 'preview_job_1.cfg' to '/opt/spool/snijder/spool/cur/UID_STRIPPED.jobfile'.
+snijder [INFO] Enqueueing job 'UID_STRIPPED' into category 'user01'.
+snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [INFO] Job (type 'hucore') added. New queue: {'user01': deque(['UID_STRIPPED'])}
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): UID_STRIPPED - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: '/opt/spool/snijder/queue/status/hucore.json'
+cats: deque(['user01'])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'preview',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: []
+queue: {'user01': deque(['UID_STRIPPED'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [WARNING] Received spooler status change request: pause -> run
+snijder [INFO] Retrieving next job: category 'user01', uid 'UID_STRIPPED'.
+snijder [WARNING] Adding job (type 'HuDeconApp') to the gc3pie engine.
+snijder [WARNING] Instantiating a HuDeconApp: [[user: user01]] [[uid: UID_STRIPPED]]
+snijder [WARNING] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb']]]
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): UID_STRIPPED - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: '/opt/spool/snijder/queue/status/hucore.json'
+cats: deque([])
+jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
+                                              'exec': '/usr/local/bin/hucore',
+                                              'infiles': ['resources/sample_data/hucore/faba128.h5',
+                                                          'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb'],
+                                              'pid': 'N/A',
+                                              'progress': 'N/A',
+                                              'server': 'N/A',
+                                              'start': 'N/A',
+                                              'status': 'queued',
+                                              'tasktype': 'preview',
+                                              'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
+                                              'timestamp': TIMESTAMP_STRIPPED,
+                                              'type': 'hucore',
+                                              'uid': 'UID_STRIPPED',
+                                              'user': 'user01',
+                                              'ver': '7'}}
+processing: ['UID_STRIPPED']
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [INFO] Successfully submitted HuDeconApp@APPID_STRIPPED to: localhost
+snijder [INFO] HuDeconApp status: 'NEW' -> 'SUBMITTED'
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'SUBMITTED'
+snijder [INFO] HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'RUNNING'
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'RUNNING'
+snijder [INFO] HuDeconApp status: 'RUNNING' -> 'TERMINATING'
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'TERMINATING'
+snijder [INFO] Job finished. Execution stats:
+	[[ CPUTIME_STRIPPED ]]
+	[[ WALLTIME_STRIPPED ]]
+	[[ MAXMEM_STRIPPED ]]
+snijder [INFO] Job 'UID_STRIPPED' terminated successfully!
+snijder [INFO] The output of the application is in `/opt/spool/snijder/gc3/spool/results_UID_STRIPPED`.
+snijder [INFO] HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'TERMINATED'
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'TERMINATED'
+snijder [INFO] Status of job to be removed: TERMINATED
+snijder [INFO] Moving file 'UID_STRIPPED.jobfile' to '/opt/spool/snijder/spool/done/UID_STRIPPED.jobfile'.
+snijder [WARNING] Received spooler status change request: run -> shutdown
+snijder [WARNING] Queue Manager shutdown initiated.
+snijder [INFO] QM shutdown: cleaning up spooler.
+snijder [INFO] QM shutdown: spooler cleanup completed.
+snijder [WARNING] QM shutdown: checking resource directories.
+snijder [INFO] Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
+snijder [WARNING] QM shutdown: resource directories check completed.

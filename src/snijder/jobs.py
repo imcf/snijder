@@ -49,7 +49,7 @@ def select_queue_for_job(job):
     return queuetype
 
 
-def process_jobfile(fname, queues, dirs):
+def process_jobfile(fname, queues):
     """Parse a jobfile and add it to its destination queue.
 
     Parameters
@@ -59,8 +59,6 @@ def process_jobfile(fname, queues, dirs):
     queues : dict
         Containing the JobQueue objects for the different queues, using the
         corresponding 'type' keyword as identifier.
-    dirs : dict
-        Spooling directories in a dict, as returned by snijder.setup_rundirs().
     """
     try:
         job = JobDescription(fname, 'file')
@@ -156,7 +154,7 @@ class AbstractJobConfigParser(dict):
         config_raw = []
         for snooze in [0, 0.00001, 0.0001, 0.001, 0.01, 0.1]:
             if snooze > 0:
-                loge("Failed reading jobfile, trying again in %ss.", snooze)
+                logd("Failed reading jobfile, trying again in %ss.", snooze)
             time.sleep(snooze)
             try:
                 with open(jobfile, 'r') as fileobject:
@@ -167,10 +165,10 @@ class AbstractJobConfigParser(dict):
                 # which is probably some race condition - just try again...
                 loge("'with open' statement resulted in error: %s", err)
                 continue
-            if len(config_raw) > 0:
+            if config_raw:
                 logd("Reading the job file succeeded after %ss!", snooze)
                 break
-        if len(config_raw) == 0:
+        if not config_raw:
             raise IOError("Unable to read job config file '%s'!" % jobfile)
         return config_raw
 
@@ -417,7 +415,8 @@ class JobDescription(dict):
             logw("Ignoring job config, parsing failed: %s", err)
             if srctype == 'file':
                 logw("Invalid job config file: %s", job)
-                # move the unreadable file out of the way before returning:
+                # set the 'uid' key as otherwise moving the file would fail:
+                self['uid'] = os.path.basename(job)
                 self.move_jobfile('done', ".invalid")
             raise err
         self.update(parsed_job)
@@ -461,10 +460,14 @@ class JobDescription(dict):
         if JobDescription.spooldirs is None:
             logw("Not moving jobfile as 'spooldirs' class variable is unset!")
             return
-        target = os.path.join(JobDescription.spooldirs[target],
-                              self['uid'] + suffix)
+
+        target = os.path.join(
+            JobDescription.spooldirs[target],       # pylint: disable=E1136
+            self['uid'] + suffix)
+
         if os.path.exists(target):
             target += ".%s" % time.time()
+            logd("Adding suffix to prevent overwriting file: %s", target)
         logi("Moving file '%s' to '%s'.", os.path.basename(self.fname), target)
         logd("Full path of original file: '%s'.", self.fname)
         shutil.move(self.fname, target)

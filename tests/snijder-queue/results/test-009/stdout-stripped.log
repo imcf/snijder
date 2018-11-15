@@ -1,0 +1,34 @@
+Found Python package 'gc3libs'.
+Found Python package 'snijder'.
+**** Starting Queue Manager...
+python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
+********************************************************************************
+snijder-queue spooler running. (Ctrl-C to abort).
+********************************************************************************
+Requesting QM status change to: refresh
+QM process started.
+'tests/snijder-queue/inputs/test-009/decon_job_1.cfg' -> '/opt/spool/snijder/spool/new/decon_job_1.cfg'
+Waiting .5 seconds...
+Requesting QM status change to: refresh
+Waiting 2 seconds...
+
+######################################################################
+
+'tests/snijder-queue/inputs/test-009/remove_job_1.cfg' -> '/opt/spool/snijder/spool/new/remove_job_1.cfg'
+Waiting 1 seconds...
+
+######################################################################
+
+Requesting QM status change to: refresh
+Waiting .6 seconds...
+
+######################################################################
+
+Waiting (5s max) for the queue to be finished / empty, then shutting down the QM.
+Queue is empty, trying to shut down the QM!
+Requesting QM status change to: shutdown
+QM is still running...
+Cleaning up. Remaining jobs:
+{}
+QM process terminated.
+************************* TEST FINISHED! *************************

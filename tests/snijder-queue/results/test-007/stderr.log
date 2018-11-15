@@ -1,0 +1,3085 @@
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.258609,
+ 'type': 'hucore',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.259897,
+ 'type': 'hucore',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.261055,
+ 'type': 'hucore',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.262184,
+ 'type': 'hucore',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.263307,
+ 'type': 'hucore',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.264886,
+ 'type': 'hucore',
+ 'uid': 'c805e763d7bd4089ad145348c35d2a30a6ddc8d6',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
+snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
+snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
+snijder [DEBUG] Reading the job file succeeded after 0s!
+snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [DEBUG] Finished initialization of JobDescription().
+snijder [DEBUG] {'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542203053.266041,
+ 'type': 'hucore',
+ 'uid': 'a76e7bdd99f7bc4e83418f5c527bd3695a78b3a1',
+ 'user': 'user01',
+ 'ver': '7'}
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u000_aaa'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u000'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u000_bbb'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u000'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u000_ccc'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u000'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_ddd'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_eee'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_fff'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [CRITICAL] Setting JobDescription key 'uid' to value 'u111_ggg'
+snijder [CRITICAL] Setting JobDescription key 'user' to value 'u111'
+snijder [WARNING] 
+******** adding jobs to queue: ********
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] Enqueueing job 'u000_aaa' into category 'u000'.
+snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000'])
+snijder [DEBUG] Changing status of job u000_aaa to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.258609, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] Enqueueing job 'u000_bbb' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_bbb to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.259897, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] Enqueueing job 'u000_ccc' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_ccc to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.261055, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ddd' into category 'u111'.
+snijder [INFO] Adding a new queue for 'u111' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Changing status of job u111_ddd to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.262184, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] Enqueueing job 'u111_eee' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_eee to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.263307, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] Enqueueing job 'u111_fff' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_fff to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.264886, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_fff': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.264886,
+              'type': 'hucore',
+              'uid': 'u111_fff',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ggg' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_ggg to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.266041, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.266041, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ggg", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_fff': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.264886,
+              'type': 'hucore',
+              'uid': 'u111_fff',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_ggg': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.266041,
+              'type': 'hucore',
+              'uid': 'u111_ggg',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [WARNING] 
+
+******** retrieving jobs from queue for processing: ********
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_aaa'.
+snijder [DEBUG] Current queue categories: deque(['u111', 'u000'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 7 (1 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_ddd'.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_bbb', 'u000_ccc']), 'u111': deque(['u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 7 (2 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_bbb'.
+snijder [DEBUG] Current queue categories: deque(['u111', 'u000'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_ccc']), 'u111': deque(['u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 3
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 7 (3 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_eee'.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Current contents of all queues: {'u000': deque(['u000_ccc']), 'u111': deque(['u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 4
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 7 (4 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_ccc'.
+snijder [DEBUG] Queue for category 'u000' now empty, removing it.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 5
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 7 (5 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_fff'.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 6
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 7 (6 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_ggg'.
+snijder [DEBUG] Queue for category 'u111' now empty, removing it.
+snijder [DEBUG] Current queue categories: deque([])
+snijder [DEBUG] Current contents of all queues: {}
+snijder [DEBUG] num_jobs_processing = 7
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 7 (7 processing)
+snijder [DEBUG] num_jobs_processing = 7
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 7 (7 processing)
+snijder [WARNING] 
+
+
+
+******** creating a new job queue object: ********
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque([])
+jobs: {}
+processing: []
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [WARNING] 
+
+******** adding jobs to queue: ********
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] Enqueueing job 'u000_aaa' into category 'u000'.
+snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000'])
+snijder [DEBUG] Changing status of job u000_aaa to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.258609, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] Enqueueing job 'u000_bbb' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_bbb to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.259897, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 2 (0 processing)
+snijder [INFO] Enqueueing job 'u000_ccc' into category 'u000'.
+snijder [DEBUG] Changing status of job u000_ccc to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.261055, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 3 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ddd' into category 'u111'.
+snijder [INFO] Adding a new queue for 'u111' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
+snijder [DEBUG] Changing status of job u111_ddd to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.262184, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 4 (0 processing)
+snijder [INFO] Enqueueing job 'u111_eee' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_eee to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.263307, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] Enqueueing job 'u111_fff' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_fff to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.264886, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_fff': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.264886,
+              'type': 'hucore',
+              'uid': 'u111_fff',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [INFO] Enqueueing job 'u111_ggg' into category 'u111'.
+snijder [DEBUG] Changing status of job u111_ggg to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.266041, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.266041, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ggg", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']), 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_fff': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.264886,
+              'type': 'hucore',
+              'uid': 'u111_fff',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_ggg': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.266041,
+              'type': 'hucore',
+              'uid': 'u111_ggg',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_eee - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000', 'u111'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_bbb': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.259897,
+              'type': 'hucore',
+              'uid': 'u000_bbb',
+              'user': 'u000',
+              'ver': '7'},
+ 'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_eee': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.263307,
+              'type': 'hucore',
+              'uid': 'u111_eee',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_fff': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.264886,
+              'type': 'hucore',
+              'uid': 'u111_fff',
+              'user': 'u111',
+              'ver': '7'},
+ 'u111_ggg': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.266041,
+              'type': 'hucore',
+              'uid': 'u111_ggg',
+              'user': 'u111',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa', 'u000_bbb', 'u000_ccc']),
+ 'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [WARNING] 
+
+******** removing jobs from queue: ********
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 7
+snijder [DEBUG] len(JobQueue) = 7 (0 processing)
+snijder [DEBUG] Trying to remove job with uid 'u000_aaa'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u000_aaa' from queue 'u000'.
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.259897, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_bbb", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.266041, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ggg", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 6
+snijder [DEBUG] len(JobQueue) = 6 (0 processing)
+snijder [DEBUG] Trying to remove job with uid 'u000_bbb'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u000_bbb' from queue 'u000'.
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.266041, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ggg", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 5
+snijder [DEBUG] len(JobQueue) = 5 (0 processing)
+snijder [INFO] Retrieving next job: category 'u000', uid 'u000_ccc'.
+snijder [DEBUG] Queue for category 'u000' now empty, removing it.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_ddd', 'u111_eee', 'u111_fff', 'u111_ggg'])}
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 4
+snijder [DEBUG] len(JobQueue) = 5 (1 processing)
+snijder [DEBUG] Trying to remove job with uid 'u111_ggg'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u111_ggg' from queue 'u111'.
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 4 (1 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.263307, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_eee", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [DEBUG] num_jobs_processing = 1
+snijder [DEBUG] num_jobs_queued = 3
+snijder [DEBUG] len(JobQueue) = 4 (1 processing)
+snijder [INFO] Retrieving next job: category 'u111', uid 'u111_ddd'.
+snijder [DEBUG] Current queue categories: deque(['u111'])
+snijder [DEBUG] Current contents of all queues: {'u111': deque(['u111_eee', 'u111_fff'])}
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 2
+snijder [DEBUG] len(JobQueue) = 4 (2 processing)
+snijder [DEBUG] Trying to remove job with uid 'u111_eee'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u111_eee' from queue 'u111'.
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 3 (2 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.264886, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_fff", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 3 (2 processing)
+snijder [DEBUG] Trying to remove job with uid 'u111_fff'.
+snijder [INFO] Status of job to be removed: queued
+snijder [DEBUG] Removing job 'u111_fff' from queue 'u111'.
+snijder [DEBUG] Queue for category 'u111' now empty, removing it.
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.261055, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_ccc", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }, 
+        {
+            "username": "u111", 
+            "status": "queued", 
+            "queued": 1542203053.262184, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u111_ddd", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [DEBUG] num_jobs_processing = 2
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 2 (2 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [queued]
+u111 (user01@mail.xy): u111_ddd - ['resources/sample_data/hucore/faba128.h5'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque([])
+jobs: {'u000_ccc': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.261055,
+              'type': 'hucore',
+              'uid': 'u000_ccc',
+              'user': 'u000',
+              'ver': '7'},
+ 'u111_ddd': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.262184,
+              'type': 'hucore',
+              'uid': 'u111_ddd',
+              'user': 'u111',
+              'ver': '7'}}
+processing: ['u000_ccc', 'u111_ddd']
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] Trying to remove job with uid 'aaa'.
+snijder [ERROR] No job with uid 'aaa' was found!
+snijder [WARNING] 
+
+
+
+******** creating a new job queue object: ********
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque([])
+jobs: {}
+processing: []
+queue: {}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 0
+snijder [DEBUG] len(JobQueue) = 0 (0 processing)
+snijder [DEBUG] Empty queue!
+snijder [INFO] Enqueueing job 'u000_aaa' into category 'u000'.
+snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
+snijder [DEBUG] Current queue categories: deque(['u000'])
+snijder [DEBUG] Changing status of job u000_aaa to queued
+snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1542203053.258609, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [DEBUG] {
+    "jobs": [
+        {
+            "username": "u000", 
+            "status": "queued", 
+            "queued": 1542203053.258609, 
+            "file": [
+                "resources/sample_data/hucore/faba128.h5"
+            ], 
+            "start": "N/A", 
+            "progress": "N/A", 
+            "pid": "N/A", 
+            "id": "u000_aaa", 
+            "jobType": "hucore", 
+            "server": "N/A"
+        }
+    ]
+}
+snijder [INFO] Job (type 'hucore') added. New queue: {'u000': deque(['u000_aaa'])}
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [queued]
+========================= queue status =========================
+snijder [WARNING] QUEUE STATUS
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+statusfile: None
+cats: deque(['u000'])
+jobs: {'u000_aaa': {'email': 'user01@mail.xy',
+              'exec': '/usr/local/bin/hucore',
+              'infiles': ['resources/sample_data/hucore/faba128.h5'],
+              'pid': 'N/A',
+              'progress': 'N/A',
+              'server': 'N/A',
+              'start': 'N/A',
+              'status': 'queued',
+              'tasktype': 'decon',
+              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+              'timestamp': 1542203053.258609,
+              'type': 'hucore',
+              'uid': 'u000_aaa',
+              'user': 'u000',
+              'ver': '7'}}
+processing: []
+queue: {'u000': deque(['u000_aaa'])}
+deletion_list: []
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+snijder [DEBUG] num_jobs_processing = 0
+snijder [DEBUG] num_jobs_queued = 1
+snijder [DEBUG] len(JobQueue) = 1 (0 processing)

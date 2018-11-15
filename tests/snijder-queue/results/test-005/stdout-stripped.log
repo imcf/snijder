@@ -1,0 +1,204 @@
+scripts/python/test-005__jobfile-parser.py
+
+>>>>>> Testing CORRECT job description files:
+
+----------------- parsing jobfiles/decon_it-3_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user01_abspath.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01_abspath.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['/data/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': '/data/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user01_fixed-timestamp.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01_fixed-timestamp.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user02.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user02.cfg'.
+{'email': 'user02@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user02',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-999_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-999_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/dummy_sleep_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/dummy_sleep_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/bin/sleep',
+ 'infiles': [],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'sleep',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'dummy',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/preview_user01.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/preview_user01.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['resources/sample_data/hucore/faba128.h5'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'preview',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'hucore',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/remove_job_8598870.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_8598870.cfg'.
+{'email': 'user01@mail.xy',
+ 'ids': ['UID_STRIPPED'],
+ 'infiles': [],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'deletejobs',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/remove_job_bfbe38a.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/remove_job_bfbe38a.cfg'.
+{'email': 'user01@mail.xy',
+ 'ids': ['UID_STRIPPED'],
+ 'infiles': [],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'timestamp': TIMESTAMP_STRIPPED,
+ 'type': 'deletejobs',
+ 'uid': 'UID_STRIPPED',
+ 'user': 'user01',
+ 'ver': '7'}
+
+>>>>>> Testing INVALID job description files:
+----------------- parsing jobfiles/invalid/v1_broken_section-title.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v1_broken_section-title.cfg':
+   Section 'snijderjob' missing in job config!
+
+----------------- parsing jobfiles/invalid/v2_broken_section-content_inputfiles.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v2_broken_section-content_inputfiles.cfg':
+   Option 'useremail' missing from section 'snijderjob'!
+
+----------------- parsing jobfiles/invalid/v7_broken_section_hrmjobfile.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hrmjobfile.cfg':
+   Option 'useremail' missing from section 'snijderjob'!
+
+----------------- parsing jobfiles/invalid/v7_broken_section_hucore.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hucore.cfg':
+   Option 'tasktype' missing from section 'hucore'!
+
+----------------- parsing jobfiles/invalid/v7_broken_section_hucore_unknown-option.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_hucore_unknown-option.cfg':
+   Job config invalid, section 'snijderjob' contains unknown options: [('invalid_option', 'some-value')]
+
+----------------- parsing jobfiles/invalid/v7_broken_section_inputfiles.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_section_inputfiles.cfg':
+   No input files defined in job config!
+
+----------------- parsing jobfiles/invalid/v7_broken_timestamp.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_broken_timestamp.cfg':
+   Invalid timestamp: on_parse.
+
+----------------- parsing jobfiles/invalid/v7_removejob_nojobids.cfg -----------------
+ - Got the excpected ValueError from 'jobfiles/invalid/v7_removejob_nojobids.cfg':
+   Can't find job IDs in job config!
+
+************************* TEST FINISHED! *************************

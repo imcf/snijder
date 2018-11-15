@@ -11,12 +11,12 @@ JobQueue()
 
 import itertools
 import json
+import pprint
 from collections import deque
 
-from . import logi, logd, logw, logc, loge
-
 import gc3libs
-import pprint
+
+from . import logi, logd, logw, logc, loge
 
 
 class JobQueue(object):
@@ -127,13 +127,13 @@ class JobQueue(object):
         status : bool
             True if the queue was empty and removed, False otherwise.
         """
-        if len(self.queue[cat]) == 0:
-            logd("Queue for category '%s' now empty, removing it.", cat)
-            self.cats.remove(cat)  # remove it from the categories list
-            del self.queue[cat]    # delete the category from the queue dict
-            return True
-        else:
+        if self.queue[cat]:
             return False
+
+        logd("Queue for category '%s' now empty, removing it.", cat)
+        self.cats.remove(cat)  # remove it from the categories list
+        del self.queue[cat]    # delete the category from the queue dict
+        return True
 
     def next_job(self):
         """Return the next job description for processing.
@@ -150,7 +150,7 @@ class JobQueue(object):
         -------
         job : JobDescription
         """
-        if len(self.cats) == 0:
+        if not self.cats:
             return None
         cat = self.cats[0]
         jobid = self.queue[cat].popleft()
@@ -186,8 +186,9 @@ class JobQueue(object):
         """
         logd("Trying to remove job with uid '%s'.", uid)
         if uid not in self.jobs:
-            loge("No job with uid '%s' was found!", uid)
+            logi("No job with uid '%s' was found, discarding the request.", uid)
             return None
+
         job = self.jobs[uid]   # remember the job for returning it later
         cat = job.get_category()
         logi("Status of job to be removed: %s", job['status'])
@@ -202,6 +203,7 @@ class JobQueue(object):
         else:
             logw("Can't find job '%s' in any of our queues!", uid)
             return None
+
         # logd("Current jobs: %s", self.jobs)
         # logd("Current queue categories: %s", self.cats)
         # logd("Current contents of all queues: %s", self.queue)
@@ -213,14 +215,12 @@ class JobQueue(object):
         """Remove jobs from this queue that are on the deletion list."""
         for uid in self.deletion_list:
             logi("Job %s was requested for deletion", uid)
+            self.deletion_list.remove(uid)
             removed = self.remove(uid, update_status=False)
             if removed is None:
-                # this is to be expected, so we only print a log message if we
-                # are in debug mode...
                 logd("No job removed, invalid uid or other queue's job.")
             else:
                 logi("Job successfully removed from the queue.")
-                self.deletion_list.remove(uid)
         # updating the queue status file is only done now:
         logd(self.queue_details_json())
 
@@ -228,7 +228,7 @@ class JobQueue(object):
         """Update the status of a job and trigger related actions."""
         logd("Changing status of job %s to %s", job['uid'], status)
         job['status'] = status
-        if status == gc3libs.Run.State.TERMINATED:
+        if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
             self.remove(job['uid'])
         logd(self.queue_details_json())
 
@@ -369,7 +369,7 @@ class JobQueue(object):
         """
         joblist = []
         # if the queue is empty, we return immediately with an empty list:
-        if len(self) == 0:
+        if len(self) == 0:                          # pylint: disable=C1801
             logd('Empty queue!')
             return joblist
         # put queues into a list of lists, respecting the current queue order:

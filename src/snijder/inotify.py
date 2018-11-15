@@ -14,12 +14,21 @@ class JobFileHandler(object):
     """Wrapper class to set up inotify for incoming jobfiles."""
 
     def __init__(self, queues, dirs):
-        """Initialize watch-manager and notifier."""
+        """Initialize watch-manager and notifier.
+
+        Parameters
+        ----------
+        queues : dict(snijder.queue.JobQueue)
+            Dict with JobQueue objects.
+        dirs : dict
+            Spooling dirs, as returned by JobSpooler.setup_rundirs().
+        """
         self.watch_mgr = pyinotify.WatchManager()
         # mask which events to watch: pyinotify.IN_CREATE
-        self.wdd = self.watch_mgr.add_watch(dirs['new'],
-                                            pyinotify.IN_CREATE,
-                                            rec=False)
+        self.wdd = self.watch_mgr.add_watch(
+            dirs['new'],
+            pyinotify.IN_CREATE,  # pylint: disable=E1101
+            rec=False)
         self.notifier = pyinotify.ThreadedNotifier(self.watch_mgr,
                                                    EventHandler(queues=queues,
                                                                 dirs=dirs))
@@ -51,14 +60,14 @@ class EventHandler(pyinotify.ProcessEvent):
             Containing the JobQueue objects for the different queues, using the
             corresponding 'type' keyword as identifier.
         dirs : dict
-            Spooling directories in a dict, as returned by snijder.setup_rundirs().
+            Spooling dirs, as returned by JobSpooler.setup_rundirs().
         """
         self.queues = queues
         self.dirs = dirs
         logi('Initialized the event handler for inotify, watching job '
              'submission directory "%s".', self.dirs['new'])
 
-    def process_IN_CREATE(self, event):
+    def process_IN_CREATE(self, event):             # pylint: disable=C0103
         """Method handling 'create' events.
 
         Parameters
@@ -67,4 +76,4 @@ class EventHandler(pyinotify.ProcessEvent):
         """
         logi("New file event '%s'", os.path.basename(event.pathname))
         logd("inotify 'IN_CREATE' event full file path '%s'", event.pathname)
-        process_jobfile(event.pathname, self.queues, self.dirs)
+        process_jobfile(event.pathname, self.queues)
