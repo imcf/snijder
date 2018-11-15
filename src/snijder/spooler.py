@@ -199,7 +199,7 @@ class JobSpooler(object):
         return cfg
 
     @staticmethod
-    def resource_dirs_clean(engine):
+    def unclean_resource_dirs(engine):
         """Check if the resource dirs of all resources are clean.
 
         Parameters
@@ -208,8 +208,10 @@ class JobSpooler(object):
 
         Returns
         -------
-        bool
+        list(str)
+            A list with all unclean resource directories. Empty if all clean.
         """
+        unclean = list()
         for resource in engine.get_resources():
             resourcedir = os.path.expandvars(resource.resource_dir)
             logi("Checking resource dir for resource '%s': %s",
@@ -218,10 +220,10 @@ class JobSpooler(object):
                 continue
             files = os.listdir(resourcedir)
             if files:
-                logw("Resource dir unclean: %s", files)
-                return False
+                logw("Resource dir [%s] unclean: %s", resourcedir, files)
+                unclean.append(resourcedir)
 
-        return True
+        return unclean
 
     def setup_engine(self):
         """Wrapper to set up the GC3Pie engine.
@@ -233,8 +235,12 @@ class JobSpooler(object):
         logi('Creating GC3Pie engine using config file "%s".',
              self.gc3cfg['conffile'])
         engine = gc3libs.create_engine(self.gc3cfg['conffile'])
-        if not self.resource_dirs_clean(engine):
-            raise RuntimeError("GC3 resource dir unclean, refusing to start!")
+        unclean = self.unclean_resource_dirs(engine)
+        if unclean:
+            raise RuntimeError(
+                "the gc3pie resource directory is unclean! \nMake sure no "
+                "other process using the same resource is running then remove "
+                "all files from %s and try again!" % unclean)
         return engine
 
     def engine_status(self):
@@ -364,7 +370,7 @@ class JobSpooler(object):
                 logi("Successfully terminated remaining jobs, none left.")
         logi("QM shutdown: spooler cleanup completed.")
         logw("QM shutdown: checking resource directories.")
-        self.resource_dirs_clean(self.engine)
+        self.unclean_resource_dirs(self.engine)
         logw("QM shutdown: resource directories check completed.")
 
     def kill_running_job(self, app):
