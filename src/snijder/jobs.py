@@ -154,7 +154,7 @@ class AbstractJobConfigParser(dict):
         config_raw = []
         for snooze in [0, 0.00001, 0.0001, 0.001, 0.01, 0.1]:
             if snooze > 0:
-                loge("Failed reading jobfile, trying again in %ss.", snooze)
+                logd("Failed reading jobfile, trying again in %ss.", snooze)
             time.sleep(snooze)
             try:
                 with open(jobfile, 'r') as fileobject:
