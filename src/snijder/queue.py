@@ -213,14 +213,12 @@ class JobQueue(object):
         """Remove jobs from this queue that are on the deletion list."""
         for uid in self.deletion_list:
             logi("Job %s was requested for deletion", uid)
+            self.deletion_list.remove(uid)
             removed = self.remove(uid, update_status=False)
             if removed is None:
-                # this is to be expected, so we only print a log message if we
-                # are in debug mode...
                 logd("No job removed, invalid uid or other queue's job.")
             else:
                 logi("Job successfully removed from the queue.")
-                self.deletion_list.remove(uid)
         # updating the queue status file is only done now:
         logd(self.queue_details_json())
 

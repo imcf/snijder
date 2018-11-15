@@ -38,12 +38,6 @@ snijder [WARNING] Received job deletion request(s)!
 snijder [INFO] Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/UID_STRIPPED.jobfile.TIMESTAMP_STRIPPED'.
 snijder [INFO] Job UID_STRIPPED was requested for deletion
 snijder [ERROR] No job with uid 'UID_STRIPPED' was found!
-snijder [INFO] Job UID_STRIPPED was requested for deletion
-snijder [ERROR] No job with uid 'UID_STRIPPED' was found!
-snijder [INFO] Job UID_STRIPPED was requested for deletion
-snijder [ERROR] No job with uid 'UID_STRIPPED' was found!
-snijder [INFO] Job UID_STRIPPED was requested for deletion
-snijder [ERROR] No job with uid 'UID_STRIPPED' was found!
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.

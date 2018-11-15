@@ -35,13 +35,7 @@ snijder [INFO] New file event 'remove_job_1.cfg'
 snijder [INFO] Parsing jobfile 'remove_job_1.cfg'...
 snijder [INFO] Request to --- DELETE --- job 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'
 snijder [WARNING] Received job deletion request(s)!
-snijder [INFO] Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/3731199ca83b636626bc132803583f057d542369.jobfile.1542281530.7'.
-snijder [INFO] Job bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 was requested for deletion
-snijder [ERROR] No job with uid 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721' was found!
-snijder [INFO] Job bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 was requested for deletion
-snijder [ERROR] No job with uid 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721' was found!
-snijder [INFO] Job bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 was requested for deletion
-snijder [ERROR] No job with uid 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721' was found!
+snijder [INFO] Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/3731199ca83b636626bc132803583f057d542369.jobfile.1542281723.77'.
 snijder [INFO] Job bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721 was requested for deletion
 snijder [ERROR] No job with uid 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721' was found!
 snijder [WARNING] Received spooler status change request: run -> shutdown
