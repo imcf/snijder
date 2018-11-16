@@ -47,6 +47,10 @@ class JobQueue(object):
         deletion_list : list
             UID's of jobs to be deleted from the queue (NOTE: this list may
             contain UID's from other queues as well!)
+        status_changed : bool
+            Flag indicating whether the queue status has changed since the
+            status file has been written the last time and the status has been
+            reported to the log files.
         """
         self._statusfile = None
         self.categories = deque('')
@@ -54,6 +58,7 @@ class JobQueue(object):
         self.processing = list()
         self.queue = dict()
         self.deletion_list = list()
+        self.status_changed = False
 
     def __len__(self):
         """Get the total number of jobs in all queues (incl. processing)."""
@@ -118,6 +123,7 @@ class JobQueue(object):
         self.queue[category].append(uid)
         self.set_jobstatus(job, 'queued')
         self.queue_details_hr()
+        self.status_changed = True
 
     def _is_queue_empty(self, category):
         """Clean up if a queue of a given category is empty.
@@ -162,6 +168,7 @@ class JobQueue(object):
             self.categories.rotate(-1)
         logd("Current queue categories: %s", self.categories)
         logd("Current contents of all queues: %s", self.queue)
+        self.status_changed = True
         return self.jobs[jobid]
 
     def remove(self, uid, update_status=True):
@@ -193,6 +200,7 @@ class JobQueue(object):
         category = job.get_category()
         logi("Status of job to be removed: %s", job['status'])
         del self.jobs[uid]     # remove the job from the jobs dict
+        self.status_changed = True
         if category in self.queue and uid in self.queue[category]:
             logd("Removing job '%s' from queue '%s'.", uid, category)
             self.queue[category].remove(uid)
@@ -236,6 +244,7 @@ class JobQueue(object):
         """
         logd("Changing status of job %s to %s", job['uid'], status)
         job['status'] = status
+        self.status_changed = True
         if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
             self.remove(job['uid'])
         logd(self.queue_details_json())
