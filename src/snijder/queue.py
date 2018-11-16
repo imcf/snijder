@@ -94,6 +94,7 @@ class JobQueue(object):
 
     def append(self, job):
         """Add a new job to the queue.
+    
         Parameters
         ----------
         job : JobDescription
@@ -225,7 +226,15 @@ class JobQueue(object):
         logd(self.queue_details_json())
 
     def set_jobstatus(self, job, status):
-        """Update the status of a job and trigger related actions."""
+        """Update the status of a job and trigger related actions.
+
+        Parameters
+        ----------
+        job : JobDescription
+            The job to be updated
+        status : str
+            The new status.
+        """
         logd("Changing status of job %s to %s", job['uid'], status)
         job['status'] = status
         if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101

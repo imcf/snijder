@@ -281,12 +281,12 @@ class JobSpooler(object):
     @staticmethod
     def check_gc3_resources(engine):
         """Check if gc3 resource directories are clean.
-        
+
         Parameters
         ----------
         engine : gc3libs.core.Engine
             The gc3 engine from which the resource dirs should be checked.
-        
+
         Raises
         ------
         RuntimeError
@@ -447,7 +447,6 @@ class JobSpooler(object):
                 logi("Successfully terminated remaining jobs, none left.")
         self.check_gc3_resources(self.engine)
         logi("QM shutdown: spooler cleanup completed.")
-
 
     def kill_running_job(self, app):
         """Helper method to kill a running job."""
