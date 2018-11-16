@@ -427,8 +427,9 @@ class JobDescription(dict):
         logd(pprint.pformat(self))
 
     def __setitem__(self, key, value):
-        # temporarily increase loglevel to 'critical' for debugging purposes:
-        logc("Setting JobDescription key '%s' to value '%s'", key, value)
+        if self[key] == value:
+            return
+        logd("Setting JobDescription '%s' to '%s'", key, value)
         super(JobDescription, self).__setitem__(key, value)
         # on status changes, update / store the job
         if key == "status":
