@@ -315,7 +315,12 @@ class JobQueue(object):
         return queue_json
 
     def queue_details_hr(self):
-        """Generate a human readable list of the queue details."""
+        """Log a human readable representation of the queue details.
+
+        Depending on the requested log level, print a simplified version of the
+        current queue to the log. If debug logging is enabled, an extensive
+        representation with all the details is logged as well.
+        """
         # the information assembling and string formatting below is very
         # time-consuming, so we check the current log level first and return if
         # we wouldn't log anything anyway:
@@ -338,10 +343,12 @@ class JobQueue(object):
         joblist = self.queue_details()
         if not joblist:
             msg.append("None.")
-        for job in joblist:
+        for job in joblist[:5]:
             msg.append("%s (%s): %s - %s [%s]" %
-                       (job['user'], job['email'], job['uid'],
+                        (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
+        if len(joblist) > 5:
+            msg.append(" [ showing first 5 jobs (total: %s) ]" % len(joblist))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
 
         logi('queue_details_hr():\n%s', '\n'.join(msg))
