@@ -427,7 +427,7 @@ class JobDescription(dict):
         logd(pprint.pformat(self))
 
     def __setitem__(self, key, value):
-        if self[key] == value:
+        if self.has_key(key) and self[key] == value:
             return
         logd("Setting JobDescription '%s' to '%s'", key, value)
         super(JobDescription, self).__setitem__(key, value)
