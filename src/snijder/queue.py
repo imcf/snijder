@@ -68,20 +68,6 @@ class JobQueue(object):
         logd("len(JobQueue) = %s (%s processing)", jobstotal, jobsproc)
         return jobstotal
 
-    def num_jobs_queued(self):
-        """Get the number of queued jobs (waiting for retrieval)."""
-        numjobs = 0
-        for queue in self.queue.values():
-            numjobs += len(queue)
-        logd("num_jobs_queued = %s", numjobs)
-        return numjobs
-
-    def num_jobs_processing(self):
-        """Get the number of currently processing jobs."""
-        numjobs = len(self.processing)
-        logd("num_jobs_processing = %s", numjobs)
-        return numjobs
-
     @property
     def statusfile(self):
         """Get the 'statusfile' attribute."""
@@ -97,6 +83,20 @@ class JobQueue(object):
         """
         logi("Setting job queue status report file: %s", statusfile)
         self._statusfile = statusfile
+
+    def num_jobs_queued(self):
+        """Get the number of queued jobs (waiting for retrieval)."""
+        numjobs = 0
+        for queue in self.queue.values():
+            numjobs += len(queue)
+        logd("num_jobs_queued = %s", numjobs)
+        return numjobs
+
+    def num_jobs_processing(self):
+        """Get the number of currently processing jobs."""
+        numjobs = len(self.processing)
+        logd("num_jobs_processing = %s", numjobs)
+        return numjobs
 
     def append(self, job):
         """Add a new job to the queue.
@@ -375,7 +375,6 @@ class JobQueue(object):
              pprint.pformat(self.processing),
              pprint.pformat(self.queue),
              pprint.pformat(self.deletion_list))
-
 
     def queue_details(self):
         """Generate a list with the current queue details."""
