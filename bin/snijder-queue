@@ -1,15 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-#
 
-"""
-Job spooling engine using the SNIJDER package.
-"""
+"""Job spooling engine using the SNIJDER package."""
+
+# pylint: disable=C0103
 
 # stdlib imports
 import sys
 import os
 import argparse
-
 
 import snijder
 import snijder.queue
