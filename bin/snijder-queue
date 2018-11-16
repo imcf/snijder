@@ -106,10 +106,9 @@ def main():
         process_jobfile(fname, jobqueues)
 
 
-    file_handler = JobFileHandler(jobqueues, job_spooler.dirs)
-
     retval = True
     try:
+        file_handler = JobFileHandler(jobqueues, job_spooler.dirs)
         # NOTE: spool() is blocking, as it contains the main spooling loop!
         job_spooler.spool()
     except Exception as err:                        # pylint: disable=W0703
