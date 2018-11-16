@@ -96,8 +96,12 @@ class AbstractApp(gc3libs.Application):
         """Check the if the execution state of the app has changed.
 
         Track and update the internal execution status of the app and print a
-        log message if the status changes. Return the new state if the app it
-        has changed, otherwise None.
+        log message if the status changes.
+
+        Returns
+        -------
+        gc3libs.Application.Run.state
+            The new state of the app in case it has changed, None otherwise.
         """
         new = self.execution.state
         if new != self.laststate:
