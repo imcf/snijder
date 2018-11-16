@@ -96,6 +96,7 @@ class JobSpooler(object):
         logw("Received spooler status change request: %s -> %s",
              self._status_pre, self.status)
 
+
     @staticmethod
     def setup_rundirs(base_dir):
         """Check if all runtime dirs exist or try to create them otherwise.
