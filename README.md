@@ -93,12 +93,25 @@ To set up _Snijder_ you need to create a base directory where all the spooling /
 queueing will take place, then you're good to clone the repository:
 
 ```bash
+sudo apt install python-pyinotify
+
 SPOOL_BASE="/opt/spool"  # adapt as you like, e.g. "/scratch/spool" or similar
 mkdir -pv "$SPOOL_BASE/snijder"
 mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
 
 cd /opt/snijder
 git clone https://github.com/imcf/snijder.git
+
+
+if [ -z "$VIRTUAL_ENV" ] ; then
+    source /opt/snijder/venvs/gc3pie_2.5.0/bin/activate
+fi
+
+pip install --upgrade psutil
+
+# TEMPORARY SETUP using a symlink:
+cd $VIRTUAL_ENV/lib/python2.7
+ln -s /opt/snijder/snijder/src/snijder
 ```
 
 For testing you can simply use the configuration files provided with the repo,
@@ -111,26 +124,47 @@ ln -s resources/config
 
 ## Example
 
-The testing scripts also serve as a very nice example to see _Snijder_ in
-action. To launch them, simply call the corresponding wrapper script from within
-the base directory like so:
+The testing scripts mentioned below also serve as a very nice example to see
+_Snijder_ in action. To run the spooler / queue manager manually, use the
+following command (from within the Python virtualenv created above):
+
+```bash
+if [ -z "$VIRTUAL_ENV" ] ; then
+    source /opt/snijder/venvs/gc3pie_2.5.0/bin/activate
+fi
+cd /opt/snijder/snijder
+
+bin/snijder-queue --spooldir /opt/spool/snijder --config config/gc3pie/localhost.conf -v
+```
+
+From there on you're ready to submit jobs through the configured spooling
+directories, e.g. like so:
+
+```bash
+cp -v tests/snijder-queue/jobfiles/decon_it-3_user01.cfg /opt/spool/snijder/spool/new/
+```
+
+## Testing
+
+To run the tests provided in `tests/snijder-queue` you need some sample input
+files which are not part of this repository, as they are large binary files. See
+the next section on how to get them.
+
+### HuCore Test Images
+
+The test images for deconvolution are a set of images which can be downloaded
+from the [SVI website](https://svi.nl/DemoImages) (requires registration).
+Simply place them in `resources/sample_data/hucore/` to run the tests.
+
+### Running the tests
+
+Once the sample images are there, you can just launch the test runner. Make sure
+to have the Python virtualenv activated that was created above, then:
 
 ```bash
 cd /opt/snijder/snijder
 tests/snijder-queue/run_tests.sh
 ```
-
-## Testing
-
-The scripts in `tests/snijder-queue` require some sample input files which are
-not part of this repository, as they are large binary files. Here's how to get
-them:
-
-### HuCore Test Images - `resources/sample_data/hucore/`
-
-The test images for deconvolution are a set of images which can be downloaded
-from the [SVI website](https://svi.nl/DemoImages) (requires registration).
-Simply place them in `resources/sample_data/hucore/` to run the tests.
 
 ## Contributing
 

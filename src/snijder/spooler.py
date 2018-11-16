@@ -20,11 +20,13 @@ JobSpooler()
 import os
 import pprint
 import time
+import psutil
 
 import gc3libs
 import gc3libs.config
 
-from . import logi, logd, logw, logc, loge, JOBFILE_VER
+from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from . import JOBFILE_VER
 from .apps import hucore, dummy
 from .jobs import JobDescription
 
@@ -93,6 +95,7 @@ class JobSpooler(object):
         self._status = newstatus
         logw("Received spooler status change request: %s -> %s",
              self._status_pre, self.status)
+
 
     @staticmethod
     def setup_rundirs(base_dir):
@@ -198,29 +201,110 @@ class JobSpooler(object):
         return cfg
 
     @staticmethod
-    def resource_dirs_clean(engine):
+    def scan_gc3_resource_dirs(engine):
         """Check if the resource dirs of all resources are clean.
 
         Parameters
         ----------
         engine : gc3libs.core.Engine
+            The gc3 engine from which the resource dirs should be checked.
 
         Returns
         -------
-        bool
+        list(str)
+            All files in any resource directory, empty if all clean.
         """
+        unclean = list()
         for resource in engine.get_resources():
             resourcedir = os.path.expandvars(resource.resource_dir)
-            logi("Checking resource dir for resource '%s': %s",
+            logi("Checking resource dir for resource '%s': [%s]",
                  resource.name, resourcedir)
             if not os.path.exists(resourcedir):
                 continue
             files = os.listdir(resourcedir)
             if files:
-                logw("Resource dir unclean: %s", files)
-                return False
+                logw("Resource dir [%s] unclean: %s", resourcedir, files)
+                for resfile in files:
+                    unclean.append(os.path.join(resourcedir, resfile))
 
-        return True
+        return unclean
+
+    @staticmethod
+    def check_running_gc3_jobs(engine):
+        """Inspect and clean up PID files in gc3pie resource dirs.
+
+        Parameters
+        ----------
+        engine : gc3libs.core.Engine
+            The gc3 engine from which the resource dirs should be checked.
+
+        Returns
+        -------
+        dict
+            A dict with PIDs as keys, having resource file names as values.
+        """
+        gc3_files = JobSpooler.scan_gc3_resource_dirs(engine)
+        logi("Inspecting gc3pie resource files for running processes.")
+        gc3_jobs = dict()
+        for resfile in gc3_files:
+            if not os.path.exists(resfile):
+                logw("Resource file [%s] doesn't exist!", resfile)
+                continue
+
+            try:
+                pid = int(os.path.basename(resfile))
+                cmd = psutil.Process(pid).cmdline()
+                logd("Process matching resource pid '%s' found: %s", pid, cmd)
+                if 'gc3pie' in str(cmd):
+                    logw("Process with pid '%s' seems to be a running gc3pie "
+                         "job: %s", pid, cmd)
+                    gc3_jobs[pid] = resfile
+                    continue
+
+            except ValueError as err:
+                logw("Unable to parse a pid from file [%s]: %s", resfile, err)
+            except TypeError as err:
+                logw("Unable to look up status for pid '%s': %s", pid, err)
+            except psutil.NoSuchProcess:
+                logd("No running process matching pid '%s' found.", pid)
+            except Exception as err:
+                loge("Unexpected error while checking resource file [%s]: %s",
+                     resfile, err)
+                raise err
+
+            logi("File [%s] doesn't seem to be from an existing gc3 job, "
+                 "removing it.", resfile)
+            os.remove(resfile)
+
+        return gc3_jobs
+
+    @staticmethod
+    def check_gc3_resources(engine):
+        """Check if gc3 resource directories are clean.
+        
+        Parameters
+        ----------
+        engine : gc3libs.core.Engine
+            The gc3 engine from which the resource dirs should be checked.
+        
+        Raises
+        ------
+        RuntimeError
+            In case the resource dir can't be cleaned (e.g. because the job
+            files therein correspond to existing processes), a RuntimeError
+            is raised.
+        """
+        running_gc3jobs = JobSpooler.check_running_gc3_jobs(engine)
+        if running_gc3jobs:
+            logc("The gc3pie resource directories are unclean!")
+            msg = ("One or more gc3pie resource directories are containing gc3"
+                   "job files referring to running processes.\n\n"
+                   "Please check if these processes are terminated and clean "
+                   "up those files before starting the queue manager again!\n")
+            for job in running_gc3jobs.iteritems():
+                msg += "\n PID: %s - gc3pie job resource file: [%s]" % job
+            raise RuntimeError(msg)
+
 
     def setup_engine(self):
         """Wrapper to set up the GC3Pie engine.
@@ -232,8 +316,8 @@ class JobSpooler(object):
         logi('Creating GC3Pie engine using config file "%s".',
              self.gc3cfg['conffile'])
         engine = gc3libs.create_engine(self.gc3cfg['conffile'])
-        if not self.resource_dirs_clean(engine):
-            raise RuntimeError("GC3 resource dir unclean, refusing to start!")
+        self.check_gc3_resources(engine)
+
         return engine
 
     def engine_status(self):
@@ -361,10 +445,9 @@ class JobSpooler(object):
                 logc("Killing jobs failed, %s still running.", stats['RUNNING'])
             else:
                 logi("Successfully terminated remaining jobs, none left.")
+        self.check_gc3_resources(self.engine)
         logi("QM shutdown: spooler cleanup completed.")
-        logw("QM shutdown: checking resource directories.")
-        self.resource_dirs_clean(self.engine)
-        logw("QM shutdown: resource directories check completed.")
+
 
     def kill_running_job(self, app):
         """Helper method to kill a running job."""

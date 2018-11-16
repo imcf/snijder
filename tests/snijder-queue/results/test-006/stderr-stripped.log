@@ -25,7 +25,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque([])
+categories: deque([])
 jobs: {}
 processing: []
 queue: {}
@@ -34,7 +34,6 @@ deletion_list: []
 snijder [WARNING] Received spooler status change request: run -> pause
 snijder [INFO] New file event 'preview_job_1.cfg'
 snijder [INFO] Parsing jobfile 'preview_job_1.cfg'...
-snijder [ERROR] Failed reading jobfile, trying again in 1e-05s.
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -55,7 +54,7 @@ user01 (user01@mail.xy): UID_STRIPPED - ['resources/sample_data/hucore/faba128.h
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque(['user01'])
+categories: deque(['user01'])
 jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -91,7 +90,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-cats: deque([])
+categories: deque([])
 jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
                                               'exec': '/usr/local/bin/hucore',
                                               'infiles': ['resources/sample_data/hucore/faba128.h5',

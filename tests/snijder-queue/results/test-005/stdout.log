@@ -14,9 +14,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542203041.174867,
+ 'timestamp': 1542299108.737456,
  'type': 'hucore',
- 'uid': '8b3daba35f2a6fa39309757e85cf1a40f7f0851d',
+ 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-3_user01_abspath.cfg -----------------
@@ -34,6 +34,23 @@ scripts/python/test-005__jobfile-parser.py
  'timestamp': 1435835245.7417,
  'type': 'hucore',
  'uid': '639d71e60c6aeb591c559186dd4e146b1c66796c',
+ 'user': 'user01',
+ 'ver': '7'}
+----------------- parsing jobfiles/decon_it-3_user01_data-missing.cfg -----------------
+ - Parsing worked without errors on 'jobfiles/decon_it-3_user01_data-missing.cfg'.
+{'email': 'user01@mail.xy',
+ 'exec': '/usr/local/bin/hucore',
+ 'infiles': ['/its/not/here/for/sure.foo'],
+ 'pid': 'N/A',
+ 'progress': 'N/A',
+ 'server': 'N/A',
+ 'start': 'N/A',
+ 'status': 'N/A',
+ 'tasktype': 'decon',
+ 'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
+ 'timestamp': 1542299108.739953,
+ 'type': 'hucore',
+ 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-3_user01_fixed-timestamp.cfg -----------------
@@ -65,9 +82,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542203041.18014,
+ 'timestamp': 1542299108.743149,
  'type': 'hucore',
- 'uid': '380d9cdeb89cdfc4587e59654ef003081b17c6e3',
+ 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
  'user': 'user02',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-999_user01.cfg -----------------
@@ -82,9 +99,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
- 'timestamp': 1542203041.181547,
+ 'timestamp': 1542299108.744544,
  'type': 'hucore',
- 'uid': '380d9cdeb89cdfc4587e59654ef003081b17c6e3',
+ 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg -----------------
@@ -115,9 +132,9 @@ scripts/python/test-005__jobfile-parser.py
  'start': 'N/A',
  'status': 'N/A',
  'tasktype': 'sleep',
- 'timestamp': 1542203041.185074,
+ 'timestamp': 1542299108.746948,
  'type': 'dummy',
- 'uid': 'ba3445eea306bb62976e01f13ead5df20e7e991f',
+ 'uid': '873e1c30ef63ccf21ab83741559a2321117025b0',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/preview_user01.cfg -----------------
@@ -132,24 +149,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'preview',
  'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
- 'timestamp': 1542203041.186768,
+ 'timestamp': 1542299108.748091,
  'type': 'hucore',
- 'uid': 'ba3445eea306bb62976e01f13ead5df20e7e991f',
- 'user': 'user01',
- 'ver': '7'}
------------------ parsing jobfiles/remove_job_8598870.cfg -----------------
- - Parsing worked without errors on 'jobfiles/remove_job_8598870.cfg'.
-{'email': 'user01@mail.xy',
- 'ids': ['bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'],
- 'infiles': [],
- 'pid': 'N/A',
- 'progress': 'N/A',
- 'server': 'N/A',
- 'start': 'N/A',
- 'status': 'N/A',
- 'timestamp': 1435827755.2494,
- 'type': 'deletejobs',
- 'uid': '3731199ca83b636626bc132803583f057d542369',
+ 'uid': '873e1c30ef63ccf21ab83741559a2321117025b0',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/remove_job_bfbe38a.cfg -----------------

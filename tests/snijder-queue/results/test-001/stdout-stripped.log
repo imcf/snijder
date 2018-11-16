@@ -3,7 +3,7 @@ Found Python package 'snijder'.
 **** Starting Queue Manager...
 python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
-snijder-queue spooler running. (Ctrl-C to abort).
+snijder-queue spooler running, press ctrl-c to shut it down
 ********************************************************************************
 Requesting QM status change to: refresh
 QM process started.

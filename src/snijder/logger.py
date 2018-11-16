@@ -8,40 +8,64 @@ import gc3libs
 
 __all__ = ["logw", "logi", "logd", "loge", "logc"]
 
-# we set a default loglevel and add some shortcuts for logging:
 LOGLEVEL = logging.WARN
-LOGGER_NAME = "snijder"
 
-logger = logging.getLogger(LOGGER_NAME)
-_handler = logging.StreamHandler()
-_formatter = logging.Formatter('%(name)s [%(levelname)s] %(message)s')
-_handler.setFormatter(_formatter)
-logger.addHandler(_handler)
-logger.setLevel(LOGLEVEL)
+ROOT_LOGGER = logging.getLogger()
+LOG_FORMATTER = logging.Formatter('%(name)s [%(levelname)s] %(message)s')
+LOG_HANDLER = logging.StreamHandler()
+LOG_HANDLER.setFormatter(LOG_FORMATTER)
+ROOT_LOGGER.addHandler(LOG_HANDLER)
 
-gc3libs.log = logger
-gc3libs.log.level = LOGLEVEL
+LOGGER = logging.getLogger('snijder')
+LOGGER.setLevel(LOGLEVEL)
 
-logw = logger.warn
-logi = logger.info
-logd = logger.debug
-loge = logger.error
-logc = logger.critical
+gc3libs.log = logging.getLogger('gc3libs')
+gc3libs.log.level = logging.WARN
+
+logw = LOGGER.warn                                  # pylint: disable=C0103
+logi = LOGGER.info                                  # pylint: disable=C0103
+logd = LOGGER.debug                                 # pylint: disable=C0103
+loge = LOGGER.error                                 # pylint: disable=C0103
+logc = LOGGER.critical                              # pylint: disable=C0103
+
+_MAPPING = {
+    'debug'    : logging.DEBUG,
+    'info'     : logging.INFO,
+    'warn'     : logging.WARN,
+    'error'    : logging.ERROR,
+    'critical' : logging.CRITICAL
+}
 
 
 def set_loglevel(level):
-    """Convenience function to adjust the loglevel."""
-    mapping = {
-        'debug'    : logging.DEBUG,
-        'info'     : logging.INFO,
-        'warn'     : logging.WARN,
-        'error'    : logging.ERROR,
-        'critical' : logging.CRITICAL
-    }
-    logger.setLevel(mapping[level])
+    """Convenience function to adjust the loglevel.
+
+    Parameters
+    ----------
+    level : str
+        A string matching one of the keys from the _MAPPING dict.
+    """
+    LOGGER.setLevel(_MAPPING[level])
 
 
 def set_verbosity(verbosity):
-    """Convenience function to set loglevel from commandline arguments."""
+    """Convenience function to set loglevel from commandline arguments.
+
+    Parameters
+    ----------
+    verbosity : int
+        An int between 0 and 2, indicating the logging verbosity level.
+    """
     loglevel = logging.WARN - (verbosity * 10)
-    logger.setLevel(loglevel)
+    LOGGER.setLevel(loglevel)
+
+
+def set_gc3loglevel(level):
+    """Set the logging level for gc3libs.
+
+    Parameters
+    ----------
+    level : str
+        A string matching one of the keys from the _MAPPING dict.
+    """
+    gc3libs.log.level = _MAPPING[level]

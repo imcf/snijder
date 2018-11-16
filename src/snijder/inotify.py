@@ -7,7 +7,7 @@ import os
 import pyinotify
 
 from .jobs import process_jobfile
-from .logger import logi, logd
+from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
 
 
 class JobFileHandler(object):

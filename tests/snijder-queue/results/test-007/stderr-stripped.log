@@ -235,7 +235,7 @@ u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -313,7 +313,7 @@ u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -421,7 +421,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -561,7 +561,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -730,7 +730,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -929,7 +929,7 @@ u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -1158,7 +1158,7 @@ u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -1345,7 +1345,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque([])
+categories: deque([])
 jobs: {}
 processing: []
 queue: {}
@@ -1400,7 +1400,7 @@ u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -1478,7 +1478,7 @@ u000 (user01@mail.xy): u000_bbb - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -1586,7 +1586,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -1726,7 +1726,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -1895,7 +1895,7 @@ u000 (user01@mail.xy): u000_ccc - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -2094,7 +2094,7 @@ u111 (user01@mail.xy): u111_fff - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -2323,7 +2323,7 @@ u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -2457,7 +2457,7 @@ u111 (user01@mail.xy): u111_ggg - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000', 'u111'])
+categories: deque(['u000', 'u111'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -2951,7 +2951,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque([])
+categories: deque([])
 jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
@@ -2987,7 +2987,7 @@ queue: {}
 deletion_list: []
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 snijder [DEBUG] Trying to remove job with uid 'aaa'.
-snijder [ERROR] No job with uid 'aaa' was found!
+snijder [INFO] No job with uid 'aaa' was found, discarding the request.
 snijder [WARNING] 
 
 
@@ -3008,7 +3008,7 @@ None.
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque([])
+categories: deque([])
 jobs: {}
 processing: []
 queue: {}
@@ -3060,7 +3060,7 @@ u000 (user01@mail.xy): u000_aaa - ['resources/sample_data/hucore/faba128.h5'] [q
 snijder [WARNING] QUEUE STATUS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 statusfile: None
-cats: deque(['u000'])
+categories: deque(['u000'])
 jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'exec': '/usr/local/bin/hucore',
               'infiles': ['resources/sample_data/hucore/faba128.h5'],
