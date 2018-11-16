@@ -17,6 +17,7 @@ from collections import deque
 import gc3libs
 
 from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from .logger import LOGGER, LEVEL_MAPPING
 
 
 class JobQueue(object):
@@ -315,11 +316,12 @@ class JobQueue(object):
 
     def queue_details_hr(self):
         """Generate a human readable list of the queue details."""
-        # FIXME: don't print the queue status, return the text instead!
-        #        this produces annoying amounts of output in a production
-        #        environment, therefore the generated text should be returned,
-        #        so it can be handled by the logging methods (e.g. only printed
-        #        when running in debug mode)
+        # the information assembling and string formatting below is very
+        # time-consuming, so we check the current log level first and return if
+        # we wouldn't log anything anyway:
+        if LOGGER.level > LEVEL_MAPPING['info']:
+            return
+
         msg = list()
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
         msg.append("--- jobs retrieved for processing")
@@ -331,6 +333,7 @@ class JobQueue(object):
                        (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
         msg.append("%s queue status %s" % ("-" * 25, "-" * 25))
+
         msg.append("--- jobs queued (not yet retrieved)")
         joblist = self.queue_details()
         if not joblist:
@@ -340,7 +343,11 @@ class JobQueue(object):
                        (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
+
         logi('queue_details_hr():\n%s', '\n'.join(msg))
+        if LOGGER.level > LEVEL_MAPPING['debug']:
+            return
+
         logd('QUEUE STATUS\n'
              '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
              "statusfile: %s\n"
