@@ -103,14 +103,14 @@ class AbstractApp(gc3libs.Application):
         gc3libs.Application.Run.state
             The new state of the app in case it has changed, None otherwise.
         """
-        new = self.execution.state
-        if new != self.laststate:
-            logi("%s status: '%s' -> '%s'",
-                 self.__class__.__name__, self.laststate, new)
-            self.laststate = self.job['status'] = new
-            return new
-        else:
+        newstate = self.execution.state
+        if newstate == self.laststate:
             return None
+
+        logi("%s status: '%s' -> '%s'",
+             self.__class__.__name__, self.laststate, newstate)
+        self.laststate = self.job['status'] = newstate
+        return newstate
 
     def execution_stats(self):
         """Log execution stats: cpu and walltime, maximum memory."""
