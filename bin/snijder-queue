@@ -47,12 +47,12 @@ def parse_arguments():
     gc3log = argparser.add_mutually_exclusive_group()
     gc3log.add_argument(
         '--gc3debug',
-        action='store_false',
+        action='store_true',
         help='set logging for gc3libs to "DEBUG" level'
     )
     gc3log.add_argument(
         '--gc3info',
-        action='store_false',
+        action='store_true',
         help='set logging for gc3libs to "INFO" level'
     )
     try:
