@@ -201,12 +201,13 @@ class JobSpooler(object):
         return cfg
 
     @staticmethod
-    def scan_resource_dirs(engine):
+    def scan_gc3_resource_dirs(engine):
         """Check if the resource dirs of all resources are clean.
 
         Parameters
         ----------
         engine : gc3libs.core.Engine
+            The gc3 engine from which the resource dirs should be checked.
 
         Returns
         -------
@@ -229,22 +230,23 @@ class JobSpooler(object):
         return unclean
 
     @staticmethod
-    def check_running_gc3_pids(unclean):
+    def check_running_gc3_jobs(engine):
         """Inspect and clean up PID files in gc3pie resource dirs.
 
         Parameters
         ----------
-        unclean : list
-            Files in resource dirs, as returned by scan_resource_dirs().
+        engine : gc3libs.core.Engine
+            The gc3 engine from which the resource dirs should be checked.
 
         Returns
         -------
-        list(int)
-            All PIDs that seem to be running gc3pie jobs.
+        dict
+            A dict with PIDs as keys, having resource file names as values.
         """
+        gc3_files = JobSpooler.scan_gc3_resource_dirs(engine)
         logi("Inspecting gc3pie resource files for running processes.")
-        running_gc3 = list()
-        for resfile in unclean:
+        gc3_jobs = dict()
+        for resfile in gc3_files:
             if not os.path.exists(resfile):
                 logw("Resource file [%s] doesn't exist!", resfile)
                 continue
@@ -255,8 +257,8 @@ class JobSpooler(object):
                 logd("Process matching resource pid '%s' found: %s", pid, cmd)
                 if 'gc3pie' in str(cmd):
                     logw("Process with pid '%s' seems to be a running gc3pie "
-                         "job: %s", pid, cmd[5:])
-                    running_gc3.append(pid)
+                         "job: %s", pid, cmd)
+                    gc3_jobs[pid] = resfile
                     continue
 
             except ValueError as err:
@@ -274,7 +276,35 @@ class JobSpooler(object):
                  "removing it.", resfile)
             os.remove(resfile)
 
-        return running_gc3
+        return gc3_jobs
+
+    @staticmethod
+    def check_gc3_resources(engine):
+        """Check if gc3 resource directories are clean.
+        
+        Parameters
+        ----------
+        engine : gc3libs.core.Engine
+            The gc3 engine from which the resource dirs should be checked.
+        
+        Raises
+        ------
+        RuntimeError
+            In case the resource dir can't be cleaned (e.g. because the job
+            files therein correspond to existing processes), a RuntimeError
+            is raised.
+        """
+        running_gc3jobs = JobSpooler.check_running_gc3_jobs(engine)
+        if running_gc3jobs:
+            logc("The gc3pie resource directories are unclean!")
+            msg = ("One or more gc3pie resource directories are containing gc3"
+                   "job files referring to running processes.\n\n"
+                   "Please check if these processes are terminated and clean "
+                   "up those files before starting the queue manager again!\n")
+            for job in running_gc3jobs.iteritems():
+                msg += "\n PID: %s - gc3pie job resource file: [%s]" % job
+            raise RuntimeError(msg)
+
 
     def setup_engine(self):
         """Wrapper to set up the GC3Pie engine.
@@ -286,12 +316,8 @@ class JobSpooler(object):
         logi('Creating GC3Pie engine using config file "%s".',
              self.gc3cfg['conffile'])
         engine = gc3libs.create_engine(self.gc3cfg['conffile'])
-        unclean = self.scan_resource_dirs(engine)
-        if unclean:
-            raise RuntimeError(
-                "the gc3pie resource directory is unclean! \nMake sure no "
-                "other process using the same resource is running then remove "
-                "all files from %s and try again!" % unclean)
+        self.check_gc3_resources(engine)
+
         return engine
 
     def engine_status(self):
@@ -419,10 +445,9 @@ class JobSpooler(object):
                 logc("Killing jobs failed, %s still running.", stats['RUNNING'])
             else:
                 logi("Successfully terminated remaining jobs, none left.")
+        self.check_gc3_resources(self.engine)
         logi("QM shutdown: spooler cleanup completed.")
-        logw("QM shutdown: checking resource directories.")
-        self.scan_resource_dirs(self.engine)
-        logw("QM shutdown: resource directories check completed.")
+
 
     def kill_running_job(self, app):
         """Helper method to kill a running job."""
