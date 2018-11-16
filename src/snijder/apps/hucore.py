@@ -15,7 +15,7 @@ HuSNRApp()
 import os
 
 from . import AbstractApp
-from .. import logi, logd, logw, logc, loge
+from .. import logi, logd, logw, logc, loge         # pylint: disable=W0611
 
 
 class HuCoreApp(AbstractApp):
