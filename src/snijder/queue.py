@@ -298,6 +298,7 @@ class JobQueue(object):
                 "queued"  : job['timestamp'],
             }
             return fjob
+
         joblist = self.queue_details()
         formatted = []
         for jobid in self.processing:
@@ -306,10 +307,11 @@ class JobQueue(object):
         for job in joblist:
             formatted.append(format_job(job))
         details = {'jobs' : formatted}
+        queue_json = json.dumps(details, indent=4)
         if self.statusfile is not None:
             with open(self.statusfile, 'w') as fout:
-                json.dump(details, fout, indent=4)
-        return json.dumps(details, indent=4)
+                fout.write(queue_json)
+        return queue_json
 
     def queue_details_hr(self):
         """Generate a human readable list of the queue details."""
