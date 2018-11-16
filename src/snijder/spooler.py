@@ -83,8 +83,7 @@ class JobSpooler(object):
             # don't change the status on "refresh", instead simply print the
             # queue status and update the status file:
             logi("Received spooler queue status refresh request.")
-            self.queue.queue_details_hr()
-            logd(self.queue.queue_details_json())
+            logd(self.queue.update_status())
             return
 
         if newstatus == self.status:
@@ -469,8 +468,8 @@ class JobSpooler(object):
         # ## self.engine.progress()
         # remove the job from the queue:
         self.queue.remove(app.job['uid'])
-        # trigger the update of the queue status json file:
-        self.queue.queue_details_json()
+        # trigger an update of the queue status:
+        self.queue.update_status()
         # this is just to trigger the stats messages in debug mode:
         self.engine_status()
 

@@ -122,7 +122,6 @@ class JobQueue(object):
         #     logd("JobQueue already contains a queue for '%s'.", category)
         self.queue[category].append(uid)
         self.set_jobstatus(job, 'queued')
-        self.queue_details_hr()
         self.status_changed = True
 
     def _is_queue_empty(self, category):
@@ -216,7 +215,7 @@ class JobQueue(object):
         # logd("Current queue categories: %s", self.cats)
         # logd("Current contents of all queues: %s", self.queue)
         if update_status:
-            logd(self.queue_details_json())
+            logd(self.update_status())
         return job
 
     def process_deletion_list(self):
@@ -230,7 +229,7 @@ class JobQueue(object):
             else:
                 logi("Job successfully removed from the queue.")
         # updating the queue status file is only done now:
-        logd(self.queue_details_json())
+        logd(self.update_status())
 
     def set_jobstatus(self, job, status):
         """Update the status of a job and trigger related actions.
@@ -247,7 +246,21 @@ class JobQueue(object):
         self.status_changed = True
         if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
             self.remove(job['uid'])
-        logd(self.queue_details_json())
+        logd(self.update_status())
+
+    def update_status(self):
+        """Update the queue status information (JSON and logs)
+
+        Returns
+        -------
+        str
+            The JSON-formatted dict as returned by queue_details_json().
+        """
+        if not self.status_changed:
+            return None
+        self.status_changed = False
+        self.queue_details_hr()
+        return self.queue_details_json()
 
     def queue_details_json(self):
         """Generate a JSON representation of the queue details.
