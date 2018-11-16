@@ -14,7 +14,7 @@ import argparse
 import snijder
 import snijder.queue
 from snijder.jobs import process_jobfile
-from snijder.logger import set_verbosity
+from snijder.logger import set_verbosity, set_gc3loglevel
 from snijder.spooler import JobSpooler
 from snijder.inotify import JobFileHandler
 
@@ -43,7 +43,19 @@ def parse_arguments():
         '--verbosity',
         dest='verbosity',
         action='count',
+        help='increase log level (may be repeated)',
         default=0)
+    gc3log = argparser.add_mutually_exclusive_group()
+    gc3log.add_argument(
+        '--gc3debug',
+        action='store_false',
+        help='set logging for gc3libs to "DEBUG" level'
+    )
+    gc3log.add_argument(
+        '--gc3info',
+        action='store_false',
+        help='set logging for gc3libs to "INFO" level'
+    )
     try:
         return argparser.parse_args()
     except IOError as err:
@@ -56,6 +68,10 @@ def main():
 
     # set the loglevel as requested on the commandline
     set_verbosity(args.verbosity)
+    if args.gc3debug:
+        set_gc3loglevel('debug')
+    elif args.gc3info:
+        set_gc3loglevel('info')
 
     # TODO:
     # [x] init spooldirs as staticmethod of spooler

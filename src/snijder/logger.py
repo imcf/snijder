@@ -8,19 +8,19 @@ import gc3libs
 
 __all__ = ["logw", "logi", "logd", "loge", "logc"]
 
-# we set a default loglevel and add some shortcuts for logging:
 LOGLEVEL = logging.WARN
-LOGGER_NAME = "snijder"
 
-LOGGER = logging.getLogger(LOGGER_NAME)
-LOG_HANDLER = logging.StreamHandler()
+ROOT_LOGGER = logging.getLogger()
 LOG_FORMATTER = logging.Formatter('%(name)s [%(levelname)s] %(message)s')
+LOG_HANDLER = logging.StreamHandler()
 LOG_HANDLER.setFormatter(LOG_FORMATTER)
-LOGGER.addHandler(LOG_HANDLER)
+ROOT_LOGGER.addHandler(LOG_HANDLER)
+
+LOGGER = logging.getLogger('snijder')
 LOGGER.setLevel(LOGLEVEL)
 
-gc3libs.log = LOGGER
-gc3libs.log.level = LOGLEVEL
+gc3libs.log = logging.getLogger('gc3libs')
+gc3libs.log.level = logging.WARN
 
 logw = LOGGER.warn                                  # pylint: disable=C0103
 logi = LOGGER.info                                  # pylint: disable=C0103
@@ -28,20 +28,44 @@ logd = LOGGER.debug                                 # pylint: disable=C0103
 loge = LOGGER.error                                 # pylint: disable=C0103
 logc = LOGGER.critical                              # pylint: disable=C0103
 
+_MAPPING = {
+    'debug'    : logging.DEBUG,
+    'info'     : logging.INFO,
+    'warn'     : logging.WARN,
+    'error'    : logging.ERROR,
+    'critical' : logging.CRITICAL
+}
+
 
 def set_loglevel(level):
-    """Convenience function to adjust the loglevel."""
-    mapping = {
-        'debug'    : logging.DEBUG,
-        'info'     : logging.INFO,
-        'warn'     : logging.WARN,
-        'error'    : logging.ERROR,
-        'critical' : logging.CRITICAL
-    }
-    LOGGER.setLevel(mapping[level])
+    """Convenience function to adjust the loglevel.
+
+    Parameters
+    ----------
+    level : str
+        A string matching one of the keys from the _MAPPING dict.
+    """
+    LOGGER.setLevel(_MAPPING[level])
 
 
 def set_verbosity(verbosity):
-    """Convenience function to set loglevel from commandline arguments."""
+    """Convenience function to set loglevel from commandline arguments.
+
+    Parameters
+    ----------
+    verbosity : int
+        An int between 0 and 2, indicating the logging verbosity level.
+    """
     loglevel = logging.WARN - (verbosity * 10)
     LOGGER.setLevel(loglevel)
+
+
+def set_gc3loglevel(level):
+    """Set the logging level for gc3libs.
+
+    Parameters
+    ----------
+    level : str
+        A string matching one of the keys from the _MAPPING dict.
+    """
+    gc3libs.log.level = _MAPPING[level]
