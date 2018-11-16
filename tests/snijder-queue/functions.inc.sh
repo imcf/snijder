@@ -379,10 +379,11 @@ strip_rt() {
     # strips away various hashes that are runtime-specific, to make the result
     # better comparable among subsequent individual runs
     sed -u '''
+        s/uid:[0-9a-f]\{7\}/UID_STRIPPED/g
         s/[0-9a-f]\{40\}/UID_STRIPPED/g
         s/App@[0-9a-f]\{12\}/App@APPID_STRIPPED/g
         s/[0-9]\{10\}\.[0-9]\{1,6\}/TIMESTAMP_STRIPPED/g
-        s/  cpu: [0-9\.]*s  / CPUTIME_STRIPPED /
+        s/  cpu: [0-9\.]*s  /  CPUTIME_STRIPPED  /
         s/  wall: [0-9\.]*s  /  WALLTIME_STRIPPED  /
         s/  max_mem: [0-9]*kB  /  MAXMEM_STRIPPED  /
         s/unclean: \[['"'"'0-9]*\]/unclean: \[RSC_STRIPPED\]/g

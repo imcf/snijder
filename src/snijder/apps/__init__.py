@@ -37,7 +37,7 @@ class AbstractApp(gc3libs.Application):
         self.job = job   # remember the job object
         logd('gc3_output_dir: %s', appconfig['output_dir'])
         logd('self.job: %s', job)
-        logi('Instantiating a %s: [[user: %s]] [[uid: %s]]',
+        logi('Instantiating a %s: [user:%s] [uid:%.7s]',
              self.__class__.__name__, job['user'], job['uid'])
         super(AbstractApp, self).__init__(**appconfig)
         self.laststate = self.execution.state
@@ -59,7 +59,7 @@ class AbstractApp(gc3libs.Application):
     def stopped(self):
         """Called when the job state transitions to STOPPED."""
         self.status_changed()
-        logc("Job '%s' has been suspended for an unknown reason!!!",
+        logc("Job [uid:%.7s] has been suspended for an unknown reason!!!",
              self.job['uid'])
 
     def submitted(self):
@@ -76,16 +76,16 @@ class AbstractApp(gc3libs.Application):
             #       app was explicitly killed by gc3pie - it would be cleaner
             #       to explicitly cover this situation e.g. in the spooler's
             #       cleanup() method by telling the app it is requested to stop
-            logw("Job '%s' apparently was killed or crahsed!", self.job['uid'])
+            logw("Job [uid:%.7s] was killed or crahsed!", self.job['uid'])
         elif self.execution.exitcode != 0:
             # IMPORTANT: gc3pie does NOT seem to pass on the exit code of
             # the job in this value, instead every non-zero exit code is
             # represented as 255 - which means we can NOT DERIVE from this how
             # the job process has finished!
-            logc("Job '%s' terminated with unexpected EXIT CODE: %s!",
+            logc("Job [uid:%.7s] terminated with unexpected EXIT CODE: %s!",
                  self.job['uid'], self.execution.exitcode)
         else:
-            logi("Job '%s' terminated successfully, output is in [%s].",
+            logi("Job [uid:%.7s] terminated successfully, output is in [%s].",
                  self.job['uid'], self.output_dir)
 
     def terminating(self):

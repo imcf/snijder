@@ -109,8 +109,8 @@ class JobQueue(object):
         category = job.get_category()
         uid = job['uid']
         if uid in self.jobs:
-            raise ValueError("Job with uid '%s' already in this queue!" % uid)
-        logi("Enqueueing job '%s' into category '%s'.", uid, category)
+            raise ValueError("Job with [uid:%.7s] already in this queue!" % uid)
+        logi("Enqueueing job [uid:%.7s] into category '%s'.", uid, category)
         self.jobs[uid] = job  # store the job in the global dict
         if category not in self.categories:
             logi("Adding a new queue for '%s' to the JobQueue.", category)
@@ -162,7 +162,7 @@ class JobQueue(object):
         jobid = self.queue[category].popleft()
         # put it into the list of currently processing jobs:
         self.processing.append(jobid)
-        logi("Retrieving next job: category '%s', uid '%s'.", category, jobid)
+        logi("Retrieving next job: category '%s', [uid:%.7s].", category, jobid)
         if not self._is_queue_empty(category):
             # push the current category to the last position in the queue:
             self.categories.rotate(-1)
@@ -191,9 +191,9 @@ class JobQueue(object):
         job : JobDescription
             The JobDescription dict of the job that was removed (on success).
         """
-        logd("Trying to remove job with uid '%s'.", uid)
+        logd("Trying to remove job [uid:%.7s].", uid)
         if uid not in self.jobs:
-            logi("No job with uid '%s' was found, discarding the request.", uid)
+            logi("Job [uid:%.7s] not found, discarding the request.", uid)
             return None
 
         job = self.jobs[uid]   # remember the job for returning it later
@@ -202,14 +202,14 @@ class JobQueue(object):
         del self.jobs[uid]     # remove the job from the jobs dict
         self.status_changed = True
         if category in self.queue and uid in self.queue[category]:
-            logd("Removing job '%s' from queue '%s'.", uid, category)
+            logd("Removing job [uid:%.7s] from queue '%s'.", uid, category)
             self.queue[category].remove(uid)
             self._is_queue_empty(category)
         elif uid in self.processing:
-            logd("Removing job '%s' from currently processing jobs.", uid)
+            logd("Removing job [uid:%.7s] from currently processing jobs.", uid)
             self.processing.remove(uid)
         else:
-            logw("Can't find job '%s' in any of our queues!", uid)
+            logw("Can't find job [uid:%.7s] in any of our queues!", uid)
             return None
 
         # logd("Current jobs: %s", self.jobs)
@@ -222,7 +222,7 @@ class JobQueue(object):
     def process_deletion_list(self):
         """Remove jobs from this queue that are on the deletion list."""
         for uid in self.deletion_list:
-            logi("Job %s was requested for deletion", uid)
+            logi("Job [uid:%.7s] was requested for deletion", uid)
             self.deletion_list.remove(uid)
             removed = self.remove(uid, update_status=False)
             if removed is None:
@@ -242,7 +242,7 @@ class JobQueue(object):
         status : str
             The new status.
         """
-        logd("Changing status of job %s to %s", job['uid'], status)
+        logd("Changing status of job [uid:%.7s] to %s", job['uid'], status)
         job['status'] = status
         self.status_changed = True
         if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
@@ -339,7 +339,7 @@ class JobQueue(object):
             msg.append("None.")
         for jobid in self.processing:
             job = self.jobs[jobid]
-            msg.append("%s (%s): %s - %s [%s]" %
+            msg.append("%s (%s): [uid:%.7s] - %s [%s]" %
                        (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
         msg.append("%s queue status %s" % ("-" * 25, "-" * 25))
@@ -349,7 +349,7 @@ class JobQueue(object):
         if not joblist:
             msg.append("None.")
         for job in joblist[:5]:
-            msg.append("%s (%s): %s - %s [%s]" %
+            msg.append("%s (%s): [uid:%.7s] - %s [%s]" %
                         (job['user'], job['email'], job['uid'],
                         job['infiles'], job['status']))
         if len(joblist) > 5:
