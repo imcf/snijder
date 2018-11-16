@@ -14,9 +14,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542299108.737456,
+ 'timestamp': 1542404266.460959,
  'type': 'hucore',
- 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
+ 'uid': 'e42725c51f677f7c1bdd196927ff92dd22070ce0',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-3_user01_abspath.cfg -----------------
@@ -48,9 +48,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542299108.739953,
+ 'timestamp': 1542404266.463118,
  'type': 'hucore',
- 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
+ 'uid': 'e42725c51f677f7c1bdd196927ff92dd22070ce0',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-3_user01_fixed-timestamp.cfg -----------------
@@ -82,9 +82,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1542299108.743149,
+ 'timestamp': 1542404266.465545,
  'type': 'hucore',
- 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
+ 'uid': 'e47387f842003eb3a82fc4440b68bed6c609a476',
  'user': 'user02',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-999_user01.cfg -----------------
@@ -99,9 +99,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
- 'timestamp': 1542299108.744544,
+ 'timestamp': 1542404266.466975,
  'type': 'hucore',
- 'uid': 'bc5c534b30f5ebabb5ad7c8e09cde51f6d54e86f',
+ 'uid': 'e47387f842003eb3a82fc4440b68bed6c609a476',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/decon_it-999_user01_fixed-timestamp_c682dcd.cfg -----------------
@@ -132,9 +132,9 @@ scripts/python/test-005__jobfile-parser.py
  'start': 'N/A',
  'status': 'N/A',
  'tasktype': 'sleep',
- 'timestamp': 1542299108.746948,
+ 'timestamp': 1542404266.46924,
  'type': 'dummy',
- 'uid': '873e1c30ef63ccf21ab83741559a2321117025b0',
+ 'uid': 'e47387f842003eb3a82fc4440b68bed6c609a476',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/preview_user01.cfg -----------------
@@ -149,9 +149,9 @@ scripts/python/test-005__jobfile-parser.py
  'status': 'N/A',
  'tasktype': 'preview',
  'template': 'tests/snijder-queue/scripts/hucore-templates/preview_faba128.hgsb',
- 'timestamp': 1542299108.748091,
+ 'timestamp': 1542404266.470635,
  'type': 'hucore',
- 'uid': '873e1c30ef63ccf21ab83741559a2321117025b0',
+ 'uid': 'e47387f842003eb3a82fc4440b68bed6c609a476',
  'user': 'user01',
  'ver': '7'}
 ----------------- parsing jobfiles/remove_job_bfbe38a.cfg -----------------

@@ -7,83 +7,43 @@ snijder [INFO] Runtime directories:
  'status': '/opt/spool/snijder/queue/status'}
 snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
 snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
-snijder [INFO] Computational resource 'localhost' initialized successfully.
-snijder [INFO] Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
 snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
 snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
 snijder [INFO] Expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
-snijder [INFO] queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
-snijder [WARNING] QUEUE STATUS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-categories: deque([])
-jobs: {}
-processing: []
-queue: {}
-deletion_list: []
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 snijder [WARNING] Received spooler status change request: run -> pause
-snijder [INFO] New file event 'decon_job_1.cfg'
 snijder [INFO] Parsing jobfile 'decon_job_1.cfg'...
-snijder [INFO] Selected queue for jobtype (hucore) and tasktype (decon): hucore
-snijder [INFO] Moving file 'decon_job_1.cfg' to '/opt/spool/snijder/spool/cur/UID_STRIPPED.jobfile'.
-snijder [INFO] Enqueueing job 'UID_STRIPPED' into category 'user01'.
+snijder [INFO] Enqueueing job [UID_STRIPPED] into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
-snijder [CRITICAL] Setting JobDescription key 'status' to value 'queued'
-snijder [INFO] Job (type 'hucore') added. New queue: {'user01': deque(['UID_STRIPPED'])}
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): UID_STRIPPED - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [WARNING] QUEUE STATUS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-categories: deque(['user01'])
-jobs: {'UID_STRIPPED': {'email': 'user01@mail.xy',
-                                              'exec': '/usr/local/bin/hucore',
-                                              'infiles': ['resources/sample_data/hucore/faba128.h5'],
-                                              'pid': 'N/A',
-                                              'progress': 'N/A',
-                                              'server': 'N/A',
-                                              'start': 'N/A',
-                                              'status': 'queued',
-                                              'tasktype': 'decon',
-                                              'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb',
-                                              'timestamp': TIMESTAMP_STRIPPED,
-                                              'type': 'hucore',
-                                              'uid': 'UID_STRIPPED',
-                                              'user': 'user01',
-                                              'ver': '7'}}
-processing: []
-queue: {'user01': deque(['UID_STRIPPED'])}
-deletion_list: []
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-snijder [INFO] New file event 'remove_job_1.cfg'
 snijder [INFO] Parsing jobfile 'remove_job_1.cfg'...
 snijder [INFO] Request to --- DELETE --- job 'UID_STRIPPED'
 snijder [WARNING] Received job deletion request(s)!
-snijder [INFO] Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/UID_STRIPPED.jobfile.TIMESTAMP_STRIPPED'.
 snijder [WARNING] Received spooler status change request: pause -> run
-snijder [INFO] Job UID_STRIPPED was requested for deletion
+snijder [INFO] Job [UID_STRIPPED] was requested for deletion
 snijder [INFO] Status of job to be removed: queued
 snijder [INFO] Job successfully removed from the queue.
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] QM shutdown: spooler cleanup completed.
-snijder [WARNING] QM shutdown: checking resource directories.
-snijder [INFO] Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
-snijder [WARNING] QM shutdown: resource directories check completed.

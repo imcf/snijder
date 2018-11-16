@@ -7,41 +7,21 @@ snijder [INFO] Runtime directories:
  'status': '/opt/spool/snijder/queue/status'}
 snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
 snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
-snijder [INFO] Computational resource 'localhost' initialized successfully.
-snijder [INFO] Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
 snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
 snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
 snijder [INFO] Expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
-snijder [INFO] queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
-snijder [WARNING] QUEUE STATUS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-statusfile: '/opt/spool/snijder/queue/status/hucore.json'
-categories: deque([])
-jobs: {}
-processing: []
-queue: {}
-deletion_list: []
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-snijder [INFO] New file event 'remove_job_1.cfg'
 snijder [INFO] Parsing jobfile 'remove_job_1.cfg'...
 snijder [INFO] Request to --- DELETE --- job 'UID_STRIPPED'
 snijder [WARNING] Received job deletion request(s)!
-snijder [INFO] Moving file 'remove_job_1.cfg' to '/opt/spool/snijder/spool/done/UID_STRIPPED.jobfile.TIMESTAMP_STRIPPED'.
-snijder [INFO] Job UID_STRIPPED was requested for deletion
-snijder [INFO] No job with uid 'UID_STRIPPED' was found, discarding the request.
+snijder [INFO] Job [UID_STRIPPED] was requested for deletion
+snijder [INFO] Job [UID_STRIPPED] not found, discarding the request.
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] QM shutdown: spooler cleanup completed.
-snijder [WARNING] QM shutdown: checking resource directories.
-snijder [INFO] Checking resource dir for resource 'localhost': /opt/spool/snijder/gc3/resource/shellcmd.d
-snijder [WARNING] QM shutdown: resource directories check completed.
