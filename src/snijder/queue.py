@@ -266,14 +266,19 @@ class JobQueue(object):
     def queue_details_json(self):
         """Generate a JSON representation of the queue details.
 
-        The details are returned in a dict of the following form:
+        Returns
+        -------
+        str
+            A JSON-formatted dict with the details of the current queue status
+            in the following form:
+
         details = { "jobs" :
             [
                 {
                     "username" : "user00",
                     "status"   : "N/A",
                     "queued"   : 1437152020.751692,
-                    "file"     : [ "tests/jobfiles/sandbox/faba128.h5" ],
+                    "file"     : [ "data/example.h5" ],
                     "start"    : "N/A",
                     "progress" : "N/A",
                     "pid"      : "N/A",
