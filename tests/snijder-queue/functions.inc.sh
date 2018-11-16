@@ -387,6 +387,7 @@ strip_rt() {
         s/  wall: [0-9\.]*s  /  WALLTIME_STRIPPED  /
         s/  max_mem: [0-9]*kB  /  MAXMEM_STRIPPED  /
         s/unclean: \[['"'"'0-9]*\]/unclean: \[RSC_STRIPPED\]/g
+        s/shellcmd.d\/[0-9]*\]/PID_STRIPPED/g
     ''' | strip_c
 }
 
