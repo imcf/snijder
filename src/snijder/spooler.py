@@ -209,7 +209,7 @@ class JobSpooler(object):
         Returns
         -------
         list(str)
-            A list with all unclean resource directories. Empty if all clean.
+            All files in any resource directory, empty if all clean.
         """
         unclean = list()
         for resource in engine.get_resources():
@@ -221,7 +221,8 @@ class JobSpooler(object):
             files = os.listdir(resourcedir)
             if files:
                 logw("Resource dir [%s] unclean: %s", resourcedir, files)
-                unclean.append(resourcedir)
+                for resfile in files:
+                    unclean.append(os.path.join(resourcedir, resfile))
 
         return unclean
 
