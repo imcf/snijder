@@ -106,6 +106,9 @@ git clone https://github.com/imcf/snijder.git
 if [ -z "$VIRTUAL_ENV" ] ; then
     source /opt/snijder/venvs/gc3pie_2.5.0/bin/activate
 fi
+
+pip install --upgrade psutil
+
 # TEMPORARY SETUP using a symlink:
 cd $VIRTUAL_ENV/lib/python2.7
 ln -s /opt/snijder/snijder/src/snijder

@@ -20,6 +20,7 @@ JobSpooler()
 import os
 import pprint
 import time
+import psutil
 
 import gc3libs
 import gc3libs.config
@@ -225,6 +226,54 @@ class JobSpooler(object):
                     unclean.append(os.path.join(resourcedir, resfile))
 
         return unclean
+
+    @staticmethod
+    def check_running_gc3_pids(unclean):
+        """Inspect and clean up PID files in gc3pie resource dirs.
+
+        Parameters
+        ----------
+        unclean : list
+            Files in resource dirs, as returned by scan_resource_dirs().
+
+        Returns
+        -------
+        list(int)
+            All PIDs that seem to be running gc3pie jobs.
+        """
+        logi("Inspecting gc3pie resource files for running processes.")
+        running_gc3 = list()
+        for resfile in unclean:
+            if not os.path.exists(resfile):
+                logw("Resource file [%s] doesn't exist!", resfile)
+                continue
+
+            try:
+                pid = int(os.path.basename(resfile))
+                cmd = psutil.Process(pid).cmdline()
+                logd("Process matching resource pid '%s' found: %s", pid, cmd)
+                if 'gc3pie' in str(cmd):
+                    logw("Process with pid '%s' seems to be a running gc3pie "
+                         "job: %s", pid, cmd[5:])
+                    running_gc3.append(pid)
+                    continue
+
+            except ValueError as err:
+                logw("Unable to parse a pid from file [%s]: %s", resfile, err)
+            except TypeError as err:
+                logw("Unable to look up status for pid '%s': %s", pid, err)
+            except psutil.NoSuchProcess:
+                logd("No running process matching pid '%s' found.", pid)
+            except Exception as err:
+                loge("Unexpected error while checking resource file [%s]: %s",
+                     resfile, err)
+                raise err
+
+            logi("File [%s] doesn't seem to be from an existing gc3 job, "
+                 "removing it.", resfile)
+            os.remove(resfile)
+
+        return running_gc3
 
     def setup_engine(self):
         """Wrapper to set up the GC3Pie engine.
