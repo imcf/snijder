@@ -56,7 +56,7 @@ class HuCoreApp(AbstractApp):
             stdout='stdout.txt'
         )
         super(HuCoreApp, self).__init__(job, appconfig)
-        logw('Additional %s parameters: [[template: %s]] [[infiles: %s]]',
+        logi('Additional %s parameters: [[template: %s]] [[infiles: %s]]',
              self.__class__.__name__,
              job['template'],
              job['infiles'])

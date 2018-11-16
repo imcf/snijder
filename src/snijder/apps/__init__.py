@@ -37,7 +37,7 @@ class AbstractApp(gc3libs.Application):
         self.job = job   # remember the job object
         logd('gc3_output_dir: %s', appconfig['output_dir'])
         logd('self.job: %s', job)
-        logw('Instantiating a %s: [[user: %s]] [[uid: %s]]',
+        logi('Instantiating a %s: [[user: %s]] [[uid: %s]]',
              self.__class__.__name__, job['user'], job['uid'])
         super(AbstractApp, self).__init__(**appconfig)
         self.laststate = self.execution.state

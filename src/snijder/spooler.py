@@ -407,7 +407,7 @@ class JobSpooler(object):
                 if nextjob is not None:
                     logd("Current joblist: %s", self.queue.queue)
                     apptype = apptypes[nextjob['type']]
-                    logw("Adding job (type '%s') to the gc3pie engine.",
+                    logi("Adding job (type '%s') to the gc3pie engine.",
                          apptype.__name__)
                     app = apptype(nextjob, self.gc3cfg['spooldir'])
                     self.apps.append(app)
