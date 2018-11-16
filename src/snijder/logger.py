@@ -28,7 +28,7 @@ logd = LOGGER.debug                                 # pylint: disable=C0103
 loge = LOGGER.error                                 # pylint: disable=C0103
 logc = LOGGER.critical                              # pylint: disable=C0103
 
-_MAPPING = {
+LEVEL_MAPPING = {
     'debug'    : logging.DEBUG,
     'info'     : logging.INFO,
     'warn'     : logging.WARN,
@@ -45,7 +45,7 @@ def set_loglevel(level):
     level : str
         A string matching one of the keys from the _MAPPING dict.
     """
-    LOGGER.setLevel(_MAPPING[level])
+    LOGGER.setLevel(LEVEL_MAPPING[level])
 
 
 def set_verbosity(verbosity):
@@ -68,4 +68,4 @@ def set_gc3loglevel(level):
     level : str
         A string matching one of the keys from the _MAPPING dict.
     """
-    gc3libs.log.level = _MAPPING[level]
+    gc3libs.log.level = LEVEL_MAPPING[level]
