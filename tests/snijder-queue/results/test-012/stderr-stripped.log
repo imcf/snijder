@@ -1,0 +1,103 @@
+snijder [INFO] Runtime directories:
+{'cur': '/opt/spool/snijder/spool/cur',
+ 'done': '/opt/spool/snijder/spool/done',
+ 'new': '/opt/spool/snijder/spool/new',
+ 'newfiles': [],
+ 'requests': '/opt/spool/snijder/queue/requests',
+ 'status': '/opt/spool/snijder/queue/status'}
+snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
+snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Inspecting gc3pie resource files for running processes.
+snijder [INFO] Created JobSpooler.
+snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
+snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
+snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] Received spooler queue status refresh request.
+snijder [INFO] Parsing jobfile 'decon_job_1_missingdata.cfg'...
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
+snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
+snijder [INFO] Enqueueing job [UID_STRIPPED] into category 'user01'.
+snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo'] [queued]
+========================= queue status =========================
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo'] [queued]
+========================= queue status =========================
+snijder [INFO] Retrieving next job: category 'user01', [UID_STRIPPED].
+snijder [INFO] Adding job (type 'HuDeconApp') to the gc3pie engine.
+snijder [INFO] Instantiating a HuDeconApp: [user:user01] [UID_STRIPPED]
+snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
+gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+snijder [WARNING] Received spooler status change request: run -> shutdown
+snijder [WARNING] Queue Manager shutdown initiated.
+snijder [INFO] QM shutdown: cleaning up spooler.
+snijder [WARNING] v--------------------------------------------------------------------------------v
+snijder [WARNING] Unfinished jobs, trying to stop them:
+snijder [WARNING] Status of running job: queued
+snijder [WARNING] <KILLING> [user01] HuDeconApp
+snijder [INFO] Job finished  -  [  cpu: N/A  |  wall: N/A  |  max_mem: N/A  ]
+snijder [WARNING] Job [UID_STRIPPED] was killed or crahsed!
+snijder [INFO] HuDeconApp status: 'NEW' -> 'TERMINATED'
+snijder [WARNING] App has terminated, removing from list of apps.
+snijder [INFO] Status of job to be removed: TERMINATED
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
+snijder [WARNING] ^--------------------------------------------------------------------------------^
+snijder [INFO] Successfully terminated remaining jobs, none left.
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Inspecting gc3pie resource files for running processes.
+snijder [INFO] QM shutdown: spooler cleanup completed.
