@@ -85,8 +85,8 @@ class AbstractApp(gc3libs.Application):
             logc("Job '%s' terminated with unexpected EXIT CODE: %s!",
                  self.job['uid'], self.execution.exitcode)
         else:
-            logi("Job '%s' terminated successfully!", self.job['uid'])
-            logi("The output of the application is in `%s`.", self.output_dir)
+            logi("Job '%s' terminated successfully, output is in [%s].",
+                 self.job['uid'], self.output_dir)
 
     def terminating(self):
         """Called when the job state transitions to TERMINATING."""
@@ -121,8 +121,5 @@ class AbstractApp(gc3libs.Application):
         used_cpu_time = getattr(self.execution, 'used_cpu_time', 'N/A')
         duration = getattr(self.execution, 'duration', 'N/A')
         max_used_memory = getattr(self.execution, 'max_used_memory', 'N/A')
-        logi("Job finished. Execution stats:\n"
-             "\t[[ cpu time: %s ]]\n"
-             "\t[[ wall time: %s ]]\n"
-             "\t[[ max memory: %s ]]",
+        logi("Job finished  -  [  cpu: %s  |  wall: %s  |  max_mem: %s  ]",
              used_cpu_time, duration, max_used_memory)
