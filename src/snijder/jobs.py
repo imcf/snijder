@@ -45,7 +45,7 @@ def select_queue_for_job(job):
         logc("No queue found for tasktype '%s'!", job['tasktype'])
         return None
     queuetype = mapping[job['type']][job['tasktype']]
-    logi("Selected queue for jobtype (%s) and tasktype (%s): %s",
+    logd("Selected queue for jobtype (%s) and tasktype (%s): %s",
          job['type'], job['tasktype'], queuetype)
     return queuetype
 
@@ -90,7 +90,7 @@ def process_jobfile(fname, queues):
     try:
         queues[selected_queue].append(job)
     except ValueError as err:
-        loge("Adding the new job from '%s' failed:\n    %s", fname, err)
+        loge("Adding the new job from [%s] failed:\n    %s", fname, err)
 
 
 class AbstractJobConfigParser(dict):
@@ -470,8 +470,7 @@ class JobDescription(dict):
         if os.path.exists(target):
             target += ".%s" % time.time()
             logd("Adding suffix to prevent overwriting file: %s", target)
-        logi("Moving file '%s' to '%s'.", os.path.basename(self.fname), target)
-        logd("Full path of original file: '%s'.", self.fname)
+        logd("Moving file '%s' to '%s'.", self.fname, target)
         shutil.move(self.fname, target)
         # update the job's internal fname pointer:
         self.fname = target

@@ -117,7 +117,6 @@ class JobQueue(object):
         #     logd("JobQueue already contains a queue for '%s'.", category)
         self.queue[category].append(uid)
         self.set_jobstatus(job, 'queued')
-        logi("Job (type '%s') added. New queue: %s", job['type'], self.queue)
         self.queue_details_hr()
 
     def _is_queue_empty(self, category):
@@ -318,7 +317,7 @@ class JobQueue(object):
                         job['infiles'], job['status']))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
         logi('queue_details_hr():\n%s', '\n'.join(msg))
-        logw('QUEUE STATUS\n'
+        logd('QUEUE STATUS\n'
              '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
              "statusfile: %s\n"
              "categories: %s\n"

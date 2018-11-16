@@ -74,6 +74,6 @@ class EventHandler(pyinotify.ProcessEvent):
         ----------
         event : pyinotify.Event
         """
-        logi("New file event '%s'", os.path.basename(event.pathname))
+        # logi("New file event '%s'", os.path.basename(event.pathname))
         logd("inotify 'IN_CREATE' event full file path '%s'", event.pathname)
         process_jobfile(event.pathname, self.queues)
