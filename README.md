@@ -130,14 +130,14 @@ if [ -z "$VIRTUAL_ENV" ] ; then
 fi
 cd $BASE_DIR/snijder
 
-bin/snijder-queue --spooldir /opt/spool/snijder --config config/gc3pie/localhost.conf -v
+bin/snijder-queue --spooldir $SPOOL_BASE/snijder --config config/gc3pie/localhost.conf -v
 ```
 
 From there on you're ready to submit jobs through the configured spooling
 directories, e.g. like so:
 
 ```bash
-cp -v tests/snijder-queue/jobfiles/decon_it-3_user01.cfg /opt/spool/snijder/spool/new/
+cp -v tests/snijder-queue/jobfiles/decon_it-3_user01.cfg $SPOOL_BASE/snijder/spool/new/
 ```
 
 ## Testing
