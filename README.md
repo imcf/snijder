@@ -114,13 +114,9 @@ cd $VIRTUAL_ENV/lib/python2.7
 ln -s /opt/snijder/snijder/src/snijder
 ```
 
-For testing you can simply use the configuration files provided with the repo,
-to enable them just run these commands:
-
-```bash
-cd /opt/snijder/snijder
-ln -s resources/config
-```
+For testing purposes, there is a symlink provided to an example configuration in the
+`config/` directory. If you need to use a different configuration, simply remove the
+link and/or replace the file.
 
 ## Example
 
