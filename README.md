@@ -65,7 +65,6 @@ chown $SNIJDER_USER:$SNIJDER_GROUP $BASE_DIR
 Then, as the above configured `$SNIJDER_USER` run:
 
 ```bash
-BASE_DIR="/opt/snijder"
 GC3VER="2.5.0"
 GC3HOME="$BASE_DIR/venvs/gc3pie_$GC3VER"
 
@@ -96,22 +95,23 @@ queueing will take place, then you're good to clone the repository:
 sudo apt install python-pyinotify
 
 SPOOL_BASE="/opt/spool"  # adapt as you like, e.g. "/scratch/spool" or similar
+
 mkdir -pv "$SPOOL_BASE/snijder"
 mkdir -pv "$SPOOL_BASE/gc3/resourcedir"
 
-cd /opt/snijder
+cd $BASE_DIR
 git clone https://github.com/imcf/snijder.git
 
 
 if [ -z "$VIRTUAL_ENV" ] ; then
-    source /opt/snijder/venvs/gc3pie_2.5.0/bin/activate
+    source $BASE_DIR/venvs/gc3pie_2.5.0/bin/activate
 fi
 
 pip install --upgrade psutil
 
 # TEMPORARY SETUP using a symlink:
 cd $VIRTUAL_ENV/lib/python2.7
-ln -s /opt/snijder/snijder/src/snijder
+ln -s $BASE_DIR/snijder/src/snijder
 ```
 
 For testing purposes, there is a symlink provided to an example configuration in the
@@ -126,9 +126,9 @@ following command (from within the Python virtualenv created above):
 
 ```bash
 if [ -z "$VIRTUAL_ENV" ] ; then
-    source /opt/snijder/venvs/gc3pie_2.5.0/bin/activate
+    source $BASE_DIR/venvs/gc3pie_2.5.0/bin/activate
 fi
-cd /opt/snijder/snijder
+cd $BASE_DIR/snijder
 
 bin/snijder-queue --spooldir /opt/spool/snijder --config config/gc3pie/localhost.conf -v
 ```
@@ -158,7 +158,7 @@ Once the sample images are there, you can just launch the test runner. Make sure
 to have the Python virtualenv activated that was created above, then:
 
 ```bash
-cd /opt/snijder/snijder
+cd $BASE_DIR/snijder
 tests/snijder-queue/run_tests.sh
 ```
 
