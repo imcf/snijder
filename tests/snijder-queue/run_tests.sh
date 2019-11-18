@@ -66,7 +66,7 @@ for TEST in $RUN_TESTS ; do
     # clean up after the run:
     wait_for_qm_to_finish 2
     clean_all_spooldirs
-    
+
     echo
     colr yellow "Test '$SHORT' finished."
     if [ $RET -gt 0 ] ; then
