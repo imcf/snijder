@@ -1,7 +1,8 @@
+Using spooling directory '/scratch/data/var/snijder/py2/snijder'.
 Found Python package 'gc3libs'.
 Found Python package 'snijder'.
 **** Starting Queue Manager...
-python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
+python -u bin/snijder-queue --spooldir /scratch/data/var/snijder/py2/snijder --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
 snijder-queue spooler running, press ctrl-c to shut it down
 ********************************************************************************

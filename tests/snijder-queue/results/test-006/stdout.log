@@ -1,7 +1,8 @@
+Using spooling directory '/scratch/data/var/snijder/py2/snijder'.
 Found Python package 'gc3libs'.
 Found Python package 'snijder'.
 **** Starting Queue Manager...
-python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
+python -u bin/snijder-queue --spooldir /scratch/data/var/snijder/py2/snijder --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
 snijder-queue spooler running, press ctrl-c to shut it down
 ********************************************************************************
@@ -9,7 +10,7 @@ Requesting QM status change to: refresh
 QM process started.
 Requesting QM status change to: pause
 Waiting 1 seconds...
-'tests/snijder-queue/inputs/test-006/preview_job_1.cfg' -> '/opt/spool/snijder/spool/new/preview_job_1.cfg'
+'tests/snijder-queue/inputs/test-006/preview_job_1.cfg' -> '/scratch/data/var/snijder/py2/snijder/spool/new/preview_job_1.cfg'
 Waiting .5 seconds...
 Requesting QM status change to: run
 Waiting 1 seconds...

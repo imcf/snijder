@@ -1,3 +1,4 @@
+Using spooling directory 'SPOOLINGDIR'.
 scripts/python/test-005__jobfile-parser.py
 
 >>>>>> Testing CORRECT job description files:

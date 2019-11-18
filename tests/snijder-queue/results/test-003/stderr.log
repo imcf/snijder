@@ -1,25 +1,33 @@
 snijder [INFO] Runtime directories:
-{'cur': '/opt/spool/snijder/spool/cur',
- 'done': '/opt/spool/snijder/spool/done',
- 'new': '/opt/spool/snijder/spool/new',
+{'cur': '/scratch/data/var/snijder/py2/snijder/spool/cur',
+ 'done': '/scratch/data/var/snijder/py2/snijder/spool/done',
+ 'new': '/scratch/data/var/snijder/py2/snijder/spool/new',
  'newfiles': [],
- 'requests': '/opt/spool/snijder/queue/requests',
- 'status': '/opt/spool/snijder/queue/status'}
-snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
+ 'requests': '/scratch/data/var/snijder/py2/snijder/queue/requests',
+ 'status': '/scratch/data/var/snijder/py2/snijder/queue/status'}
+snijder [INFO] Using gc3pie spooldir: /scratch/data/var/snijder/py2/snijder/gc3/spool
 snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
-snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Checking resource dir for resource 'localhost': [/scratch/data/var/snijder/py2/snijder/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
-snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
-snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
+snijder [INFO] Setting job queue status report file: /scratch/data/var/snijder/py2/snijder/queue/status/hucore.json
+snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/scratch/data/var/snijder/py2/snijder/spool/new".
 snijder [INFO] Expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> pause
 snijder [INFO] Parsing jobfile 'decon_job_1.cfg'...
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-snijder [INFO] Enqueueing job [uid:10ffc04] into category 'user01'.
+snijder [INFO] Enqueueing job [uid:3346cd8] into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -27,36 +35,36 @@ snijder [INFO] queue_details_hr():
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] Parsing jobfile 'decon_job_2.cfg'...
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-snijder [INFO] Enqueueing job [uid:e21f891] into category 'user01'.
+snijder [INFO] Enqueueing job [uid:317e93e] into category 'user01'.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] Parsing jobfile 'decon_job_3.cfg'...
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-snijder [INFO] Enqueueing job [uid:b929d13] into category 'user01'.
+snijder [INFO] Enqueueing job [uid:008706d] into category 'user01'.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: pause -> run
 snijder [INFO] queue_details_hr():
@@ -65,46 +73,46 @@ snijder [INFO] queue_details_hr():
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [uid:10ffc04].
-snijder [INFO] Adding job (type 'HuDeconApp') to the gc3pie engine.
-snijder [INFO] Instantiating a HuDeconApp: [user:user01] [uid:10ffc04]
+snijder [INFO] Retrieving next job: category 'user01', [uid:3346cd8].
+snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
+snijder [INFO] Instantiating a HuDeconApp: [user:user01] [uid:3346cd8]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'NEW' -> 'SUBMITTED'
 snijder [INFO] HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:10ffc04] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [RUNNING]
+user01 (user01@mail.xy): [uid:3346cd8] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [RUNNING]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'RUNNING' -> 'TERMINATING'
-snijder [INFO] Job finished  -  [  cpu: 14.14s  |  wall: 9.22s  |  max_mem: 158704kB  ]
-snijder [INFO] Job [uid:10ffc04] terminated successfully, output is in [/opt/spool/snijder/gc3/spool/results_10ffc04b428567cd52d5a05ba78cfa0f6139b32c].
+snijder [INFO] Job finished  -  [  cpu: 0s  |  wall: 1.6s  |  max_mem: 2860kB  ]
+snijder [INFO] Job [uid:3346cd8] terminated successfully, output is in [/scratch/data/var/snijder/py2/snijder/gc3/spool/results_3346cd82cc1e50208a5d6b66f7f63d070c5620e4].
 snijder [INFO] HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 snijder [INFO] Status of job to be removed: TERMINATED
 snijder [INFO] queue_details_hr():
@@ -113,42 +121,42 @@ snijder [INFO] queue_details_hr():
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5'] [queued]
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [uid:e21f891].
-snijder [INFO] Adding job (type 'HuDeconApp') to the gc3pie engine.
-snijder [INFO] Instantiating a HuDeconApp: [user:user01] [uid:e21f891]
+snijder [INFO] Retrieving next job: category 'user01', [uid:317e93e].
+snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
+snijder [INFO] Instantiating a HuDeconApp: [user:user01] [uid:317e93e]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'NEW' -> 'SUBMITTED'
 snijder [INFO] HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:e21f891] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [RUNNING]
+user01 (user01@mail.xy): [uid:317e93e] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [RUNNING]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'RUNNING' -> 'TERMINATING'
-snijder [INFO] Job finished  -  [  cpu: 14.5s  |  wall: 9.1s  |  max_mem: 158708kB  ]
-snijder [INFO] Job [uid:e21f891] terminated successfully, output is in [/opt/spool/snijder/gc3/spool/results_e21f891efd7e22b810a9c1658b368a15ac12815f].
+snijder [INFO] Job finished  -  [  cpu: 0s  |  wall: 1.6s  |  max_mem: 3036kB  ]
+snijder [INFO] Job [uid:317e93e] terminated successfully, output is in [/scratch/data/var/snijder/py2/snijder/gc3/spool/results_317e93e9aec9ae56fb57a1dd05676e78d6b358f0].
 snijder [INFO] HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 snijder [INFO] Status of job to be removed: TERMINATED
 snijder [INFO] queue_details_hr():
@@ -157,16 +165,16 @@ snijder [INFO] queue_details_hr():
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [uid:b929d13].
-snijder [INFO] Adding job (type 'HuDeconApp') to the gc3pie engine.
-snijder [INFO] Instantiating a HuDeconApp: [user:user01] [uid:b929d13]
+snijder [INFO] Retrieving next job: category 'user01', [uid:008706d].
+snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
+snijder [INFO] Instantiating a HuDeconApp: [user:user01] [uid:008706d]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -174,7 +182,7 @@ None.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -184,14 +192,14 @@ snijder [INFO] HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:b929d13] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [RUNNING]
+user01 (user01@mail.xy): [uid:008706d] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [RUNNING]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
 ========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'RUNNING' -> 'TERMINATING'
-snijder [INFO] Job finished  -  [  cpu: 13.81s  |  wall: 8.67s  |  max_mem: 158664kB  ]
-snijder [INFO] Job [uid:b929d13] terminated successfully, output is in [/opt/spool/snijder/gc3/spool/results_b929d1360b3fd148b5f29638a297186a68193c41].
+snijder [INFO] Job finished  -  [  cpu: 0s  |  wall: 1.6s  |  max_mem: 2844kB  ]
+snijder [INFO] Job [uid:008706d] terminated successfully, output is in [/scratch/data/var/snijder/py2/snijder/gc3/spool/results_008706dc1f3616ecf6503370854f7e4cd6bf90dc].
 snijder [INFO] HuDeconApp status: 'TERMINATING' -> 'TERMINATED'
 snijder [INFO] Status of job to be removed: TERMINATED
 snijder [INFO] queue_details_hr():
@@ -205,6 +213,6 @@ None.
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.
-snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Checking resource dir for resource 'localhost': [/scratch/data/var/snijder/py2/snijder/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] QM shutdown: spooler cleanup completed.

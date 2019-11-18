@@ -1,25 +1,33 @@
 snijder [INFO] Runtime directories:
-{'cur': '/opt/spool/snijder/spool/cur',
- 'done': '/opt/spool/snijder/spool/done',
- 'new': '/opt/spool/snijder/spool/new',
+{'cur': '/scratch/data/var/snijder/py2/snijder/spool/cur',
+ 'done': '/scratch/data/var/snijder/py2/snijder/spool/done',
+ 'new': '/scratch/data/var/snijder/py2/snijder/spool/new',
  'newfiles': [],
- 'requests': '/opt/spool/snijder/queue/requests',
- 'status': '/opt/spool/snijder/queue/status'}
-snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
+ 'requests': '/scratch/data/var/snijder/py2/snijder/queue/requests',
+ 'status': '/scratch/data/var/snijder/py2/snijder/queue/status'}
+snijder [INFO] Using gc3pie spooldir: /scratch/data/var/snijder/py2/snijder/gc3/spool
 snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
-snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Checking resource dir for resource 'localhost': [/scratch/data/var/snijder/py2/snijder/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
-snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
-snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
+snijder [INFO] Setting job queue status report file: /scratch/data/var/snijder/py2/snijder/queue/status/hucore.json
+snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/scratch/data/var/snijder/py2/snijder/spool/new".
 snijder [INFO] Expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+None.
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> pause
 snijder [INFO] Parsing jobfile 'dummy_sleep_user01.cfg'...
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
-snijder [INFO] Enqueueing job [uid:4256629] into category 'user01'.
+snijder [INFO] Enqueueing job [uid:4fbbbce] into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -27,7 +35,7 @@ snijder [INFO] queue_details_hr():
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:4256629] - [] [queued]
+user01 (user01@mail.xy): [uid:4fbbbce] - [] [queued]
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: pause -> run
 snijder [INFO] queue_details_hr():
@@ -36,15 +44,15 @@ snijder [INFO] queue_details_hr():
 None.
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:4256629] - [] [queued]
+user01 (user01@mail.xy): [uid:4fbbbce] - [] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [uid:4256629].
-snijder [INFO] Adding job (type 'DummySleepApp') to the gc3pie engine.
-snijder [INFO] Instantiating a DummySleepApp: [user:user01] [uid:4256629]
+snijder [INFO] Retrieving next job: category 'user01', [uid:4fbbbce].
+snijder [INFO] Adding job (type 'DummySleepApp') to the gc3 engine.
+snijder [INFO] Instantiating a DummySleepApp: [user:user01] [uid:4fbbbce]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:4256629] - [] [queued]
+user01 (user01@mail.xy): [uid:4fbbbce] - [] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -52,7 +60,7 @@ None.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:4256629] - [] [queued]
+user01 (user01@mail.xy): [uid:4fbbbce] - [] [queued]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
@@ -62,14 +70,14 @@ snijder [INFO] DummySleepApp status: 'SUBMITTED' -> 'RUNNING'
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
-user01 (user01@mail.xy): [uid:4256629] - [] [RUNNING]
+user01 (user01@mail.xy): [uid:4fbbbce] - [] [RUNNING]
 ------------------------- queue status -------------------------
 --- jobs queued (not yet retrieved)
 None.
 ========================= queue status =========================
 snijder [INFO] DummySleepApp status: 'RUNNING' -> 'TERMINATING'
-snijder [INFO] Job finished  -  [  cpu: 0s  |  wall: 1.6s  |  max_mem: 1440kB  ]
-snijder [INFO] Job [uid:4256629] terminated successfully, output is in [/opt/spool/snijder/gc3/spool/results_4256629bca2ef8e86f7d126bfbae0da5c45da3d9].
+snijder [INFO] Job finished  -  [  cpu: 0s  |  wall: 1.6s  |  max_mem: 1612kB  ]
+snijder [INFO] Job [uid:4fbbbce] terminated successfully, output is in [/scratch/data/var/snijder/py2/snijder/gc3/spool/results_4fbbbce672fef20a598043ae0a1d07fee800d934].
 snijder [INFO] DummySleepApp status: 'TERMINATING' -> 'TERMINATED'
 snijder [INFO] Status of job to be removed: TERMINATED
 snijder [INFO] queue_details_hr():
@@ -83,6 +91,6 @@ None.
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.
-snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Checking resource dir for resource 'localhost': [/scratch/data/var/snijder/py2/snijder/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] QM shutdown: spooler cleanup completed.

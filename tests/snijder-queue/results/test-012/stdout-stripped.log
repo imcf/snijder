@@ -1,13 +1,14 @@
+Using spooling directory 'SPOOLINGDIR'.
 Found Python package 'gc3libs'.
 Found Python package 'snijder'.
 **** Starting Queue Manager...
-python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
+python -u bin/snijder-queue --spooldir SPOOLINGDIR --config resources/config/gc3pie/localhost.conf -v
 ********************************************************************************
 snijder-queue spooler running, press ctrl-c to shut it down
 ********************************************************************************
 Requesting QM status change to: refresh
 QM process started.
-'tests/snijder-queue/inputs/test-012/decon_job_1_missingdata.cfg' -> '/opt/spool/snijder/spool/new/decon_job_1_missingdata.cfg'
+'tests/snijder-queue/inputs/test-012/decon_job_1_missingdata.cfg' -> 'SPOOLINGDIR/spool/new/decon_job_1_missingdata.cfg'
 Waiting .5 seconds...
 Waiting (5s max) for the queue to be finished / empty, then shutting down the QM.
 ============================ ERROR ============================
