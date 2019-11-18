@@ -1,10 +1,12 @@
+"""Dummy app that just issues a 'sleep', intended for testing."""
+
 import os
 
 from . import AbstractApp
 
 
 class DummySleepApp(AbstractApp):
-    """Dummy app class that just issues a 'sleep' (intended for testing)."""
+    """Dummy sleep class inheriting from AbstractApp."""
 
     def __init__(self, job, output_dir):
         """Set up the sleep job.
