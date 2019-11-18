@@ -7,6 +7,7 @@ minutes to hours, so being able to process thousands of queue-requests per
 second is just not important here.
 
 _Snijder_ is an acronym for
+
 * **`S`** ingle
 * **`N`** ode
 * **`I`** nhomogeneous
@@ -20,8 +21,9 @@ Manager (HRM)](http://huygens-rm.org/) but from a technical perspective
 _Snijder_ is completely independent of that project and is actually used for
 other tasks as well.
 
-
 ## Under The Hood
+
+[![Code style: black][img_codestyle_black]](https://github.com/psf/black)
 
 _Snijder_ makes use of the [GC3Pie](https://github.com/imcf/gc3pie) Python
 package dealing with job dispatching, monitoring, data transfer and cluster
@@ -168,3 +170,4 @@ Please see the details in the [Development And Contribution
 Guide](CONTRIBUTING.md).
 
 [img_snijder_logo]: https://raw.githubusercontent.com/imcf/snijder/master/resources/artwork/snijder-logo-blue-64.png
+[img_codestyle_black]: https://img.shields.io/badge/code%20style-black-000000.svg
