@@ -15,7 +15,7 @@ from collections import deque
 
 import gc3libs
 
-from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
+from . import logi, logd, logw
 from .logger import LOGGER, LEVEL_MAPPING
 
 
@@ -99,7 +99,7 @@ class JobQueue(object):
 
     def append(self, job):
         """Add a new job to the queue.
-    
+
         Parameters
         ----------
         job : JobDescription
@@ -244,7 +244,8 @@ class JobQueue(object):
         logd("Changing status of job [uid:%.7s] to %s", job["uid"], status)
         job["status"] = status
         self.status_changed = True
-        if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
+
+        if status == gc3libs.Run.State.TERMINATED:  # pylint: disable-msg=no-member
             self.remove(job["uid"])
         logd(self.update_status())
 
@@ -423,7 +424,7 @@ class JobQueue(object):
         """
         joblist = []
         # if the queue is empty, we return immediately with an empty list:
-        if len(self) == 0:  # pylint: disable=C1801
+        if len(self) == 0:  # pylint: disable-msg=len-as-condition
             logd("Empty queue!")
             return joblist
         # put queues into a list of lists, respecting the current queue order:

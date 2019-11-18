@@ -106,7 +106,7 @@ def manage_queue():
         file_handler = JobFileHandler(jobqueues, job_spooler.dirs)
         # NOTE: spool() is blocking, as it contains the main spooling loop!
         job_spooler.spool()
-    except Exception as err:  # pylint: disable=W0703
+    except Exception as err:  # pylint: disable-msg=broad-except
         print "\nThe Snijder Queue Manager terminated with an ERROR: %s\n" % err
         retval = False
     finally:

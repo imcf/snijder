@@ -18,7 +18,7 @@ import time
 import json
 from hashlib import sha1
 
-from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
+from . import logi, logd, logw, logc, loge
 from . import JOBFILE_VER
 
 
@@ -464,10 +464,9 @@ class JobDescription(dict):
             logw("Not moving jobfile as 'spooldirs' class variable is unset!")
             return
 
-        target = os.path.join(
-            JobDescription.spooldirs[target],  # pylint: disable=E1136
-            self["uid"] + suffix,
-        )
+        # pylint: disable-msg=unsubscriptable-object
+        target = os.path.join(JobDescription.spooldirs[target], self["uid"] + suffix,)
+        # pylint: enable-msg=unsubscriptable-object
 
         if os.path.exists(target):
             target += ".%s" % time.time()

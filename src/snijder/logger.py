@@ -20,11 +20,14 @@ LOGGER.setLevel(LOGLEVEL)
 gc3libs.log = logging.getLogger("gc3libs")
 gc3libs.log.level = logging.WARN
 
-logw = LOGGER.warn  # pylint: disable=C0103
-logi = LOGGER.info  # pylint: disable=C0103
-logd = LOGGER.debug  # pylint: disable=C0103
-loge = LOGGER.error  # pylint: disable=C0103
-logc = LOGGER.critical  # pylint: disable=C0103
+
+# pylint: disable-msg=invalid-name
+logw = LOGGER.warn
+logi = LOGGER.info
+logd = LOGGER.debug
+loge = LOGGER.error
+logc = LOGGER.critical
+# pylint: enable-msg=invalid-name
 
 LEVEL_MAPPING = {
     "debug": logging.DEBUG,

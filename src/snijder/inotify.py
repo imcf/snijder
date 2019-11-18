@@ -4,10 +4,10 @@
 import pyinotify
 
 from .jobs import process_jobfile
-from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
+from . import logi, logd
 
 
-class JobFileHandler(object):
+class JobFileHandler(object):  # pylint: disable-msg=too-few-public-methods
     """Wrapper class to set up inotify for incoming jobfiles."""
 
     def __init__(self, queues, dirs):
@@ -23,7 +23,7 @@ class JobFileHandler(object):
         self.watch_mgr = pyinotify.WatchManager()
         # mask which events to watch: pyinotify.IN_CREATE
         self.wdd = self.watch_mgr.add_watch(
-            dirs["new"], pyinotify.IN_CREATE, rec=False  # pylint: disable=E1101
+            dirs["new"], pyinotify.IN_CREATE, rec=False  # pylint: disable-msg=no-member
         )
         self.notifier = pyinotify.ThreadedNotifier(
             self.watch_mgr, EventHandler(queues=queues, dirs=dirs)
@@ -47,7 +47,7 @@ class EventHandler(pyinotify.ProcessEvent):
     process_IN_CREATE()
     """
 
-    def my_init(self, queues, dirs):  # pylint: disable=W0221
+    def my_init(self, queues, dirs):  # pylint: disable-msg=arguments-differ
         """Initialize the inotify event handler.
 
         Parameters
@@ -66,7 +66,7 @@ class EventHandler(pyinotify.ProcessEvent):
             self.dirs["new"],
         )
 
-    def process_IN_CREATE(self, event):  # pylint: disable=C0103
+    def process_IN_CREATE(self, event):  # pylint: disable-msg=invalid-name
         """Method handling 'create' events.
 
         Parameters

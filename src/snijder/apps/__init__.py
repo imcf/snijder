@@ -11,7 +11,7 @@ AbstractApp()
 import os
 import gc3libs
 
-from .. import logi, logd, logw, logc, loge  # pylint: disable=W0611
+from .. import logi, logd, logw, logc
 
 
 class AbstractApp(gc3libs.Application):

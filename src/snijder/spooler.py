@@ -24,7 +24,7 @@ import psutil
 import gc3libs
 import gc3libs.config
 
-from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
+from . import logi, logd, logw, logc, loge
 from . import JOBFILE_VER
 from .apps import hucore, dummy
 from .jobs import JobDescription
@@ -419,10 +419,13 @@ class JobSpooler(object):
                     new_state = app.status_changed()
                     if new_state is not None:
                         self.queue.set_jobstatus(app.job, new_state)
-                    # pylint: disable=E1101
+
+                    # pylint: disable-msg=no-member
                     if new_state == gc3libs.Run.State.TERMINATED:
                         app.job.move_jobfile("done")
                         self.apps.pop(i)
+                    # pylint: enable-msg=no-member
+
                 stats = self.engine_status()
                 # NOTE: in theory, we could simply add all apps to the engine
                 # and let gc3 decide when to dispatch the next one, however
