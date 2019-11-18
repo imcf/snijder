@@ -28,6 +28,9 @@ init() {
     fi
     source "$CONFFILE"
 
+    SPOOLINGDIR=$(read_snijder_basedir $GC3CONF)
+    colr green "Using spooling directory '$SPOOLINGDIR'."
+
     local QM_PY="bin/snijder-queue"
     if ! [ -f "$QM_PY" ] ; then
         error "Can't find queue manager executable!"
@@ -86,6 +89,22 @@ check_python_packages() {
         colr yellow "$MSG"
         exit 255
     fi
+}
+
+
+read_snijder_basedir() {
+    # parse the gc3pie config file and report the snijder_basedir
+    BASE=$(python -c "
+import ConfigParser
+parser = ConfigParser.ConfigParser()
+parser.readfp(open('${1}'))
+print(parser.defaults()['snijder_basedir'])
+    ")
+    if [ -z "$BASE" ] ; then
+        error "Couldn't find spooling directory from configuration!"
+        exit 252
+    fi
+    echo $BASE
 }
 
 
