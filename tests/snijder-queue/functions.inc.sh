@@ -407,7 +407,9 @@ strip_rt() {
         s/  max_mem: [0-9]*kB  /  MAXMEM_STRIPPED  /
         s/unclean: \[['"'"'0-9]*\]/unclean: \[RSC_STRIPPED\]/g
         s/shellcmd.d\/[0-9]*\]/PID_STRIPPED/g
-    ''' | strip_c
+    ''' |
+    sed -u "s,$SPOOLINGDIR,SPOOLINGDIR,g" |
+    strip_c
 }
 
 
