@@ -249,15 +249,21 @@ class JobQueue(object):
             self.remove(job["uid"])
         logd(self.update_status())
 
-    def update_status(self):
+    def update_status(self, force=False):
         """Update the queue status information (JSON and logs)
+
+        Parameters
+        ----------
+        force : bool, optional
+            Flag whether an update of the status should be forced even if the
+            `status_changed` indicates it is not necessary, by default False.
 
         Returns
         -------
         str
             The JSON-formatted dict as returned by queue_details_json().
         """
-        if not self.status_changed:
+        if not self.status_changed and not force:
             return None
         self.status_changed = False
         self.queue_details_hr()
@@ -316,6 +322,7 @@ class JobQueue(object):
         details = {"jobs": formatted}
         queue_json = json.dumps(details, indent=4)
         if self.statusfile is not None:
+            logd("Writing queue status JSON file [%s].", self.statusfile)
             with open(self.statusfile, "w") as fout:
                 fout.write(queue_json)
         return queue_json

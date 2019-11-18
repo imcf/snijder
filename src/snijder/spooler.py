@@ -86,7 +86,7 @@ class JobSpooler(object):
             # don't change the status on "refresh", instead simply print the
             # queue status and update the status file:
             logi("Received spooler queue status refresh request.")
-            logd(self.queue.update_status())
+            logd(self.queue.update_status(force=True))
             return
 
         if newstatus == self.status:
