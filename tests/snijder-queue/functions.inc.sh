@@ -405,7 +405,7 @@ strip_rt() {
         s/  cpu: [0-9\.]*s  /  CPUTIME_STRIPPED  /
         s/  wall: [0-9\.]*s  /  WALLTIME_STRIPPED  /
         s/  max_mem: [0-9]*kB  /  MAXMEM_STRIPPED  /
-        s/unclean: \[['"'"'0-9]*\]/unclean: \[RSC_STRIPPED\]/g
+        s/unclean: \[[u]['"'"'0-9]*\]/unclean: \[RSC_STRIPPED\]/g
         s/shellcmd.d\/[0-9]*\]/PID_STRIPPED/g
     ''' |
     sed -u "s,$SPOOLINGDIR,SPOOLINGDIR,g" |
