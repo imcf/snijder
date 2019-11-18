@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Logging helper module.
-"""
+"""Logging helper module."""
 
 import logging
 import gc3libs

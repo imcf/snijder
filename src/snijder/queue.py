@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Queue class module for SNIJDER.
+"""Queue class module for SNIJDER.
 
 Classes
 -------

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Job spooler class module.
+"""Job spooler class module.
 
 Classes
 -------
