@@ -8,4 +8,4 @@ __author__ = "Niko Ehrenfeuchter"
 __version__ = "7.0.3"
 
 # expected version for job description files:
-JOBFILE_VER = '7'
+JOBFILE_VER = "7"

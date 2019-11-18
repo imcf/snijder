@@ -15,7 +15,7 @@ from collections import deque
 
 import gc3libs
 
-from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
 from .logger import LOGGER, LEVEL_MAPPING
 
 
@@ -53,7 +53,7 @@ class JobQueue(object):
             reported to the log files.
         """
         self._statusfile = None
-        self.categories = deque('')
+        self.categories = deque("")
         self.jobs = dict()
         self.processing = list()
         self.queue = dict()
@@ -106,7 +106,7 @@ class JobQueue(object):
             The job to be added to the queue.
         """
         category = job.get_category()
-        uid = job['uid']
+        uid = job["uid"]
         if uid in self.jobs:
             raise ValueError("Job with [uid:%.7s] already in this queue!" % uid)
         logi("Enqueueing job [uid:%.7s] into category '%s'.", uid, category)
@@ -121,7 +121,7 @@ class JobQueue(object):
         #     # the scheduler / priority queue:
         #     logd("JobQueue already contains a queue for '%s'.", category)
         self.queue[category].append(uid)
-        self.set_jobstatus(job, 'queued')
+        self.set_jobstatus(job, "queued")
         self.status_changed = True
 
     def _is_queue_empty(self, category):
@@ -137,7 +137,7 @@ class JobQueue(object):
 
         logd("Queue for category '%s' now empty, removing it.", category)
         self.categories.remove(category)  # remove it from the categories list
-        del self.queue[category]    # delete the category from the queue dict
+        del self.queue[category]  # delete the category from the queue dict
         return True
 
     def next_job(self):
@@ -195,10 +195,10 @@ class JobQueue(object):
             logi("Job [uid:%.7s] not found, discarding the request.", uid)
             return None
 
-        job = self.jobs[uid]   # remember the job for returning it later
+        job = self.jobs[uid]  # remember the job for returning it later
         category = job.get_category()
-        logi("Status of job to be removed: %s", job['status'])
-        del self.jobs[uid]     # remove the job from the jobs dict
+        logi("Status of job to be removed: %s", job["status"])
+        del self.jobs[uid]  # remove the job from the jobs dict
         self.status_changed = True
         if category in self.queue and uid in self.queue[category]:
             logd("Removing job [uid:%.7s] from queue '%s'.", uid, category)
@@ -241,11 +241,11 @@ class JobQueue(object):
         status : str
             The new status.
         """
-        logd("Changing status of job [uid:%.7s] to %s", job['uid'], status)
-        job['status'] = status
+        logd("Changing status of job [uid:%.7s] to %s", job["uid"], status)
+        job["status"] = status
         self.status_changed = True
         if status == gc3libs.Run.State.TERMINATED:  # pylint: disable=E1101
-            self.remove(job['uid'])
+            self.remove(job["uid"])
         logd(self.update_status())
 
     def update_status(self):
@@ -288,19 +288,20 @@ class JobQueue(object):
             ]
         }
         """
+
         def format_job(job):
             """Helper function to assemble the job dict."""
             fjob = {
-                "id"      : job['uid'],
-                "file"    : job['infiles'],
-                "username": job['user'],
-                "jobType" : job['type'],
-                "status"  : job['status'],
-                "server"  : 'N/A',
-                "progress": 'N/A',
-                "pid"     : 'N/A',
-                "start"   : 'N/A',
-                "queued"  : job['timestamp'],
+                "id": job["uid"],
+                "file": job["infiles"],
+                "username": job["user"],
+                "jobType": job["type"],
+                "status": job["status"],
+                "server": "N/A",
+                "progress": "N/A",
+                "pid": "N/A",
+                "start": "N/A",
+                "queued": job["timestamp"],
             }
             return fjob
 
@@ -311,10 +312,10 @@ class JobQueue(object):
             formatted.append(format_job(job))
         for job in joblist:
             formatted.append(format_job(job))
-        details = {'jobs' : formatted}
+        details = {"jobs": formatted}
         queue_json = json.dumps(details, indent=4)
         if self.statusfile is not None:
-            with open(self.statusfile, 'w') as fout:
+            with open(self.statusfile, "w") as fout:
                 fout.write(queue_json)
         return queue_json
 
@@ -328,7 +329,7 @@ class JobQueue(object):
         # the information assembling and string formatting below is very
         # time-consuming, so we check the current log level first and return if
         # we wouldn't log anything anyway:
-        if LOGGER.level > LEVEL_MAPPING['info']:
+        if LOGGER.level > LEVEL_MAPPING["info"]:
             return
 
         msg = list()
@@ -338,9 +339,10 @@ class JobQueue(object):
             msg.append("None.")
         for jobid in self.processing:
             job = self.jobs[jobid]
-            msg.append("%s (%s): [uid:%.7s] - %s [%s]" %
-                       (job['user'], job['email'], job['uid'],
-                        job['infiles'], job['status']))
+            msg.append(
+                "%s (%s): [uid:%.7s] - %s [%s]"
+                % (job["user"], job["email"], job["uid"], job["infiles"], job["status"])
+            )
         msg.append("%s queue status %s" % ("-" * 25, "-" * 25))
 
         msg.append("--- jobs queued (not yet retrieved)")
@@ -348,32 +350,35 @@ class JobQueue(object):
         if not joblist:
             msg.append("None.")
         for job in joblist[:5]:
-            msg.append("%s (%s): [uid:%.7s] - %s [%s]" %
-                        (job['user'], job['email'], job['uid'],
-                        job['infiles'], job['status']))
+            msg.append(
+                "%s (%s): [uid:%.7s] - %s [%s]"
+                % (job["user"], job["email"], job["uid"], job["infiles"], job["status"])
+            )
         if len(joblist) > 5:
             msg.append(" [ showing first 5 jobs (total: %s) ]" % len(joblist))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
 
-        logi('queue_details_hr():\n%s', '\n'.join(msg))
-        if LOGGER.level > LEVEL_MAPPING['debug']:
+        logi("queue_details_hr():\n%s", "\n".join(msg))
+        if LOGGER.level > LEVEL_MAPPING["debug"]:
             return
 
-        logd('QUEUE STATUS\n'
-             '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
-             "statusfile: %s\n"
-             "categories: %s\n"
-             "jobs: %s\n"
-             "processing: %s\n"
-             "queue: %s\n"
-             "deletion_list: %s\n"
-             '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
-             pprint.pformat(self._statusfile),
-             pprint.pformat(self.categories),
-             pprint.pformat(self.jobs),
-             pprint.pformat(self.processing),
-             pprint.pformat(self.queue),
-             pprint.pformat(self.deletion_list))
+        logd(
+            "QUEUE STATUS\n"
+            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+            "statusfile: %s\n"
+            "categories: %s\n"
+            "jobs: %s\n"
+            "processing: %s\n"
+            "queue: %s\n"
+            "deletion_list: %s\n"
+            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+            pprint.pformat(self._statusfile),
+            pprint.pformat(self.categories),
+            pprint.pformat(self.jobs),
+            pprint.pformat(self.processing),
+            pprint.pformat(self.queue),
+            pprint.pformat(self.deletion_list),
+        )
 
     def queue_details(self):
         """Generate a list with the current queue details."""
@@ -418,8 +423,8 @@ class JobQueue(object):
         """
         joblist = []
         # if the queue is empty, we return immediately with an empty list:
-        if len(self) == 0:                          # pylint: disable=C1801
-            logd('Empty queue!')
+        if len(self) == 0:  # pylint: disable=C1801
+            logd("Empty queue!")
             return joblist
         # put queues into a list of lists, respecting the current queue order:
         queues = [self.queue[category] for category in self.categories]
@@ -433,8 +438,7 @@ class JobQueue(object):
         #  (None,     None,     'u00_j3')]
 
         # now flatten the tuple-list and fill with the job details:
-        joblist = [jobid
-                   for roundlist in queues
-                   for jobid in roundlist
-                   if jobid is not None]
+        joblist = [
+            jobid for roundlist in queues for jobid in roundlist if jobid is not None
+        ]
         return joblist

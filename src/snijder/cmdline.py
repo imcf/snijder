@@ -17,38 +17,42 @@ def parse_arguments():
     """Parse command line arguments."""
     argparser = argparse.ArgumentParser(description=__doc__)
     argparser.add_argument(
-        '-s',
-        '--spooldir',
+        "-s",
+        "--spooldir",
         required=True,
-        help='spooling directory for jobfiles (e.g. "run/spool/")')
+        help='spooling directory for jobfiles (e.g. "run/spool/")',
+    )
     argparser.add_argument(
-        '-c',
-        '--config',
+        "-c",
+        "--config",
         required=False,
         default=None,
-        help='GC3Pie config file (default: ~/.gc3/gc3pie.conf)')
+        help="GC3Pie config file (default: ~/.gc3/gc3pie.conf)",
+    )
     argparser.add_argument(
-        '-r',
-        '--resource',
+        "-r",
+        "--resource",
         required=False,
-        help='GC3Pie resource name')
+        help="GC3Pie resource name, see documentation for details",
+    )
     argparser.add_argument(
-        '-v',
-        '--verbosity',
-        dest='verbosity',
-        action='count',
-        help='increase log level (may be repeated)',
-        default=0)
+        "-v",
+        "--verbosity",
+        dest="verbosity",
+        action="count",
+        help="increase log level (may be repeated)",
+        default=0,
+    )
     gc3log = argparser.add_mutually_exclusive_group()
     gc3log.add_argument(
-        '--gc3debug',
-        action='store_true',
-        help='set logging for gc3libs to "DEBUG" level'
+        "--gc3debug",
+        action="store_true",
+        help='set the logging for gc3libs to "DEBUG" level',
     )
     gc3log.add_argument(
-        '--gc3info',
-        action='store_true',
-        help='set logging for gc3libs to "INFO" level'
+        "--gc3info",
+        action="store_true",
+        help='set the logging for gc3libs to "INFO" level',
     )
     try:
         return argparser.parse_args()
@@ -63,9 +67,9 @@ def manage_queue():
     # set the loglevel as requested on the commandline
     set_verbosity(args.verbosity)
     if args.gc3debug:
-        set_gc3loglevel('debug')
+        set_gc3loglevel("debug")
     elif args.gc3info:
-        set_gc3loglevel('info')
+        set_gc3loglevel("info")
 
     # TODO:
     # [x] init spooldirs as staticmethod of spooler
@@ -76,15 +80,12 @@ def manage_queue():
     #     our queues, warn otherwise
     # [ ] then process files in the 'new' dir as new ones
     jobqueues = dict()
-    jobqueues['hucore'] = snijder.queue.JobQueue()
+    jobqueues["hucore"] = snijder.queue.JobQueue()
 
     try:
-        job_spooler = JobSpooler(
-            args.spooldir,
-            jobqueues['hucore'],
-            args.config)
+        job_spooler = JobSpooler(args.spooldir, jobqueues["hucore"], args.config)
     except RuntimeError as err:
-        print '\nERROR instantiating the job spooler: %s\n' % err
+        print "\nERROR instantiating the job spooler: %s\n" % err
         return False
 
     # select a specific resource if requested on the cmdline:
@@ -92,27 +93,25 @@ def manage_queue():
         job_spooler.engine.select_resource(args.resource)
 
     for qname, queue in jobqueues.iteritems():
-        status = os.path.join(job_spooler.dirs['status'], qname + '.json')
+        status = os.path.join(job_spooler.dirs["status"], qname + ".json")
         queue.statusfile = status
 
     # process jobfiles already existing during our startup:
-    for jobfile in job_spooler.dirs['newfiles']:
-        fname = os.path.join(job_spooler.dirs['new'], jobfile)
+    for jobfile in job_spooler.dirs["newfiles"]:
+        fname = os.path.join(job_spooler.dirs["new"], jobfile)
         process_jobfile(fname, jobqueues)
-
 
     retval = True
     try:
         file_handler = JobFileHandler(jobqueues, job_spooler.dirs)
         # NOTE: spool() is blocking, as it contains the main spooling loop!
         job_spooler.spool()
-    except Exception as err:                        # pylint: disable=W0703
-        print '\nThe Snijder Queue Manager terminated with an ERROR: %s\n' % err
+    except Exception as err:  # pylint: disable=W0703
+        print "\nThe Snijder Queue Manager terminated with an ERROR: %s\n" % err
         retval = False
     finally:
-        print 'Cleaning up. Remaining jobs:'
-        print jobqueues['hucore'].queue
+        print "Cleaning up. Remaining jobs:"
+        print jobqueues["hucore"].queue
         file_handler.shutdown()
 
     return retval
-

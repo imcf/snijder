@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
-"""
-Helper module for pyinotify stuff.
-"""
+"""Helper module for pyinotify stuff."""
 
-import os
 import pyinotify
 
 from .jobs import process_jobfile
-from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
 
 
 class JobFileHandler(object):
@@ -26,12 +23,11 @@ class JobFileHandler(object):
         self.watch_mgr = pyinotify.WatchManager()
         # mask which events to watch: pyinotify.IN_CREATE
         self.wdd = self.watch_mgr.add_watch(
-            dirs['new'],
-            pyinotify.IN_CREATE,  # pylint: disable=E1101
-            rec=False)
-        self.notifier = pyinotify.ThreadedNotifier(self.watch_mgr,
-                                                   EventHandler(queues=queues,
-                                                                dirs=dirs))
+            dirs["new"], pyinotify.IN_CREATE, rec=False  # pylint: disable=E1101
+        )
+        self.notifier = pyinotify.ThreadedNotifier(
+            self.watch_mgr, EventHandler(queues=queues, dirs=dirs)
+        )
         self.notifier.start()
 
     def shutdown(self):
@@ -51,7 +47,7 @@ class EventHandler(pyinotify.ProcessEvent):
     process_IN_CREATE()
     """
 
-    def my_init(self, queues, dirs):                # pylint: disable=W0221
+    def my_init(self, queues, dirs):  # pylint: disable=W0221
         """Initialize the inotify event handler.
 
         Parameters
@@ -64,10 +60,13 @@ class EventHandler(pyinotify.ProcessEvent):
         """
         self.queues = queues
         self.dirs = dirs
-        logi('Initialized the event handler for inotify, watching job '
-             'submission directory "%s".', self.dirs['new'])
+        logi(
+            "Initialized the event handler for inotify, watching job "
+            'submission directory "%s".',
+            self.dirs["new"],
+        )
 
-    def process_IN_CREATE(self, event):             # pylint: disable=C0103
+    def process_IN_CREATE(self, event):  # pylint: disable=C0103
         """Method handling 'create' events.
 
         Parameters

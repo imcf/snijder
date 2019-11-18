@@ -24,7 +24,7 @@ import psutil
 import gc3libs
 import gc3libs.config
 
-from . import logi, logd, logw, logc, loge          # pylint: disable=W0611
+from . import logi, logd, logw, logc, loge  # pylint: disable=W0611
 from . import JOBFILE_VER
 from .apps import hucore, dummy
 from .jobs import JobDescription
@@ -69,7 +69,7 @@ class JobSpooler(object):
         JobDescription.spooldirs = self.dirs
         self.queue = queue
         # self.queues = dict()  # TODO: multi-queue logic (#136, #272)
-        self._status = self._status_pre = 'run'  # the initial status is 'run'
+        self._status = self._status_pre = "run"  # the initial status is 'run'
         self.gc3cfg = self.check_gc3conf(gc3conf)
         self.engine = self.setup_engine()
         logi("Created JobSpooler.")
@@ -82,7 +82,7 @@ class JobSpooler(object):
     @status.setter
     def status(self, newstatus):
         """Set the 'status' variable, perform non-spooling actions."""
-        if newstatus == 'refresh':
+        if newstatus == "refresh":
             # don't change the status on "refresh", instead simply print the
             # queue status and update the status file:
             logi("Received spooler queue status refresh request.")
@@ -95,9 +95,11 @@ class JobSpooler(object):
 
         self._status_pre = self.status
         self._status = newstatus
-        logw("Received spooler status change request: %s -> %s",
-             self._status_pre, self.status)
-
+        logw(
+            "Received spooler status change request: %s -> %s",
+            self._status_pre,
+            self.status,
+        )
 
     @staticmethod
     def setup_rundirs(base_dir):
@@ -132,48 +134,55 @@ class JobSpooler(object):
         }
         """
         full_subdirs = dict()
-        tree = {
-            'spool': ['new', 'cur', 'done'],
-            'queue': ['status', 'requests']
-        }
+        tree = {"spool": ["new", "cur", "done"], "queue": ["status", "requests"]}
         for run_dir in tree:
             for sub_dir in tree[run_dir]:
                 cur = os.path.join(base_dir, run_dir, sub_dir)
                 if not os.access(cur, os.W_OK):
                     if os.path.exists(cur):
-                        raise OSError("Directory '%s' exists, but it is not "
-                                      "writable for us. Stopping!" % cur)
+                        raise OSError(
+                            "Directory '%s' exists, but it is not "
+                            "writable for us. Stopping!" % cur
+                        )
                     try:
                         os.makedirs(cur)
                         logi("Created spool directory '%s'.", cur)
                     except OSError as err:
-                        raise OSError("Error creating Queue Manager runtime "
-                                      "directory '%s': %s" % (cur, err))
+                        raise OSError(
+                            "Error creating Queue Manager runtime "
+                            "directory '%s': %s" % (cur, err)
+                        )
                 full_subdirs[sub_dir] = cur
 
         # pick up any existing jobfiles in the 'new' spooldir
-        full_subdirs['newfiles'] = list()
-        new_existing = os.listdir(full_subdirs['new'])
+        full_subdirs["newfiles"] = list()
+        new_existing = os.listdir(full_subdirs["new"])
         if new_existing:
             logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
-            logw("Spooling directory '%s' contains files that were already "
-                 "submitted prior to the QM startup.", full_subdirs['new'])
+            logw(
+                "Spooling directory '%s' contains files that were already "
+                "submitted prior to the QM startup.",
+                full_subdirs["new"],
+            )
             for fname in new_existing:
                 logw("- file: %s", fname)
-                full_subdirs['newfiles'].append(fname)
+                full_subdirs["newfiles"].append(fname)
             logw("%s PRE-SUBMITTED JOBS %s", "=" * 60, "=" * 60)
         logi("Runtime directories:\n%s", pprint.pformat(full_subdirs))
 
         # check 'cur' dir and remember files for resuming from a queue shutdown:
-        full_subdirs['curfiles'] = list()
-        cur_existing = os.listdir(full_subdirs['cur'])
+        full_subdirs["curfiles"] = list()
+        cur_existing = os.listdir(full_subdirs["cur"])
         if cur_existing:
             logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
-            logi("Spooling directory '%s' contains files from a previous "
-                 "session, will try to resume them!", full_subdirs['cur'])
+            logi(
+                "Spooling directory '%s' contains files from a previous "
+                "session, will try to resume them!",
+                full_subdirs["cur"],
+            )
             for fname in cur_existing:
                 logi("- file: %s", fname)
-                full_subdirs['curfiles'].append(fname)
+                full_subdirs["curfiles"].append(fname)
             logi("%s PREVIOUS JOBS %s", "=" * 60, "=" * 60)
         return full_subdirs
 
@@ -193,13 +202,14 @@ class JobSpooler(object):
         cfg = dict()
         gc3conf = gc3libs.config.Configuration(gc3conffile)
         try:
-            cfg['spooldir'] = gc3conf.resources['localhost'].spooldir
-            logi("Using gc3pie spooldir: %s", cfg['spooldir'])
+            cfg["spooldir"] = gc3conf.resources["localhost"].spooldir
+            logi("Using gc3pie spooldir: %s", cfg["spooldir"])
         except AttributeError:
-            raise AttributeError("Unable to parse spooldir for resource "
-                                 "'localhost' from gc3pie config file '%s'!" %
-                                 gc3conffile)
-        cfg['conffile'] = gc3conffile
+            raise AttributeError(
+                "Unable to parse spooldir for resource "
+                "'localhost' from gc3pie config file '%s'!" % gc3conffile
+            )
+        cfg["conffile"] = gc3conffile
         return cfg
 
     @staticmethod
@@ -219,8 +229,11 @@ class JobSpooler(object):
         unclean = list()
         for resource in engine.get_resources():
             resourcedir = os.path.expandvars(resource.resource_dir)
-            logi("Checking resource dir for resource '%s': [%s]",
-                 resource.name, resourcedir)
+            logi(
+                "Checking resource dir for resource '%s': [%s]",
+                resource.name,
+                resourcedir,
+            )
             if not os.path.exists(resourcedir):
                 continue
             files = os.listdir(resourcedir)
@@ -257,9 +270,12 @@ class JobSpooler(object):
                 pid = int(os.path.basename(resfile))
                 cmd = psutil.Process(pid).cmdline()
                 logd("Process matching resource pid '%s' found: %s", pid, cmd)
-                if 'gc3pie' in str(cmd):
-                    logw("Process with pid '%s' seems to be a running gc3pie "
-                         "job: %s", pid, cmd)
+                if "gc3pie" in str(cmd):
+                    logw(
+                        "Process with pid '%s' seems to be a running gc3pie " "job: %s",
+                        pid,
+                        cmd,
+                    )
                     gc3_jobs[pid] = resfile
                     continue
 
@@ -270,12 +286,18 @@ class JobSpooler(object):
             except psutil.NoSuchProcess:
                 logd("No running process matching pid '%s' found.", pid)
             except Exception as err:
-                loge("Unexpected error while checking resource file [%s]: %s",
-                     resfile, err)
+                loge(
+                    "Unexpected error while checking resource file [%s]: %s",
+                    resfile,
+                    err,
+                )
                 raise err
 
-            logi("File [%s] doesn't seem to be from an existing gc3 job, "
-                 "removing it.", resfile)
+            logi(
+                "File [%s] doesn't seem to be from an existing gc3 job, "
+                "removing it.",
+                resfile,
+            )
             os.remove(resfile)
 
         return gc3_jobs
@@ -292,21 +314,21 @@ class JobSpooler(object):
         Raises
         ------
         RuntimeError
-            In case the resource dir can't be cleaned (e.g. because the job
-            files therein correspond to existing processes), a RuntimeError
-            is raised.
+            In case the resource dir can't be cleaned (e.g. because the job files
+            therein correspond to existing processes), a RuntimeError is raised.
         """
         running_gc3jobs = JobSpooler.check_running_gc3_jobs(engine)
         if running_gc3jobs:
             logc("The gc3pie resource directories are unclean!")
-            msg = ("One or more gc3pie resource directories are containing gc3"
-                   "job files referring to running processes.\n\n"
-                   "Please check if these processes are terminated and clean "
-                   "up those files before starting the queue manager again!\n")
+            msg = (
+                "One or more gc3pie resource directories are containing gc3 job files "
+                "referring to running processes.\n\n"
+                "Please check if these processes are terminated and clean up those "
+                "files before starting the queue manager again!\n"
+            )
             for job in running_gc3jobs.iteritems():
                 msg += "\n PID: %s - gc3pie job resource file: [%s]" % job
             raise RuntimeError(msg)
-
 
     def setup_engine(self):
         """Wrapper to set up the GC3Pie engine.
@@ -315,9 +337,8 @@ class JobSpooler(object):
         -------
         gc3libs.core.Engine
         """
-        logi('Creating GC3Pie engine using config file "%s".',
-             self.gc3cfg['conffile'])
-        engine = gc3libs.create_engine(self.gc3cfg['conffile'])
+        logi('Creating GC3Pie engine using config file "%s".', self.gc3cfg["conffile"])
+        engine = gc3libs.create_engine(self.gc3cfg["conffile"])
         self.check_gc3_resources(engine)
 
         return engine
@@ -325,18 +346,25 @@ class JobSpooler(object):
     def engine_status(self):
         """Helper to get the engine status and print a formatted log."""
         stats = self.engine.stats()
-        logd("Engine: NEW:%s  SUBM:%s  RUN:%s  TERM'ing:%s  TERM'ed:%s  "
-             "UNKNWN:%s  STOP:%s  (total:%s)",
-             stats['NEW'], stats['SUBMITTED'], stats['RUNNING'],
-             stats['TERMINATING'], stats['TERMINATED'], stats['UNKNOWN'],
-             stats['STOPPED'], stats['total'])
+        logd(
+            "Engine: NEW:%s  SUBM:%s  RUN:%s  TERM'ing:%s  TERM'ed:%s  "
+            "UNKNWN:%s  STOP:%s  (total:%s)",
+            stats["NEW"],
+            stats["SUBMITTED"],
+            stats["RUNNING"],
+            stats["TERMINATING"],
+            stats["TERMINATED"],
+            stats["UNKNOWN"],
+            stats["STOPPED"],
+            stats["total"],
+        )
         return stats
 
     def check_status_request(self):
         """Check if a status change for the QM was requested."""
-        valid = ['shutdown', 'refresh', 'pause', 'run']
+        valid = ["shutdown", "refresh", "pause", "run"]
         for fname in valid:
-            check_file = os.path.join(self.dirs['requests'], fname)
+            check_file = os.path.join(self.dirs["requests"], fname)
             if os.path.exists(check_file):
                 os.remove(check_file)
                 self.status = fname
@@ -347,7 +375,7 @@ class JobSpooler(object):
         """Process job deletion requests for all queues."""
         # first process jobs that have been dispatched already:
         for app in self.apps:
-            uid = app.job['uid']
+            uid = app.job["uid"]
             if uid in self.queue.deletion_list:
                 # TODO: we need to make sure that the calls to the engine in
                 # kill_running_job() do not accidentally submit the next job
@@ -369,18 +397,18 @@ class JobSpooler(object):
 
     def _spool(self):
         """Spooler function dispatching jobs from the queues. BLOCKING!"""
-        print '*' * 80
-        print 'snijder-queue spooler running, press ctrl-c to shut it down'
-        print '*' * 80
-        logi('Expected jobfile version: %s.', JOBFILE_VER)
+        print "*" * 80
+        print "snijder-queue spooler running, press ctrl-c to shut it down"
+        print "*" * 80
+        logi("Expected jobfile version: %s.", JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
         apptypes = {
-            'hucore': hucore.HuDeconApp,
-            'dummy': dummy.DummySleepApp,
+            "hucore": hucore.HuDeconApp,
+            "dummy": dummy.DummySleepApp,
         }
         while True:
             self.check_status_request()
-            if self.status == 'run':
+            if self.status == "run":
                 # process deletion requests before anything else
                 self.check_for_jobs_to_delete()
                 # TODO: gc3pie logs an 'UnrecoverableDataStagingError' in case
@@ -393,7 +421,7 @@ class JobSpooler(object):
                         self.queue.set_jobstatus(app.job, new_state)
                     # pylint: disable=E1101
                     if new_state == gc3libs.Run.State.TERMINATED:
-                        app.job.move_jobfile('done')
+                        app.job.move_jobfile("done")
                         self.apps.pop(i)
                 stats = self.engine_status()
                 # NOTE: in theory, we could simply add all apps to the engine
@@ -402,29 +430,28 @@ class JobSpooler(object):
                 # more tasks than available resources, see ticket #421 and
                 # upstream gc3pie ticket #359 for more details. For now we do
                 # not submit new jobs if there are any running or submitted:
-                if stats['RUNNING'] > 0 or stats['SUBMITTED'] > 0:
+                if stats["RUNNING"] > 0 or stats["SUBMITTED"] > 0:
                     time.sleep(1)
                     continue
                 nextjob = self.queue.next_job()
                 if nextjob is not None:
                     logd("Current joblist: %s", self.queue.queue)
-                    apptype = apptypes[nextjob['type']]
-                    logi("Adding job (type '%s') to the gc3pie engine.",
-                         apptype.__name__)
-                    app = apptype(nextjob, self.gc3cfg['spooldir'])
+                    apptype = apptypes[nextjob["type"]]
+                    logi("Adding job (type '%s') to the gc3 engine.", apptype.__name__)
+                    app = apptype(nextjob, self.gc3cfg["spooldir"])
                     self.apps.append(app)
                     self.engine.add(app)
                     # as a new job is dispatched now, we also print out the
                     # human readable queue status:
                     self.queue.queue_details_hr()
-            elif self.status == 'shutdown':
+            elif self.status == "shutdown":
                 return True
 
-            elif self.status == 'refresh':
+            elif self.status == "refresh":
                 # the actual refresh action is handled by the status.setter
                 # method, so we simply pass on:
                 pass
-            elif self.status == 'pause':
+            elif self.status == "pause":
                 # no need to do anything, just sleep and check requests again:
                 pass
             time.sleep(0.5)
@@ -438,13 +465,13 @@ class JobSpooler(object):
             logw("v%sv", "-" * 80)
             logw("Unfinished jobs, trying to stop them:")
             for app in self.apps:
-                logw("Status of running job: %s", app.job['status'])
+                logw("Status of running job: %s", app.job["status"])
                 self.kill_running_job(app)
             logw("^%s^", "-" * 80)
             self.engine.progress()
             stats = self.engine_status()
-            if stats['RUNNING'] > 0:
-                logc("Killing jobs failed, %s still running.", stats['RUNNING'])
+            if stats["RUNNING"] > 0:
+                logc("Killing jobs failed, %s still running.", stats["RUNNING"])
             else:
                 logi("Successfully terminated remaining jobs, none left.")
         self.check_gc3_resources(self.engine)
@@ -452,11 +479,11 @@ class JobSpooler(object):
 
     def kill_running_job(self, app):
         """Helper method to kill a running job."""
-        logw("<KILLING> [%s] %s", app.job['user'], type(app).__name__)
+        logw("<KILLING> [%s] %s", app.job["user"], type(app).__name__)
         app.kill()
         self.engine.progress()
         state = app.status_changed()
-        if state != 'TERMINATED':
+        if state != "TERMINATED":
             loge("Expected status 'TERMINATED', found '%s'!", state)
         else:
             logw("App has terminated, removing from list of apps.")
@@ -470,7 +497,7 @@ class JobSpooler(object):
         # ## app.fetch_output()
         # ## self.engine.progress()
         # remove the job from the queue:
-        self.queue.remove(app.job['uid'])
+        self.queue.remove(app.job["uid"])
         # trigger an update of the queue status:
         self.queue.update_status()
         # this is just to trigger the stats messages in debug mode:
