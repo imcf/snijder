@@ -335,7 +335,7 @@ class SnijderJobConfigParser(AbstractJobConfigParser):
         ]
         # now parse the section:
         self.parse_section_entries("hucore", mapping)
-        if self["tasktype"] != "decon" and self["tasktype"] != "preview":
+        if self["tasktype"] not in ["decon", "preview"]:
             raise ValueError("Tasktype invalid: %s" % self["tasktype"])
         # and the input file(s) section:
         # TODO: can we check if this section contains nonsense values?
