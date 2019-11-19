@@ -1,5 +1,7 @@
 """Tests for the snijder.jobs module."""
 
+# pylint: disable-msg=invalid-name
+
 from __future__ import print_function
 
 import os
@@ -73,3 +75,36 @@ def test_snijder_job_config_parser_valid_jobfiles(caplog):
         assert "Finished initialization of JobDescription" in caplog.text
         # print(" - Parsing worked without errors on '%s'." % jobfile)
         pprint.pprint(job)
+
+
+def test_snijder_job_config_parser_invalid_jobfiles(caplog):
+    """Test parsing the INVALID job configuration files."""
+    prepare_logging(caplog)
+
+    # locate the provided sample job configuration files:
+    jobfile_path = os.path.join("tests", "snijder-queue", "jobfiles", "invalid")
+    jobfile_list = glob.glob(jobfile_path + "/*.cfg")
+    jobfile_list.sort()
+    print("Found %s job config files in [%s]." % (len(jobfile_list), jobfile_path))
+    assert jobfile_list
+
+    # test parsing the invalid job configuration files
+    error_messages = [
+        "Section '.*' missing in job config!",
+        "Option '.*' missing from section '.*'!",
+        "Job config invalid, section '.*' contains unknown options:",
+        "No input files defined in job config.",
+        "Invalid timestamp: on_parse.",
+        "Can't find job IDs in job config!",
+        "Unexpected jobfile version",
+        "Unknown jobtype",
+    ]
+    match = "(" + "|".join(error_messages) + ")"
+    print(match)
+    for jobfile in jobfile_list:
+        caplog.clear()
+        print(jobfile)
+        with pytest.raises(ValueError, match=match):
+            snijder.jobs.JobDescription(jobfile, "file")
+        assert "Ignoring job config, parsing failed" in caplog.text
+        assert "Invalid job config file" in caplog.text
