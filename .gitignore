@@ -6,6 +6,10 @@
 # Python bytecode
 *.py[cod]
 
+# test outputs, coverage, etc.
+.coverage
+/htmlcov/
+
 # vim swap files
 .*.sw?
 
