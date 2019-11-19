@@ -67,10 +67,12 @@ def process_jobfile(fname, queues):
         # there is nothing to add to the queue and the IOError indicates
         # problems accessing the file, so we simply return silently:
         return
+
     except (SyntaxError, ValueError) as err:
         # jobfile was already moved out of the way by the constructor of the
         # JobDescription object, so we simply stop here and return:
         return
+
     if job["type"] == "deletejobs":
         logw("Received job deletion request(s)!")
         # TODO: append only to specific queue!
@@ -85,6 +87,7 @@ def process_jobfile(fname, queues):
         logc("Selected queue (%s) does not exist!", selected_queue)
         job.move_jobfile("done")
         return
+
     job.move_jobfile("cur")
     try:
         queues[selected_queue].append(job)
@@ -165,11 +168,14 @@ class AbstractJobConfigParser(dict):
                 # which is probably some race condition - just try again...
                 loge("'with open' statement resulted in error: %s", err)
                 continue
+
             if config_raw:
                 logd("Reading the job file succeeded after %ss!", snooze)
                 break
+
         if not config_raw:
             raise IOError("Unable to read job config file '%s'!" % jobfile)
+
         return config_raw
 
     def get_option(self, section, option):
