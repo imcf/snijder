@@ -98,6 +98,8 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
         "Can't find job IDs in job config!",
         "Unexpected jobfile version",
         "Unknown jobtype",
+        "Tasktype invalid",
+        "No 'deletejobs' section in job config!",
     ]
     match = "(" + "|".join(error_messages) + ")"
     print(match)
