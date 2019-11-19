@@ -109,6 +109,11 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
         assert "Ignoring job config, parsing failed" in caplog.text
         assert "Invalid job config file" in caplog.text
 
+    # test with a job configuration file not following the ini-style syntax:
+    caplog.clear()
+    with pytest.raises(SyntaxError, match="ERROR in JobDescription"):
+        snijder.jobs.SnijderJobConfigParser(jobconfig="no-header", srctype="string")
+
 
 def test_snijder_job_config_parser__read_jobfile(caplog, tmpdir):
     """Test the read_jobfile static method."""
