@@ -12,13 +12,15 @@ import snijder.logger
 import pytest  # pylint: disable-msg=unused-import
 
 
-def set_snijder_debug_logging():
+def prepare_logging(caplog):
+    """Helper function to set up logging appropriately."""
+    caplog.set_level("DEBUG")
     snijder.logger.set_loglevel("debug")
 
 
 def test_select_queue_for_job(caplog):
-    caplog.set_level("DEBUG")
-    set_snijder_debug_logging()
+    """Test the select_queue_for_job function."""
+    prepare_logging(caplog)
     print("testing select_queue_for_job()...")
 
     caplog.clear()
@@ -38,7 +40,8 @@ def test_select_queue_for_job(caplog):
 
 
 def test_snijder_job_config_parser(caplog):
-    caplog.set_level("DEBUG")
+    """Test the SnijderJobConfigParser constructor."""
+    prepare_logging(caplog)
 
     # test with an invalid source type
     caplog.clear()
