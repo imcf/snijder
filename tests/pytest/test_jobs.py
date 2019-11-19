@@ -54,15 +54,22 @@ def test_snijder_job_config_parser(caplog):
         snijder.jobs.SnijderJobConfigParser(jobconfig="", srctype="string")
     assert "Read job configuration file / string." in caplog.text
 
+
+def test_snijder_job_config_parser_valid_jobfiles(caplog):
+    """Test parsing the valid job configuration files."""
+    prepare_logging(caplog)
+
     # locate the provided sample job configuration files:
     jobfile_path = os.path.join("tests", "snijder-queue", "jobfiles")
-    jobfile_list = glob.glob(jobfile_path + '/*.cfg')
+    jobfile_list = glob.glob(jobfile_path + "/*.cfg")
     jobfile_list.sort()
     print("Found %s job config files in [%s]." % (len(jobfile_list), jobfile_path))
     assert jobfile_list
 
+    # test parsing the job configuration files
     for jobfile in jobfile_list:
-        print("----------------- parsing %s -----------------" % jobfile)
-        job = snijder.jobs.JobDescription(jobfile, 'file')
-        print(" - Parsing worked without errors on '%s'." % jobfile)
+        caplog.clear()
+        job = snijder.jobs.JobDescription(jobfile, "file")
+        assert "Finished initialization of JobDescription" in caplog.text
+        # print(" - Parsing worked without errors on '%s'." % jobfile)
         pprint.pprint(job)
