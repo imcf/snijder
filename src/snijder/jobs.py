@@ -117,7 +117,7 @@ class AbstractJobConfigParser(dict):
         elif srctype == "string":
             pass
         else:
-            raise Exception("Unknown source type '%s'" % srctype)
+            raise TypeError("Unknown source type '%s'" % srctype)
         # store the SHA1 digest of this job, serving as the UID:
         self["uid"] = sha1(jobconfig).hexdigest()
         self.parse_jobconfig(jobconfig)
