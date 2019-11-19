@@ -2,7 +2,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -18,16 +18,16 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.871165,
+ 'timestamp': 1574160170.624932,
  'type': 'hucore',
- 'uid': 'd2ed6366a46fb6f8e7d103fdfdf69230b4b03d35',
+ 'uid': 'feccca5ad848597ec00c115e26d16b33d4270725',
  'user': 'user01',
  'ver': '7'}
 snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -43,16 +43,16 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.872839,
+ 'timestamp': 1574160170.626047,
  'type': 'hucore',
- 'uid': 'd2ed6366a46fb6f8e7d103fdfdf69230b4b03d35',
+ 'uid': '8fa189af9116b1cbc0c4fe8ec4b52e5756e86fe7',
  'user': 'user01',
  'ver': '7'}
 snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -68,16 +68,16 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.87405,
+ 'timestamp': 1574160170.6269,
  'type': 'hucore',
- 'uid': 'd2ed6366a46fb6f8e7d103fdfdf69230b4b03d35',
+ 'uid': '8fa189af9116b1cbc0c4fe8ec4b52e5756e86fe7',
  'user': 'user01',
  'ver': '7'}
 snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -93,16 +93,16 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.875179,
+ 'timestamp': 1574160170.627735,
  'type': 'hucore',
- 'uid': 'b09f697d25efda99b9634c9f404d73626c493cc7',
+ 'uid': '8fa189af9116b1cbc0c4fe8ec4b52e5756e86fe7',
  'user': 'user01',
  'ver': '7'}
 snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -118,16 +118,16 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.876383,
+ 'timestamp': 1574160170.628505,
  'type': 'hucore',
- 'uid': 'b09f697d25efda99b9634c9f404d73626c493cc7',
+ 'uid': '8fa189af9116b1cbc0c4fe8ec4b52e5756e86fe7',
  'user': 'user01',
  'ver': '7'}
 snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -143,16 +143,16 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.877593,
+ 'timestamp': 1574160170.629268,
  'type': 'hucore',
- 'uid': 'b09f697d25efda99b9634c9f404d73626c493cc7',
+ 'uid': '8fa189af9116b1cbc0c4fe8ec4b52e5756e86fe7',
  'user': 'user01',
  'ver': '7'}
 snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended for production use! TESTING ONLY!!
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -168,9 +168,9 @@ snijder [DEBUG] {'email': 'user01@mail.xy',
  'status': 'N/A',
  'tasktype': 'decon',
  'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
- 'timestamp': 1574096008.878902,
+ 'timestamp': 1574160170.630068,
  'type': 'hucore',
- 'uid': 'b09f697d25efda99b9634c9f404d73626c493cc7',
+ 'uid': '8fa189af9116b1cbc0c4fe8ec4b52e5756e86fe7',
  'user': 'user01',
  'ver': '7'}
 snijder [DEBUG] Setting JobDescription 'uid' to 'u000_aaa'
@@ -198,7 +198,7 @@ snijder [INFO] Adding a new queue for 'u000' to the JobQueue.
 snijder [DEBUG] Current queue categories: deque(['u000'])
 snijder [DEBUG] Changing status of job [uid:u000_aa] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.871165, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.624932, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_aaa"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 1
 snijder [DEBUG] len(JobQueue) = 1 (0 processing)
@@ -224,7 +224,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -241,7 +241,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -260,7 +260,7 @@ snijder [DEBUG] len(JobQueue) = 1 (0 processing)
 snijder [INFO] Enqueueing job [uid:u000_bb] into category 'u000'.
 snijder [DEBUG] Changing status of job [uid:u000_bb] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.872839, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.626047, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_bbb"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 2
 snijder [DEBUG] len(JobQueue) = 2 (0 processing)
@@ -287,7 +287,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -302,7 +302,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -319,7 +319,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -333,7 +333,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -352,7 +352,7 @@ snijder [DEBUG] len(JobQueue) = 2 (0 processing)
 snijder [INFO] Enqueueing job [uid:u000_cc] into category 'u000'.
 snijder [DEBUG] Changing status of job [uid:u000_cc] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.87405, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.6269, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u000", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u000_ccc"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 3
 snijder [DEBUG] len(JobQueue) = 3 (0 processing)
@@ -380,7 +380,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -395,7 +395,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -410,7 +410,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -427,7 +427,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -441,7 +441,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -455,7 +455,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -476,7 +476,7 @@ snijder [INFO] Adding a new queue for 'u111' to the JobQueue.
 snijder [DEBUG] Current queue categories: deque(['u000', 'u111'])
 snijder [DEBUG] Changing status of job [uid:u111_dd] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.875179, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.627735, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ddd"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 4
 snijder [DEBUG] len(JobQueue) = 4 (0 processing)
@@ -505,7 +505,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -520,7 +520,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -535,7 +535,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -550,7 +550,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -568,7 +568,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -582,7 +582,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -596,7 +596,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -610,7 +610,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -629,7 +629,7 @@ snijder [DEBUG] len(JobQueue) = 4 (0 processing)
 snijder [INFO] Enqueueing job [uid:u111_ee] into category 'u111'.
 snijder [DEBUG] Changing status of job [uid:u111_ee] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.876383, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.628505, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_eee"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 5
 snijder [DEBUG] len(JobQueue) = 5 (0 processing)
@@ -659,7 +659,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -674,7 +674,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -689,7 +689,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -704,7 +704,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -719,7 +719,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -737,7 +737,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -751,7 +751,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -765,7 +765,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -779,7 +779,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -793,7 +793,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -812,7 +812,7 @@ snijder [DEBUG] len(JobQueue) = 5 (0 processing)
 snijder [INFO] Enqueueing job [uid:u111_ff] into category 'u111'.
 snijder [DEBUG] Changing status of job [uid:u111_ff] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.877593, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.629268, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_fff"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 6
 snijder [DEBUG] len(JobQueue) = 6 (0 processing)
@@ -843,7 +843,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -858,7 +858,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -873,7 +873,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -888,7 +888,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -903,7 +903,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -918,7 +918,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -936,7 +936,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -950,7 +950,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -964,7 +964,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -978,7 +978,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -992,7 +992,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1006,7 +1006,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1025,7 +1025,7 @@ snijder [DEBUG] len(JobQueue) = 6 (0 processing)
 snijder [INFO] Enqueueing job [uid:u111_gg] into category 'u111'.
 snijder [DEBUG] Changing status of job [uid:u111_gg] to queued
 snijder [DEBUG] Setting JobDescription 'status' to 'queued'
-snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574096008.878902, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
+snijder [DEBUG] JobDescription.store_job: {"status": "queued", "ver": "7", "infiles": ["resources/sample_data/hucore/faba128.h5"], "exec": "/usr/local/bin/hucore", "timestamp": 1574160170.630068, "pid": "N/A", "server": "N/A", "start": "N/A", "user": "u111", "template": "tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb", "tasktype": "decon", "progress": "N/A", "type": "hucore", "email": "user01@mail.xy", "uid": "u111_ggg"}
 snijder [DEBUG] num_jobs_processing = 0
 snijder [DEBUG] num_jobs_queued = 7
 snijder [DEBUG] len(JobQueue) = 7 (0 processing)
@@ -1056,7 +1056,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1071,7 +1071,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1086,7 +1086,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1101,7 +1101,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1116,7 +1116,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -1131,7 +1131,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -1146,7 +1146,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.878902,
+              'timestamp': 1574160170.630068,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -1164,7 +1164,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1178,7 +1178,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1192,7 +1192,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1206,7 +1206,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1220,7 +1220,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1234,7 +1234,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1248,7 +1248,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.878902, 
+            "queued": 1574160170.630068, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1379,7 +1379,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1396,7 +1396,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1440,7 +1440,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1455,7 +1455,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1472,7 +1472,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1486,7 +1486,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1531,7 +1531,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1546,7 +1546,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1561,7 +1561,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1578,7 +1578,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1592,7 +1592,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1606,7 +1606,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1654,7 +1654,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1669,7 +1669,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1684,7 +1684,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1699,7 +1699,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1717,7 +1717,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1731,7 +1731,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1745,7 +1745,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1759,7 +1759,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1806,7 +1806,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -1821,7 +1821,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -1836,7 +1836,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -1851,7 +1851,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -1866,7 +1866,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -1884,7 +1884,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1898,7 +1898,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1912,7 +1912,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1926,7 +1926,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1940,7 +1940,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -1988,7 +1988,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -2003,7 +2003,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2018,7 +2018,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2033,7 +2033,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2048,7 +2048,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2063,7 +2063,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2081,7 +2081,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2095,7 +2095,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2109,7 +2109,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2123,7 +2123,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2137,7 +2137,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2151,7 +2151,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2199,7 +2199,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -2214,7 +2214,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2229,7 +2229,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2244,7 +2244,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2259,7 +2259,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2274,7 +2274,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2289,7 +2289,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.878902,
+              'timestamp': 1574160170.630068,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -2307,7 +2307,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2321,7 +2321,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2335,7 +2335,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2349,7 +2349,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2363,7 +2363,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2377,7 +2377,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2391,7 +2391,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.878902, 
+            "queued": 1574160170.630068, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2437,7 +2437,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -2452,7 +2452,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2467,7 +2467,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2482,7 +2482,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2497,7 +2497,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2512,7 +2512,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2527,7 +2527,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.878902,
+              'timestamp': 1574160170.630068,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -2576,7 +2576,7 @@ jobs: {'u000_bbb': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.872839,
+              'timestamp': 1574160170.626047,
               'type': 'hucore',
               'uid': 'u000_bbb',
               'user': 'u000',
@@ -2591,7 +2591,7 @@ jobs: {'u000_bbb': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2606,7 +2606,7 @@ jobs: {'u000_bbb': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2621,7 +2621,7 @@ jobs: {'u000_bbb': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2636,7 +2636,7 @@ jobs: {'u000_bbb': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2651,7 +2651,7 @@ jobs: {'u000_bbb': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.878902,
+              'timestamp': 1574160170.630068,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -2669,7 +2669,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.872839, 
+            "queued": 1574160170.626047, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2683,7 +2683,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2697,7 +2697,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2711,7 +2711,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2725,7 +2725,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2739,7 +2739,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.878902, 
+            "queued": 1574160170.630068, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2787,7 +2787,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2802,7 +2802,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -2817,7 +2817,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -2832,7 +2832,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -2847,7 +2847,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.878902,
+              'timestamp': 1574160170.630068,
               'type': 'hucore',
               'uid': 'u111_ggg',
               'user': 'u111',
@@ -2865,7 +2865,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2879,7 +2879,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2893,7 +2893,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2907,7 +2907,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2921,7 +2921,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.878902, 
+            "queued": 1574160170.630068, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -2974,7 +2974,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -2989,7 +2989,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -3004,7 +3004,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.876383,
+              'timestamp': 1574160170.628505,
               'type': 'hucore',
               'uid': 'u111_eee',
               'user': 'u111',
@@ -3019,7 +3019,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -3036,7 +3036,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3050,7 +3050,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3064,7 +3064,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.876383, 
+            "queued": 1574160170.628505, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3078,7 +3078,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3129,7 +3129,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -3144,7 +3144,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -3159,7 +3159,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.877593,
+              'timestamp': 1574160170.629268,
               'type': 'hucore',
               'uid': 'u111_fff',
               'user': 'u111',
@@ -3176,7 +3176,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3190,7 +3190,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3204,7 +3204,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.877593, 
+            "queued": 1574160170.629268, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3250,7 +3250,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -3265,7 +3265,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -3282,7 +3282,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.87405, 
+            "queued": 1574160170.6269, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3296,7 +3296,7 @@ snijder [DEBUG] {
         {
             "username": "u111", 
             "status": "queued", 
-            "queued": 1574096008.875179, 
+            "queued": 1574160170.627735, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 
@@ -3341,7 +3341,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.87405,
+              'timestamp': 1574160170.6269,
               'type': 'hucore',
               'uid': 'u000_ccc',
               'user': 'u000',
@@ -3356,7 +3356,7 @@ jobs: {'u000_ccc': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.875179,
+              'timestamp': 1574160170.627735,
               'type': 'hucore',
               'uid': 'u111_ddd',
               'user': 'u111',
@@ -3426,7 +3426,7 @@ jobs: {'u000_aaa': {'email': 'user01@mail.xy',
               'status': 'queued',
               'tasktype': 'decon',
               'template': 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb',
-              'timestamp': 1574096008.871165,
+              'timestamp': 1574160170.624932,
               'type': 'hucore',
               'uid': 'u000_aaa',
               'user': 'u000',
@@ -3443,7 +3443,7 @@ snijder [DEBUG] {
         {
             "username": "u000", 
             "status": "queued", 
-            "queued": 1574096008.871165, 
+            "queued": 1574160170.624932, 
             "file": [
                 "resources/sample_data/hucore/faba128.h5"
             ], 

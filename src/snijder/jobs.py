@@ -234,7 +234,7 @@ class AbstractJobConfigParser(dict):
         self.jobparser = ConfigParser.RawConfigParser()
         try:
             self.jobparser.readfp(StringIO.StringIO(cfg_raw))
-            logd("Parsed job configuration.")
+            logd("Read job configuration file / string.")
         except ConfigParser.MissingSectionHeaderError as err:
             raise SyntaxError("ERROR in JobDescription: %s" % err)
         self.sections = self.jobparser.sections()

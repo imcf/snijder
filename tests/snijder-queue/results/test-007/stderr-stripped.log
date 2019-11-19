@@ -2,7 +2,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -27,7 +27,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -52,7 +52,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -77,7 +77,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -102,7 +102,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -127,7 +127,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
@@ -152,7 +152,7 @@ snijder [CRITICAL] Class variable 'spooldirs' is 'None', this is not intended fo
 snijder [INFO] Parsing jobfile 'decon_it-3_user01.cfg'...
 snijder [DEBUG] Full jobfile path: 'jobfiles/decon_it-3_user01.cfg'...
 snijder [DEBUG] Reading the job file succeeded after 0s!
-snijder [DEBUG] Parsed job configuration.
+snijder [DEBUG] Read job configuration file / string.
 snijder [DEBUG] Job description sections: ['snijderjob', 'hucore', 'inputfiles']
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
 snijder [WARNING] "timestamp = on_parsing" is meant for testing only!!!
