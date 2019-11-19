@@ -108,3 +108,27 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
             snijder.jobs.JobDescription(jobfile, "file")
         assert "Ignoring job config, parsing failed" in caplog.text
         assert "Invalid job config file" in caplog.text
+
+
+def test_snijder_job_config_parser__read_jobfile(caplog, tmpdir):
+    """Test the read_jobfile static method."""
+    prepare_logging(caplog)
+
+    # test with an invalid path for the job configuration file
+    caplog.clear()
+    jobfile = os.path.join(str(tmpdir), "non-existing-subdirectory", "job_file")
+    with pytest.raises(IOError):
+        snijder.jobs.SnijderJobConfigParser.read_jobfile(jobfile)
+    assert "Full jobfile path:" in caplog.text
+
+    # test with a job configuration file lacking file-system level read permissions
+    caplog.clear()
+    jobfile = tmpdir.join("snijder-unreadable-jobfile")
+    print(jobfile)
+    jobfile.write("[invalid]")  # put something into the file
+    jobfile.chmod(0o0000)  # make file read-only
+    with pytest.raises(IOError):
+        snijder.jobs.SnijderJobConfigParser.read_jobfile(str(jobfile))
+    jobfile.chmod(0o0600)  # restore read-write permissions
+    assert str(jobfile) in caplog.text
+    assert "Full jobfile path:" in caplog.text
