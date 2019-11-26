@@ -83,7 +83,7 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
     prepare_logging(caplog)
 
     # locate the provided sample job configuration files:
-    jobfile_path = os.path.join("tests", "snijder-queue", "jobfiles", "invalid")
+    jobfile_path = os.path.join("tests", "resources", "jobfiles", "invalid")
     jobfile_list = glob.glob(jobfile_path + "/*.cfg")
     jobfile_list.sort()
     print("Found %s job config files in [%s]." % (len(jobfile_list), jobfile_path))
