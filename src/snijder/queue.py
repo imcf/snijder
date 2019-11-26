@@ -69,7 +69,7 @@ class JobQueue(object):
 
     @property
     def statusfile(self):
-        """Get the 'statusfile' attribute."""
+        """Get the `statusfile` attribute."""
         return self._statusfile
 
     @statusfile.setter
