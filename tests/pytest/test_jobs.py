@@ -201,6 +201,19 @@ def test_job_description__move_jobfile(caplog, tmp_path, jobcfg_valid_delete):
     assert "/cur/" in caplog.text
     assert "Adding suffix to prevent overwriting file" not in caplog.text
 
+    # now create the same jobfile again and try to move it once more:
+    caplog.clear()
+    cfgfile = tmp_path / "jobfile.cfg"
+    cfgfile.write_text(jobcfg_valid_delete)
+    print("Created job config file (again) for testing: %s" % str(cfgfile))
+    job = snijder.jobs.JobDescription(str(cfgfile), srctype="file")
+    assert "Finished initialization of JobDescription()." in caplog.text
+    caplog.clear()
+    job.move_jobfile("cur")
+    assert "Moved job file" in caplog.text
+    assert "/cur/" in caplog.text
+    assert "Adding suffix to prevent overwriting file" in caplog.text
+
 
 def test_abstract_job_config_parser(caplog, jobcfg_valid_delete):
     """Test the AbstractJobConfigParser class."""
