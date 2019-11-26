@@ -167,6 +167,14 @@ def test_job_description(caplog, jobcfg_valid_delete):
     assert "Setting JobDescription" not in caplog.text
 
 
+def test_job_description__get_category(caplog, jobcfg_valid_delete):
+    """Test the JobDescription.get_category method."""
+    prepare_logging(caplog)
+
+    job = snijder.jobs.JobDescription(jobcfg_valid_delete, srctype="string")
+    assert job.get_category() == job["user"]
+
+
 def test_job_description__move_jobfile(caplog, tmp_path, jobcfg_valid_delete):
     """Test the JobDescription.move_jobfile() method."""
     prepare_logging(caplog)
