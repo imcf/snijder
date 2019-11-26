@@ -472,7 +472,7 @@ class JobDescription(dict):
             return
 
         # pylint: disable-msg=unsubscriptable-object
-        target = os.path.join(JobDescription.spooldirs[target], self["uid"] + suffix,)
+        target = os.path.join(JobDescription.spooldirs[target], self["uid"] + suffix)
         # pylint: enable-msg=unsubscriptable-object
 
         if os.path.exists(target):
