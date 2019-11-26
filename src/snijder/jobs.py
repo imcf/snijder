@@ -156,13 +156,13 @@ class AbstractJobConfigParser(dict):
         # levels of waiting time to avoid this race condition:
         config_raw = []
         for snooze in [0, 0.00001, 0.0001, 0.001, 0.01, 0.1]:
-            if snooze > 0:
+            if snooze > 0:  # pragma: no cover
                 logd("Failed reading jobfile, trying again in %ss.", snooze)
             time.sleep(snooze)
             try:
                 with open(jobfile, "r") as fileobject:
                     config_raw = fileobject.read()
-            except TypeError as err:
+            except TypeError as err:  # pragma: no cover
                 # sometimes the 'with open' statement raises a TypeError
                 # ("coercing to Unicode: need string or buffer, file found"),
                 # which is probably some race condition - just try again...
