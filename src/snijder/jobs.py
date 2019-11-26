@@ -465,6 +465,7 @@ class JobDescription(dict):
         """
         # make sure to only move "file" job descriptions, return otherwise:
         if self.fname is None:
+            logd("Job description is a string, move_jobfile() doesn't make sense here.")
             return
         if JobDescription.spooldirs is None:
             logw("Not moving jobfile as 'spooldirs' class variable is unset!")
@@ -477,8 +478,9 @@ class JobDescription(dict):
         if os.path.exists(target):
             target += ".%s" % time.time()
             logd("Adding suffix to prevent overwriting file: %s", target)
-        logd("Moving file '%s' to '%s'.", self.fname, target)
+        # logd("Moving file '%s' to '%s'.", self.fname, target)
         shutil.move(self.fname, target)
+        logd("Moved job file '%s' to '%s'.", self.fname, target)
         # update the job's internal fname pointer:
         self.fname = target
 
