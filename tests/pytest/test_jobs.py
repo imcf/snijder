@@ -10,6 +10,7 @@ import pprint
 
 import snijder.jobs
 import snijder.logger
+import snijder.spooler
 
 import pytest  # pylint: disable-msg=unused-import
 
@@ -139,3 +140,48 @@ def test_snijder_job_config_parser__read_jobfile(caplog, tmpdir):
     jobfile.chmod(0o0600)  # restore read-write permissions
     assert str(jobfile) in caplog.text
     assert "Full jobfile path:" in caplog.text
+
+
+def test_job_description(caplog, jobcfg_valid_delete):
+    """Test the JobDescription class."""
+    prepare_logging(caplog)
+
+    job = snijder.jobs.JobDescription(jobcfg_valid_delete, srctype="string")
+
+    caplog.clear()
+    job["status"] = "changed"
+    assert "Setting JobDescription" in caplog.text
+
+    caplog.clear()
+    job["type"] = "deletejobs"
+    assert "Setting JobDescription" not in caplog.text
+
+
+def test_job_description__move_jobfile(caplog, tmp_path, jobcfg_valid_delete):
+    """Test the JobDescription.move_jobfile() method."""
+    prepare_logging(caplog)
+
+    caplog.clear()
+    job = snijder.jobs.JobDescription(jobcfg_valid_delete, srctype="string")
+    assert job.fname is None
+    assert "Finished initialization of JobDescription()." in caplog.text
+
+    caplog.clear()
+    job.move_jobfile(target="")
+    assert "move_jobfile() doesn't make sense" in caplog.text
+
+    caplog.clear()
+    print("Using spooling directory: %s" % tmp_path)
+    spooldirs = snijder.spooler.JobSpooler.setup_rundirs(str(tmp_path))
+    assert "Created spool directory" in caplog.text
+    print(spooldirs)
+    snijder.jobs.JobDescription.spooldirs = spooldirs
+    cfgfile = tmp_path / "jobfile.cfg"
+    cfgfile.write_text(jobcfg_valid_delete)
+    print("Created job config file for testing: %s" % str(cfgfile))
+    job = snijder.jobs.JobDescription(str(cfgfile), srctype="file")
+    assert "Finished initialization of JobDescription()." in caplog.text
+    caplog.clear()
+    job.move_jobfile("cur")
+    assert "Moved job file" in caplog.text
+    assert "/cur/" in caplog.text
