@@ -28,3 +28,9 @@ def test_job_queue(caplog):
     assert "num_jobs_processing" in caplog.text
     assert "num_jobs_queued" in caplog.text
     assert "len(JobQueue)" in caplog.text
+
+    # `statusfile` hasn't been set yet, so it should be `None`
+    assert queue.statusfile is None
+
+    # queue is empty, so next_job() should return `None`
+    assert queue.next_job() is None
