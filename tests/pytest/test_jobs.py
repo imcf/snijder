@@ -195,3 +195,14 @@ def test_job_description__move_jobfile(caplog, tmp_path, jobcfg_valid_delete):
     job.move_jobfile("cur")
     assert "Moved job file" in caplog.text
     assert "/cur/" in caplog.text
+
+
+def test_abstract_job_config_parser(caplog, jobcfg_valid_delete):
+    """Test the AbstractJobConfigParser class."""
+    prepare_logging(caplog)
+
+    caplog.clear()
+    with pytest.raises(NotImplementedError, match="This is an abstract class"):
+        snijder.jobs.AbstractJobConfigParser(jobcfg_valid_delete, srctype="string")
+    assert "Read job configuration file / string." in caplog.text
+    assert "Job description sections" in caplog.text
