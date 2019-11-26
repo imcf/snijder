@@ -180,12 +180,16 @@ def test_job_description__move_jobfile(caplog, tmp_path, jobcfg_valid_delete):
     job.move_jobfile(target="")
     assert "move_jobfile() doesn't make sense" in caplog.text
 
+    # set up the spooldirs class variable
     caplog.clear()
     print("Using spooling directory: %s" % tmp_path)
     spooldirs = snijder.spooler.JobSpooler.setup_rundirs(str(tmp_path))
     assert "Created spool directory" in caplog.text
     print(spooldirs)
     snijder.jobs.JobDescription.spooldirs = spooldirs
+
+    # create a job config file, parse it into a job object and call move_jobfile()
+    caplog.clear()
     cfgfile = tmp_path / "jobfile.cfg"
     cfgfile.write_text(jobcfg_valid_delete)
     print("Created job config file for testing: %s" % str(cfgfile))
@@ -195,6 +199,7 @@ def test_job_description__move_jobfile(caplog, tmp_path, jobcfg_valid_delete):
     job.move_jobfile("cur")
     assert "Moved job file" in caplog.text
     assert "/cur/" in caplog.text
+    assert "Adding suffix to prevent overwriting file" not in caplog.text
 
 
 def test_abstract_job_config_parser(caplog, jobcfg_valid_delete):
