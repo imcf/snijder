@@ -141,6 +141,16 @@ def test_snijder_job_config_parser__read_jobfile(caplog, tmpdir):
     assert str(jobfile) in caplog.text
     assert "Full jobfile path:" in caplog.text
 
+    # test with an empty job configuration file
+    caplog.clear()
+    jobfile = tmpdir.join("snijder-empty-jobfile")
+    jobfile.write("")  # put an empty string into the file to create it
+    print(jobfile)
+    with pytest.raises(IOError, match="Unable to read job config file"):
+        snijder.jobs.SnijderJobConfigParser.read_jobfile(str(jobfile))
+    assert str(jobfile) in caplog.text
+    assert "Full jobfile path:" in caplog.text
+
 
 def test_job_description(caplog, jobcfg_valid_delete):
     """Test the JobDescription class."""
