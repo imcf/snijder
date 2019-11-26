@@ -7,7 +7,31 @@
 # be checked again after migration to Python3 (see pylint issue #1535):
 # pylint: disable-msg=redefined-outer-name
 
+from __future__ import print_function
+
+import os
+
 import pytest
+
+
+def jobfile_path(name, category="valid"):
+    """Helper function to locate a job configuration file.
+
+    Parameters
+    ----------
+    name : str
+        The name of the job configuration file.
+    category : str, optional
+        One of ["valid", "invalid"], by default "valid"
+
+    Returns
+    -------
+    str
+        The (relative) path to the job configuration file.
+    """
+    file_path = os.path.join("tests", "resources", "jobfiles", category, name)
+    print("Generated job configuration file path: %s" % file_path)
+    return file_path
 
 
 @pytest.fixture(scope="module")
