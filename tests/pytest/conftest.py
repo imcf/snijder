@@ -1,6 +1,7 @@
 """Module-wide fixtures for testing snijder."""
 
 # pylint: disable-msg=fixme
+# pylint: disable-msg=invalid-name
 
 # TODO: pylint for Python2 complains about redefining an outer scope when using
 # pytest fixtures, this is supposed to be fixed in newer versions, so it should
@@ -50,3 +51,14 @@ def jobcfg_valid_delete():
     )
 
     return config
+
+
+@pytest.fixture(scope="module")
+def jobfile_valid_decon_fixedtimestamp():
+    """A valid jobfile for a deconvolution job with a fixed timestamp.
+
+    This job description will always result in the same job UID as all components
+    including the timestamp are fixed before parsing time.
+    """
+    file_path = jobfile_path("decon_it-999_user01_fixed-timestamp_c682dcd.cfg")
+    return file_path
