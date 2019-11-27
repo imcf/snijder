@@ -301,7 +301,7 @@ class SnijderJobConfigParser(AbstractJobConfigParser):
             # done to allow submitting the same jobfile multiple times during
             # testing and should not be used in production, therefore we also
             # issue a corresponding warning message:
-            self["uid"] = sha1(str(self["timestamp"])).hexdigest()
+            self["uid"] = sha1("%.18f" % self["timestamp"]).hexdigest()
             logw("===%s", " WARNING ===" * 8)
             logw('"timestamp = on_parsing" is meant for testing only!!!')
             logw("===%s", " WARNING ===" * 8)
