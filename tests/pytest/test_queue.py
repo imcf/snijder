@@ -79,3 +79,30 @@ def test_job_queue_append_nextjob_remove(caplog, jobfile_valid_decon_fixedtimest
     caplog.clear()
     assert queue.remove(job_fixed["uid"]) is None
     assert "not found, discarding the request" in caplog.text
+
+
+def test_job_queue_remove_unqueued(caplog, jobfile_valid_decon_fixedtimestamp):
+    """Test the queue behaviour if a non-queued job is requested to be removed.
+
+    If all goes well it should not happen that a job is registered in the (global)
+    queue's joblist `queue.jobs` without being listed on one of the sub-queues. This
+    test is checking the queue's behaviour if such a job is trying to be removed.
+    """
+    prepare_logging(caplog)
+
+    # create the queue
+    queue = snijder.queue.JobQueue()
+
+    caplog.clear()
+    # first we have to add a job to the queue's joblist by accessing the `jobs`
+    # attribute directly (which should not be done)
+    fake_job = snijder.jobs.JobDescription(jobfile_valid_decon_fixedtimestamp, "file")
+    fake_job["uid"] = "zzzz"
+    queue.jobs[fake_job["uid"]] = fake_job
+    print("current queue.jobs: %s" % queue.jobs)
+    # now trying to remove it should yield None and a corresponding log message
+    assert queue.remove(fake_job["uid"]) is None
+    assert "Can't find job" in caplog.text
+    print("current queue.jobs: %s" % queue.jobs)
+    assert len(queue) == 0
+    assert len(queue.jobs) == 0
