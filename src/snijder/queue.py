@@ -135,7 +135,7 @@ class JobQueue(object):
         if self.queue[category]:
             return False
 
-        logd("Queue for category '%s' now empty, removing it.", category)
+        logd("Removing empty queue for [category:%s].", category)
         self.categories.remove(category)  # remove it from the categories list
         del self.queue[category]  # delete the category from the queue dict
         return True
@@ -162,7 +162,7 @@ class JobQueue(object):
         jobid = self.queue[category].popleft()
         # put it into the list of currently processing jobs:
         self.processing.append(jobid)
-        logi("Retrieving next job: category '%s', [uid:%.7s].", category, jobid)
+        logi("Retrieving next job: [category:%s], [uid:%.7s].", category, jobid)
         if not self._is_queue_empty(category):
             logd("Pushing category [%s] to the last position in the queue.", category)
             self.categories.rotate(-1)
@@ -193,7 +193,7 @@ class JobQueue(object):
         """
         logd("Trying to remove job [uid:%.7s].", uid)
         if uid not in self.jobs:
-            logi("Job [uid:%.7s] not found, discarding the request.", uid)
+            logi("Job not found, discarding the request: [uid:%.7s].", uid)
             return None
 
         job = self.jobs[uid]  # remember the job for returning it later
@@ -202,14 +202,14 @@ class JobQueue(object):
         del self.jobs[uid]  # remove the job from the jobs dict
         self.status_changed = True
         if category in self.queue and uid in self.queue[category]:
-            logd("Removing job [uid:%.7s] from queue '%s'.", uid, category)
+            logd("Removing job from queue: [uid:%.7s] [queue:%s]'.", uid, category)
             self.queue[category].remove(uid)
             self._is_queue_empty(category)
         elif uid in self.processing:
-            logd("Removing job [uid:%.7s] from currently processing jobs.", uid)
+            logd("Removing job from currently processing jobs [uid:%.7s].", uid)
             self.processing.remove(uid)
         else:
-            logw("Can't find job [uid:%.7s] in any of our queues!", uid)
+            logw("Can't find job in any of our queues: [uid:%.7s]!", uid)
             return None
 
         # logd("Current jobs: %s", self.jobs)
@@ -222,7 +222,7 @@ class JobQueue(object):
     def process_deletion_list(self):
         """Remove jobs from this queue that are on the deletion list."""
         for uid in self.deletion_list:
-            logi("Job [uid:%.7s] was requested for deletion", uid)
+            logi("Received a deletion request for job [uid:%.7s].", uid)
             self.deletion_list.remove(uid)
             removed = self.remove(uid, update_status=False)
             if removed is None:
@@ -242,7 +242,7 @@ class JobQueue(object):
         status : str
             The new status.
         """
-        logd("Changing status of job [uid:%.7s] to %s", job["uid"], status)
+        logd("Changing job-status: [uid:%.7s] [status:%s]", job["uid"], status)
         job["status"] = status
         self.status_changed = True
 

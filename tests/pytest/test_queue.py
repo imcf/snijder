@@ -65,7 +65,7 @@ def test_job_queue_append_nextjob_remove(caplog, jobfile_valid_decon_fixedtimest
     assert "Retrieving next job" in caplog.text
     print(from_queue["uid"])
     assert from_queue["uid"] == job_fixed["uid"]
-    assert "now empty, removing it" in caplog.text
+    assert "Removing empty queue" in caplog.text
     assert r"Current contents of all queues: {}" in caplog.text
 
     # try to remove the job from the queue
