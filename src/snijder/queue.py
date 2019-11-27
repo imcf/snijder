@@ -148,6 +148,7 @@ class JobQueue(object):
         categories queue is shifted one to the left, meaning that the category
         of the just picked job is then at the last position in the categories
         queue.
+
         This implements a very simple round-robin (token based) scheduler that
         is going one-by-one through the existing categories.
 
