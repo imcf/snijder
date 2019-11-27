@@ -5,6 +5,8 @@
 
 from __future__ import print_function
 
+import logging
+
 import snijder.queue
 import snijder.logger
 import snijder.jobs
@@ -106,3 +108,52 @@ def test_job_queue_remove_unqueued(caplog, jobfile_valid_decon_fixedtimestamp):
     print("current queue.jobs: %s" % queue.jobs)
     assert len(queue) == 0
     assert len(queue.jobs) == 0
+
+
+def test_job_queue_rotation(
+    caplog,
+    jobfile_valid_decon_fixedtimestamp,
+    jobfile_valid_decon_user01,
+    jobfile_valid_decon_user02,
+):
+    """Test the queue rotation (round robin) behaviour in `next_job()`.
+
+    First add two jobs for `user01` and one job for `user02` to the queue, then fetch a
+    job from the queue using `next_job()`. As a result the (sub-) queue of `user01`
+    has to be at the last position in the (global) queue.
+    """
+    prepare_logging(caplog)
+
+    # create the queue
+    queue = snijder.queue.JobQueue()
+
+    # prepare the jobs
+    job_fixed = snijder.jobs.JobDescription(jobfile_valid_decon_fixedtimestamp, "file")
+    job1 = snijder.jobs.JobDescription(jobfile_valid_decon_user01, "file")
+    job2 = snijder.jobs.JobDescription(jobfile_valid_decon_user02, "file")
+    logging.info(job1)
+    logging.info(job2)
+    assert job1["uid"] != job2["uid"]
+
+    caplog.clear()
+    # now add jobs from more than one category (~user) to the queue, check if it is
+    # rotating correctly when retrieving them back:
+    queue.append(job_fixed)
+    assert len(queue) == 1
+    assert queue.categories[0] == "user01"
+    queue.append(job1)
+    assert len(queue) == 2
+    queue.append(job2)
+    assert len(queue) == 3
+    assert queue.categories[1] == "user02"
+    for cat in queue.categories:
+        logging.warning("queue of [%s]: %s", cat, queue.queue[cat])
+    assert len(queue.queue["user01"]) == 2
+    assert len(queue.queue["user02"]) == 1
+    queue.next_job()
+    assert len(queue.queue["user01"]) == 1
+    assert len(queue.queue["user02"]) == 1
+    assert queue.categories[0] == "user02"
+    assert queue.categories[1] == "user01"
+    for cat in queue.categories:
+        logging.warning("queue of [%s]: %s", cat, queue.queue[cat])
