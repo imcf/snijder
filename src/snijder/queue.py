@@ -54,7 +54,7 @@ class JobQueue(object):
         """
         self._statusfile = None
         self.categories = deque("")
-        self.jobs = dict()
+        self.jobs = dict()  # TODO: this should probably be private
         self.processing = list()
         self.queue = dict()
         self.deletion_list = list()
