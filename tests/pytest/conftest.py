@@ -62,3 +62,17 @@ def jobfile_valid_decon_fixedtimestamp():
     """
     file_path = jobfile_path("decon_it-999_user01_fixed-timestamp_c682dcd.cfg")
     return file_path
+
+
+@pytest.fixture(scope="module")
+def jobfile_valid_decon_user01():
+    """A valid jobfile for a deconvolution job for `user01`."""
+    file_path = jobfile_path("decon_it-3_user01.cfg")
+    return file_path
+
+
+@pytest.fixture(scope="module")
+def jobfile_valid_decon_user02():
+    """A valid jobfile for a deconvolution job for `user02`."""
+    file_path = jobfile_path("decon_it-3_user02.cfg")
+    return file_path
