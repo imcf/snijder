@@ -164,7 +164,7 @@ class JobQueue(object):
         self.processing.append(jobid)
         logi("Retrieving next job: category '%s', [uid:%.7s].", category, jobid)
         if not self._is_queue_empty(category):
-            # push the current category to the last position in the queue:
+            logd("Pushing category [%s] to the last position in the queue.", category)
             self.categories.rotate(-1)
         logd("Current queue categories: %s", self.categories)
         logd("Current contents of all queues: %s", self.queue)
