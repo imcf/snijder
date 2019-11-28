@@ -54,7 +54,7 @@ def test_job_queue_append_nextjob_remove(caplog, jobfile_valid_decon_fixedtimest
     queue.append(job_fixed)
     assert "Adding a new queue" in caplog.text
     assert "Setting JobDescription 'status' to 'queued'" in caplog.text
-    assert "num_jobs_queued = 1" in caplog.text
+    assert queue.num_jobs_queued() == 1
 
     # now try to add the same job (-> same UID) again, an exception should be raised
     with pytest.raises(ValueError, match="already in this queue"):
@@ -219,13 +219,14 @@ def test_set_jobstatus(caplog, jobfile_valid_decon_fixedtimestamp):
     caplog.clear()
     job = snijder.jobs.JobDescription(jobfile_valid_decon_fixedtimestamp, "file")
     print(job["uid"])
-    assert len(queue) == 0
+    assert queue.num_jobs_queued() == 0
     queue.append(job)
-    assert len(queue) == 1
+    assert queue.num_jobs_queued() == 1
 
     # change the status to "TERMINATED", which will also remove the job from the queue
     queue.set_jobstatus(job, "TERMINATED")
     assert "Changing job-status" in caplog.text
     assert "[status:TERMINATED]" in caplog.text
     assert "Removing job from queue" in caplog.text
-    assert len(queue) == 0
+    assert queue.num_jobs_queued() == 0
+    assert queue.num_jobs_processing() == 0
