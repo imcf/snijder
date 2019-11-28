@@ -246,8 +246,10 @@ class JobQueue(object):
         job["status"] = status
         self.status_changed = True
 
-        if status == gc3libs.Run.State.TERMINATED:  # pylint: disable-msg=no-member
+        # pylint: disable-msg=no-member
+        if status == gc3libs.Run.State.TERMINATED or status == "TERMINATED":
             self.remove(job["uid"])
+        # pylint: enable-msg=no-member
         logd(self.update_status())
 
     def update_status(self, force=False):
