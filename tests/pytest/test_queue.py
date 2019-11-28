@@ -297,3 +297,42 @@ def test_queue_details_json(
     assert jobs[2]["queued"] == job1["timestamp"]
 
     logging.info("Re-parsed queue details from JSON.")
+
+
+def test_queue_details_hr(
+    caplog, jobfile_valid_decon_user01, jobfile_valid_decon_user02
+):
+    """Test the queue_details_hr() method."""
+    prepare_logging(caplog)
+
+    # create the queue
+    queue = snijder.queue.JobQueue()
+
+    job1 = snijder.jobs.JobDescription(jobfile_valid_decon_user01, "file")
+    job2 = snijder.jobs.JobDescription(jobfile_valid_decon_user02, "file")
+
+    queue.append(job1)
+    queue.append(job2)
+    queue.next_job()
+
+    # in log level "warn" the method should return `None`
+    snijder.logger.set_loglevel("warn")
+    caplog.clear()
+    queue.queue_details_hr()
+    assert "queue status" not in caplog.text
+
+    # in log level "info" the method should return a short queue summary
+    snijder.logger.set_loglevel("info")
+    caplog.clear()
+    queue.queue_details_hr()
+    assert "jobs retrieved for processing" in caplog.text
+    assert "jobs queued (not yet retrieved)" in caplog.text
+    assert "user01 (user01@mail.xy)" in caplog.text
+
+    # now create five more jobs and add them to see the queue truncation
+    caplog.clear()
+    for _ in range(5):
+        job = snijder.jobs.JobDescription(jobfile_valid_decon_user01, "file")
+        queue.append(job)
+    queue.queue_details_hr()
+    assert "[ showing first 5 jobs (total: 6) ]" in caplog.text
