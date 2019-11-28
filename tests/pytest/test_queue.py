@@ -82,6 +82,14 @@ def test_job_queue_append_nextjob_remove(caplog, jobfile_valid_decon_fixedtimest
     assert queue.remove(job_fixed["uid"]) is None
     assert "not found, discarding the request" in caplog.text
 
+    # add it again, then remove it (without assigning it to the processing list by
+    # calling next_job() before)
+    caplog.clear()
+    queue.append(job_fixed)
+    queue.remove(job_fixed["uid"])
+    assert "Removing job from queue" in caplog.text
+    assert "Empty queue!" in caplog.text
+
 
 def test_job_queue_remove_unqueued(caplog, jobfile_valid_decon_fixedtimestamp):
     """Test the queue behaviour if a non-queued job is requested to be removed.
