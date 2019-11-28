@@ -165,3 +165,44 @@ def test_job_queue_rotation(
     assert queue.categories[1] == "user01"
     for cat in queue.categories:
         logging.warning("queue of [%s]: %s", cat, queue.queue[cat])
+
+
+def test_process_deletion_list(caplog, jobfile_valid_decon_fixedtimestamp):
+    """Test the process_deletion_list() method."""
+    prepare_logging(caplog)
+
+    # create the queue
+    queue = snijder.queue.JobQueue()
+
+    # parse the jobfile and append the job to the queue
+    caplog.clear()
+    job = snijder.jobs.JobDescription(jobfile_valid_decon_fixedtimestamp, "file")
+    print(job["uid"])
+    queue.append(job)
+
+    # place the job's UID on the deletion list
+    assert len(queue.deletion_list) == 0
+    queue.deletion_list.append(job["uid"])
+    assert len(queue.deletion_list) == 1
+    queue.process_deletion_list()
+    assert len(queue.deletion_list) == 0
+    assert "Received a deletion request for job" in caplog.text
+    assert "Status of job to be removed: queued" in caplog.text
+    assert "Removing job from queue" in caplog.text
+    assert "Job successfully removed from the queue" in caplog.text
+    assert "Job not found, discarding the request" not in caplog.text
+    assert "No job removed, invalid uid or other queue's job." not in caplog.text
+
+    # try with an unknown UID
+    caplog.clear()
+    assert len(queue.deletion_list) == 0
+    queue.deletion_list.append("zzzz")
+    assert len(queue.deletion_list) == 1
+    queue.process_deletion_list()
+    assert len(queue.deletion_list) == 0
+    assert "Received a deletion request for job" in caplog.text
+    assert "Job not found, discarding the request" in caplog.text
+    assert "No job removed, invalid uid or other queue's job." in caplog.text
+    assert "Status of job to be removed: queued" not in caplog.text
+    assert "Removing job from queue" not in caplog.text
+    assert "Job successfully removed from the queue" not in caplog.text
