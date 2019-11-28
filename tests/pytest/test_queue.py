@@ -6,6 +6,7 @@
 from __future__ import print_function
 
 import logging
+import json
 
 import snijder.queue
 import snijder.logger
@@ -230,3 +231,69 @@ def test_set_jobstatus(caplog, jobfile_valid_decon_fixedtimestamp):
     assert "Removing job from queue" in caplog.text
     assert queue.num_jobs_queued() == 0
     assert queue.num_jobs_processing() == 0
+
+
+def test_queue_details_json(
+    caplog,
+    tmp_path,
+    jobfile_valid_decon_fixedtimestamp,
+    jobfile_valid_decon_user01,
+    jobfile_valid_decon_user02,
+):
+    """Test the queue_details_json() method."""
+    prepare_logging(caplog)
+
+    # create the queue
+    queue = snijder.queue.JobQueue()
+
+    # assign a statusfile
+    statusfile = tmp_path / "test_queue_details.json"
+    queue.statusfile = str(statusfile)
+
+    # parse the jobfiles and append the jobs to the queue
+    caplog.clear()
+    job_fixed = snijder.jobs.JobDescription(jobfile_valid_decon_fixedtimestamp, "file")
+    job1 = snijder.jobs.JobDescription(jobfile_valid_decon_user01, "file")
+    job2 = snijder.jobs.JobDescription(jobfile_valid_decon_user02, "file")
+    logging.info("job_fixed UID: %s", job_fixed["uid"])
+    logging.info("job1 UID: %s", job1["uid"])
+    logging.info("job2 UID: %s", job2["uid"])
+
+    queue.append(job_fixed)
+    queue.append(job1)
+    queue.append(job2)
+    assert queue.num_jobs_queued() == 3
+    assert queue.num_jobs_processing() == 0
+
+    # call next_job() so one of the jobs will be assigned to the "processing" jobs
+    processing_job = queue.next_job()
+    assert queue.num_jobs_queued() == 2
+    assert queue.num_jobs_processing() == 1
+    assert processing_job["uid"] == job_fixed["uid"]
+
+    details = queue.queue_details_json()
+    logging.debug("JSON encoded queue details:\n%s", details)
+
+    # now parse the JSON formatted string back into a Python object
+    parsed_json = json.loads(details)
+    jobs = parsed_json["jobs"]
+
+    # NOTE: jobs in the queue details are in this order: first any jobs from the
+    # `processing` list, then the jobs as returned by `joblist()`
+
+    # job_fixed is therefore the first one
+    assert jobs[0]["id"] == job_fixed["uid"]
+    assert jobs[0]["username"] == job_fixed["user"]
+    assert jobs[0]["queued"] == job_fixed["timestamp"]
+
+    # followed by job2
+    assert jobs[1]["id"] == job2["uid"]
+    assert jobs[1]["username"] == job2["user"]
+    assert jobs[1]["queued"] == job2["timestamp"]
+
+    # and finally job1
+    assert jobs[2]["id"] == job1["uid"]
+    assert jobs[2]["username"] == job1["user"]
+    assert jobs[2]["queued"] == job1["timestamp"]
+
+    logging.info("Re-parsed queue details from JSON.")
