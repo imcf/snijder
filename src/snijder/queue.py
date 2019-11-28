@@ -83,6 +83,7 @@ class JobQueue(object):
         logi("Setting job queue status report file: %s", statusfile)
         self._statusfile = statusfile
 
+    # TODO: could be a property...?
     def num_jobs_queued(self):
         """Get the number of queued jobs (waiting for retrieval)."""
         numjobs = 0
@@ -91,6 +92,7 @@ class JobQueue(object):
         logd("num_jobs_queued = %s", numjobs)
         return numjobs
 
+    # TODO: could be a property...?
     def num_jobs_processing(self):
         """Get the number of currently processing jobs."""
         numjobs = len(self.processing)
