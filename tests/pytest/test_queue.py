@@ -206,3 +206,26 @@ def test_process_deletion_list(caplog, jobfile_valid_decon_fixedtimestamp):
     assert "Status of job to be removed: queued" not in caplog.text
     assert "Removing job from queue" not in caplog.text
     assert "Job successfully removed from the queue" not in caplog.text
+
+
+def test_set_jobstatus(caplog, jobfile_valid_decon_fixedtimestamp):
+    """Test the set_jobstatus() method."""
+    prepare_logging(caplog)
+
+    # create the queue
+    queue = snijder.queue.JobQueue()
+
+    # parse the jobfile and append the job to the queue
+    caplog.clear()
+    job = snijder.jobs.JobDescription(jobfile_valid_decon_fixedtimestamp, "file")
+    print(job["uid"])
+    assert len(queue) == 0
+    queue.append(job)
+    assert len(queue) == 1
+
+    # change the status to "TERMINATED", which will also remove the job from the queue
+    queue.set_jobstatus(job, "TERMINATED")
+    assert "Changing job-status" in caplog.text
+    assert "[status:TERMINATED]" in caplog.text
+    assert "Removing job from queue" in caplog.text
+    assert len(queue) == 0
