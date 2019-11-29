@@ -35,6 +35,24 @@ def jobfile_path(name, category="valid"):
     return file_path
 
 
+def gc3conf_path(name):
+    """Helper function to locate a gc3pie configuration file.
+
+    Parameters
+    ----------
+    name : str
+        The name of the gc3pie configuration file WITHOUT suffix.
+
+    Returns
+    -------
+    str
+        The (relative) path to the gc3pie configuration file.
+    """
+    file_path = os.path.join("tests", "resources", "config", "gc3pie", name + ".conf")
+    print("Generated gc3pie configuration file path: %s" % file_path)
+    return file_path
+
+
 @pytest.fixture(scope="module")
 def jobcfg_valid_delete():
     """A valid job configuration string for a `deletejobs` job."""
@@ -75,4 +93,11 @@ def jobfile_valid_decon_user01():
 def jobfile_valid_decon_user02():
     """A valid jobfile for a deconvolution job for `user02`."""
     file_path = jobfile_path("decon_it-3_user02.cfg")
+    return file_path
+
+
+@pytest.fixture(scope="module")
+def gc3conf_localhost():
+    """A gc3pie configuration file for localhost."""
+    file_path = gc3conf_path("localhost")
     return file_path
