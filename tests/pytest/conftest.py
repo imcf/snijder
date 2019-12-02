@@ -11,6 +11,7 @@
 from __future__ import print_function
 
 import os
+import textwrap
 
 import pytest
 
@@ -52,6 +53,54 @@ def gc3conf_path(name):
     print("Generated gc3pie configuration file path: %s" % file_path)
     return file_path
 
+
+def generate_gc3conf(basedir):
+    """Helper function to generate a gc3config with a specific `snijder_basedir`.
+
+    Parameters
+    ----------
+    basedir : str
+        The value to be used for the `snijder_basedir` entry.
+
+    Returns
+    -------
+    str
+        A gc3pie configuration as a string.
+    """
+    # NOTE: the generated string requires several places to be an actual "%" (percent
+    # character), but as we need to inject the basedir via string mapping the "real"
+    # percent chars have to be doubled!
+    config = textwrap.dedent("""
+        # Very simple configuration for dispatching jobs on the local machine.
+
+        [DEFAULT]
+        # The `DEFAULT` section is entirely optional; if present, its values can
+        # be used to interpolate values in other sections, using the `%%(name)s` syntax.
+        # See documentation of the `SafeConfigParser` object at:
+        #   http://docs.python.org/library/configparser.html
+        debug = 0
+        snijder_basedir = %s
+
+
+        # Auth sections: [auth/name]
+        [auth/noauth]
+        type = none
+
+        [resource/localhost]
+        enabled = yes
+        type = shellcmd
+        auth = noauth
+        transport = local
+        time_cmd = /usr/bin/time
+        max_cores = 2
+        max_cores_per_job = 2
+        max_memory_per_core = 2 GB
+        max_walltime = 2 hours
+        architecture = x64_64
+        spooldir = %%(snijder_basedir)s/gc3/spool
+        resourcedir = %%(snijder_basedir)s/gc3/resource/shellcmd.d
+    """)
+    return config % basedir
 
 @pytest.fixture(scope="module")
 def jobcfg_valid_delete():
