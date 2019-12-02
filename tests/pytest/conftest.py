@@ -150,3 +150,14 @@ def gc3conf_path_localhost():
     """A path to a gc3pie configuration file for localhost."""
     file_path = gc3conf_path("localhost")
     return file_path
+
+
+@pytest.fixture(scope="module")
+def gc3conf_with_basedir():
+    """Wrapper fixture returning the gc3conf generator function.
+
+    This is used as a parameterization-workaround, as fixtures can't (easily) have
+    parameters that will be evaluated at calling time. Like this, the fixture simply
+    returns the function and therefore can be "called" by the test.
+    """
+    return generate_gc3conf
