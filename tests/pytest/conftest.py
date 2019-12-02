@@ -66,13 +66,13 @@ def generate_gc3conf(basedir):
 
     Returns
     -------
-    str
-        A gc3pie configuration as a string.
+    unicode
+        A gc3pie configuration as a unicode-string.
     """
     # NOTE: the generated string requires several places to be an actual "%" (percent
     # character), but as we need to inject the basedir via string mapping the "real"
     # percent chars have to be doubled!
-    config = textwrap.dedent("""
+    config = textwrap.dedent(u"""
         # Very simple configuration for dispatching jobs on the local machine.
 
         [DEFAULT]
