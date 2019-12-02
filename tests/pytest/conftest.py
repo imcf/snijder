@@ -16,6 +16,8 @@ import textwrap
 import pytest
 
 
+### FUNCTIONS ###
+
 def jobfile_path(name, category="valid"):
     """Helper function to locate a job configuration file.
 
@@ -101,6 +103,9 @@ def generate_gc3conf(basedir):
         resourcedir = %%(snijder_basedir)s/gc3/resource/shellcmd.d
     """)
     return config % basedir
+
+
+### FIXTURES ###
 
 @pytest.fixture(scope="module")
 def jobcfg_valid_delete():
