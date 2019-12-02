@@ -17,13 +17,13 @@ def prepare_logging(caplog):
     snijder.logger.set_loglevel("debug")
 
 
-def test_job_spooler_constructor(caplog, tmp_path, gc3conf_localhost):
+def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
     """Test the JobQueue class."""
     prepare_logging(caplog)
 
     queue = snijder.queue.JobQueue()
 
-    spooler = snijder.spooler.JobSpooler(str(tmp_path), queue, gc3conf_localhost)
+    spooler = snijder.spooler.JobSpooler(str(tmp_path), queue, gc3conf_path_localhost)
     assert spooler.status == "run"
     assert spooler.apps == list()
     assert spooler.dirs.keys() == [

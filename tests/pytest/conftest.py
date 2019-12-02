@@ -97,7 +97,7 @@ def jobfile_valid_decon_user02():
 
 
 @pytest.fixture(scope="module")
-def gc3conf_localhost():
-    """A gc3pie configuration file for localhost."""
+def gc3conf_path_localhost():
+    """A path to a gc3pie configuration file for localhost."""
     file_path = gc3conf_path("localhost")
     return file_path
