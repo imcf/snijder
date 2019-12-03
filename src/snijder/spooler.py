@@ -238,7 +238,7 @@ class JobSpooler(object):
                 continue
             files = os.listdir(resourcedir)
             if files:
-                logw("Resource dir [%s] unclean: %s", resourcedir, files)
+                logw("Resource dir unclean: [%s] - files: %s", resourcedir, files)
                 for resfile in files:
                     unclean.append(os.path.join(resourcedir, resfile))
 
@@ -267,11 +267,7 @@ class JobSpooler(object):
                 cmd = psutil.Process(pid).cmdline()
                 logd("Process matching resource pid '%s' found: %s", pid, cmd)
                 if "gc3pie" in str(cmd):
-                    logw(
-                        "Process with pid '%s' seems to be a running gc3pie " "job: %s",
-                        pid,
-                        cmd,
-                    )
+                    logw("Potentially a running gc3 job: [pid:%s] [cmd:%s]", pid, cmd)
                     gc3_jobs[pid] = resfile
                     continue
 
