@@ -262,10 +262,6 @@ class JobSpooler(object):
         logi("Inspecting gc3pie resource files for running processes.")
         gc3_jobs = dict()
         for resfile in gc3_files:
-            if not os.path.exists(resfile):
-                logw("Resource file [%s] doesn't exist!", resfile)
-                continue
-
             try:
                 pid = int(os.path.basename(resfile))
                 cmd = psutil.Process(pid).cmdline()
