@@ -14,11 +14,15 @@ import snijder.spooler
 import pytest  # pylint: disable-msg=unused-import
 
 
+### FUNCTIONS ###
+
 def prepare_logging(caplog):
     """Helper function to set up logging appropriately."""
     caplog.set_level("DEBUG")
     snijder.logger.set_loglevel("debug")
 
+
+### TESTS ###
 
 def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
     """Test the JobQueue class constructor."""
