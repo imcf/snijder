@@ -235,6 +235,7 @@ class JobSpooler(object):
                 resourcedir,
             )
             if not os.path.exists(resourcedir):
+                # TODO: should this really be ignored silently?!
                 continue
             files = os.listdir(resourcedir)
             if files:
