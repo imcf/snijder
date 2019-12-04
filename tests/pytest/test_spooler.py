@@ -21,7 +21,7 @@ def prepare_logging(caplog):
 
 
 def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
-    """Test the JobQueue class."""
+    """Test the JobQueue class constructor."""
     prepare_logging(caplog)
 
     queue = snijder.queue.JobQueue()
