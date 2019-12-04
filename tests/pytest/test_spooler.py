@@ -38,6 +38,14 @@ def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
     assert "PRE-SUBMITTED JOBS" not in caplog.text
     assert "Created JobSpooler." in caplog.text
 
+    caplog.clear()
+    spooler.status = "run"
+    spooler.status = "refresh"
+    assert "Received spooler queue status refresh request" in caplog.text
+
+    spooler.status = "invalid"
+    assert "Received spooler status change request" in caplog.text
+
 
 def test_setup_rundirs(caplog, tmp_path):
     """Test the setup_rundirs() method."""
