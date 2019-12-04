@@ -65,6 +65,9 @@ def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
     assert "Created JobSpooler." in caplog.text
 
     caplog.clear()
+    spooler.status = "run"
+    assert "Received spooler status change request" not in caplog.text
+
     spooler.status = "pause"
     assert "Received spooler status change request" in caplog.text
 
