@@ -5,6 +5,7 @@
 from __future__ import print_function
 
 import os
+import sys
 import logging
 
 import snijder.logger
@@ -159,3 +160,38 @@ def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
         "Engine: NEW:0  SUBM:0  RUN:0  TERM'ing:0  TERM'ed:0  "
         "UNKNWN:0  STOP:0  (total:0)"
     ) in caplog.text
+
+
+def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir):
+    """Test setting up a spooler with an unclean gc3resource_dir."""
+    snijder_basedir = tmp_path / "snijder"
+    snijder_basedir.mkdir()
+    logging.info("Created SNIJDER base dir: %s", snijder_basedir)
+    gc3conf = snijder_basedir / "gc3conf_localhost.conf"
+    gc3conf.write_text(gc3conf_with_basedir(str(snijder_basedir)))
+    logging.info("Created gc3pie config file: %s", gc3conf)
+
+    gc3resource_dir = snijder_basedir / "gc3" / "resource" / "shellcmd.d"
+    assert not os.path.exists(str(gc3resource_dir))
+    gc3resource_dir.mkdir(parents=True)
+    assert os.path.exists(str(gc3resource_dir))
+
+    # create a fake PID file using *our* PID (i.e. the one of the pytest process)
+    fake_pid_file = gc3resource_dir / str(os.getpid())
+    fake_pid_file.touch()
+
+    # create a non-PID file
+    non_pid_file = gc3resource_dir / "this-should-not-be-a-valid-PID"
+    non_pid_file.touch()
+
+    # create a PID file with a value that (hopefully) doesn't correspond to a valid PID
+    negative_pid_file = gc3resource_dir / str(sys.maxint)
+    negative_pid_file.touch()
+
+    # now create the spooler, this will initialize the gc3 engine
+    prepare_spooler(caplog, snijder_basedir, gc3conf)
+    assert "Resource dir unclean" in caplog.text
+    assert "Inspecting gc3pie resource files for running processes." in caplog.text
+    assert "Process matching resource pid '%s' found" % str(os.getpid()) in caplog.text
+    assert "No running process matching pid" in caplog.text
+    assert "doesn't seem to be from an existing gc3 job" in caplog.text
