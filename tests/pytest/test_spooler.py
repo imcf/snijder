@@ -30,7 +30,7 @@ def prepare_spooler(caplog, spooldir, gc3conf):
     caplog : pytest caplog fixture
     spooldir : str or str-like
         The spooldir to use for the spooler instance.
-    gc3conf : str
+    gc3conf : str or str-like
         The path to the gc3 configuration file to be used.
 
     Returns
@@ -39,7 +39,7 @@ def prepare_spooler(caplog, spooldir, gc3conf):
     """
     prepare_logging(caplog)
     queue = snijder.queue.JobQueue()
-    spooler = snijder.spooler.JobSpooler(str(spooldir), queue, gc3conf)
+    spooler = snijder.spooler.JobSpooler(str(spooldir), queue, str(gc3conf))
     logging.info("Initialized JobSpooler")
     return spooler
 
