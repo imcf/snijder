@@ -33,8 +33,8 @@ from .jobs import JobDescription
 class JobSpooler(object):
     """Spooler class processing the queue, dispatching jobs, etc.
 
-    Instance Variables
-    ------------------
+    Instance Attributes
+    --------------------
     apps : list
     dirs : dict
         A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
