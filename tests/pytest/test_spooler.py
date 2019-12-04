@@ -134,6 +134,22 @@ def test_setup_rundirs(caplog, tmp_path):
     assert run_dirs["curfiles"] == [fake_file_name]
 
 
+def test_check_gc3conf(caplog, tmp_path, gc3conf_with_basedir):
+    """Test check_gc3conf() with a config missing the 'spooldir' entry."""
+    prepare_logging(caplog)
+    config = gc3conf_with_basedir(tmp_path)
+    # remove the "spooldir" entry
+    config = config.replace("spooldir = ", "xnospooldir = ")
+    logging.debug("Generated gc3pie config without 'spooldir' entry:\n%s", config)
+
+    gc3conf = tmp_path / "gc3conf_localhost_nospooldir.conf"
+    gc3conf.write_text(config)
+    logging.info("Created gc3pie config file: %s", gc3conf)
+
+    with pytest.raises(AttributeError, match="Unable to parse spooldir for resource"):
+        snijder.spooler.JobSpooler.check_gc3conf(str(gc3conf))
+
+
 def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
     """Set up a spooler with a pre-existing basedir and check the engine status."""
     snijder_basedir = tmp_path / "snijder"
