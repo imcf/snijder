@@ -133,8 +133,6 @@ def test_setup_rundirs(caplog, tmp_path):
 
 def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
     """Set up a spooler with a pre-existing basedir and check the engine status."""
-    prepare_logging(caplog)
-
     snijder_basedir = tmp_path / "snijder"
     snijder_basedir.mkdir()
     logging.info("Created SNIJDER base dir: %s", snijder_basedir)
@@ -145,11 +143,8 @@ def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
     gc3resource_dir = snijder_basedir / "gc3" / "resource" / "shellcmd.d"
     assert not os.path.exists(str(gc3resource_dir))
 
-    # we need a queue to create a spooler instance
-    queue = snijder.queue.JobQueue()
-
     # now create the spooler, this will initialize the gc3 engine
-    spooler = snijder.spooler.JobSpooler(str(snijder_basedir), queue, str(gc3conf))
+    spooler = prepare_spooler(caplog, snijder_basedir, gc3conf)
 
     assert "Inspecting gc3pie resource files for running processes." in caplog.text
     assert os.path.exists(str(gc3resource_dir))
@@ -157,7 +152,7 @@ def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
     assert spooler.gc3cfg["conffile"].startswith(str(gc3conf))
     assert spooler.status == "run"
 
-    # request the spooler's engine status
+    # request the spooler's engine status, this will trigger some log messages as well
     caplog.clear()
     assert spooler.engine_status()["total"] == 0
     assert (
