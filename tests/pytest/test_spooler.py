@@ -130,7 +130,7 @@ def test_setup_rundirs(caplog, tmp_path):
 
 
 def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
-    """Test setting up aspooler with a unique basedir and get the engine status."""
+    """Set up a spooler with a pre-existing basedir and check the engine status."""
     prepare_logging(caplog)
 
     snijder_basedir = tmp_path / "snijder"
