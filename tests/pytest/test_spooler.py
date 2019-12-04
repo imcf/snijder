@@ -1,5 +1,7 @@
 """Tests for the snijder.spooler module."""
 
+# pylint: disable-msg=invalid-name
+
 from __future__ import print_function
 
 import os
