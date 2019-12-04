@@ -116,7 +116,6 @@ def test_setup_rundirs(caplog, tmp_path):
     assert "- file: %s" % fake_file_name in caplog.text
     assert run_dirs["newfiles"] == [fake_file_name]
 
-
     # test with pre-existing files in "spool/cur"
     caplog.clear()
     base = tmp_path / "curfiles"
