@@ -42,12 +42,17 @@ def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
     assert "Created JobSpooler." in caplog.text
 
     caplog.clear()
-    spooler.status = "run"
+    spooler.status = "pause"
+    assert "Received spooler status change request" in caplog.text
+
     spooler.status = "refresh"
     assert "Received spooler queue status refresh request" in caplog.text
 
-    spooler.status = "invalid"
-    assert "Received spooler status change request" in caplog.text
+
+def test_job_spooler_invalid_status_request(caplog, tmp_path, gc3conf_with_basedir):
+    """Test requesting an invalid status change to the spooler."""
+    # FIXME: needs to be implemented
+    pass
 
 
 def test_setup_rundirs(caplog, tmp_path):
