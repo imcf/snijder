@@ -274,8 +274,6 @@ class JobSpooler(object):
 
             except ValueError as err:
                 logw("Unable to parse a pid from file [%s]: %s", resfile, err)
-            except TypeError as err:
-                logw("Unable to look up status for pid '%s': %s", pid, err)
             except psutil.NoSuchProcess:
                 logd("No running process matching pid '%s' found.", pid)
             except Exception as err:
