@@ -18,6 +18,7 @@ import pytest
 
 ### FUNCTIONS ###
 
+
 def jobfile_path(name, category="valid"):
     """Helper function to locate a job configuration file.
 
@@ -72,7 +73,8 @@ def generate_gc3conf(basedir):
     # NOTE: the generated string requires several places to be an actual "%" (percent
     # character), but as we need to inject the basedir via string mapping the "real"
     # percent chars have to be doubled!
-    config = textwrap.dedent(u"""
+    config = textwrap.dedent(
+        u"""
         # Very simple configuration for dispatching jobs on the local machine.
 
         [DEFAULT]
@@ -101,11 +103,13 @@ def generate_gc3conf(basedir):
         architecture = x64_64
         spooldir = %%(snijder_basedir)s/gc3/spool
         resourcedir = %%(snijder_basedir)s/gc3/resource/shellcmd.d
-    """)
+    """
+    )
     return config % basedir
 
 
 ### FIXTURES ###
+
 
 @pytest.fixture(scope="module")
 def jobcfg_valid_delete():
