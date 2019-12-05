@@ -2,6 +2,9 @@
 
 # pylint: disable-msg=invalid-name
 
+# 'black' has priority over 'pylint:
+# pylint: disable-msg=bad-continuation
+
 from __future__ import print_function
 
 import os
