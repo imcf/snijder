@@ -45,6 +45,32 @@ def prepare_spooler(caplog, spooldir, gc3conf):
     return spooler
 
 
+def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
+    """Helper function to prepare the SNIJDER basedir and a gc3 config file.
+
+    Parameters
+    ----------
+    basedir : Pathlib
+        The path to be used for the basedir, this is intended to be used with the pytest
+        fixture `tmp_path`.
+    gc3conf_generator : function
+        The function to be called for generating the gc3pie configuration.
+
+    Returns
+    -------
+    (Pathlib, Pathlib)
+        A tuple of Pathlib objects, the first being the `snijder_basedir` and the second
+        being the `gc3conf`.
+    """
+    snijder_basedir = basedir / "snijder"
+    snijder_basedir.mkdir()
+    logging.info("Created SNIJDER base dir: %s", snijder_basedir)
+    gc3conf = snijder_basedir / "gc3conf_localhost.conf"
+    gc3conf.write_text(gc3conf_generator(str(snijder_basedir)))
+    logging.info("Created gc3pie config file: %s", gc3conf)
+    return (snijder_basedir, gc3conf)
+
+
 ### TESTS ###
 
 def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
@@ -182,12 +208,7 @@ def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
 
 def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir):
     """Test setting up a spooler with an unclean gc3resource_dir."""
-    snijder_basedir = tmp_path / "snijder"
-    snijder_basedir.mkdir()
-    logging.info("Created SNIJDER base dir: %s", snijder_basedir)
-    gc3conf = snijder_basedir / "gc3conf_localhost.conf"
-    gc3conf.write_text(gc3conf_with_basedir(str(snijder_basedir)))
-    logging.info("Created gc3pie config file: %s", gc3conf)
+    snijder_basedir, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
 
     gc3resource_dir = snijder_basedir / "gc3" / "resource" / "shellcmd.d"
     assert not os.path.exists(str(gc3resource_dir))
