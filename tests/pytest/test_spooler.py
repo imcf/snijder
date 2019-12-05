@@ -76,9 +76,11 @@ def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
 
 ### TESTS ###
 
-def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
+
+def test_job_spooler_constructor(caplog, tmp_path, gc3conf_with_basedir):
     """Test the JobQueue class constructor."""
-    spooler = prepare_spooler(caplog, tmp_path, gc3conf_path_localhost)
+    _, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
+    spooler = prepare_spooler(caplog, tmp_path, gc3conf)
     assert spooler.status == "run"
     assert spooler.apps == list()
     assert spooler.dirs.keys() == [
@@ -104,9 +106,10 @@ def test_job_spooler_constructor(caplog, tmp_path, gc3conf_path_localhost):
     assert "Received spooler queue status refresh request" in caplog.text
 
 
-def test_job_spooler_invalid_status_request(caplog, tmp_path, gc3conf_path_localhost):
+def test_job_spooler_invalid_status_request(caplog, tmp_path, gc3conf_with_basedir):
     """Test requesting an invalid status change to the spooler."""
-    spooler = prepare_spooler(caplog, tmp_path, gc3conf_path_localhost)
+    _, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
+    spooler = prepare_spooler(caplog, tmp_path, gc3conf)
     spooler.status = "invalid"
     assert "Invalid spooler status requested, ignoring" in caplog.text
     assert "Received spooler status change request" not in caplog.text
