@@ -62,7 +62,7 @@ def generate_gc3conf(basedir):
 
     Parameters
     ----------
-    basedir : str
+    basedir : str or str-like
         The value to be used for the `snijder_basedir` entry.
 
     Returns
@@ -105,7 +105,7 @@ def generate_gc3conf(basedir):
         resourcedir = %%(snijder_basedir)s/gc3/resource/shellcmd.d
     """
     )
-    return config % basedir
+    return config % str(basedir)
 
 
 ### FIXTURES ###
