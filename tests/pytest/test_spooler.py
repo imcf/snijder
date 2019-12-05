@@ -208,9 +208,9 @@ def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
 
 def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir):
     """Test setting up a spooler with an unclean gc3resource_dir."""
-    snijder_basedir, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
+    basedir, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
 
-    gc3resource_dir = snijder_basedir / "gc3" / "resource" / "shellcmd.d"
+    gc3resource_dir = basedir / "gc3" / "resource" / "shellcmd.d"
     assert not os.path.exists(str(gc3resource_dir))
     gc3resource_dir.mkdir(parents=True)
     assert os.path.exists(str(gc3resource_dir))
@@ -228,7 +228,7 @@ def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir
     negative_pid_file.touch()
 
     # now create the spooler, this will initialize the gc3 engine
-    prepare_spooler(caplog, snijder_basedir, gc3conf)
+    prepare_spooler(caplog, basedir, gc3conf)
     assert "Resource dir unclean" in caplog.text
     assert "Inspecting gc3pie resource files for running processes." in caplog.text
     assert "Process matching resource pid '%s' found" % str(os.getpid()) in caplog.text
