@@ -49,6 +49,8 @@ class JobSpooler(object):
         The current spooler status.
     """
 
+    __allowed_status_values__ = ["shutdown", "refresh", "pause", "run"]
+
     def __init__(self, spooldir, queue, gc3conf):
         """Prepare the spooler.
 
@@ -82,6 +84,10 @@ class JobSpooler(object):
     @status.setter
     def status(self, newstatus):
         """Set the 'status' variable, perform non-spooling actions."""
+        if newstatus not in self.__allowed_status_values__:
+            logw("Invalid spooler status requested, ignoring: [%s]", newstatus)
+            return
+
         if newstatus == "refresh":
             # don't change the status on "refresh", instead simply print the
             # queue status and update the status file:
@@ -353,8 +359,7 @@ class JobSpooler(object):
 
     def check_status_request(self):
         """Check if a status change for the QM was requested."""
-        valid = ["shutdown", "refresh", "pause", "run"]
-        for fname in valid:
+        for fname in self.__allowed_status_values__:
             check_file = os.path.join(self.dirs["requests"], fname)
             if os.path.exists(check_file):
                 os.remove(check_file)
