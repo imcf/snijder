@@ -34,7 +34,7 @@ class JobSpooler(object):
     """Spooler class processing the queue, dispatching jobs, etc.
 
     Instance Attributes
-    --------------------
+    -------------------
     apps : list
     dirs : dict
         A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
@@ -383,7 +383,7 @@ class JobSpooler(object):
         self.queue.process_deletion_list()
 
     def spool(self):
-        """Wrapper method for the spooler to catch Ctrl-C."""
+        """Wrapper for the spooler to catch Ctrl-C and clean up after spooling."""
         try:
             self._spool()
         except KeyboardInterrupt:
