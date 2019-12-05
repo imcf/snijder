@@ -48,6 +48,9 @@ def prepare_spooler(caplog, spooldir, gc3conf):
 def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
     """Helper function to prepare the SNIJDER basedir and a gc3 config file.
 
+    The `basedir`, a sub-directory called `snijder` will be created and a gc3pie config
+    file called `gc3pie_configuration.conf` will be placed therein.
+
     Parameters
     ----------
     basedir : Pathlib
@@ -65,7 +68,7 @@ def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
     snijder_basedir = basedir / "snijder"
     snijder_basedir.mkdir()
     logging.info("Created SNIJDER base dir: %s", snijder_basedir)
-    gc3conf = snijder_basedir / "gc3conf_localhost.conf"
+    gc3conf = snijder_basedir / "gc3pie_configuration.conf"
     gc3conf.write_text(gc3conf_generator(str(snijder_basedir)))
     logging.info("Created gc3pie config file: %s", gc3conf)
     return (snijder_basedir, gc3conf)
