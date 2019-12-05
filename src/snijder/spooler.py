@@ -396,7 +396,7 @@ class JobSpooler(object):
         print "*" * 80
         print "snijder-queue spooler running, press ctrl-c to shut it down"
         print "*" * 80
-        logi("Expected jobfile version: %s.", JOBFILE_VER)
+        logi("SNIJDER spooler started, expected jobfile version: %s.", JOBFILE_VER)
         # dict with a mapping from jobtypes to app classes:
         apptypes = {
             "hucore": hucore.HuDeconApp,
