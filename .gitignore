@@ -9,6 +9,7 @@
 # test outputs, coverage, etc.
 .coverage
 /htmlcov/
+.pytest_cache/
 
 # vim swap files
 .*.sw?
