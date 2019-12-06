@@ -22,6 +22,7 @@ import pytest  # pylint: disable-msg=unused-import
 
 ### FUNCTIONS ###
 
+
 def prepare_logging(caplog):
     """Helper function to set up logging appropriately."""
     caplog.set_level("DEBUG")
