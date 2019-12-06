@@ -9,7 +9,9 @@ from __future__ import print_function
 
 import os
 import sys
+import time
 import logging
+import threading
 
 import snijder.logger
 import snijder.queue
@@ -75,6 +77,50 @@ def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
     gc3conf.write_text(gc3conf_generator(str(snijder_basedir)))
     logging.info("Created gc3pie config file: %s", gc3conf)
     return (snijder_basedir, gc3conf)
+
+
+def wait_for_log_message(caplog, log_message, desc, timeout=0.005):
+    """Helper to wait for a specific log message for a given timeout.
+
+    This helper is repeatedly checking the log for a message to show up before the given
+    `timeout` has been reached, using a fixed delay between the subsequent checks.
+
+    Parameters
+    ----------
+    caplog : pytest fixture
+    log_message : str
+        The log message to wait for.
+    desc : str
+        A description to use in this function's own log messages. MUST NOT be a
+        substring of `log_message` as otherwise it will render the check useless!
+    timeout : float, optional
+        The maximum amount of time in seconds to wait for the log message to appear, by
+        default 0.005.
+
+    Returns
+    -------
+    bool
+        True if the log message was found within the given timeout, False otherwise.
+    """
+    if desc in log_message:
+        logging.error("Description MUST NOT be a substring of the log message!")
+        desc = "FIX TEST DESCRIPTION"
+
+    found_message = False
+    elapsed_time = 0.0
+    sleep_for = 0.000001
+    max_attempts = int(timeout / sleep_for)
+    logging.warning("Waiting (<%s cycles) for %s log message.", max_attempts, desc)
+    for i in range(max_attempts):
+        if log_message in caplog.text:
+            found_message = True
+            elapsed_time = i * sleep_for
+            logging.warning("Found %s log message after %.6fs", desc, elapsed_time)
+            break
+        # logging.debug("Log message not found, sleeping...")
+        time.sleep(sleep_for)
+
+    return found_message
 
 
 ### TESTS ###
@@ -243,3 +289,48 @@ def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir
     assert "Process matching resource pid '%s' found" % str(os.getpid()) in caplog.text
     assert "No running process matching pid" in caplog.text
     assert "doesn't seem to be from an existing gc3 job" in caplog.text
+
+
+def test_spooling_thread(caplog, tmp_path, gc3conf_with_basedir):
+    """Start a spooler (as a thread), check if it's alive, request a shutdown.
+
+    This test is doing the following tasks:
+    - prepare a spooler instance
+    - start spooling in a background thread
+    - check if the spooler has started spooling
+    - request the spooler to shut down
+    - check if shutdown succeeded
+    """
+    ### prepare the spooler
+    basedir, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
+    spooler = prepare_spooler(caplog, basedir, gc3conf)
+
+    ### start spooling using a background thread
+    spooler_loop = threading.Thread(target=spooler.spool)
+    spooler_loop.daemon = True
+    caplog.clear()
+    spooler_loop.start()
+
+    ### check if the spooler is spooling
+    running = wait_for_log_message(
+        caplog, "SNIJDER spooler started, expected jobfile version", "spooler startup"
+    )
+    assert running
+    assert spooler_loop.is_alive()
+
+    ### request spooler to shut down using the `status` attribute
+    caplog.clear()
+    spooler.status = "shutdown"
+    logging.debug("spooler thread alive (pre-join): %s", spooler_loop.is_alive())
+    # wait max 2 seconds for the spooling thread to terminate:
+    spooler_loop.join(timeout=2)
+
+    ### check if the spooler shutdown succeeded
+    logging.debug("spooler thread alive (post-join): %s", spooler_loop.is_alive())
+    # with the thread-join above, the log message should be found immediately:
+    shutdown = wait_for_log_message(
+        caplog, "QM shutdown: spooler cleanup completed.", "spooler shutdown"
+    )
+    assert shutdown
+    logging.info("spooler thread alive (post-shutdown): %s", spooler_loop.is_alive())
+    assert not spooler_loop.is_alive()
