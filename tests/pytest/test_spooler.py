@@ -23,18 +23,11 @@ import pytest  # pylint: disable-msg=unused-import
 ### FUNCTIONS ###
 
 
-def prepare_logging(caplog):
-    """Helper function to set up logging appropriately."""
-    caplog.set_level("DEBUG")
-    snijder.logger.set_loglevel("debug")
-
-
-def prepare_spooler(caplog, spooldir, gc3conf):
+def prepare_spooler(spooldir, gc3conf):
     """Helper function setting up a spooler instance.
 
     Parameters
     ----------
-    caplog : pytest caplog fixture
     spooldir : str or str-like
         The spooldir to use for the spooler instance.
     gc3conf : str or str-like
@@ -44,7 +37,6 @@ def prepare_spooler(caplog, spooldir, gc3conf):
     -------
     snijder.spooler.JobSpooler
     """
-    prepare_logging(caplog)
     queue = snijder.queue.JobQueue()
     spooler = snijder.spooler.JobSpooler(str(spooldir), queue, str(gc3conf))
     logging.info("Initialized JobSpooler")
@@ -130,7 +122,7 @@ def wait_for_log_message(caplog, log_message, desc, timeout=0.005):
 def test_job_spooler_constructor(caplog, tmp_path, gc3conf_with_basedir):
     """Test the JobQueue class constructor."""
     _, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
-    spooler = prepare_spooler(caplog, tmp_path, gc3conf)
+    spooler = prepare_spooler(tmp_path, gc3conf)
     assert spooler.status == "run"
     assert spooler.apps == list()
     assert spooler.dirs.keys() == [
@@ -159,7 +151,7 @@ def test_job_spooler_constructor(caplog, tmp_path, gc3conf_with_basedir):
 def test_job_spooler_invalid_status_request(caplog, tmp_path, gc3conf_with_basedir):
     """Test requesting an invalid status change to the spooler."""
     _, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
-    spooler = prepare_spooler(caplog, tmp_path, gc3conf)
+    spooler = prepare_spooler(tmp_path, gc3conf)
     spooler.status = "invalid"
     assert "Invalid spooler status requested, ignoring" in caplog.text
     assert "Received spooler status change request" not in caplog.text
@@ -167,7 +159,6 @@ def test_job_spooler_invalid_status_request(caplog, tmp_path, gc3conf_with_based
 
 def test_setup_rundirs(caplog, tmp_path):
     """Test the setup_rundirs() method."""
-    prepare_logging(caplog)
 
     # test where one of the runtime directories already exists but is read-only
     caplog.clear()
@@ -216,9 +207,8 @@ def test_setup_rundirs(caplog, tmp_path):
     assert run_dirs["curfiles"] == [fake_file_name]
 
 
-def test_check_gc3conf(caplog, tmp_path, gc3conf_with_basedir):
+def test_check_gc3conf(tmp_path, gc3conf_with_basedir):
     """Test check_gc3conf() with a config missing the 'spooldir' entry."""
-    prepare_logging(caplog)
     config = gc3conf_with_basedir(tmp_path)
     # remove the "spooldir" entry
     config = config.replace("spooldir = ", "xnospooldir = ")
@@ -245,7 +235,7 @@ def test_setup_engine_and_status(caplog, tmp_path, gc3conf_with_basedir):
     assert not os.path.exists(str(gc3resource_dir))
 
     # now create the spooler, this will initialize the gc3 engine
-    spooler = prepare_spooler(caplog, snijder_basedir, gc3conf)
+    spooler = prepare_spooler(snijder_basedir, gc3conf)
 
     assert "Inspecting gc3pie resource files for running processes." in caplog.text
     assert os.path.exists(str(gc3resource_dir))
@@ -284,7 +274,7 @@ def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir
     negative_pid_file.touch()
 
     # now create the spooler, this will initialize the gc3 engine
-    prepare_spooler(caplog, basedir, gc3conf)
+    prepare_spooler(basedir, gc3conf)
     assert "Resource dir unclean" in caplog.text
     assert "Inspecting gc3pie resource files for running processes." in caplog.text
     assert "Process matching resource pid '%s' found" % str(os.getpid()) in caplog.text
@@ -304,7 +294,7 @@ def test_spooling_thread(caplog, tmp_path, gc3conf_with_basedir):
     """
     ### prepare the spooler
     basedir, gc3conf = prepare_basedir_and_gc3conf(tmp_path, gc3conf_with_basedir)
-    spooler = prepare_spooler(caplog, basedir, gc3conf)
+    spooler = prepare_spooler(basedir, gc3conf)
 
     ### start spooling using a background thread
     spooler_loop = threading.Thread(target=spooler.spool)

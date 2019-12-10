@@ -11,7 +11,10 @@
 from __future__ import print_function
 
 import os
+import logging
 import textwrap
+
+import snijder
 
 import pytest
 
@@ -91,6 +94,13 @@ def generate_gc3conf(basedir):
 
 
 ### FIXTURES ###
+
+
+@pytest.fixture(autouse=True)
+def debug_logging(caplog):
+    """Auto-use fixture setting the log level(s)."""
+    caplog.set_level("DEBUG")
+    snijder.logger.set_loglevel("debug")
 
 
 @pytest.fixture(scope="module")
