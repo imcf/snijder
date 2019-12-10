@@ -107,6 +107,25 @@ class JobSpooler(object):
             self.status,
         )
 
+    def run(self):
+        """Set the spooler status to 'run'."""
+        self.status = "run"
+
+    def refresh(self):
+        """Request a refresh of the spooler status.
+
+        This will update the status file and print the queue status to the logs.
+        """
+        self.status = "refresh"
+
+    def pause(self):
+        """Set the spooler status to 'pause'."""
+        self.status = "pause"
+
+    def shutdown(self):
+        """Request the spooler to shut down."""
+        self.status = "shutdown"
+
     @staticmethod
     def setup_rundirs(base_dir):
         """Check if all runtime dirs exist or try to create them otherwise.
