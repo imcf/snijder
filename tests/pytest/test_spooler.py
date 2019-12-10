@@ -116,6 +116,22 @@ def message_timeout(caplog, log_message, desc, timeout=0.005):
     return found_message
 
 
+def log_thread(thread, description):
+    """Log a message about the status of a background thread.
+
+    Parameters
+    ----------
+    thread : threading.Thread
+        The thread to check if it's alive.
+    description : str
+        The description to use for the status in the log message.
+    """
+    status = "running"
+    if not thread.is_alive():
+        status = "STOPPED"
+    logging.debug("Status of background thread (%s): %s", description, status)
+
+
 ### TESTS ###
 
 
@@ -312,16 +328,16 @@ def test_spooling_thread(caplog, tmp_path, gc3conf_with_basedir):
     ### request spooler to shut down using the `status` attribute
     caplog.clear()
     spooler.status = "shutdown"
-    logging.debug("spooler thread alive (pre-join): %s", spooler_loop.is_alive())
+    log_thread(spooler_loop, "pre-join")
     # wait max 2 seconds for the spooling thread to terminate:
     spooler_loop.join(timeout=2)
 
     ### check if the spooler shutdown succeeded
-    logging.debug("spooler thread alive (post-join): %s", spooler_loop.is_alive())
+    log_thread(spooler_loop, "post-join")
     # with the thread-join above, the log message should be found immediately:
     shutdown = message_timeout(
         caplog, "QM shutdown: spooler cleanup completed.", "spooler shutdown"
     )
     assert shutdown
-    logging.info("spooler thread alive (post-shutdown): %s", spooler_loop.is_alive())
+    log_thread(spooler_loop, "post-shutdown")
     assert not spooler_loop.is_alive()
