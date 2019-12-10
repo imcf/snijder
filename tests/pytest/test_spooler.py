@@ -72,7 +72,7 @@ def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
     return (snijder_basedir, gc3conf)
 
 
-def wait_for_log_message(caplog, log_message, desc, timeout=0.005):
+def message_timeout(caplog, log_message, desc, timeout=0.005):
     """Helper to wait for a specific log message for a given timeout.
 
     This helper is repeatedly checking the log for a message to show up before the given
@@ -303,7 +303,7 @@ def test_spooling_thread(caplog, tmp_path, gc3conf_with_basedir):
     spooler_loop.start()
 
     ### check if the spooler is spooling
-    running = wait_for_log_message(
+    running = message_timeout(
         caplog, "SNIJDER spooler started, expected jobfile version", "spooler startup"
     )
     assert running
@@ -319,7 +319,7 @@ def test_spooling_thread(caplog, tmp_path, gc3conf_with_basedir):
     ### check if the spooler shutdown succeeded
     logging.debug("spooler thread alive (post-join): %s", spooler_loop.is_alive())
     # with the thread-join above, the log message should be found immediately:
-    shutdown = wait_for_log_message(
+    shutdown = message_timeout(
         caplog, "QM shutdown: spooler cleanup completed.", "spooler shutdown"
     )
     assert shutdown
