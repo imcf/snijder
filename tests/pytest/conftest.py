@@ -13,6 +13,7 @@ from __future__ import print_function
 import os
 import logging
 import textwrap
+import threading
 
 import snijder
 
@@ -155,3 +156,67 @@ def gc3conf_with_basedir():
     returns the function and therefore can be "called" by the test.
     """
     return generate_gc3conf
+
+
+@pytest.fixture(scope="function")
+def snijder_spooler(caplog, tmp_path):
+    """Fixture providing a spooler in a background thread.
+
+    The fixture sets up a new spooler instance with its own `spooldir` and `gc3conf` and
+    prepares a background thread for running the main spooler loop. It returns a proxy
+    object that gives access to the spooler configuration, the instance and the thread
+    object.
+
+    NOTE 1: the fixture is using the `yield` statement to allow for some teardown code.
+    Most notably it will check if the spooling thread has terminated, or will request it
+    to do so otherwise.
+
+    NOTE 2: the thread will not be started automatically, this has to be done explicitly
+    by calling `thread.start()` on the proxy object.
+    """
+
+    class SpoolerProxy(object):
+
+        """Proxy providing access to the spooler instance, the thread and related stuff.
+
+        Instance Attributes
+        -------------------
+        basedir: str
+            The path that was used as `spooldir` parameter for the spooler.
+        gc3conf: str
+            The gc3pie config file that was used as `gc3conf` parameter for the spooler.
+        spooler: snijder.spooler.JobSpooler
+            The spooler instance.
+        thread: threading.Thread
+            The background thread for the spooling loop.
+        """
+
+        def __init__(self, basedir, gc3conf, spooler, thread):
+            self.basedir = basedir
+            self.gc3conf = gc3conf
+            self.spooler = spooler
+            self.thread = thread
+
+    basedir = tmp_path / "snijder"
+    basedir.mkdir()
+    logging.info("Created SNIJDER base dir: %s", basedir)
+
+    gc3conf = basedir / "gc3pie_configuration.conf"
+    gc3conf.write_text(generate_gc3conf(str(basedir)))
+    logging.info("Created gc3pie config file: %s", gc3conf)
+
+    spooler = snijder.spooler.JobSpooler(
+        str(basedir), snijder.queue.JobQueue(), str(gc3conf)
+    )
+    thread = threading.Thread(target=spooler.spool)
+    thread.daemon = True
+
+    proxy = SpoolerProxy(basedir, gc3conf, spooler, thread)
+
+    yield proxy
+
+    if proxy.thread.is_alive():
+        logging.warning("Spooler thread still alive, trying to shut it down...")
+        spooler.shutdown()
+        thread.join(timeout=2)
+        assert "QM shutdown: spooler cleanup completed." in caplog.text
