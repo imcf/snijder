@@ -148,6 +148,17 @@ def create_request_file(spooler, request):
     logging.debug("Created request file [%s]", request_file)
 
 
+def queue_is_empty(spooler):
+    """Helper function to check if the queue(s) of a spooler are empty.
+
+    Parameters
+    ----------
+    spooler : snijder.spooler.JobSpooler
+        The spooler instance to check.
+    """
+    return len(spooler.queue) == 0
+
+
 ### TESTS ###
 
 
@@ -394,6 +405,7 @@ def test_check_status_request(caplog, snijder_spooler):
 
     ### create a request file to shut down the spooler
     caplog.clear()
+    assert queue_is_empty(snijder_spooler.spooler)
     create_request_file(snijder_spooler.spooler, "shutdown")
     assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
     # wait max 2 seconds for the spooling thread to terminate:
