@@ -351,3 +351,58 @@ def test_spooling_thread(caplog, snijder_spooler):
     log_thread(snijder_spooler.thread, "post-shutdown")
     assert not snijder_spooler.thread.is_alive()
     assert snijder_spooler.spooler.status == "shutdown"
+
+
+def test_check_status_request(caplog, snijder_spooler):
+    """Start a spooler thread and request a status change through a request-file.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+    - check if the spooler has started spooling
+    - create request files to change the spooler status
+        - "run" to "pause"
+        - back from "pause" to "run"
+        - request a "refresh" (will not change the status)
+        - spooler "shutdown"
+    - check if shutdown succeeded
+    """
+    ### start spooling in a background thread
+    snijder_spooler.thread.start()
+
+    ### check if the spooler is spooling
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+    assert snijder_spooler.spooler.status == "run"
+
+    ### create a request file switching to "pause" mode
+    caplog.clear()
+    create_request_file(snijder_spooler.spooler, "pause")
+    assert message_timeout(caplog, "request: run -> pause", "pause request", 2)
+    assert snijder_spooler.spooler.status == "pause"
+
+    ### create a request file switching back to "run" mode
+    caplog.clear()
+    create_request_file(snijder_spooler.spooler, "run")
+    assert message_timeout(caplog, "request: pause -> run", "run request", 2)
+    assert snijder_spooler.spooler.status == "run"
+
+    ### create a request file to "refresh" the queue status
+    caplog.clear()
+    create_request_file(snijder_spooler.spooler, "refresh")
+    assert message_timeout(caplog, "status refresh request", "refresh status", 2)
+    assert snijder_spooler.spooler.status == "run"
+
+    ### create a request file to shut down the spooler
+    caplog.clear()
+    create_request_file(snijder_spooler.spooler, "shutdown")
+    assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
+    # wait max 2 seconds for the spooling thread to terminate:
+    snijder_spooler.thread.join(timeout=2)
+
+    ### check if the spooler shutdown succeeded
+    log_thread(snijder_spooler.thread, "post-join")
+    # with the thread-join above, the log message should be found immediately:
+    assert message_timeout(caplog, "spooler cleanup completed", "spooler shutdown")
+    log_thread(snijder_spooler.thread, "post-shutdown")
+    assert not snijder_spooler.thread.is_alive()
+    assert snijder_spooler.spooler.status == "shutdown"
