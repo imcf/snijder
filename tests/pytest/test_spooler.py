@@ -16,6 +16,8 @@ import snijder.logger
 import snijder.queue
 import snijder.spooler
 
+import pathlib2
+
 import pytest  # pylint: disable-msg=unused-import
 
 
@@ -129,6 +131,21 @@ def log_thread(thread, description):
     if not thread.is_alive():
         status = "STOPPED"
     logging.debug("Status of background thread (%s): %s", description, status)
+
+
+def create_request_file(spooler, request):
+    """Helper to create a spooler request file.
+
+    Parameters
+    ----------
+    spooler : snijder.spooler.JobSpooler
+        The spooler instance to communicate with.
+    request : str
+        A valid status request string.
+    """
+    request_file = pathlib2.Path(spooler.dirs["requests"]) / request
+    request_file.touch()
+    logging.debug("Created request file [%s]", request_file)
 
 
 ### TESTS ###
