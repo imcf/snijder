@@ -31,22 +31,23 @@ from .jobs import JobDescription
 
 
 class JobSpooler(object):
+
     """Spooler class processing the queue, dispatching jobs, etc.
 
-    Instance Attributes
-    -------------------
-    apps : list
-    dirs : dict
-        A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
-    queue : JobQueue
-        The queue for this spooler.
-    # queues : dict(snijder.JobQueue)  # TODO: multi-queue logic (#136, #272)
-    gc3cfg : dict
-        A dict with gc3 config paths as returned by JobSpooler.check_gc3conf().
-    engine : gc3libs.core.Engine
-        The gc3 engine object to be used for this spooler.
-    status : str
-        The current spooler status.
+        Instance Attributes
+        -------------------
+        apps : list
+        dirs : dict
+            A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
+        queue : JobQueue
+            The queue for this spooler.
+        # queues : dict(snijder.JobQueue)  # TODO: multi-queue logic (#136, #272)
+        gc3cfg : dict
+            A dict with gc3 config paths as returned by JobSpooler.check_gc3conf().
+        engine : gc3libs.core.Engine
+            The gc3 engine object to be used for this spooler.
+        status : str
+            The current spooler status.
     """
 
     __allowed_status_values__ = ["shutdown", "refresh", "pause", "run"]
