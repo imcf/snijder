@@ -220,3 +220,34 @@ def snijder_spooler(caplog, tmp_path):
         spooler.shutdown()
         thread.join(timeout=2)
         assert "QM shutdown: spooler cleanup completed." in caplog.text
+
+
+@pytest.fixture(scope="module")
+def joblist(jobfile_valid_decon_user01):
+    """Provide a list of job objects with defined usernames and job UIDs.
+
+    The list will have seven jobs in total, three of user 'u000' (UID suffixes from
+    'aaa' to 'ccc') and four of user 'u111' (UID suffixes 'ddd' to 'ggg').
+    """
+    jobs = list(xrange(7))
+
+    for i in xrange(7):
+        jobs[i] = snijder.jobs.JobDescription(jobfile_valid_decon_user01, "file")
+
+    jobs[0]["uid"] = "u000_aaa"
+    jobs[0]["user"] = "u000"
+    jobs[1]["uid"] = "u000_bbb"
+    jobs[1]["user"] = "u000"
+    jobs[2]["uid"] = "u000_ccc"
+    jobs[2]["user"] = "u000"
+
+    jobs[3]["uid"] = "u111_ddd"
+    jobs[3]["user"] = "u111"
+    jobs[4]["uid"] = "u111_eee"
+    jobs[4]["user"] = "u111"
+    jobs[5]["uid"] = "u111_fff"
+    jobs[5]["user"] = "u111"
+    jobs[6]["uid"] = "u111_ggg"
+    jobs[6]["user"] = "u111"
+
+    return jobs

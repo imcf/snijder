@@ -339,3 +339,33 @@ def test_queue_details_hr(
         queue.append(job)
     queue.queue_details_hr()
     assert "[ showing first 5 jobs (total: 6) ]" in caplog.text
+
+
+def test_joblist(joblist):
+    """Test the behavior of the joblist() method."""
+    queue = snijder.queue.JobQueue()
+    for job in joblist:
+        queue.append(job)
+    assert len(queue) == 7
+    assert list(queue.queue["u000"]) == ["u000_aaa", "u000_bbb", "u000_ccc"]
+    assert list(queue.queue["u111"]) == ["u111_ddd", "u111_eee", "u111_fff", "u111_ggg"]
+
+    expected_order = [
+        "u000_aaa",
+        "u111_ddd",
+        "u000_bbb",
+        "u111_eee",
+        "u000_ccc",
+        "u111_fff",
+        "u111_ggg",
+    ]
+
+    assert queue.joblist() == expected_order
+    next_job = queue.next_job()
+    while next_job:
+        expected_jobid = expected_order.pop(0)
+        logging.warn("next job: [%s], expected: [%s]", next_job["uid"], expected_jobid)
+        assert next_job["uid"] == expected_jobid
+        next_job = queue.next_job()
+    assert len(queue.joblist()) == 0
+
