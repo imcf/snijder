@@ -369,3 +369,49 @@ def test_joblist(joblist):
         next_job = queue.next_job()
     assert len(queue.joblist()) == 0
 
+
+def test_add_remove_jobs(caplog, joblist):
+    """Test removing jobs out of order."""
+    queue = snijder.queue.JobQueue()
+    for job in joblist:
+        queue.append(job)
+    assert len(queue) == 7
+
+    queue.remove("u000_aaa")
+    queue.remove("u000_bbb")
+    assert "Removing job from queue: [uid:u000_aa] [queue:u000]" in caplog.text
+    assert "Removing job from queue: [uid:u000_bb] [queue:u000]" in caplog.text
+    logging.warning(queue.joblist())
+    assert queue.joblist() == [
+        "u000_ccc",
+        "u111_ddd",
+        "u111_eee",
+        "u111_fff",
+        "u111_ggg",
+    ]
+
+    next_job = queue.next_job()
+    assert next_job["uid"] == "u000_ccc"
+
+    caplog.clear()
+    queue.remove("u111_ggg")
+    assert queue.joblist() == [
+        "u111_ddd",
+        "u111_eee",
+        "u111_fff",
+    ]
+    next_job = queue.next_job()
+    assert next_job["uid"] == "u111_ddd"
+    assert queue.joblist() == [
+        "u111_eee",
+        "u111_fff",
+    ]
+    queue.remove("u111_eee")
+    assert queue.joblist() == ["u111_fff"]
+    queue.remove("u111_fff")
+
+    queue.remove("aaa")
+    assert "Job not found, discarding the request: [uid:aaa]" in caplog.text
+
+    assert len(queue.joblist()) == 0
+
