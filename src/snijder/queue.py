@@ -204,7 +204,7 @@ class JobQueue(object):
         del self.jobs[uid]  # remove the job from the jobs dict
         self.status_changed = True
         if category in self.queue and uid in self.queue[category]:
-            logd("Removing job from queue: [uid:%.7s] [queue:%s]'.", uid, category)
+            logd("Removing job from queue: [uid:%.7s] [queue:%s].", uid, category)
             self.queue[category].remove(uid)
             self._is_queue_empty(category)
         elif uid in self.processing:
