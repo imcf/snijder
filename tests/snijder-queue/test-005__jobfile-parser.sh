@@ -7,16 +7,11 @@ set -e
 PFX=$(dirname $0)
 source "$PFX/functions.inc.sh"
 
-SHORT=$(parse_shortname)
-PYSCRIPT="scripts/python/$(basename $0 | sed 's,.sh$,.py,')"
-
-########## TEST DESCRIPTION ##########
-# intended behaviour:
-# 1) launches the Python script that does the jobfile parsing
-########## TEST DESCRIPTION ##########
-
-ls $PYSCRIPT
-python $PYSCRIPT
+echo
+colr yellow 'Test has been superseded / replaced by pytest:
+- tests/pytest/test_jobs.py::test_snijder_job_config_parser_valid_jobfiles
+- tests/pytest/test_jobs.py::test_snijder_job_config_parser_invalid_jobfiles
+'
 
 msg_finished
 

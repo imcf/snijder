@@ -7,16 +7,12 @@ set -e
 PFX=$(dirname $0)
 source "$PFX/functions.inc.sh"
 
-SHORT=$(parse_shortname)
-PYSCRIPT="scripts/python/$(basename $0 | sed 's,.sh$,.py,')"
-
-########## TEST DESCRIPTION ##########
-# intended behaviour:
-# 1) launches the Python script that does the JobQueue testing
-########## TEST DESCRIPTION ##########
-
-ls $PYSCRIPT
-python $PYSCRIPT
+echo
+colr yellow 'Test has been superseded / replaced by pytest:
+- tests/pytest/test_queue.py::test_joblist
+- tests/pytest/test_queue.py::test_add_remove_jobs
+- tests/pytest/test_queue.py::test_add_duplicate_jobs
+'
 
 msg_finished
 
