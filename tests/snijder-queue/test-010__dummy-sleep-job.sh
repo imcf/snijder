@@ -16,6 +16,9 @@ SHORT=$(parse_shortname)
 # 3) place a preview generation job in the queue
 # 4) switch to run mode
 # 5) shutdown QM when queue is empty, latest after 5 min
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_sleep_job
+#
 ########## TEST DESCRIPTION ##########
 
 

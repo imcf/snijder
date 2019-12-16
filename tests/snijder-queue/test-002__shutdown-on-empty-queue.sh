@@ -16,6 +16,10 @@ SHORT=$(parse_shortname)
 # 3) switch to run mode
 # 4) refresh the queue (currently triggers generation of status file)
 # 5) shutdown QM on empty queue (should be immediate), latest after 10s
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_check_status_request
+# NOTE: the pytest test is the same as for the (shell) test-001!
+#
 ########## TEST DESCRIPTION ##########
 
 
