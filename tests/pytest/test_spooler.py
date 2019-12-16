@@ -11,6 +11,7 @@ import os
 import sys
 import time
 import logging
+import shutil
 
 import snijder.logger
 import snijder.queue
@@ -157,6 +158,30 @@ def queue_is_empty(spooler):
         The spooler instance to check.
     """
     return len(spooler.queue) == 0
+
+
+def submit_jobfile(spooler, jobfile):
+    """Submit a job file to a spooler.
+
+    Parameters
+    ----------
+    spooler : snijder.spooler.JobSpooler
+        The spooler instance to which the job file should be submitted to.
+    jobfile : str
+        The job description file.
+
+    Returns
+    -------
+    str
+        The file name (full path) of the submitted job file.
+    """
+    new_dir = spooler.dirs["new"]
+    logging.debug("Submitting [%s] to [%s]...", jobfile, new_dir)
+    dest = os.path.basename(jobfile)
+    dest = os.path.join(new_dir, dest)
+    shutil.copy2(jobfile, dest)
+    logging.debug("Copied jobfile to [%s].", dest)
+    return dest
 
 
 ### TESTS ###
