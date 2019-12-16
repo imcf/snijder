@@ -17,6 +17,7 @@ import shutil
 import snijder.logger
 import snijder.queue
 import snijder.spooler
+import snijder.cmdline
 
 import pathlib2
 
@@ -463,3 +464,49 @@ def test_check_status_request(caplog, snijder_spooler):
     log_thread(snijder_spooler.thread, "post-shutdown")
     assert not snijder_spooler.thread.is_alive()
     assert snijder_spooler.spooler.status == "shutdown"
+
+
+def test_sleep_job(caplog, snijder_spooler, jobfile_valid_sleep):
+    """Start a spooler thread and run a sleep job.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+        - switch spooler to "pause" mode
+        - submit a sleep job
+        - switch spooler to "run" mode
+        - wait (just a couple of seconds) for spooler to complete the sleep job
+        - spooler "shutdown"
+    - check if shutdown succeeded
+    """
+    ### start spooling in a background thread
+    snijder_spooler.thread.start()
+
+    ### check if the spooler is spooling
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+    assert snijder_spooler.spooler.status == "run"
+
+    snijder_spooler.spooler.pause()
+    assert message_timeout(caplog, "request: run -> pause", "pause request", 2)
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+    dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_sleep)
+    snijder.cmdline.process_jobfile(dest, queues)
+    assert "Error reading job description file" not in caplog.text
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 1
+
+    snijder_spooler.spooler.run()
+    assert message_timeout(caplog, "request: pause -> run", "run request", 2)
+    assert message_timeout(caplog, "Retrieving next job", "job selection", 2)
+    assert message_timeout(caplog, "Adding job (type 'DummySleepApp')", "dispatch", 0.5)
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 1
+
+    assert message_timeout(caplog, "'NEW' -> 'SUBMITTED'", "job submission", 2)
+    assert message_timeout(caplog, "'SUBMITTED' -> 'RUNNING'", "job execution", 2)
+
+    assert message_timeout(caplog, "'RUNNING' -> 'TERMINATING'", "job termination", 2)
+    assert queue_is_empty(snijder_spooler.spooler, 2)
+
+    snijder_spooler.spooler.shutdown()
+    assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
+    assert message_timeout(caplog, "spooler cleanup completed", "shutdown complete", 2)
