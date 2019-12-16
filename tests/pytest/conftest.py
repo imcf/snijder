@@ -148,6 +148,13 @@ def jobfile_valid_decon_user02():
 
 
 @pytest.fixture(scope="module")
+def jobfile_valid_sleep():
+    """A valid jobfile for a (dummy) sleep job for `user01`."""
+    file_path = jobfile_path("dummy_sleep_user01.cfg")
+    return file_path
+
+
+@pytest.fixture(scope="module")
 def gc3conf_with_basedir():
     """Wrapper fixture returning the gc3conf generator function.
 
