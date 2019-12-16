@@ -1,6 +1,7 @@
 """Tests for the snijder.spooler module."""
 
 # pylint: disable-msg=invalid-name
+# pylint: disable-msg=len-as-condition
 
 # 'black' has priority over 'pylint:
 # pylint: disable-msg=bad-continuation
@@ -149,14 +150,33 @@ def create_request_file(spooler, request):
     logging.debug("Created request file [%s]", request_file)
 
 
-def queue_is_empty(spooler):
+def queue_is_empty(spooler, timeout=0):
     """Helper function to check if the queue(s) of a spooler are empty.
+
+    When the `timeout` parameter is omitted, a single check is performed only. If a
+    `timeout` has been specified, the queue is checked repeatedly (with a delay of
+    0.005 seconds) and the function returns `True` as soon as the queue is empty. In
+    case the queue is still not empty after the `timeout` has elapsed, it returns
+    `False`.
 
     Parameters
     ----------
     spooler : snijder.spooler.JobSpooler
         The spooler instance to check.
+    timeout : float
+        The maximum amount of time to wait until the queue is empty.
     """
+    elapsed = 0.0
+    sleep_for = 0.005
+    max_attempts = int(timeout / sleep_for)
+    logging.warning("Waiting (<%s cycles) for queue to be empty.", max_attempts)
+    for i in range(max_attempts):
+        if len(spooler.queue) == 0:
+            elapsed = i * sleep_for
+            logging.warning("Queue empty after %.3fs", elapsed)
+            return True
+        time.sleep(sleep_for)
+
     return len(spooler.queue) == 0
 
 
