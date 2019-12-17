@@ -175,6 +175,13 @@ def jobfile_valid_sleep():
 
 
 @pytest.fixture(scope="module")
+def jobfile_valid_delete():
+    """A valid jobfile for a deletejobs job."""
+    file_path = jobfile_path("remove_job_bfbe38a.cfg")
+    return file_path
+
+
+@pytest.fixture(scope="module")
 def gc3conf_with_basedir():
     """Wrapper fixture returning the gc3conf generator function.
 

@@ -513,3 +513,30 @@ def test_sleep_job(caplog, snijder_spooler, jobfile_valid_sleep):
     snijder_spooler.spooler.shutdown()
     assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
     assert message_timeout(caplog, "spooler cleanup completed", "shutdown complete", 2)
+
+
+@pytest.mark.runjobs
+def test_remove_nonexisting_job(caplog, snijder_spooler, jobfile_valid_delete):
+    """Start a spooler thread an submit a deletion request for a non-existing job."""
+    snijder_spooler.thread.start()
+
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+    dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_delete)
+    snijder.cmdline.process_jobfile(dest, queues)
+    assert "Error reading job description file" not in caplog.text
+    assert message_timeout(caplog, "Received job deletion", "deletion-request", 0.1)
+
+    assert message_timeout(
+        caplog, "Trying to remove job", "request-processing", timeout=2, sleep_for=0.1
+    )
+    assert message_timeout(
+        caplog,
+        "Job not found, discarding the request",
+        "request being discarded",
+        timeout=2,
+        sleep_for=0.1,
+    )
+

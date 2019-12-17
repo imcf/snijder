@@ -15,6 +15,9 @@ SHORT=$(parse_shortname)
 # 2) submit a request to remove a non-existing job from the queue
 # 3) wait for 2 seconds to give the QM some time to process it
 # 3) shutdown QM when queue is empty, latest after 10s
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_remove_nonexisting_job
+#
 ########## TEST DESCRIPTION ##########
 
 
