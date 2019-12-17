@@ -76,7 +76,7 @@ def prepare_basedir_and_gc3conf(basedir, gc3conf_generator):
     return (snijder_basedir, gc3conf)
 
 
-def message_timeout(caplog, log_message, desc, timeout=0.005):
+def message_timeout(caplog, log_message, desc, timeout=0.005, sleep_for=0.000001):
     """Helper to wait for a specific log message for a given timeout.
 
     This helper is repeatedly checking the log for a message to show up before the given
@@ -93,6 +93,9 @@ def message_timeout(caplog, log_message, desc, timeout=0.005):
     timeout : float, optional
         The maximum amount of time in seconds to wait for the log message to appear, by
         default 0.005.
+    sleep_for : float, optional
+        The amount of time that should be waited between two attempts of checking the
+        log messages, by default 0.000001
 
     Returns
     -------
@@ -105,7 +108,6 @@ def message_timeout(caplog, log_message, desc, timeout=0.005):
 
     found_message = False
     elapsed_time = 0.0
-    sleep_for = 0.000001
     max_attempts = int(timeout / sleep_for)
     logging.warning("Waiting (<%s cycles) for %s log message.", max_attempts, desc)
     for i in range(max_attempts):
