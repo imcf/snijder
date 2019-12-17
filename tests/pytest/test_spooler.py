@@ -466,6 +466,7 @@ def test_check_status_request(caplog, snijder_spooler):
     assert snijder_spooler.spooler.status == "shutdown"
 
 
+@pytest.mark.runjobs
 def test_sleep_job(caplog, snijder_spooler, jobfile_valid_sleep):
     """Start a spooler thread and run a sleep job.
 
