@@ -20,6 +20,26 @@ import snijder
 import pytest
 
 
+### pytest setup
+
+
+def pytest_addoption(parser):
+    """Add a command line option '--runjobs' to pytest."""
+    parser.addoption('--runjobs', action='store_true', default=False,
+                     help="enable running snijder-jobs (slow)")
+
+
+def pytest_collection_modifyitems(config, items):
+    """Add the 'skip' marker to tests decorated with 'pytest.mark.runjobs'."""
+    if config.getoption("--runjobs"):
+        # --runjobs given in cli: do not skip job tests
+        return
+    skip_runjobs = pytest.mark.skip(reason="need --runjobs option to run")
+    for item in items:
+        if "runjobs" in item.keywords:
+            item.add_marker(skip_runjobs)
+
+
 ### FUNCTIONS ###
 
 
