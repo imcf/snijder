@@ -543,3 +543,69 @@ def test_remove_nonexisting_job(caplog, snijder_spooler, jobfile_valid_delete):
         sleep_for=0.1,
     )
 
+
+@pytest.mark.runjobs
+def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01):
+    """Start a spooler thread an submit multiple deconvolution jobs.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+        - switch spooler to "pause" mode
+        - submit three deconvolution jobs
+        - switch spooler to "run" mode
+        - check spooler to process the jobs, allowing up to 60s per job
+        - check if queues are empty, then shutdown the spooler
+    - check if shutdown succeeded
+    """
+    snijder_spooler.thread.start()
+
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+    assert snijder_spooler.spooler.status == "run"
+
+    ### switch spooler to "pause" for submitting the jobs
+    snijder_spooler.spooler.pause()
+    assert message_timeout(caplog, "request: run -> pause", "pause request", 2)
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+
+    # submit 3 jobs (actually the same job 3 times, using the "on_parsing" flag)
+    for _ in range(3):
+        dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_decon_user01)
+        snijder.cmdline.process_jobfile(dest, queues)
+
+    assert "Error reading job description file" not in caplog.text
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 3
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
+
+    ### switch to "run", then check the jobs processing
+    snijder_spooler.spooler.run()
+    for num_jobs_queued in [2, 1, 0]:
+        assert message_timeout(caplog, "Adding job (type 'HuDeconApp')", "dispatch", 2)
+        assert message_timeout(caplog, "Instantiating a HuDeconApp", "app-instance", 2)
+        assert snijder_spooler.spooler.queue.num_jobs_queued() == num_jobs_queued
+        assert snijder_spooler.spooler.queue.num_jobs_processing() == 1
+
+        assert message_timeout(caplog, "'NEW' -> 'SUBMITTED'", "job submission", 2)
+        assert message_timeout(caplog, "'SUBMITTED' -> 'RUNNING'", "job execution", 2)
+
+        # now is the "safest" point to clear the captured logs as the current step is
+        # supposed to take multiple seconds (so it is less likely to clear log messages
+        # that we are expecting later on)
+        caplog.clear()
+
+        # give the job up to 60 seconds to complete:
+        assert message_timeout(caplog, "-> 'TERMINATING'", "job termination", 60, 0.2)
+        assert message_timeout(caplog, "terminated successfully", "job success", 1)
+        assert message_timeout(caplog, "to be removed: TERMINATED", "job cleanup", 1)
+
+
+    ### check for empty queues
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
+
+
+    snijder_spooler.spooler.shutdown()
+    assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
+    assert message_timeout(caplog, "spooler cleanup completed", "shutdown complete", 2)
+

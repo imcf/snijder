@@ -16,6 +16,9 @@ SHORT=$(parse_shortname)
 # 3) place three deconvolution jobs in the queue
 # 4) switch to run mode
 # 5) shutdown QM when queue is empty, latest after 5 min
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_multiple_decon_jobs
+#
 ########## TEST DESCRIPTION ##########
 
 
