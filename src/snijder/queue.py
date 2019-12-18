@@ -232,7 +232,9 @@ class JobQueue(object):
             else:
                 logi("Job successfully removed from the queue.")
         # updating the queue status file is only done now:
-        logd(self.update_status())
+        queue_status = self.update_status()
+        if queue_status:
+            logd("Queue status after processing the deletion list: %s", queue_status)
 
     def set_jobstatus(self, job, status):
         """Update the status of a job and trigger related actions.
