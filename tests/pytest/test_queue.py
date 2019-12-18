@@ -422,4 +422,3 @@ def test_add_duplicate_jobs(joblist):
     queue.append(joblist[0])
     with pytest.raises(ValueError, match="\[uid:u000_aa\] already in this queue"):
         queue.append(joblist[0])
-
