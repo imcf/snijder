@@ -266,7 +266,9 @@ class JobQueue(object):
         Returns
         -------
         str
-            The JSON-formatted dict as returned by queue_details_json().
+            The JSON-formatted dict as returned by queue_details_json() or `None` in
+            case the status hasn't changed and the `force` parameter isn't set to
+            `True`.
         """
         if not self.status_changed and not force:
             return None
