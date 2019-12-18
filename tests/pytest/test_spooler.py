@@ -186,6 +186,9 @@ def queue_is_empty(spooler, timeout=0):
 def submit_jobfile(spooler, jobfile):
     """Submit a job file to a spooler.
 
+    Copy a given job file to the incoming spooling directory ("new") to submit it to a
+    running spooler / queue.
+
     Parameters
     ----------
     spooler : snijder.spooler.JobSpooler
