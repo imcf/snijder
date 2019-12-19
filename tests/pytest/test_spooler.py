@@ -546,7 +546,7 @@ def test_remove_nonexisting_job(caplog, snijder_spooler, jobfile_valid_delete):
 
 @pytest.mark.runjobs
 def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01):
-    """Start a spooler thread an submit multiple deconvolution jobs.
+    """Start a spooler thread and submit multiple deconvolution jobs.
 
     This test is doing the following tasks:
     - start a spooling instance in a background thread
@@ -599,11 +599,9 @@ def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01
         assert message_timeout(caplog, "terminated successfully", "job success", 1)
         assert message_timeout(caplog, "to be removed: TERMINATED", "job cleanup", 1)
 
-
     ### check for empty queues
     assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
     assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
-
 
     snijder_spooler.spooler.shutdown()
     assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
