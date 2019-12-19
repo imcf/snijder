@@ -17,6 +17,9 @@ SHORT=$(parse_shortname)
 # 4) switch to run mode
 # 5) request a QM shutdown after 3 seconds
 # 6) wait 5s for the QM to shut down, kill it the hard way otherwise
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_killing_decon_jobs_at_3s
+#
 ########## TEST DESCRIPTION ##########
 
 

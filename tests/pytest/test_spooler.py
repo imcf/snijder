@@ -607,3 +607,70 @@ def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01
     assert message_timeout(caplog, "request: run -> shutdown", "shutdown request", 2)
     assert message_timeout(caplog, "spooler cleanup completed", "shutdown complete", 2)
 
+
+@pytest.mark.runjobs
+def test_killing_decon_jobs_at_3s(
+    caplog, snijder_spooler, jobfile_valid_decon_user01_long_fixedts
+):
+    """Start a spooler thread, submit a long-running job and kill it after 3 seconds.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+        - switch spooler to "pause" mode
+        - submit a long-running deconvolution job
+        - switch spooler to "run" mode
+        - wait for 3 seconds
+        - request the spooler to shut down while the job is still running
+    """
+    snijder_spooler.thread.start()
+
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+    assert snijder_spooler.spooler.status == "run"
+
+    ### switch spooler to "pause" for submitting the jobs
+    snijder_spooler.spooler.pause()
+    assert message_timeout(caplog, "request: run -> pause", "pause request", 2, 0.01)
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+
+    dest = submit_jobfile(
+        snijder_spooler.spooler, jobfile_valid_decon_user01_long_fixedts
+    )
+    snijder.cmdline.process_jobfile(dest, queues)
+
+    assert "Error reading job description file" not in caplog.text
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 1
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
+
+    ### switch to "run", then check the job
+    snijder_spooler.spooler.run()
+    assert message_timeout(caplog, "Adding job (type 'HuDeconApp')", "dispatch", 2, 0.1)
+    assert message_timeout(caplog, "Instantiating a HuDeconApp", "app-instance", 2, 0.1)
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 1
+
+    assert message_timeout(caplog, "'NEW' -> 'SUBMITTED'", "job submission", 2, 0.01)
+    assert message_timeout(caplog, "'SUBMITTED' -> 'RUNNING'", "job execution", 2, 0.01)
+
+    ### wait for 3 seconds
+    time.sleep(3)
+
+    ### request the spooler to shut down while the job is still running
+    snijder_spooler.spooler.shutdown()
+    assert message_timeout(caplog, "request: run -> shutdown", "stop-request", 2, 0.1)
+    assert message_timeout(caplog, "shutdown initiated", "shutdown-start", 1, 0.01)
+    assert message_timeout(caplog, "Unfinished jobs", "remaining jobs", 0.1, 0.01)
+    assert message_timeout(caplog, "<KILLING> [user01] HuDeconApp", "app-kill")
+    assert message_timeout(caplog, "'RUNNING' -> 'TERMINATED'", "job-status", 2, 0.01)
+    assert queue_is_empty(snijder_spooler.spooler)
+
+    assert message_timeout(
+        caplog,
+        "Successfully terminated remaining jobs, none left.",
+        "cleanup-success",
+        2,
+        0.01,
+    )
+
+    assert message_timeout(caplog, "spooler cleanup completed", "stop-complete", 2, 0.1)
