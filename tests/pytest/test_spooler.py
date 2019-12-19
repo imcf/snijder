@@ -674,3 +674,55 @@ def test_killing_decon_jobs_at_3s(
     )
 
     assert message_timeout(caplog, "spooler cleanup completed", "stop-complete", 2, 0.1)
+
+
+@pytest.mark.runjobs
+def test_add_remove_job(
+    caplog,
+    snijder_spooler,
+    jobfile_valid_decon_user01_long_fixedts,
+    jobfile_valid_delete,
+):
+    """Start a spooler thread, submit a job and deletion request for the same job.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+        - switch spooler to "pause" mode
+        - submit a long-running deconvolution job
+        - submit a deletion request for the previously submitted deconvolution job
+        - switch spooler to "run" mode
+        - check if the job is removed from the queue
+        - request the spooler to shut down
+    """
+    snijder_spooler.thread.start()
+
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+
+    ### switch spooler to "pause" for submitting the jobs
+    snijder_spooler.spooler.pause()
+    assert message_timeout(caplog, "request: run -> pause", "pause request", 2, 0.01)
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+
+    dest = submit_jobfile(
+        snijder_spooler.spooler, jobfile_valid_decon_user01_long_fixedts
+    )
+    snijder.cmdline.process_jobfile(dest, queues)
+
+    dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_delete)
+    snijder.cmdline.process_jobfile(dest, queues)
+
+    assert "Error reading job description file" not in caplog.text
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 1
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
+
+    ### switch to "run", then check if the job got removed
+    snijder_spooler.spooler.run()
+    assert message_timeout(caplog, "Received a deletion request", "del-request", 0.5)
+    assert queue_is_empty(snijder_spooler.spooler, timeout=0.1)
+
+    ### request the spooler to shut down
+    snijder_spooler.spooler.shutdown()
+    assert message_timeout(caplog, "request: run -> shutdown", "stop-request", 1, 0.1)
+    assert message_timeout(caplog, "spooler cleanup completed", "stop-complete", 2, 0.1)
