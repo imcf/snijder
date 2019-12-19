@@ -161,6 +161,13 @@ def jobfile_valid_decon_user01():
 
 
 @pytest.fixture(scope="module")
+def jobfile_valid_decon_user01_long_fixedts():
+    """A valid jobfile for a long-running deconvolution job with a fixed timestamp."""
+    file_path = jobfile_path("decon_it-999_user01_fixed-timestamp_bfbe38a.cfg")
+    return file_path
+
+
+@pytest.fixture(scope="module")
 def jobfile_valid_decon_user02():
     """A valid jobfile for a deconvolution job for `user02`."""
     file_path = jobfile_path("decon_it-3_user02.cfg")
