@@ -292,7 +292,7 @@ class JobSpooler(object):
             try:
                 pid = int(os.path.basename(resfile))
                 cmd = psutil.Process(pid).cmdline()
-                logd("Process matching resource pid '%s' found: %s", pid, cmd)
+                logd("Found process matching [pid:%s]: %s", pid, cmd)
                 if "gc3pie" in str(cmd):
                     logw("Potentially a running gc3 job: [pid:%s] [cmd:%s]", pid, cmd)
                     gc3_jobs[pid] = resfile
@@ -301,7 +301,7 @@ class JobSpooler(object):
             except ValueError as err:
                 logw("Unable to parse a pid from file [%s]: %s", resfile, err)
             except psutil.NoSuchProcess:
-                logd("No running process matching pid '%s' found.", pid)
+                logd("No process found matching [pid:%s].", pid)
             except Exception as err:
                 loge(
                     "Unexpected error while checking resource file [%s]: %s",
@@ -310,11 +310,7 @@ class JobSpooler(object):
                 )
                 raise err
 
-            logi(
-                "File [%s] doesn't seem to be from an existing gc3 job, "
-                "removing it.",
-                resfile,
-            )
+            logi("Removing file not related to a gc3 job: [file:%s]", resfile)
             os.remove(resfile)
 
         return gc3_jobs
