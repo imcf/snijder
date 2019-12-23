@@ -17,6 +17,9 @@ SHORT=$(parse_shortname)
 # 5) place the "remove_job" from the inputs directory in the queue
 # 6) request queue status
 # 7) shutdown QM when queue is empty (should be IMMEDIATE!), latest after 5 SECONDS
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_remove_running_job
+#
 ########## TEST DESCRIPTION ##########
 
 

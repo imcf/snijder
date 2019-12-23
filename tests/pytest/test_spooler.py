@@ -726,3 +726,59 @@ def test_add_remove_job(
     snijder_spooler.spooler.shutdown()
     assert message_timeout(caplog, "request: run -> shutdown", "stop-request", 1, 0.1)
     assert message_timeout(caplog, "spooler cleanup completed", "stop-complete", 2, 0.1)
+
+
+@pytest.mark.runjobs
+def test_remove_running_job(
+    caplog,
+    snijder_spooler,
+    jobfile_valid_decon_user01_long_fixedts,
+    jobfile_valid_delete,
+):
+    """Start a spooler thread, submit a job and a deletion request after 2 seconds.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+        - submit a long-running deconvolution job
+        - wait for 2 seconds
+        - check if the job is being processed
+        - submit a deletion request for the previously submitted deconvolution job
+        - check if the job is removed from the queue and cleaned up
+        - request the spooler to shut down
+    """
+    snijder_spooler.thread.start()
+
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+
+    dest = submit_jobfile(
+        snijder_spooler.spooler, jobfile_valid_decon_user01_long_fixedts
+    )
+    snijder.cmdline.process_jobfile(dest, queues)
+
+    assert message_timeout(caplog, "Instantiating a HuDeconApp", "job-start", 2, 0.1)
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 1
+    logging.warning("job is processing...")
+    time.sleep(1.1)
+
+    logging.warning("submitting deletion request")
+    dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_delete)
+    snijder.cmdline.process_jobfile(dest, queues)
+
+    assert message_timeout(caplog, "job deletion request", "del-request", 0.5, 0.01)
+    assert message_timeout(caplog, "was killed or crahsed", "job-kill", 2, 0.01)
+    assert message_timeout(caplog, "App has terminated", "app-termination", 0.5, 0.01)
+    assert queue_is_empty(snijder_spooler.spooler, timeout=0.1)
+
+    ### request the spooler to shut down
+    snijder_spooler.spooler.shutdown()
+    assert message_timeout(caplog, "request: run -> shutdown", "stop-request", 1, 0.1)
+    assert message_timeout(caplog, "spooler cleanup completed", "stop-complete", 2, 0.1)
+
+    ### spooler should clean up the gc3 resource dir
+    assert message_timeout(caplog, "Resource dir unclean", "unclean-resource", 2, 0.01)
+    assert message_timeout(caplog, "No process found matching", "no-process", 0.5, 0.01)
+    assert message_timeout(caplog, "Removing file not related", "file removal", 1, 0.01)
