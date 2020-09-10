@@ -810,3 +810,50 @@ def test_remove_running_job(
     assert message_timeout(caplog, "Resource dir unclean", "unclean-resource", 2, 0.01)
     assert message_timeout(caplog, "No process found matching", "no-process", 0.5, 0.01)
     assert message_timeout(caplog, "Removing file not related", "file removal", 1, 0.01)
+
+
+@pytest.mark.runjobs
+def test_job_with_missing_data(caplog, snijder_spooler, jobcfg_missingdata, tmp_path):
+    """Start a spooler thread, submit a job with missing input data.
+
+    This test is doing the following tasks:
+    - start a spooling instance in a background thread
+        - submit a job config referencing some missing input data
+        - check if the broken job gets removed from the queue (currently IT DOESN'T!)
+        - request the spooler to shut down
+
+    TODO: this needs to be adapted once issue #1 is fixed (meaning gc3pie is not longer
+    silencing the exception and putting snijder into blind flight mode...)
+    """
+    snijder_spooler.thread.start()
+
+    assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
+    assert snijder_spooler.thread.is_alive()
+    assert snijder_spooler.spooler.status == "run"
+
+    queues = {"hucore": snijder_spooler.spooler.queue}
+
+    logging.warning("submitting job with missing data")
+    dest = submit_jobconfig(snijder_spooler.spooler, jobcfg_missingdata, tmp_path)
+    snijder.cmdline.process_jobfile(dest, queues)
+
+    assert message_timeout(caplog, "Instantiating a HuDeconApp", "job-start", 2, 0.1)
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 1
+    logging.warning("job is processing...")
+    time.sleep(3.1)
+
+    # NOTE: this unfortunately is the current behaviour of gc3pie, it is logging a
+    # message only, but not passing up the exception - so all we can do for now is to
+    # watch the log output (relates to snijder issue #1)
+    assert message_timeout(
+        caplog, "UnrecoverableDataStagingError", "data-staging-error", 0.5, 0.01
+    )
+
+    ### request the spooler to shut down
+    snijder_spooler.spooler.shutdown()
+    assert message_timeout(caplog, "request: run -> shutdown", "stop-request", 1, 0.1)
+    assert message_timeout(caplog, "spooler cleanup completed", "stop-complete", 2, 0.1)
+
+    ### spooler should clean up the gc3 resource dir
+    assert message_timeout(caplog, "Resource dir is clean", "clean-resource", 2, 0.01)
