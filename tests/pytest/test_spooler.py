@@ -194,7 +194,7 @@ def submit_jobfile(spooler, jobfile):
     spooler : snijder.spooler.JobSpooler
         The spooler instance to which the job file should be submitted to.
     jobfile : str
-        The job description file.
+        The path to the job description file.
 
     Returns
     -------
