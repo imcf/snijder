@@ -399,9 +399,9 @@ def test_setup_engine_unclean_resourcedir(caplog, tmp_path, gc3conf_with_basedir
     prepare_spooler(basedir, gc3conf)
     assert "Resource dir unclean" in caplog.text
     assert "Inspecting gc3pie resource files for running processes." in caplog.text
-    assert "Process matching resource pid '%s' found" % str(os.getpid()) in caplog.text
-    assert "No running process matching pid" in caplog.text
-    assert "doesn't seem to be from an existing gc3 job" in caplog.text
+    assert "Found process matching [pid:%s]" % str(os.getpid()) in caplog.text
+    assert "No process found matching [pid:" in caplog.text
+    assert "Removing file not related to a gc3 job: [file:" in caplog.text
 
 
 def test_spooling_thread(caplog, snijder_spooler):
