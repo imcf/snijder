@@ -143,6 +143,34 @@ def jobcfg_valid_delete():
 
 
 @pytest.fixture(scope="module")
+def jobcfg_missingdata():
+    """A job configuration string referencing missing input files
+
+    Returns
+    -------
+    str
+    """
+    config = (
+        u"[snijderjob]\n"
+        u"version = 7\n"
+        u"username = user01\n"
+        u"useremail = user01@mail.xy\n"
+        u"jobtype = hucore\n"
+        u"timestamp = on_parsing\n"
+        u"\n"
+        u"[hucore]\n"
+        u"tasktype = decon\n"
+        u"executable = /usr/local/bin/hucore\n"
+        u"template = tests/snijder-queue/scripts/templates/dummy.hgsb\n"
+        u"\n"
+        u"[inputfiles]\n"
+        u"file1 = /its/not/here/for/sure.foo\n"
+    )
+
+    return config
+
+
+@pytest.fixture(scope="module")
 def jobfile_valid_decon_fixedtimestamp():
     """A valid jobfile for a deconvolution job with a fixed timestamp.
 
