@@ -210,6 +210,34 @@ def submit_jobfile(spooler, jobfile):
     return dest
 
 
+def submit_jobconfig(spooler, jobcfg, tmp_path):
+    """Submit a job configuration string as a file to a spooler instance.
+
+    Write the given job configuration into a file and submit it to the incoming spooling
+    directory ("new") of a running spooler / queue.
+
+    Parameters
+    ----------
+    spooler : snijder.spooler.JobSpooler
+        The spooler instance to which the job file should be submitted to.
+    jobcfg : str
+        The job configuration as a string.
+    tmp_path : Pathlib
+        The path to a temporary (writable) directory, intended to be used with the
+        pytest `tmp_path` fixture.
+
+    Returns
+    -------
+    str
+        The file name (full path) of the submitted job file.
+    """
+    jobfile = tmp_path / "jobfile.cfg"
+    jobfile.write_text(jobcfg)
+    dest = submit_jobfile(spooler, (str(jobfile)))
+
+    return dest
+
+
 ### TESTS ###
 
 
