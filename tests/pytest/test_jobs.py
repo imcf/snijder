@@ -59,7 +59,11 @@ def test_snijder_job_config_parser(caplog):
 
 
 def test_snijder_job_config_parser_valid_jobfiles(caplog):
-    """Test parsing the valid job configuration files."""
+    """Test parsing the valid job configuration files.
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-005__jobfile-parser.sh
+    """
     prepare_logging(caplog)
 
     # locate the provided sample job configuration files:
@@ -79,7 +83,11 @@ def test_snijder_job_config_parser_valid_jobfiles(caplog):
 
 
 def test_snijder_job_config_parser_invalid_jobfiles(caplog):
-    """Test parsing the INVALID job configuration files."""
+    """Test parsing the INVALID job configuration files.
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-005__jobfile-parser.sh
+    """
     prepare_logging(caplog)
 
     # locate the provided sample job configuration files:

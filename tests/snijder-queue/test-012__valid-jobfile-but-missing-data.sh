@@ -15,6 +15,9 @@ SHORT=$(parse_shortname)
 # 2) submit a job with a valid jobfile but non-existing inputfiles
 #    -> the job should automatically be removed from the queue again
 # 3) shutdown QM when queue is empty, latest after 5 seconds
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_job_with_missing_data
+#
 ########## TEST DESCRIPTION ##########
 
 

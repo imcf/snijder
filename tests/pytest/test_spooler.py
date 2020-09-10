@@ -455,6 +455,10 @@ def test_check_status_request(caplog, snijder_spooler):
         - request a "refresh" (will not change the status)
         - spooler "shutdown"
     - check if shutdown succeeded
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-001__startup-pause-run-shutdown.sh
+    - tests/snijder-queue/test-002__shutdown-on-empty-queue.sh
     """
     ### start spooling in a background thread
     snijder_spooler.thread.start()
@@ -511,6 +515,9 @@ def test_sleep_job(caplog, snijder_spooler, jobfile_valid_sleep):
         - wait (just a couple of seconds) for spooler to complete the sleep job
         - spooler "shutdown"
     - check if shutdown succeeded
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-010__dummy-sleep-job.sh
     """
     ### start spooling in a background thread
     snijder_spooler.thread.start()
@@ -548,7 +555,11 @@ def test_sleep_job(caplog, snijder_spooler, jobfile_valid_sleep):
 
 @pytest.mark.runjobs
 def test_remove_nonexisting_job(caplog, snijder_spooler, jobfile_valid_delete):
-    """Start a spooler thread an submit a deletion request for a non-existing job."""
+    """Start a spooler thread an submit a deletion request for a non-existing job.
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-011__remove-non-existing-job.sh
+    """
     snijder_spooler.thread.start()
 
     assert message_timeout(caplog, "SNIJDER spooler started", "spooler startup")
@@ -584,6 +595,9 @@ def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01
         - check spooler to process the jobs, allowing up to 60s per job
         - check if queues are empty, then shutdown the spooler
     - check if shutdown succeeded
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-003__3-decon-jobs.sh
     """
     snijder_spooler.thread.start()
 
@@ -601,6 +615,9 @@ def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01
     for _ in range(3):
         dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_decon_user01)
         snijder.cmdline.process_jobfile(dest, queues)
+        # we need to wait a little, as parsing might be too fast and the next job will
+        # simply get the same UID (and therefore be ignored):
+        time.sleep(0.001)
 
     assert "Error reading job description file" not in caplog.text
     assert snijder_spooler.spooler.queue.num_jobs_queued() == 3
@@ -649,6 +666,9 @@ def test_killing_decon_jobs_at_3s(
         - switch spooler to "run" mode
         - wait for 3 seconds
         - request the spooler to shut down while the job is still running
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-004__decon-job-long_kill-at-3s.sh
     """
     snijder_spooler.thread.start()
 
@@ -721,6 +741,9 @@ def test_add_remove_job(
         - switch spooler to "run" mode
         - check if the job is removed from the queue
         - request the spooler to shut down
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-008__add-and-remove-decon-job.sh
     """
     snijder_spooler.thread.start()
 
@@ -773,6 +796,9 @@ def test_remove_running_job(
         - submit a deletion request for the previously submitted deconvolution job
         - check if the job is removed from the queue and cleaned up
         - request the spooler to shut down
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-009__remove-running.sh
     """
     snijder_spooler.thread.start()
 
@@ -824,6 +850,9 @@ def test_job_with_missing_data(caplog, snijder_spooler, jobcfg_missingdata, tmp_
 
     TODO: this needs to be adapted once issue #1 is fixed (meaning gc3pie is not longer
     silencing the exception and putting snijder into blind flight mode...)
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-012__valid-jobfile-but-missing-data.sh
     """
     snijder_spooler.thread.start()
 

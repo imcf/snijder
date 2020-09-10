@@ -342,7 +342,11 @@ def test_queue_details_hr(
 
 
 def test_joblist(joblist):
-    """Test the behavior of the joblist() method."""
+    """Test the behavior of the joblist() method.
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-007__snijder-queue.sh
+    """
     queue = snijder.queue.JobQueue()
     for job in joblist:
         queue.append(job)
@@ -371,7 +375,11 @@ def test_joblist(joblist):
 
 
 def test_add_remove_jobs(caplog, joblist):
-    """Test removing jobs out of order."""
+    """Test removing jobs out of order.
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-007__snijder-queue.sh
+    """
     queue = snijder.queue.JobQueue()
     for job in joblist:
         queue.append(job)
@@ -417,7 +425,11 @@ def test_add_remove_jobs(caplog, joblist):
 
 
 def test_add_duplicate_jobs(joblist):
-    """Test adding two jobs with the same UID."""
+    """Test adding two jobs with the same UID.
+
+    Replaces / supersedes the following old-style shell-based tests:
+    - tests/snijder-queue/test-007__snijder-queue.sh
+    """
     queue = snijder.queue.JobQueue()
     queue.append(joblist[0])
     with pytest.raises(ValueError, match="\[uid:u000_aa\] already in this queue"):
