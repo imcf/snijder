@@ -268,6 +268,8 @@ class JobSpooler(object):
                 logw("Resource dir unclean: [%s] - files: %s", resourcedir, files)
                 for resfile in files:
                     unclean.append(os.path.join(resourcedir, resfile))
+            else:
+                logd("Resource dir is clean, all good!")
 
         return unclean
 
