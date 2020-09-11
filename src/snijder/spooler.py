@@ -360,7 +360,7 @@ class JobSpooler(object):
 
     def engine_status(self):
         """Helper to get the engine status and print a formatted log."""
-        stats = self.engine.stats()
+        stats = self.engine.counts()
         logd(
             "Engine: NEW:%s  SUBM:%s  RUN:%s  TERM'ing:%s  TERM'ed:%s  "
             "UNKNWN:%s  STOP:%s  (total:%s)",
