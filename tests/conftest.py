@@ -177,7 +177,7 @@ def jobfile_valid_decon_fixedtimestamp():
     This job description will always result in the same job UID as all components
     including the timestamp are fixed before parsing time.
     """
-    file_path = jobfile_path("decon_it-999_user01_fixed-timestamp_c682dcd.cfg")
+    file_path = jobfile_path("decon_it-999_user01_fixed-timestamp_bfbe38a.cfg")
     return file_path
 
 
