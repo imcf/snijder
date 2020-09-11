@@ -667,7 +667,12 @@ def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01
     for num_job in range(3):
         dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_decon_user01)
         snijder.cmdline.process_jobfile(dest, queues)
-        assert queue_length_timeout(snijder_spooler.spooler.queue, num_job + 1)
+        assert queue_length_timeout(
+            queue=snijder_spooler.spooler.queue,
+            expected_length=num_job+1,
+            timeout=0.1,
+            sleep_for=0.005,
+        )
 
     assert "Error reading job description file" not in caplog.text
     assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
