@@ -126,6 +126,20 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
         snijder.jobs.SnijderJobConfigParser(jobconfig="no-header", srctype="string")
 
 
+def test_snijder_job_config_parser_nonexisting_jobfile(caplog, tmp_path):
+    """Test behavior when specifying a non-existing job configuration file."""
+    prepare_logging(caplog)
+
+    # locate the provided sample job configuration files:
+    jobfile_path = tmp_path / "emptydir"
+    jobfile_path.mkdir()
+    non_existing_jobfile = str(jobfile_path / "this_doesnt_exist.conf")
+    print("Using [%s] as a non-existing job config file." % non_existing_jobfile)
+
+    snijder.jobs.process_jobfile(non_existing_jobfile, queues=None)
+    assert "Error reading job description file" in caplog.text
+
+
 def test_snijder_job_config_parser__read_jobfile(caplog, tmpdir):
     """Test the read_jobfile static method."""
     prepare_logging(caplog)
