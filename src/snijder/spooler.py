@@ -304,7 +304,7 @@ class JobSpooler(object):
                 logw("Unable to parse a pid from file [%s]: %s", resfile, err)
             except psutil.NoSuchProcess:
                 logd("No process found matching [pid:%s].", pid)
-            except Exception as err:
+            except Exception as err:  # pragma: no cover
                 loge(
                     "Unexpected error while checking resource file [%s]: %s",
                     resfile,
