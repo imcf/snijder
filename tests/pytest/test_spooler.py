@@ -156,7 +156,7 @@ def queue_length_timeout(queue, expected_length, timeout=0.1, sleep_for=0.000001
         "Waiting (<%s cycles of %.8fs) for queue to have length %s.",
         max_attempts,
         sleep_for,
-        expected_length
+        expected_length,
     )
     for i in range(max_attempts):
         if queue.num_jobs_queued() == expected_length:
@@ -166,7 +166,7 @@ def queue_length_timeout(queue, expected_length, timeout=0.1, sleep_for=0.000001
                 "Queue length matching %s after %.8fs (%s cycles)",
                 expected_length,
                 elapsed_time,
-                i
+                i,
             )
             break
         time.sleep(sleep_for)

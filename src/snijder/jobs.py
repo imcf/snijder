@@ -24,6 +24,7 @@ from . import JOBFILE_VER
 
 ### TODO (refactoring): these should rather be part of the JobSpooler class
 
+
 def select_queue_for_job(job):
     """Select a queue for a job, depending on its job- and tasktype.
 
@@ -95,6 +96,7 @@ def process_jobfile(fname, queues):
         queues[selected_queue].append(job)
     except ValueError as err:
         loge("Adding the new job from [%s] failed:\n    %s", fname, err)
+
 
 ### TODO (refactoring): these should rather be part of the JobSpooler class
 
