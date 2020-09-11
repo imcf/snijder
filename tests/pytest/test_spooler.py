@@ -664,15 +664,12 @@ def test_multiple_decon_jobs(caplog, snijder_spooler, jobfile_valid_decon_user01
     queues = {"hucore": snijder_spooler.spooler.queue}
 
     # submit 3 jobs (actually the same job 3 times, using the "on_parsing" flag)
-    for _ in range(3):
+    for num_job in range(3):
         dest = submit_jobfile(snijder_spooler.spooler, jobfile_valid_decon_user01)
         snijder.cmdline.process_jobfile(dest, queues)
-        # we need to wait a little, as parsing might be too fast and the next job will
-        # simply get the same UID (and therefore be ignored):
-        time.sleep(0.001)
+        assert queue_length_timeout(snijder_spooler.spooler.queue, num_job + 1)
 
     assert "Error reading job description file" not in caplog.text
-    assert snijder_spooler.spooler.queue.num_jobs_queued() == 3
     assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
 
     ### switch to "run", then check the jobs processing
