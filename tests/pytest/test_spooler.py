@@ -122,6 +122,58 @@ def message_timeout(caplog, log_message, desc, timeout=0.005, sleep_for=0.000001
     return found_message
 
 
+def queue_length_timeout(queue, expected_length, timeout=0.1, sleep_for=0.000001):
+    """Helper to wait for the queue to have a given length for a given timeout.
+
+    This is useful when submitting a job with the `on_parsing` flag multiple times to
+    the same queue, as sometimtes parsing and enqueueing is too fast and one of the
+    subsequent submissions would be ignored as it has the same UID as one of the already
+    enqueued jobs. This function waits for the queue to reach the expected length, but
+    not longer than necessary.
+
+    Parameters
+    ----------
+    queue : snijder.queue.JobQueue
+        The spooler queue object to check.
+    expected_length : int
+        The expected number of jobs queued (queue length).
+    timeout : float, optional
+        The maximum amount of time in seconds to wait for the queue to reach the given
+        length, by default 0.1.
+    sleep_for : float, optional
+        The amount of time that should be waited between two attempts of checking the
+        current queue length, by default 0.000001.
+
+    Returns
+    -------
+    bool
+        True if the queue has reached the length within the timeout, False otherwise.
+    """
+    length_matching = False
+    elapsed_time = 0.0
+    max_attempts = int(timeout / sleep_for)
+    logging.warning(
+        "Waiting (<%s cycles of %.8fs) for queue to have length %s.",
+        max_attempts,
+        sleep_for,
+        expected_length
+    )
+    for i in range(max_attempts):
+        if queue.num_jobs_queued() == expected_length:
+            length_matching = True
+            elapsed_time = i * sleep_for
+            logging.warning(
+                "Queue length matching %s after %.8fs (%s cycles)",
+                expected_length,
+                elapsed_time,
+                i
+            )
+            break
+        time.sleep(sleep_for)
+
+    return length_matching
+
+
 def log_thread(thread, description):
     """Log a message about the status of a background thread.
 
