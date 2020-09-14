@@ -21,7 +21,7 @@ def prepare_logging(caplog):
     snijder.logger.set_loglevel("debug")
 
 
-def test_select_queue_for_job(caplog):
+def test_select_queue_for_job(caplog, jobfile_valid_sleep):
     """Test the select_queue_for_job function."""
     prepare_logging(caplog)
     print("testing select_queue_for_job()...")
@@ -40,6 +40,12 @@ def test_select_queue_for_job(caplog):
     fake_job = {"type": "dummy", "tasktype": "sleep"}
     assert snijder.jobs.select_queue_for_job(fake_job) == "hucore"
     assert "Selected queue for jobtype" in caplog.text
+
+    caplog.clear()
+    # we need to define a mapping as this MUST NOT be emtpy:
+    queue_mapping = {"queuename": {"tasktype": "jobtype"}}
+    snijder.jobs.process_jobfile(jobfile_valid_sleep, [], queue_mapping)
+    assert "Selected queue does not exist" in caplog.text
 
 
 def test_snijder_job_config_parser(caplog):
