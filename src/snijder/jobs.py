@@ -93,7 +93,7 @@ def process_jobfile(fname, queues, mapping=None):
         return
     selected_queue = select_queue_for_job(job, mapping)
     if selected_queue not in queues:
-        logc("Selected queue (%s) does not exist!", selected_queue)
+        logc("Selected queue does not exist: %s", selected_queue)
         job.move_jobfile("done")
         return
 
