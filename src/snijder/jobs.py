@@ -22,7 +22,10 @@ from . import logi, logd, logw, logc, loge
 from . import JOBFILE_VER
 
 
-### TODO (refactoring): these should rather be part of the JobSpooler class
+### TODO (refactoring): group exception-silencing functions into own module
+# these module-level functions are basically there to catch exceptions, add a message to
+# the logs and then continue, which is required when operating a spooler / queue in a
+# daemon process - they should go into their own module
 
 
 def select_queue_for_job(job, mapping=None):
@@ -104,7 +107,7 @@ def process_jobfile(fname, queues, mapping=None):
         loge("Adding the new job from [%s] failed:\n    %s", fname, err)
 
 
-### TODO (refactoring): these should rather be part of the JobSpooler class
+### TODO (refactoring): group exception-silencing functions into own module
 
 
 class AbstractJobConfigParser(dict):
