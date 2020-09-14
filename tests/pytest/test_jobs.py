@@ -115,8 +115,15 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
     for jobfile in jobfile_list:
         caplog.clear()
         print(jobfile)
+        # first test using the JobDescription constructor directly:
         with pytest.raises(ValueError, match=match):
             snijder.jobs.JobDescription(jobfile, "file")
+        assert "Ignoring job config, parsing failed" in caplog.text
+        assert "Invalid job config file" in caplog.text
+
+        # now test again through process_jobfile() which is silencing the exceptions:
+        caplog.clear()
+        snijder.jobs.process_jobfile(jobfile, queues=None)
         assert "Ignoring job config, parsing failed" in caplog.text
         assert "Invalid job config file" in caplog.text
 
