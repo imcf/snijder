@@ -56,7 +56,7 @@ def select_queue_for_job(job, mapping=None):
     return queuetype
 
 
-def process_jobfile(fname, queues):
+def process_jobfile(fname, queues, mapping=None):
     """Parse a jobfile and add it to its destination queue.
 
     Parameters
@@ -66,6 +66,8 @@ def process_jobfile(fname, queues):
     queues : dict
         Containing the JobQueue objects for the different queues, using the
         corresponding 'type' keyword as identifier.
+    mapping : dict, optional
+        A mapping being passed on to select_queue_for_job(), by default `None`.
     """
     try:
         job = JobDescription(fname, "file")
@@ -89,7 +91,7 @@ def process_jobfile(fname, queues):
         # we're finished, so move the jobfile and return:
         job.move_jobfile("done")
         return
-    selected_queue = select_queue_for_job(job)
+    selected_queue = select_queue_for_job(job, mapping)
     if selected_queue not in queues:
         logc("Selected queue (%s) does not exist!", selected_queue)
         job.move_jobfile("done")
