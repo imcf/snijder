@@ -25,17 +25,21 @@ from . import JOBFILE_VER
 ### TODO (refactoring): these should rather be part of the JobSpooler class
 
 
-def select_queue_for_job(job):
+def select_queue_for_job(job, mapping=None):
     """Select a queue for a job, depending on its job- and tasktype.
 
     Parameters
     ----------
     job : snijder.jobs.JobDescription
+    mapping : dict, optional
+        A mapping translating jobtype and tasktype to a queue name, by default `None`
+        which gets expanded to the built-in mapping (see code below).
     """
-    mapping = {
-        "hucore": {"decon": "hucore", "preview": "hucore"},
-        "dummy": {"sleep": "hucore"},
-    }
+    if mapping is None:
+        mapping = {
+            "hucore": {"decon": "hucore", "preview": "hucore"},
+            "dummy": {"sleep": "hucore"},
+        }
     if job["type"] not in mapping:
         logc("No queue found for jobtype '%s'!", job["type"])
         return None
