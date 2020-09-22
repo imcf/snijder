@@ -41,7 +41,7 @@ class JobSpooler(object):
             A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
         queue : JobQueue
             The queue for this spooler.
-        # queues : dict(snijder.JobQueue)  # TODO: multi-queue logic (#136, #272)
+        queues : dict(snijder.JobQueue)  # TODO: multi-queue logic (#136, #272)
         gc3cfg : dict
             A dict with gc3 config paths as returned by JobSpooler.check_gc3conf().
         engine : gc3libs.core.Engine
@@ -71,7 +71,7 @@ class JobSpooler(object):
         # set the JobDescription class variable for the spooldirs:
         JobDescription.spooldirs = self.dirs
         self.queue = queue
-        # self.queues = dict()  # TODO: multi-queue logic (#136, #272)
+        self.queues = dict()  # TODO: multi-queue logic (#136, #272)
         self._status = self._status_pre = "run"  # the initial status is 'run'
         self.gc3cfg = self.check_gc3conf(gc3conf)
         self.engine = self.setup_engine()
@@ -93,7 +93,10 @@ class JobSpooler(object):
             # don't change the status on "refresh", instead simply print the
             # queue status and update the status file:
             logi("Received spooler queue status refresh request.")
-            logd(self.queue.update_status(force=True))
+            for queue_id in self.queues:
+                logd("Updating queue status for '%s'", queue_id)
+                logd(self.queues[queue_id].update_status(force=True))
+            logd(self.queue.update_status(force=True))  # FIXME: remove when #136 done
             return
 
         if newstatus == self.status:
@@ -107,6 +110,36 @@ class JobSpooler(object):
             self._status_pre,
             self.status,
         )
+
+    def add_queue(self, queue, queue_name):
+        """Add a queue to the spooler and set the queue's status file location
+
+        Parameters
+        ----------
+        queue : snijder.queue.JobQueue
+            The queue object.
+        queue_name : str
+            The queue's name. Must NOT contain whitespace and is required to be unique
+            among all queues in a spooler object. Will be used to set the queue's
+            statusfile property.
+
+        Raises
+        ------
+        ValueError
+            Raised in case a queue with the given name already exists in this spooler or
+            if `queue_name` contains whitespace.
+        """
+        # that's a very basic check only testing for simple spaces and should better be
+        # replaced with something more sophisticated:
+        if ' ' in queue_name:
+            raise ValueError("Queue name MUST NOT contain spaces: '%s'" % queue_name)
+        if queue_name in self.queues:
+            raise ValueError("Queue with name '%s' already existing!" % queue_name)
+        logi("Adding a queue with name '%s' to the spooler.", queue_name)
+        self.queues[queue_name] = queue
+        # set the queue's statusfile
+        status = os.path.join(self.dirs["status"], queue_name + ".json")
+        queue.statusfile = status
 
     def run(self):
         """Set the spooler status to 'run'."""
