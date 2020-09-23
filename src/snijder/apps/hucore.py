@@ -53,6 +53,7 @@ class HuCoreApp(AbstractApp):
             outputs=["resultdir", "previews"],
             # collect the results in a subfolder of GC3Pie's spooldir:
             output_dir=gc3_output_dir,
+            # tags=["has-hucore-available"],
         )
         # combine stdout & stderr:
         appconfig.update(stderr="stdout.txt", stdout="stdout.txt")
