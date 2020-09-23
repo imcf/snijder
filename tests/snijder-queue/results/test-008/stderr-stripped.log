@@ -12,7 +12,7 @@ snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
 snijder [INFO] Setting job queue status report file: SPOOLINGDIR/queue/status/hucore.json
 snijder [INFO] Initialized the event handler for inotify, watching job submission directory "SPOOLINGDIR/spool/new".
-snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -38,7 +38,7 @@ snijder [INFO] Parsing jobfile 'remove_job_1.cfg'...
 snijder [INFO] Request to --- DELETE --- job 'UID_STRIPPED'
 snijder [WARNING] Received job deletion request(s)!
 snijder [WARNING] Received spooler status change request: pause -> run
-snijder [INFO] Job [UID_STRIPPED] was requested for deletion
+snijder [INFO] Received a deletion request for job [UID_STRIPPED].
 snijder [INFO] Status of job to be removed: queued
 snijder [INFO] Job successfully removed from the queue.
 snijder [INFO] queue_details_hr():

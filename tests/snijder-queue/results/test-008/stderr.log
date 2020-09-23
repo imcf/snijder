@@ -1,18 +1,18 @@
 snijder [INFO] Runtime directories:
-{'cur': '/scratch/data/var/snijder/py2/snijder/spool/cur',
- 'done': '/scratch/data/var/snijder/py2/snijder/spool/done',
- 'new': '/scratch/data/var/snijder/py2/snijder/spool/new',
+{'cur': '/opt/spool/snijder/spool/cur',
+ 'done': '/opt/spool/snijder/spool/done',
+ 'new': '/opt/spool/snijder/spool/new',
  'newfiles': [],
- 'requests': '/scratch/data/var/snijder/py2/snijder/queue/requests',
- 'status': '/scratch/data/var/snijder/py2/snijder/queue/status'}
-snijder [INFO] Using gc3pie spooldir: /scratch/data/var/snijder/py2/snijder/gc3/spool
+ 'requests': '/opt/spool/snijder/queue/requests',
+ 'status': '/opt/spool/snijder/queue/status'}
+snijder [INFO] Using gc3pie spooldir: /opt/spool/snijder/gc3/spool
 snijder [INFO] Creating GC3Pie engine using config file "resources/config/gc3pie/localhost.conf".
-snijder [INFO] Checking resource dir for resource 'localhost': [/scratch/data/var/snijder/py2/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
-snijder [INFO] Setting job queue status report file: /scratch/data/var/snijder/py2/snijder/queue/status/hucore.json
-snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/scratch/data/var/snijder/py2/snijder/spool/new".
-snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] Setting job queue status report file: /opt/spool/snijder/queue/status/hucore.json
+snijder [INFO] Initialized the event handler for inotify, watching job submission directory "/opt/spool/snijder/spool/new".
+snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -38,7 +38,7 @@ snijder [INFO] Parsing jobfile 'remove_job_1.cfg'...
 snijder [INFO] Request to --- DELETE --- job 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'
 snijder [WARNING] Received job deletion request(s)!
 snijder [WARNING] Received spooler status change request: pause -> run
-snijder [INFO] Job [uid:bfbe38a] was requested for deletion
+snijder [INFO] Received a deletion request for job [uid:bfbe38a].
 snijder [INFO] Status of job to be removed: queued
 snijder [INFO] Job successfully removed from the queue.
 snijder [INFO] queue_details_hr():
@@ -52,6 +52,6 @@ None.
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.
-snijder [INFO] Checking resource dir for resource 'localhost': [/scratch/data/var/snijder/py2/snijder/gc3/resource/shellcmd.d]
+snijder [INFO] Checking resource dir for resource 'localhost': [/opt/spool/snijder/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] QM shutdown: spooler cleanup completed.

@@ -12,7 +12,7 @@ snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
 snijder [INFO] Setting job queue status report file: SPOOLINGDIR/queue/status/hucore.json
 snijder [INFO] Initialized the event handler for inotify, watching job submission directory "SPOOLINGDIR/spool/new".
-snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================

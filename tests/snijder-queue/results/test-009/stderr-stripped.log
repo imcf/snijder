@@ -12,7 +12,7 @@ snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
 snijder [INFO] Setting job queue status report file: SPOOLINGDIR/queue/status/hucore.json
 snijder [INFO] Initialized the event handler for inotify, watching job submission directory "SPOOLINGDIR/spool/new".
-snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -41,7 +41,7 @@ None.
 --- jobs queued (not yet retrieved)
 user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [UID_STRIPPED].
+snijder [INFO] Retrieving next job: [category:user01], [UID_STRIPPED].
 snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
 snijder [INFO] Instantiating a HuDeconApp: [user:user01] [UID_STRIPPED]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb']]]
@@ -53,7 +53,6 @@ user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128
 --- jobs queued (not yet retrieved)
 None.
 ========================= queue status =========================
-snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
 --- jobs retrieved for processing
@@ -63,6 +62,15 @@ user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128
 None.
 ========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'NEW' -> 'SUBMITTED'
+snijder [INFO] Received spooler queue status refresh request.
+snijder [INFO] queue_details_hr():
+========================= queue status =========================
+--- jobs retrieved for processing
+user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-999_q-0.00000001.hgsb'] [SUBMITTED]
+------------------------- queue status -------------------------
+--- jobs queued (not yet retrieved)
+None.
+========================= queue status =========================
 snijder [INFO] HuDeconApp status: 'SUBMITTED' -> 'RUNNING'
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -105,7 +113,7 @@ snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
 snijder [INFO] QM shutdown: cleaning up spooler.
 snijder [INFO] Checking resource dir for resource 'localhost': [SPOOLINGDIR/gc3/resource/shellcmd.d]
-snijder [WARNING] Resource dir [SPOOLINGDIR/gc3/resource/shellcmd.d] unclean: [RSC_STRIPPED]
+snijder [WARNING] Resource dir unclean: [SPOOLINGDIR/gc3/resource/shellcmd.d] - files: [u'588609']
 snijder [INFO] Inspecting gc3pie resource files for running processes.
-snijder [INFO] File [SPOOLINGDIR/gc3/resource/PID_STRIPPED doesn't seem to be from an existing gc3 job, removing it.
+snijder [INFO] Removing file not related to a gc3 job: [file:SPOOLINGDIR/gc3/resource/PID_STRIPPED
 snijder [INFO] QM shutdown: spooler cleanup completed.

@@ -12,7 +12,7 @@ snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] Created JobSpooler.
 snijder [INFO] Setting job queue status report file: SPOOLINGDIR/queue/status/hucore.json
 snijder [INFO] Initialized the event handler for inotify, watching job submission directory "SPOOLINGDIR/spool/new".
-snijder [INFO] Expected jobfile version: 7.
+snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
@@ -77,7 +77,7 @@ user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128
 user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [UID_STRIPPED].
+snijder [INFO] Retrieving next job: [category:user01], [UID_STRIPPED].
 snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
 snijder [INFO] Instantiating a HuDeconApp: [user:user01] [UID_STRIPPED]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
@@ -124,7 +124,7 @@ None.
 user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [UID_STRIPPED].
+snijder [INFO] Retrieving next job: [category:user01], [UID_STRIPPED].
 snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
 snijder [INFO] Instantiating a HuDeconApp: [user:user01] [UID_STRIPPED]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
@@ -167,7 +167,7 @@ None.
 --- jobs queued (not yet retrieved)
 user01 (user01@mail.xy): [UID_STRIPPED] - ['resources/sample_data/hucore/faba128.h5'] [queued]
 ========================= queue status =========================
-snijder [INFO] Retrieving next job: category 'user01', [UID_STRIPPED].
+snijder [INFO] Retrieving next job: [category:user01], [UID_STRIPPED].
 snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
 snijder [INFO] Instantiating a HuDeconApp: [user:user01] [UID_STRIPPED]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['resources/sample_data/hucore/faba128.h5', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
