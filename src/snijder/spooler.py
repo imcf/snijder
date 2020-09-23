@@ -36,7 +36,8 @@ class JobSpooler(object):
 
         Instance Attributes
         -------------------
-        apps : list
+        apps : list(snijder.apps.AbstractApp)
+            A list containing the app objects to be processed.
         dirs : dict
             A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
         queue : JobQueue

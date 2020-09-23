@@ -28,6 +28,8 @@ class AbstractApp(gc3libs.Application):
         Parameters
         ----------
         job : snijder.jobs.JobDescription
+            A snijder job configuration that has been parsed into a `JobDescription`
+            object.
         appconfig : dict
             A dict with at least all mandatory parameters for a
             gc3libs.Application, plus possibly extra parameters.
