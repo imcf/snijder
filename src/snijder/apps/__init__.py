@@ -11,7 +11,7 @@ AbstractApp()
 import os
 import gc3libs
 
-from .. import logi, logd, logw, logc, loge
+from .. import logi, logd, logw, logc
 
 
 class AbstractApp(gc3libs.Application):
@@ -32,13 +32,17 @@ class AbstractApp(gc3libs.Application):
             A dict with at least all mandatory parameters for a
             gc3libs.Application, plus possibly extra parameters.
         """
-        if self.__class__.__name__ == 'AbstractApp':
+        if self.__class__.__name__ == "AbstractApp":
             raise TypeError("Refusing to instantiate class 'AbstractApp'!")
-        self.job = job   # remember the job object
-        logd('gc3_output_dir: %s', appconfig['output_dir'])
-        logd('self.job: %s', job)
-        logw('Instantiating a %s: [[user: %s]] [[uid: %s]]',
-             self.__class__.__name__, job['user'], job['uid'])
+        self.job = job  # remember the job object
+        logd("gc3_output_dir: %s", appconfig["output_dir"])
+        logd("self.job: %s", job)
+        logi(
+            "Instantiating a %s: [user:%s] [uid:%.7s]",
+            self.__class__.__name__,
+            job["user"],
+            job["uid"],
+        )
         super(AbstractApp, self).__init__(**appconfig)
         self.laststate = self.execution.state
         # FIXME FIXME FIXME: job status has to be updated!!
@@ -59,8 +63,10 @@ class AbstractApp(gc3libs.Application):
     def stopped(self):
         """Called when the job state transitions to STOPPED."""
         self.status_changed()
-        logc("Job '%s' has been suspended for an unknown reason!!!",
-             self.job['uid'])
+        logc(
+            "Job [uid:%.7s] has been suspended for an unknown reason!!!",
+            self.job["uid"],
+        )
 
     def submitted(self):
         """Called when the job state transitions to SUBMITTED."""
@@ -76,17 +82,23 @@ class AbstractApp(gc3libs.Application):
             #       app was explicitly killed by gc3pie - it would be cleaner
             #       to explicitly cover this situation e.g. in the spooler's
             #       cleanup() method by telling the app it is requested to stop
-            logw("Job '%s' apparently was killed or crahsed!", self.job['uid'])
+            logw("Job [uid:%.7s] was killed or crahsed!", self.job["uid"])
         elif self.execution.exitcode != 0:
             # IMPORTANT: gc3pie does NOT seem to pass on the exit code of
             # the job in this value, instead every non-zero exit code is
             # represented as 255 - which means we can NOT DERIVE from this how
             # the job process has finished!
-            logc("Job '%s' terminated with unexpected EXIT CODE: %s!",
-                 self.job['uid'], self.execution.exitcode)
+            logc(
+                "Job [uid:%.7s] terminated with unexpected EXIT CODE: %s!",
+                self.job["uid"],
+                self.execution.exitcode,
+            )
         else:
-            logi("Job '%s' terminated successfully!", self.job['uid'])
-            logi("The output of the application is in `%s`.", self.output_dir)
+            logi(
+                "Job [uid:%.7s] terminated successfully, output is in [%s].",
+                self.job["uid"],
+                self.output_dir,
+            )
 
     def terminating(self):
         """Called when the job state transitions to TERMINATING."""
@@ -96,17 +108,22 @@ class AbstractApp(gc3libs.Application):
         """Check the if the execution state of the app has changed.
 
         Track and update the internal execution status of the app and print a
-        log message if the status changes. Return the new state if the app it
-        has changed, otherwise None.
+        log message if the status changes.
+
+        Returns
+        -------
+        gc3libs.Application.Run.state
+            The new state of the app in case it has changed, None otherwise.
         """
-        new = self.execution.state
-        if new != self.laststate:
-            logi("%s status: '%s' -> '%s'",
-                 self.__class__.__name__, self.laststate, new)
-            self.laststate = self.job['status'] = new
-            return new
-        else:
+        newstate = self.execution.state
+        if newstate == self.laststate:
             return None
+
+        logi(
+            "%s status: '%s' -> '%s'", self.__class__.__name__, self.laststate, newstate
+        )
+        self.laststate = self.job["status"] = newstate
+        return newstate
 
     def execution_stats(self):
         """Log execution stats: cpu and walltime, maximum memory."""
@@ -114,11 +131,12 @@ class AbstractApp(gc3libs.Application):
         # execution stats for the "shellcmd" backend (despite what the
         # documentation says), so we need to be careful when retrieving them
         # and replace them with defaults if they're not available:
-        used_cpu_time = getattr(self.execution, 'used_cpu_time', 'N/A')
-        duration = getattr(self.execution, 'duration', 'N/A')
-        max_used_memory = getattr(self.execution, 'max_used_memory', 'N/A')
-        logi("Job finished. Execution stats:\n"
-             "\t[[ cpu time: %s ]]\n"
-             "\t[[ wall time: %s ]]\n"
-             "\t[[ max memory: %s ]]",
-             used_cpu_time, duration, max_used_memory)
+        used_cpu_time = getattr(self.execution, "used_cpu_time", "N/A")
+        duration = getattr(self.execution, "duration", "N/A")
+        max_used_memory = getattr(self.execution, "max_used_memory", "N/A")
+        logi(
+            "Job finished  -  [  cpu: %s  |  wall: %s  |  max_mem: %s  ]",
+            used_cpu_time,
+            duration,
+            max_used_memory,
+        )

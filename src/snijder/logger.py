@@ -1,38 +1,72 @@
 # -*- coding: utf-8 -*-
-"""
-Logging helper module.
-"""
+"""Logging helper module."""
 
 import logging
 import gc3libs
 
 __all__ = ["logw", "logi", "logd", "loge", "logc"]
 
-# we set a default loglevel and add some shortcuts for logging:
 LOGLEVEL = logging.WARN
-LOGGER_NAME = "qmgc3"
-gc3libs.configure_logger(LOGLEVEL, LOGGER_NAME)
 
-logw = gc3libs.log.warn
-logi = gc3libs.log.info
-logd = gc3libs.log.debug
-loge = gc3libs.log.error
-logc = gc3libs.log.critical
+ROOT_LOGGER = logging.getLogger()
+LOG_FORMATTER = logging.Formatter("%(name)s [%(levelname)s] %(message)s")
+LOG_HANDLER = logging.StreamHandler()
+LOG_HANDLER.setFormatter(LOG_FORMATTER)
+ROOT_LOGGER.addHandler(LOG_HANDLER)
+
+LOGGER = logging.getLogger("snijder")
+LOGGER.setLevel(LOGLEVEL)
+
+gc3libs.log = logging.getLogger("gc3libs")
+gc3libs.log.level = logging.WARN
+
+
+# pylint: disable-msg=invalid-name
+logw = LOGGER.warn
+logi = LOGGER.info
+logd = LOGGER.debug
+loge = LOGGER.error
+logc = LOGGER.critical
+# pylint: enable-msg=invalid-name
+
+LEVEL_MAPPING = {
+    "debug": logging.DEBUG,
+    "info": logging.INFO,
+    "warn": logging.WARN,
+    "error": logging.ERROR,
+    "critical": logging.CRITICAL,
+}
 
 
 def set_loglevel(level):
-    """Convenience function to adjust the loglevel."""
-    mapping = {
-        'debug'    : logging.DEBUG,
-        'info'     : logging.INFO,
-        'warn'     : logging.WARN,
-        'error'    : logging.ERROR,
-        'critical' : logging.CRITICAL
-    }
-    gc3libs.configure_logger(mapping[level], LOGGER_NAME)
+    """Convenience function to adjust the loglevel.
+
+    Parameters
+    ----------
+    level : str
+        A string matching one of the keys from the _MAPPING dict.
+    """
+    LOGGER.setLevel(LEVEL_MAPPING[level])
 
 
 def set_verbosity(verbosity):
-    """Convenience function to set loglevel from commandline arguments."""
+    """Convenience function to set loglevel from commandline arguments.
+
+    Parameters
+    ----------
+    verbosity : int
+        An int between 0 and 2, indicating the logging verbosity level.
+    """
     loglevel = logging.WARN - (verbosity * 10)
-    gc3libs.configure_logger(loglevel, LOGGER_NAME)
+    LOGGER.setLevel(loglevel)
+
+
+def set_gc3loglevel(level):
+    """Set the logging level for gc3libs.
+
+    Parameters
+    ----------
+    level : str
+        A string matching one of the keys from the _MAPPING dict.
+    """
+    gc3libs.log.level = LEVEL_MAPPING[level]

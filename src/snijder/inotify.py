@@ -1,28 +1,33 @@
 # -*- coding: utf-8 -*-
-"""
-Helper module for pyinotify stuff.
-"""
+"""Helper module for pyinotify stuff."""
 
-import os
 import pyinotify
 
 from .jobs import process_jobfile
-from .logger import logi, logd
+from . import logi, logd
 
 
-class JobFileHandler(object):
+class JobFileHandler(object):  # pylint: disable-msg=too-few-public-methods
     """Wrapper class to set up inotify for incoming jobfiles."""
 
     def __init__(self, queues, dirs):
-        """Initialize watch-manager and notifier."""
+        """Initialize watch-manager and notifier.
+
+        Parameters
+        ----------
+        queues : dict(snijder.queue.JobQueue)
+            Dict with JobQueue objects.
+        dirs : dict
+            Spooling dirs, as returned by JobSpooler.setup_rundirs().
+        """
         self.watch_mgr = pyinotify.WatchManager()
         # mask which events to watch: pyinotify.IN_CREATE
-        self.wdd = self.watch_mgr.add_watch(dirs['new'],
-                                            pyinotify.IN_CREATE,
-                                            rec=False)
-        self.notifier = pyinotify.ThreadedNotifier(self.watch_mgr,
-                                                   EventHandler(queues=queues,
-                                                                dirs=dirs))
+        self.wdd = self.watch_mgr.add_watch(
+            dirs["new"], pyinotify.IN_CREATE, rec=False  # pylint: disable-msg=no-member
+        )
+        self.notifier = pyinotify.ThreadedNotifier(
+            self.watch_mgr, EventHandler(queues=queues, dirs=dirs)
+        )
         self.notifier.start()
 
     def shutdown(self):
@@ -42,7 +47,7 @@ class EventHandler(pyinotify.ProcessEvent):
     process_IN_CREATE()
     """
 
-    def my_init(self, queues, dirs):                # pylint: disable=W0221
+    def my_init(self, queues, dirs):  # pylint: disable-msg=arguments-differ
         """Initialize the inotify event handler.
 
         Parameters
@@ -51,20 +56,23 @@ class EventHandler(pyinotify.ProcessEvent):
             Containing the JobQueue objects for the different queues, using the
             corresponding 'type' keyword as identifier.
         dirs : dict
-            Spooling directories in a dict, as returned by snijder.setup_rundirs().
+            Spooling dirs, as returned by JobSpooler.setup_rundirs().
         """
         self.queues = queues
         self.dirs = dirs
-        logi('Initialized the event handler for inotify, watching job '
-             'submission directory "%s".', self.dirs['new'])
+        logi(
+            "Initialized the event handler for inotify, watching job "
+            'submission directory "%s".',
+            self.dirs["new"],
+        )
 
-    def process_IN_CREATE(self, event):
+    def process_IN_CREATE(self, event):  # pylint: disable-msg=invalid-name
         """Method handling 'create' events.
 
         Parameters
         ----------
         event : pyinotify.Event
         """
-        logi("New file event '%s'", os.path.basename(event.pathname))
+        # logi("New file event '%s'", os.path.basename(event.pathname))
         logd("inotify 'IN_CREATE' event full file path '%s'", event.pathname)
-        process_jobfile(event.pathname, self.queues, self.dirs)
+        process_jobfile(event.pathname, self.queues)

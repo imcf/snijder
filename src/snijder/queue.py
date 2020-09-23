@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Queue class module for SNIJDER.
+"""Queue class module for SNIJDER.
 
 Classes
 -------
@@ -11,12 +10,13 @@ JobQueue()
 
 import itertools
 import json
+import pprint
 from collections import deque
 
-from . import logi, logd, logw, logc, loge
-
 import gc3libs
-import pprint
+
+from . import logi, logd, logw
+from .logger import LOGGER, LEVEL_MAPPING
 
 
 class JobQueue(object):
@@ -36,7 +36,7 @@ class JobQueue(object):
         ------------------
         statusfile : str (default=None)
             file name used to write the JSON formatted queue status to
-        cats : deque
+        categories : deque
             categories (users), used by the scheduler
         jobs : dict(JobDescription)
             holding job descriptions (key: UID)
@@ -47,13 +47,18 @@ class JobQueue(object):
         deletion_list : list
             UID's of jobs to be deleted from the queue (NOTE: this list may
             contain UID's from other queues as well!)
+        status_changed : bool
+            Flag indicating whether the queue status has changed since the
+            status file has been written the last time and the status has been
+            reported to the log files.
         """
         self._statusfile = None
-        self.cats = deque('')
-        self.jobs = dict()
+        self.categories = deque("")
+        self.jobs = dict()  # TODO: this should probably be private
         self.processing = list()
         self.queue = dict()
         self.deletion_list = list()
+        self.status_changed = False
 
     def __len__(self):
         """Get the total number of jobs in all queues (incl. processing)."""
@@ -62,23 +67,9 @@ class JobQueue(object):
         logd("len(JobQueue) = %s (%s processing)", jobstotal, jobsproc)
         return jobstotal
 
-    def num_jobs_queued(self):
-        """Get the number of queued jobs (waiting for retrieval)."""
-        numjobs = 0
-        for queue in self.queue.values():
-            numjobs += len(queue)
-        logd("num_jobs_queued = %s", numjobs)
-        return numjobs
-
-    def num_jobs_processing(self):
-        """Get the number of currently processing jobs."""
-        numjobs = len(self.processing)
-        logd("num_jobs_processing = %s", numjobs)
-        return numjobs
-
     @property
     def statusfile(self):
-        """Get the 'statusfile' attribute."""
+        """Get the `statusfile` attribute."""
         return self._statusfile
 
     @statusfile.setter
@@ -92,34 +83,50 @@ class JobQueue(object):
         logi("Setting job queue status report file: %s", statusfile)
         self._statusfile = statusfile
 
+    # TODO: could be a property...?
+    def num_jobs_queued(self):
+        """Get the number of queued jobs (waiting for retrieval)."""
+        numjobs = 0
+        for queue in self.queue.values():
+            numjobs += len(queue)
+        logd("num_jobs_queued = %s", numjobs)
+        return numjobs
+
+    # TODO: could be a property...?
+    def num_jobs_processing(self):
+        """Get the number of currently processing jobs."""
+        numjobs = len(self.processing)
+        logd("num_jobs_processing = %s", numjobs)
+        return numjobs
+
     def append(self, job):
         """Add a new job to the queue.
+
         Parameters
         ----------
         job : JobDescription
             The job to be added to the queue.
         """
-        cat = job.get_category()
-        uid = job['uid']
+        category = job.get_category()
+        uid = job["uid"]
         if uid in self.jobs:
-            raise ValueError("Job with uid '%s' already in this queue!" % uid)
-        logi("Enqueueing job '%s' into category '%s'.", uid, cat)
+            raise ValueError("Job with [uid:%.7s] already in this queue!" % uid)
+        logi("Enqueueing job [uid:%.7s] into category '%s'.", uid, category)
         self.jobs[uid] = job  # store the job in the global dict
-        if cat not in self.cats:
-            logi("Adding a new queue for '%s' to the JobQueue.", cat)
-            self.cats.append(cat)
-            self.queue[cat] = deque()
-            logd("Current queue categories: %s", self.cats)
+        if category not in self.categories:
+            logi("Adding a new queue for '%s' to the JobQueue.", category)
+            self.categories.append(category)
+            self.queue[category] = deque()
+            logd("Current queue categories: %s", self.categories)
         # else:
         #     # in case there are already jobs of this category, we don't touch
         #     # the scheduler / priority queue:
-        #     logd("JobQueue already contains a queue for '%s'.", cat)
-        self.queue[cat].append(uid)
-        self.set_jobstatus(job, 'queued')
-        logi("Job (type '%s') added. New queue: %s", job['type'], self.queue)
-        self.queue_details_hr()
+        #     logd("JobQueue already contains a queue for '%s'.", category)
+        self.queue[category].append(uid)
+        self.set_jobstatus(job, "queued")
+        self.status_changed = True
 
-    def _is_queue_empty(self, cat):
+    def _is_queue_empty(self, category):
         """Clean up if a queue of a given category is empty.
 
         Returns
@@ -127,13 +134,13 @@ class JobQueue(object):
         status : bool
             True if the queue was empty and removed, False otherwise.
         """
-        if len(self.queue[cat]) == 0:
-            logd("Queue for category '%s' now empty, removing it.", cat)
-            self.cats.remove(cat)  # remove it from the categories list
-            del self.queue[cat]    # delete the category from the queue dict
-            return True
-        else:
+        if self.queue[category]:
             return False
+
+        logd("Removing empty queue for [category:%s].", category)
+        self.categories.remove(category)  # remove it from the categories list
+        del self.queue[category]  # delete the category from the queue dict
+        return True
 
     def next_job(self):
         """Return the next job description for processing.
@@ -143,6 +150,7 @@ class JobQueue(object):
         categories queue is shifted one to the left, meaning that the category
         of the just picked job is then at the last position in the categories
         queue.
+
         This implements a very simple round-robin (token based) scheduler that
         is going one-by-one through the existing categories.
 
@@ -150,18 +158,19 @@ class JobQueue(object):
         -------
         job : JobDescription
         """
-        if len(self.cats) == 0:
+        if not self.categories:
             return None
-        cat = self.cats[0]
-        jobid = self.queue[cat].popleft()
+        category = self.categories[0]
+        jobid = self.queue[category].popleft()
         # put it into the list of currently processing jobs:
         self.processing.append(jobid)
-        logi("Retrieving next job: category '%s', uid '%s'.", cat, jobid)
-        if not self._is_queue_empty(cat):
-            # push the current category to the last position in the queue:
-            self.cats.rotate(-1)
-        logd("Current queue categories: %s", self.cats)
+        logi("Retrieving next job: [category:%s], [uid:%.7s].", category, jobid)
+        if not self._is_queue_empty(category):
+            logd("Pushing category [%s] to the last position in the queue.", category)
+            self.categories.rotate(-1)
+        logd("Current queue categories: %s", self.categories)
         logd("Current contents of all queues: %s", self.queue)
+        self.status_changed = True
         return self.jobs[jobid]
 
     def remove(self, uid, update_status=True):
@@ -184,65 +193,107 @@ class JobQueue(object):
         job : JobDescription
             The JobDescription dict of the job that was removed (on success).
         """
-        logd("Trying to remove job with uid '%s'.", uid)
+        logd("Trying to remove job [uid:%.7s].", uid)
         if uid not in self.jobs:
-            loge("No job with uid '%s' was found!", uid)
+            logi("Job not found, discarding the request: [uid:%.7s].", uid)
             return None
-        job = self.jobs[uid]   # remember the job for returning it later
-        cat = job.get_category()
-        logi("Status of job to be removed: %s", job['status'])
-        del self.jobs[uid]     # remove the job from the jobs dict
-        if cat in self.queue and uid in self.queue[cat]:
-            logd("Removing job '%s' from queue '%s'.", uid, cat)
-            self.queue[cat].remove(uid)
-            self._is_queue_empty(cat)
+
+        job = self.jobs[uid]  # remember the job for returning it later
+        category = job.get_category()
+        logi("Status of job to be removed: %s", job["status"])
+        del self.jobs[uid]  # remove the job from the jobs dict
+        self.status_changed = True
+        if category in self.queue and uid in self.queue[category]:
+            logd("Removing job from queue: [uid:%.7s] [queue:%s].", uid, category)
+            self.queue[category].remove(uid)
+            self._is_queue_empty(category)
         elif uid in self.processing:
-            logd("Removing job '%s' from currently processing jobs.", uid)
+            logd("Removing job from currently processing jobs [uid:%.7s].", uid)
             self.processing.remove(uid)
         else:
-            logw("Can't find job '%s' in any of our queues!", uid)
+            logw("Can't find job in any of our queues: [uid:%.7s]!", uid)
             return None
+
         # logd("Current jobs: %s", self.jobs)
         # logd("Current queue categories: %s", self.cats)
         # logd("Current contents of all queues: %s", self.queue)
         if update_status:
-            logd(self.queue_details_json())
+            logd(self.update_status())
         return job
 
     def process_deletion_list(self):
         """Remove jobs from this queue that are on the deletion list."""
         for uid in self.deletion_list:
-            logi("Job %s was requested for deletion", uid)
+            logi("Received a deletion request for job [uid:%.7s].", uid)
+            self.deletion_list.remove(uid)
             removed = self.remove(uid, update_status=False)
             if removed is None:
-                # this is to be expected, so we only print a log message if we
-                # are in debug mode...
                 logd("No job removed, invalid uid or other queue's job.")
             else:
                 logi("Job successfully removed from the queue.")
-                self.deletion_list.remove(uid)
         # updating the queue status file is only done now:
-        logd(self.queue_details_json())
+        queue_status = self.update_status()
+        if queue_status:
+            logd("Queue status after processing the deletion list: %s", queue_status)
 
     def set_jobstatus(self, job, status):
-        """Update the status of a job and trigger related actions."""
-        logd("Changing status of job %s to %s", job['uid'], status)
-        job['status'] = status
-        if status == gc3libs.Run.State.TERMINATED:
-            self.remove(job['uid'])
-        logd(self.queue_details_json())
+        """Update the status of a job and trigger related actions.
+
+        Parameters
+        ----------
+        job : JobDescription
+            The job to be updated
+        status : str
+            The new status.
+        """
+        logd("Changing job-status: [uid:%.7s] [status:%s]", job["uid"], status)
+        job["status"] = status
+        self.status_changed = True
+
+        # pylint: disable-msg=no-member
+        if status == gc3libs.Run.State.TERMINATED or status == "TERMINATED":
+            self.remove(job["uid"])
+        # pylint: enable-msg=no-member
+        logd(self.update_status())
+
+    def update_status(self, force=False):
+        """Update the queue status information (JSON and logs)
+
+        Parameters
+        ----------
+        force : bool, optional
+            Flag whether an update of the status should be forced even if the
+            `status_changed` indicates it is not necessary, by default False.
+
+        Returns
+        -------
+        str
+            The JSON-formatted dict as returned by queue_details_json() or `None` in
+            case the status hasn't changed and the `force` parameter isn't set to
+            `True`.
+        """
+        if not self.status_changed and not force:
+            return None
+        self.status_changed = False
+        self.queue_details_hr()
+        return self.queue_details_json()
 
     def queue_details_json(self):
         """Generate a JSON representation of the queue details.
 
-        The details are returned in a dict of the following form:
+        Returns
+        -------
+        str
+            A JSON-formatted dict with the details of the current queue status
+            in the following form:
+
         details = { "jobs" :
             [
                 {
                     "username" : "user00",
                     "status"   : "N/A",
                     "queued"   : 1437152020.751692,
-                    "file"     : [ "tests/jobfiles/sandbox/faba128.h5" ],
+                    "file"     : [ "data/example.h5" ],
                     "start"    : "N/A",
                     "progress" : "N/A",
                     "pid"      : "N/A",
@@ -253,21 +304,23 @@ class JobQueue(object):
             ]
         }
         """
+
         def format_job(job):
             """Helper function to assemble the job dict."""
             fjob = {
-                "id"      : job['uid'],
-                "file"    : job['infiles'],
-                "username": job['user'],
-                "jobType" : job['type'],
-                "status"  : job['status'],
-                "server"  : 'N/A',
-                "progress": 'N/A',
-                "pid"     : 'N/A',
-                "start"   : 'N/A',
-                "queued"  : job['timestamp'],
+                "id": job["uid"],
+                "file": job["infiles"],
+                "username": job["user"],
+                "jobType": job["type"],
+                "status": job["status"],
+                "server": "N/A",
+                "progress": "N/A",
+                "pid": "N/A",
+                "start": "N/A",
+                "queued": job["timestamp"],
             }
             return fjob
+
         joblist = self.queue_details()
         formatted = []
         for jobid in self.processing:
@@ -275,19 +328,27 @@ class JobQueue(object):
             formatted.append(format_job(job))
         for job in joblist:
             formatted.append(format_job(job))
-        details = {'jobs' : formatted}
+        details = {"jobs": formatted}
+        queue_json = json.dumps(details, indent=4)
         if self.statusfile is not None:
-            with open(self.statusfile, 'w') as fout:
-                json.dump(details, fout, indent=4)
-        return json.dumps(details, indent=4)
+            logd("Writing queue status JSON file [%s].", self.statusfile)
+            with open(self.statusfile, "w") as fout:
+                fout.write(queue_json)
+        return queue_json
 
     def queue_details_hr(self):
-        """Generate a human readable list of the queue details."""
-        # FIXME: don't print the queue status, return the text instead!
-        #        this produces annoying amounts of output in a production
-        #        environment, therefore the generated text should be returned,
-        #        so it can be handled by the logging methods (e.g. only printed
-        #        when running in debug mode)
+        """Log a human readable representation of the queue details.
+
+        Depending on the requested log level, print a simplified version of the
+        current queue to the log. If debug logging is enabled, an extensive
+        representation with all the details is logged as well.
+        """
+        # the information assembling and string formatting below is very
+        # time-consuming, so we check the current log level first and return if
+        # we wouldn't log anything anyway:
+        if LOGGER.level > LEVEL_MAPPING["info"]:
+            return
+
         msg = list()
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
         msg.append("--- jobs retrieved for processing")
@@ -295,36 +356,46 @@ class JobQueue(object):
             msg.append("None.")
         for jobid in self.processing:
             job = self.jobs[jobid]
-            msg.append("%s (%s): %s - %s [%s]" %
-                       (job['user'], job['email'], job['uid'],
-                        job['infiles'], job['status']))
+            msg.append(
+                "%s (%s): [uid:%.7s] - %s [%s]"
+                % (job["user"], job["email"], job["uid"], job["infiles"], job["status"])
+            )
         msg.append("%s queue status %s" % ("-" * 25, "-" * 25))
+
         msg.append("--- jobs queued (not yet retrieved)")
         joblist = self.queue_details()
         if not joblist:
             msg.append("None.")
-        for job in joblist:
-            msg.append("%s (%s): %s - %s [%s]" %
-                       (job['user'], job['email'], job['uid'],
-                        job['infiles'], job['status']))
+        for job in joblist[:5]:
+            msg.append(
+                "%s (%s): [uid:%.7s] - %s [%s]"
+                % (job["user"], job["email"], job["uid"], job["infiles"], job["status"])
+            )
+        if len(joblist) > 5:
+            msg.append(" [ showing first 5 jobs (total: %s) ]" % len(joblist))
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
-        logi('queue_details_hr():\n%s', '\n'.join(msg))
-        logw('QUEUE STATUS\n'
-             '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'
-             "statusfile: %s\n"
-             "cats: %s\n"
-             "jobs: %s\n"
-             "processing: %s\n"
-             "queue: %s\n"
-             "deletion_list: %s\n"
-             '^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^',
-             pprint.pformat(self._statusfile),
-             pprint.pformat(self.cats),
-             pprint.pformat(self.jobs),
-             pprint.pformat(self.processing),
-             pprint.pformat(self.queue),
-             pprint.pformat(self.deletion_list))
 
+        logi("queue_details_hr():\n%s", "\n".join(msg))
+        if LOGGER.level > LEVEL_MAPPING["debug"]:
+            return
+
+        logd(
+            "QUEUE STATUS\n"
+            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
+            "statusfile: %s\n"
+            "categories: %s\n"
+            "jobs: %s\n"
+            "processing: %s\n"
+            "queue: %s\n"
+            "deletion_list: %s\n"
+            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+            pprint.pformat(self._statusfile),
+            pprint.pformat(self.categories),
+            pprint.pformat(self.jobs),
+            pprint.pformat(self.processing),
+            pprint.pformat(self.queue),
+            pprint.pformat(self.deletion_list),
+        )
 
     def queue_details(self):
         """Generate a list with the current queue details."""
@@ -369,11 +440,11 @@ class JobQueue(object):
         """
         joblist = []
         # if the queue is empty, we return immediately with an empty list:
-        if len(self) == 0:
-            logd('Empty queue!')
+        if len(self) == 0:  # pylint: disable-msg=len-as-condition
+            logd("Empty queue!")
             return joblist
         # put queues into a list of lists, respecting the current queue order:
-        queues = [self.queue[cat] for cat in self.cats]
+        queues = [self.queue[category] for category in self.categories]
         # turn into a zipped list of the queues of all users, padding with
         # 'None' to compensate the different queue lengths:
         queues = [x for x in itertools.izip_longest(*queues)]
@@ -384,8 +455,7 @@ class JobQueue(object):
         #  (None,     None,     'u00_j3')]
 
         # now flatten the tuple-list and fill with the job details:
-        joblist = [jobid
-                   for roundlist in queues
-                   for jobid in roundlist
-                   if jobid is not None]
+        joblist = [
+            jobid for roundlist in queues for jobid in roundlist if jobid is not None
+        ]
         return joblist

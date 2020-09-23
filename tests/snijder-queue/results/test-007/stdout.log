@@ -1,0 +1,8 @@
+Using spooling directory '/opt/spool/snijder'.
+
+Test has been superseded / replaced by pytest:
+- tests/pytest/test_queue.py::test_joblist
+- tests/pytest/test_queue.py::test_add_remove_jobs
+- tests/pytest/test_queue.py::test_add_duplicate_jobs
+
+************************* TEST FINISHED! *************************

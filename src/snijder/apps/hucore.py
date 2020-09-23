@@ -15,7 +15,7 @@ HuSNRApp()
 import os
 
 from . import AbstractApp
-from .. import logi, logd, logw, logc, loge
+from .. import logi
 
 
 class HuCoreApp(AbstractApp):
@@ -29,37 +29,41 @@ class HuCoreApp(AbstractApp):
     """
 
     def __init__(self, job, output_dir):
-        if self.__class__.__name__ == 'HuCoreApp':
+        if self.__class__.__name__ == "HuCoreApp":
             raise TypeError("Not instantiating the virtual class 'HuCoreApp'!")
         # we need to add the template (with the local path) to the list of
         # files that need to be transferred to the system running hucore:
-        job['infiles'].append(job['template'])
+        job["infiles"].append(job["template"])
         # for the execution on the remote host, we need to strip all paths from
         # this string as the template file will end up in the temporary
         # processing directory together with all the images:
-        templ_on_tgt = job['template'].split('/')[-1]
-        gc3_output_dir = os.path.join(output_dir, 'results_%s' % job['uid'])
+        templ_on_tgt = job["template"].split("/")[-1]
+        gc3_output_dir = os.path.join(output_dir, "results_%s" % job["uid"])
         appconfig = dict(
-            arguments=[job['exec'],
-                       '-exitOnDone',
-                       '-noExecLog',
-                       '-checkForUpdates', 'disable',
-                       '-template', templ_on_tgt],
-            inputs=job['infiles'],
-            outputs=['resultdir', 'previews'],
+            arguments=[
+                job["exec"],
+                "-exitOnDone",
+                "-noExecLog",
+                "-checkForUpdates",
+                "disable",
+                "-template",
+                templ_on_tgt,
+            ],
+            inputs=job["infiles"],
+            outputs=["resultdir", "previews"],
             # collect the results in a subfolder of GC3Pie's spooldir:
-            output_dir=gc3_output_dir
+            output_dir=gc3_output_dir,
         )
+        # combine stdout & stderr:
+        appconfig.update(stderr="stdout.txt", stdout="stdout.txt")
         # extra application parameters
-        appconfig.update(
-            stderr='stdout.txt',  # combine stdout & stderr
-            stdout='stdout.txt'
-        )
         super(HuCoreApp, self).__init__(job, appconfig)
-        logw('Additional %s parameters: [[template: %s]] [[infiles: %s]]',
-             self.__class__.__name__,
-             job['template'],
-             job['infiles'])
+        logi(
+            "Additional %s parameters: [[template: %s]] [[infiles: %s]]",
+            self.__class__.__name__,
+            job["template"],
+            job["infiles"],
+        )
 
     def terminated(self):
         """This is called when the app has terminated execution."""

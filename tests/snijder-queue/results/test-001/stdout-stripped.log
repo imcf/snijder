@@ -1,0 +1,20 @@
+Using spooling directory 'SPOOLINGDIR'.
+Found Python package 'gc3libs'.
+Found Python package 'snijder'.
+**** Starting Queue Manager...
+python -u bin/snijder-queue --spooldir SPOOLINGDIR --config resources/config/gc3pie/localhost.conf -v
+********************************************************************************
+snijder-queue spooler running, press ctrl-c to shut it down
+********************************************************************************
+Requesting QM status change to: refresh
+QM process started.
+Requesting QM status change to: pause
+Waiting 1 seconds...
+Requesting QM status change to: run
+Waiting 1 seconds...
+Requesting QM status change to: shutdown
+QM is still running...
+Cleaning up. Remaining jobs:
+{}
+QM process terminated.
+************************* TEST FINISHED! *************************

@@ -1,14 +1,21 @@
 # IDE project settings
 /.idea/
+*.code-workspace
+/.vscode/
 
 # Python bytecode
 *.py[cod]
+
+# test outputs, coverage, etc.
+.coverage
+/htmlcov/
+.pytest_cache/
 
 # vim swap files
 .*.sw?
 
 # configuration files
-/config/
+/config
 
 # variable data (runtime files, test files for processing, ...)
-/var/
+/resources/sample_data/

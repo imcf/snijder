@@ -17,23 +17,21 @@ SHORT=$(parse_shortname)
 # 4) place the "remove_job" from the inputs directory in the queue
 # 5) switch to run mode, this is expected to remove the job from the queue
 # 6) shutdown QM when queue is empty (should be IMMEDIATE!), latest after 5 SECONDS
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_add_remove_job
+#
 ########## TEST DESCRIPTION ##########
 
-
-clean_all_spooldirs
 
 prepare_qm
 
 startup_qm
 
-qm_request pause
-sleep 1
+qm_request pause 1
 
 submit_jobs "decon_job_"
-sleep .5
 
 submit_jobs "remove_job_"
-sleep .5
 
 qm_request run
 

@@ -13,6 +13,9 @@ source "$PFX/functions.inc.sh"
 # 1) start the QM
 # 2) switch to pause mode, then back to run
 # 3) shutdown the QM
+#
+# pytest-equivalent: tests/pytest/test_spooler.py::test_check_status_request
+#
 ########## TEST DESCRIPTION ##########
 
 
@@ -20,11 +23,9 @@ prepare_qm
 
 startup_qm
 
-qm_request pause
-sleep 1
+qm_request pause 1
 
-qm_request run
-sleep 1
+qm_request run 1
 
 qm_request shutdown
 

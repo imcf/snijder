@@ -1,0 +1,24 @@
+Using spooling directory '/opt/spool/snijder'.
+Found Python package 'gc3libs'.
+Found Python package 'snijder'.
+**** Starting Queue Manager...
+python -u bin/snijder-queue --spooldir /opt/spool/snijder --config resources/config/gc3pie/localhost.conf -v
+********************************************************************************
+snijder-queue spooler running, press ctrl-c to shut it down
+********************************************************************************
+Requesting QM status change to: refresh
+QM process started.
+Requesting QM status change to: pause
+Waiting 1 seconds...
+Requesting QM status change to: run
+Waiting 1 seconds...
+Requesting QM status change to: refresh
+Waiting 1 seconds...
+Waiting (10s max) for the queue to be finished / empty, then shutting down the QM.
+Queue is empty, trying to shut down the QM!
+Requesting QM status change to: shutdown
+QM is still running...
+Cleaning up. Remaining jobs:
+{}
+QM process terminated.
+************************* TEST FINISHED! *************************
