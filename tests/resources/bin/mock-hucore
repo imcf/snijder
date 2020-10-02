@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# a minimalistic bash script that can be used for running many (most) of the tests when
+# no actual `hucore` executable (or no license) is available on the system
+#
+# to use it, copy it to `/usr/local/bin/hucore` and make sure the executable flag is set
+
+
+# derive the sleeping time from the "iterations" tagged in the hucore template name:
+SLEEPTIME=$(echo $* | sed 's,.*_it-,,; s,_q-.*,,')
+
+# make sure we got a number for SLEEPTIME above, otherwise make one up:
+if ! [[ $SLEEPTIME =~ '^[0-9]+$' ]] ; then
+    SLEEPTIME=4.6
+fi
+
+echo "hucore mock script - sleeping for ${SLEEPTIME}s..."
+echo "command line parameters given: [$*]"
+
+sleep $SLEEPTIME
+
+echo "hucore mock script - finished sleeping."
