@@ -8,6 +8,7 @@ import os
 import glob
 import pprint
 
+import snijder.daemon
 import snijder.jobs
 import snijder.logger
 import snijder.spooler
@@ -28,23 +29,23 @@ def test_select_queue_for_job(caplog, jobfile_valid_sleep):
 
     caplog.clear()
     fake_job = {"type": "UNKNOWN_JOBTYPE"}
-    assert snijder.jobs.select_queue_for_job(fake_job) is None
+    assert snijder.daemon.select_queue_for_job(fake_job) is None
     assert "No queue found for jobtype" in caplog.text
 
     caplog.clear()
     fake_job = {"type": "dummy", "tasktype": "UNKNOWN_TASKTYPE"}
-    assert snijder.jobs.select_queue_for_job(fake_job) is None
+    assert snijder.daemon.select_queue_for_job(fake_job) is None
     assert "No queue found for tasktype" in caplog.text
 
     caplog.clear()
     fake_job = {"type": "dummy", "tasktype": "sleep"}
-    assert snijder.jobs.select_queue_for_job(fake_job) == "hucore"
+    assert snijder.daemon.select_queue_for_job(fake_job) == "hucore"
     assert "Selected queue for jobtype" in caplog.text
 
     caplog.clear()
     # we need to define a mapping as this MUST NOT be emtpy:
     queue_mapping = {"queuename": {"tasktype": "jobtype"}}
-    snijder.jobs.process_jobfile(jobfile_valid_sleep, [], queue_mapping)
+    snijder.daemon.process_jobfile(jobfile_valid_sleep, [], queue_mapping)
     assert "Selected queue does not exist" in caplog.text
 
 
@@ -129,7 +130,7 @@ def test_snijder_job_config_parser_invalid_jobfiles(caplog):
 
         # now test again through process_jobfile() which is silencing the exceptions:
         caplog.clear()
-        snijder.jobs.process_jobfile(jobfile, queues=None)
+        snijder.daemon.process_jobfile(jobfile, queues=None)
         assert "Ignoring job config, parsing failed" in caplog.text
         assert "Invalid job config file" in caplog.text
 
@@ -149,7 +150,7 @@ def test_snijder_job_config_parser_nonexisting_jobfile(caplog, tmp_path):
     non_existing_jobfile = str(jobfile_path / "this_doesnt_exist.conf")
     print("Using [%s] as a non-existing job config file." % non_existing_jobfile)
 
-    snijder.jobs.process_jobfile(non_existing_jobfile, queues=None)
+    snijder.daemon.process_jobfile(non_existing_jobfile, queues=None)
     assert "Error reading job description file" in caplog.text
 
 

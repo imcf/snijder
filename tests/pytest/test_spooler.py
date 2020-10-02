@@ -14,6 +14,7 @@ import time
 import logging
 import shutil
 
+import snijder.daemon
 import snijder.logger
 import snijder.queue
 import snijder.spooler
@@ -739,7 +740,7 @@ def test_killing_decon_jobs_at_3s(
     dest = submit_jobfile(
         snijder_spooler.spooler, jobfile_valid_decon_user01_long_fixedts
     )
-    snijder.cmdline.process_jobfile(dest, queues)
+    snijder.daemon.process_jobfile(dest, queues)
 
     assert "Error reading job description file" not in caplog.text
     assert snijder_spooler.spooler.queue.num_jobs_queued() == 1

@@ -3,7 +3,7 @@
 
 import pyinotify
 
-from .jobs import process_jobfile
+from .daemon import process_jobfile
 from . import logi, logd
 
 
