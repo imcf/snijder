@@ -7,10 +7,10 @@ import argparse
 
 import snijder
 import snijder.queue
-from snijder.logger import set_verbosity, set_gc3loglevel
-from snijder.spooler import JobSpooler
-from snijder.inotify import JobFileHandler
 from .daemon import process_jobfile
+from .logger import set_verbosity, set_gc3loglevel
+from .spooler import JobSpooler
+from .inotify import JobFileHandler
 
 
 def parse_arguments():
