@@ -132,7 +132,7 @@ class JobSpooler(object):
         """
         # that's a very basic check only testing for simple spaces and should better be
         # replaced with something more sophisticated:
-        if ' ' in queue_name:
+        if " " in queue_name:
             raise ValueError("Queue name MUST NOT contain spaces: '%s'" % queue_name)
         if queue_name in self.queues:
             raise ValueError("Queue with name '%s' already existing!" % queue_name)
