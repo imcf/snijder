@@ -392,7 +392,7 @@ class JobQueue(object):
             "\n                  QUEUE STATUS",
             pprint.pformat(self._statusfile),
             pprint.pformat(self.categories),
-            pprint.pformat(self.jobs),
+            pprint.pformat(self.jobs.keys()),
             pprint.pformat(self.processing),
             pprint.pformat(self.queue),
             pprint.pformat(self.deletion_list),
