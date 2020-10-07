@@ -351,25 +351,25 @@ class JobQueue(object):
 
         msg = list()
         msg.append("%s queue status %s" % ("=" * 25, "=" * 25))
-        msg.append("--- jobs retrieved for processing")
+        msg.append("%s jobs retrieved for processing %s" % ("-" * 16, "-" * 17))
         if not self.processing:
-            msg.append("None.")
+            msg.append("%s<NONE>" % (" " * 28))
         for jobid in self.processing:
             job = self.jobs[jobid]
             msg.append(
-                "%s (%s): [uid:%.7s] - %s [%s]"
-                % (job["user"], job["email"], job["uid"], job["infiles"], job["status"])
+                "* %s (%s): [uid:%.7s] [status:%s]\n  %s"
+                % (job["user"], job["email"], job["uid"], job["status"], job["infiles"])
             )
-        msg.append("%s queue status %s" % ("-" * 25, "-" * 25))
+        msg.append("=" * 64)
 
-        msg.append("--- jobs queued (not yet retrieved)")
+        msg.append("%s jobs queued (not yet retrieved) %s" % ("-" * 15, "-" * 16))
         joblist = self.queue_details()
         if not joblist:
-            msg.append("None.")
+            msg.append("%s<NONE>" % (" " * 28))
         for job in joblist[:5]:
             msg.append(
-                "%s (%s): [uid:%.7s] - %s [%s]"
-                % (job["user"], job["email"], job["uid"], job["infiles"], job["status"])
+                "* %s (%s): [uid:%.7s] [status:%s]\n  %s"
+                % (job["user"], job["email"], job["uid"], job["status"], job["infiles"])
             )
         if len(joblist) > 5:
             msg.append(" [ showing first 5 jobs (total: %s) ]" % len(joblist))
@@ -380,7 +380,7 @@ class JobQueue(object):
             return
 
         logd(
-            "QUEUE STATUS\n"
+            "\n                  QUEUE STATUS\n"
             "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"
             "statusfile: %s\n"
             "categories: %s\n"
@@ -388,7 +388,8 @@ class JobQueue(object):
             "processing: %s\n"
             "queue: %s\n"
             "deletion_list: %s\n"
-            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",
+            "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"
+            "\n                  QUEUE STATUS",
             pprint.pformat(self._statusfile),
             pprint.pformat(self.categories),
             pprint.pformat(self.jobs),
