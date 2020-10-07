@@ -9,6 +9,7 @@ from .jobs import JobDescription
 
 from . import logi, logd, logw, logc, loge  # pylint: disable-msg=unused-import
 
+
 def select_queue_for_job(job, mapping=None):
     """Select a queue for a job, depending on its job- and tasktype.
 
