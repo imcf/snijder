@@ -5,6 +5,8 @@
 import os
 import argparse
 
+import traceback
+
 import snijder
 import snijder.queue
 from .daemon import process_jobfile
@@ -108,6 +110,7 @@ def manage_queue():
         job_spooler.spool()
     except Exception as err:  # pylint: disable-msg=broad-except
         print "\nThe Snijder Queue Manager terminated with an ERROR: %s\n" % err
+        traceback.print_exc()
         retval = False
     finally:
         print "Cleaning up. Remaining jobs:"
