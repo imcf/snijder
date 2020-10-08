@@ -76,6 +76,7 @@ class JobSpooler(object):
         self._status = self._status_pre = "run"  # the initial status is 'run'
         self.gc3cfg = self.check_gc3conf(gc3conf)
         self.engine = self.setup_engine()
+        self._stuck_job = 0
         logi("Created JobSpooler.")
 
     @property
@@ -111,6 +112,18 @@ class JobSpooler(object):
             self._status_pre,
             self.status,
         )
+
+    @property
+    def stuck_job(self):
+        """Get the count of cycles where a job has been stuck in status 'NEW'."""
+        return self._stuck_job
+
+    @stuck_job.setter
+    def stuck_job(self, value):
+        """Set the stuck job cycle count."""
+        self._stuck_job = value
+        if value > 0:
+            logw("We seem to have a stuck job, hanging since %s cycles!", value)
 
     def add_queue(self, queue, queue_name):
         """Add a queue to the spooler and set the queue's status file location
@@ -459,9 +472,6 @@ class JobSpooler(object):
             if self.status == "run":
                 # process deletion requests before anything else
                 self.check_for_jobs_to_delete()
-                # TODO: gc3pie logs an 'UnrecoverableDataStagingError' in case
-                # one of the input files can't be found - can we somehow catch
-                # this (it doesn't seem to raise an exception)?
                 self.engine.progress()
                 for i, app in enumerate(self.apps):
                     new_state = app.status_changed()
@@ -475,6 +485,10 @@ class JobSpooler(object):
                     # pylint: enable-msg=no-member
 
                 stats = self.engine_status()
+
+                self.check_for_stuck_jobs(stats)
+
+
                 # NOTE: in theory, we could simply add all apps to the engine
                 # and let gc3 decide when to dispatch the next one, however
                 # this it is causing a lot of error messages if the engine has
@@ -482,6 +496,7 @@ class JobSpooler(object):
                 # upstream gc3pie ticket #359 for more details. For now we do
                 # not submit new jobs if there are any running or submitted:
                 if stats["RUNNING"] > 0 or stats["SUBMITTED"] > 0:
+                    self.stuck_job = 0
                     time.sleep(1)
                     continue
                 nextjob = self.queue.next_job()
@@ -490,6 +505,9 @@ class JobSpooler(object):
                     apptype = apptypes[nextjob["type"]]
                     logi("Adding job (type '%s') to the gc3 engine.", apptype.__name__)
                     app = apptype(nextjob, self.gc3cfg["spooldir"])
+                    # set the job's status to "submitting", so we know it is scheduled
+                    # for processing and should be picked up by the gc3pie engine:
+                    app.job["status"] = "submitting"
                     self.apps.append(app)
                     self.engine.add(app)
                     # as a new job is dispatched now, we also print out the
@@ -554,6 +572,44 @@ class JobSpooler(object):
         # this is just to trigger the stats messages in debug mode:
         self.engine_status()
 
+    def check_for_stuck_jobs(self, engine_status, max_cycles=3):
+        """Check for jobs submitted but not picked up for processing by the engine.
+
+        This is required as gc3pie only logs an 'UnrecoverableDataStagingError' in case
+        one of the input files for a job can't be found - we need to detect this
+        situation ourselves as it doesn't raise an exception and therefore simply will
+        result in a stuck queue (as the current job is neither processed nor removed).
+
+        Parameters
+        ----------
+        engine_status : dict
+            The dict with the current engine status as returned by
+            `gc3libs.core.Engine.counts()`
+        max_cycles : int, optional
+            The maximum number of cycles to wait before a stuck job will be removed from
+            the queue, by default 3.
+        """
+        # TODO: consider getting the job UIDs from self.queue.processing and check their
+        # status subsequently to determine if one of them is stuck
+        if engine_status["NEW"] == 1 and engine_status["RUNNING"] == 0:
+            self.stuck_job += 1
+
+        if self.stuck_job > max_cycles:
+            if len(self.queue.processing) > 1:
+                loge(
+                    "Queue has more than one job in the 'processing' list, not "
+                    "able to derive which one is stuck and should be removed!"
+                )
+            else:
+                uid = self.queue.processing[0]
+                logw(
+                    "Job [uid:%.7s] is stuck in state 'NEW' since more than %s "
+                    "cycles, trying to remove it from the queue!",
+                    uid,
+                    max_cycles,
+                )
+                self.queue.deletion_list.append(uid)
+                self.check_for_jobs_to_delete()
 
 # NOTE: if desired, we could implement other spooling methods than the
 # files-and-directories based one, e.g. using a DB or JSON files for tracking

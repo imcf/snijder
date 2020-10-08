@@ -84,7 +84,7 @@ class AbstractApp(gc3libs.Application):
             #       app was explicitly killed by gc3pie - it would be cleaner
             #       to explicitly cover this situation e.g. in the spooler's
             #       cleanup() method by telling the app it is requested to stop
-            logw("Job [uid:%.7s] was killed or crahsed!", self.job["uid"])
+            logw("Job was killed or crahsed: [uid:%.7s]", self.job["uid"])
         elif self.execution.exitcode != 0:
             # IMPORTANT: gc3pie does NOT seem to pass on the exit code of
             # the job in this value, instead every non-zero exit code is

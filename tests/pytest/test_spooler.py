@@ -900,11 +900,8 @@ def test_job_with_missing_data(caplog, snijder_spooler, jobcfg_missingdata, tmp_
     This test is doing the following tasks:
     - start a spooling instance in a background thread
         - submit a job config referencing some missing input data
-        - check if the broken job gets removed from the queue (currently IT DOESN'T!)
+        - check if the broken job gets removed from the queue
         - request the spooler to shut down
-
-    TODO: this needs to be adapted once issue #1 is fixed (meaning gc3pie is not longer
-    silencing the exception and putting snijder into blind flight mode...)
 
     Replaces / supersedes the following old-style shell-based tests:
     - tests/snijder-queue/test-012__valid-jobfile-but-missing-data.sh
@@ -924,15 +921,22 @@ def test_job_with_missing_data(caplog, snijder_spooler, jobcfg_missingdata, tmp_
     assert message_timeout(caplog, "Instantiating a HuDeconApp", "job-start", 2, 0.1)
     assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
     assert snijder_spooler.spooler.queue.num_jobs_processing() == 1
-    logging.warning("job is processing...")
-    time.sleep(3.1)
+    logging.warning("job should be processing...")
 
-    # NOTE: this unfortunately is the current behaviour of gc3pie, it is logging a
-    # message only, but not passing up the exception - so all we can do for now is to
-    # watch the log output (relates to snijder issue #1)
+    # NOTE: this is the current behaviour of gc3pie, it is logging an error message
+    # only, but not passing up the exception:
     assert message_timeout(
         caplog, "UnrecoverableDataStagingError", "data-staging-error", 0.5, 0.01
     )
+
+    assert message_timeout(
+        caplog, "stuck job, hanging since 4 cycles", "stuck-job", 4.1, 0.3
+    )
+
+    assert message_timeout(caplog, "Job was killed or crahsed", "job-killed", 1.1, 0.05)
+
+    assert snijder_spooler.spooler.queue.num_jobs_queued() == 0
+    assert snijder_spooler.spooler.queue.num_jobs_processing() == 0
 
     ### request the spooler to shut down
     snijder_spooler.spooler.shutdown()
