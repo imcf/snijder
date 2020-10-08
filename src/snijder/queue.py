@@ -223,6 +223,9 @@ class JobQueue(object):
 
     def process_deletion_list(self):
         """Remove jobs from this queue that are on the deletion list."""
+        if not self.deletion_list:
+            return
+
         for uid in self.deletion_list:
             logi("Received a deletion request for job [uid:%.7s].", uid)
             self.deletion_list.remove(uid)
