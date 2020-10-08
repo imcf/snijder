@@ -16,11 +16,11 @@ snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> pause
 snijder [INFO] Parsing jobfile 'decon_job_1.cfg'...
@@ -28,11 +28,12 @@ snijder [INFO] Enqueueing job [uid:bfbe38a] into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [uid:bfbe38a] - ['resources/sample_data/hucore/faba128.h5'] [queued]
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+* user01 (user01@mail.xy): [uid:bfbe38a] [status:queued]
+  ['resources/sample_data/hucore/faba128.h5']
 ========================= queue status =========================
 snijder [INFO] Parsing jobfile 'remove_job_1.cfg'...
 snijder [INFO] Request to --- DELETE --- job 'bfbe38a1c35ec1e8ad7eb881f0258f8ce15d2721'
@@ -43,11 +44,11 @@ snijder [INFO] Status of job to be removed: queued
 snijder [INFO] Job successfully removed from the queue.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.

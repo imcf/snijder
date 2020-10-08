@@ -16,11 +16,11 @@ snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> pause
 snijder [WARNING] Received spooler status change request: pause -> run

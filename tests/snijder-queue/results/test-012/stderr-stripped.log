@@ -16,11 +16,11 @@ snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [INFO] Parsing jobfile 'decon_job_1_missingdata.cfg'...
 snijder [WARNING] === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING === WARNING ===
@@ -30,19 +30,12 @@ snijder [INFO] Enqueueing job [UID_STRIPPED] into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo'] [queued]
-========================= queue status =========================
-snijder [INFO] queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo'] [queued]
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+* user01 (user01@mail.xy): [UID_STRIPPED] [status:queued]
+  ['/its/not/here/for/sure.foo']
 ========================= queue status =========================
 snijder [INFO] Retrieving next job: [category:user01], [UID_STRIPPED].
 snijder [INFO] Adding job (type 'HuDeconApp') to the gc3 engine.
@@ -50,64 +43,43 @@ snijder [INFO] Instantiating a HuDeconApp: [user:user01] [UID_STRIPPED]
 snijder [INFO] Additional HuDeconApp parameters: [[template: tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb]] [[infiles: ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']]]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
-snijder [INFO] queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): [UID_STRIPPED] - ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb'] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+* user01 (user01@mail.xy): [UID_STRIPPED] [status:submitting]
+  ['/its/not/here/for/sure.foo', 'tests/snijder-queue/scripts/hucore-templates/decon_faba128_it-3_q-0.5.hgsb']
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
 gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+snijder [WARNING] We seem to have a stuck job, hanging since 1 cycles!
 gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
 gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+snijder [WARNING] We seem to have a stuck job, hanging since 2 cycles!
 gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
 gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
+snijder [WARNING] We seem to have a stuck job, hanging since 3 cycles!
 gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
 gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Input file '/its/not/here/for/sure.foo' does not exist
-gc3libs [ERROR] Got error in submitting task 'HuDeconApp@APPID_STRIPPED', informing scheduler: UnrecoverableDataStagingError: Input file '/its/not/here/for/sure.foo' does not exist
-snijder [WARNING] Received spooler status change request: run -> shutdown
-snijder [WARNING] Queue Manager shutdown initiated.
-snijder [INFO] QM shutdown: cleaning up spooler.
-snijder [WARNING] v--------------------------------------------------------------------------------v
-snijder [WARNING] Unfinished jobs, trying to stop them:
-snijder [WARNING] Status of running job: queued
+snijder [WARNING] We seem to have a stuck job, hanging since 4 cycles!
+snijder [WARNING] Job [UID_STRIPPED] is stuck in state 'NEW' since more than 3 cycles, trying to remove it from the queue!
 snijder [WARNING] <KILLING> [user01] HuDeconApp
 snijder [INFO] Job finished  -  [  cpu: N/A  |  wall: N/A  |  max_mem: N/A  ]
-snijder [WARNING] Job [UID_STRIPPED] was killed or crahsed!
+snijder [WARNING] Job was killed or crahsed: [UID_STRIPPED]
 snijder [INFO] HuDeconApp status: 'NEW' -> 'TERMINATED'
 snijder [WARNING] App has terminated, removing from list of apps.
 snijder [INFO] Status of job to be removed: TERMINATED
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
-snijder [WARNING] ^--------------------------------------------------------------------------------^
-snijder [INFO] Successfully terminated remaining jobs, none left.
+snijder [WARNING] Received spooler status change request: run -> shutdown
+snijder [WARNING] Queue Manager shutdown initiated.
+snijder [INFO] QM shutdown: cleaning up spooler.
 snijder [INFO] Checking resource dir for resource 'localhost': [SPOOLINGDIR/gc3/resource/shellcmd.d]
 snijder [INFO] Inspecting gc3pie resource files for running processes.
 snijder [INFO] QM shutdown: spooler cleanup completed.

@@ -16,11 +16,11 @@ snijder [INFO] SNIJDER spooler started, expected jobfile version: 7.
 snijder [INFO] Received spooler queue status refresh request.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> pause
 snijder [INFO] Parsing jobfile 'dummy_sleep_user01.cfg'...
@@ -31,49 +31,36 @@ snijder [INFO] Enqueueing job [UID_STRIPPED] into category 'user01'.
 snijder [INFO] Adding a new queue for 'user01' to the JobQueue.
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [UID_STRIPPED] - [] [queued]
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+* user01 (user01@mail.xy): [UID_STRIPPED] [status:queued]
+  []
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: pause -> run
-snijder [INFO] queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-user01 (user01@mail.xy): [UID_STRIPPED] - [] [queued]
-========================= queue status =========================
 snijder [INFO] Retrieving next job: [category:user01], [UID_STRIPPED].
 snijder [INFO] Adding job (type 'DummySleepApp') to the gc3 engine.
 snijder [INFO] Instantiating a DummySleepApp: [user:user01] [UID_STRIPPED]
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): [UID_STRIPPED] - [] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
-========================= queue status =========================
-snijder [INFO] queue_details_hr():
-========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): [UID_STRIPPED] - [] [queued]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+* user01 (user01@mail.xy): [UID_STRIPPED] [status:submitting]
+  []
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [INFO] DummySleepApp status: 'NEW' -> 'SUBMITTED'
 snijder [INFO] DummySleepApp status: 'SUBMITTED' -> 'RUNNING'
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-user01 (user01@mail.xy): [UID_STRIPPED] - [] [RUNNING]
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+* user01 (user01@mail.xy): [UID_STRIPPED] [status:RUNNING]
+  []
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [INFO] DummySleepApp status: 'RUNNING' -> 'TERMINATING'
 snijder [INFO] Job finished  -  [  CPUTIME_STRIPPED  |  WALLTIME_STRIPPED  |  MAXMEM_STRIPPED  ]
@@ -82,11 +69,11 @@ snijder [INFO] DummySleepApp status: 'TERMINATING' -> 'TERMINATED'
 snijder [INFO] Status of job to be removed: TERMINATED
 snijder [INFO] queue_details_hr():
 ========================= queue status =========================
---- jobs retrieved for processing
-None.
-------------------------- queue status -------------------------
---- jobs queued (not yet retrieved)
-None.
+---------------- jobs retrieved for processing -----------------
+                            <NONE>
+================================================================
+--------------- jobs queued (not yet retrieved) ----------------
+                            <NONE>
 ========================= queue status =========================
 snijder [WARNING] Received spooler status change request: run -> shutdown
 snijder [WARNING] Queue Manager shutdown initiated.
