@@ -448,8 +448,9 @@ class JobSpooler(object):
                 # TODO: we need to make sure that the calls to the engine in
                 # kill_running_job() do not accidentally submit the next job
                 # as it could be potentially enlisted for removal...
-                self.kill_running_job(app)
                 self.queue.deletion_list.remove(uid)
+                self.kill_running_job(app)
+
         # then process deletion requests for waiting jobs (note: killed jobs
         # have been removed from the queue by the kill_running_job() method)
         self.queue.process_deletion_list()
