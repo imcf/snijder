@@ -484,6 +484,8 @@ class JobSpooler(object):
                 # ask gc3pie to update state of all registered tasks and take
                 # appropriate action (submit new ones, update status, fetch output):
                 self.engine.progress()
+
+                # logd("========= current count of registered apps: %s", len(self.apps))
                 for i, app in enumerate(self.apps):
                     new_state = app.status_changed()
                     if new_state is not None:
