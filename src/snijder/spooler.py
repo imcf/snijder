@@ -613,7 +613,7 @@ class JobSpooler(object):
                     "Queue has more than one job in the 'processing' list, not "
                     "able to derive which one is stuck and should be removed!"
                 )
-            else:
+            elif len(self.queue.processing) == 1:
                 uid = self.queue.processing[0]
                 logw(
                     "Job [uid:%.7s] is stuck in state 'NEW' since more than %s "
@@ -621,8 +621,16 @@ class JobSpooler(object):
                     uid,
                     max_cycles,
                 )
+                self.stuck_job = 0
                 self.queue.deletion_list.append(uid)
                 self.check_for_jobs_to_delete()
+            else:
+                loge(
+                    "We're having a stuck job count of %s, but an empty 'processing' "
+                    "list in this queue. Resetting the `stuck_job` counter!",
+                    self.stuck_job,
+                )
+                self.stuck_job = 0
 
 # NOTE: if desired, we could implement other spooling methods than the
 # files-and-directories based one, e.g. using a DB or JSON files for tracking
