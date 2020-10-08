@@ -433,7 +433,14 @@ class JobSpooler(object):
                 return
 
     def check_for_jobs_to_delete(self):
-        """Process job deletion requests for all queues."""
+        """Process job deletion requests for all queues.
+
+        Deletion requests are being processed in two stages:
+
+        First, jobs that have been dispatched already (and thus are handled by us, the
+        spooler) have to be killed and removed from the deletion list. Then, as the
+        second step, the queue can be asked to remove the remaining (waiting) jobs.
+        """
         # first process jobs that have been dispatched already:
         for app in self.apps:
             uid = app.job["uid"]
@@ -472,6 +479,9 @@ class JobSpooler(object):
             if self.status == "run":
                 # process deletion requests before anything else
                 self.check_for_jobs_to_delete()
+
+                # ask gc3pie to update state of all registered tasks and take
+                # appropriate action (submit new ones, update status, fetch output):
                 self.engine.progress()
                 for i, app in enumerate(self.apps):
                     new_state = app.status_changed()
