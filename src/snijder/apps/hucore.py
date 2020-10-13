@@ -1,16 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-GC3lib application classes for HuCore related tasks.
-
-Classes
--------
-
-HuCoreApp()
-HuDeconApp()
-HuPreviewApp()
-HuSNRApp()
-    The gc3libs applications.
-"""
+"""GC3lib application classes for HuCore related tasks."""
 
 import os
 

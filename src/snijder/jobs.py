@@ -1,13 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Job description class module.
-
-Classes
--------
-
-JobDescription()
-    Parser for job descriptions, works on files or strings.
-"""
+"""Job description class module."""
 
 import ConfigParser
 import StringIO
@@ -139,15 +131,19 @@ class AbstractJobConfigParser(dict):
             The name of the section to parse.
         mapping : list of tuples
             A list of tuples containing the mapping from the option names in
-            the config file to the key names in the JobDescription object, e.g.
+            the config file to the key names in the JobDescription object. See the
+            example below for details.
 
-            mapping = [
-                ['version', 'ver'],
-                ['username', 'user'],
-                ['useremail', 'email'],
-                ['timestamp', 'timestamp'],
-                ['jobtype', 'type']
-            ]
+        Example
+        -------
+        >>> mapping = [
+        ...     ['version', 'ver'],
+        ...     ['username', 'user'],
+        ...     ['useremail', 'email'],
+        ...     ['timestamp', 'timestamp'],
+        ...     ['jobtype', 'type']
+        ... ]
+        >>> parse_section_entries("snijderjob", mapping)
         """
         if not self.jobparser.has_section(section):
             raise ValueError("Section '%s' missing in job config!" % section)
@@ -300,22 +296,25 @@ class SnijderJobConfigParser(AbstractJobConfigParser):
 class JobDescription(dict):
     """Abstraction class for handling snijder job descriptions.
 
-    Class Variables
-    ---------------
-    spooldirs : dict
-        The spooldirs dict is supposed to be set explicitly before the first instance of
-        a JobDescription is created, this way giving all objects access to the same
-        dict. Can be left at its default 'None', but this only makes sense for testing,
-        probably not in a real scenario.
 
-    Instance Variables
-    ------------------
+    Attributes
+    ----------
+    spooldirs : dict
+        CLASS ATTRIBUTE
+            The `spooldirs` dict is supposed to be set explicitly before the first
+            instance of a JobDescription is created, this way giving all objects access
+            to the same dict. Can be left at its default ``None``, but this only makes
+            sense for testing, probably not in a real scenario.
     fname : str
-        The file name from where the job configuration has been parsed, or 'None' in
+        The file name from where the job configuration has been parsed, or ``None`` in
         case the job was supplied in a string directly.
     """
 
     spooldirs = None
+    """dict :
+    CLASS ATTRIBUTE
+        See the :attr:`spooldirs` attribute description above for details.
+    """
 
     def __init__(self, job, srctype):
         """Initialize depending on the type of description source.
@@ -324,7 +323,7 @@ class JobDescription(dict):
         ----------
         job : string
             The actual job configuration. Can be either a filename pointing to a job
-            config file, or a configuration (plain-text) itself, requires 'srctype' to
+            config file, or a configuration (plain-text) itself, requires `srctype` to
             be set accordingly!
         srctype : string
             One of ['file', 'string'], determines whether 'job' should be

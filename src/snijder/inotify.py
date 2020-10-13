@@ -41,10 +41,6 @@ class EventHandler(pyinotify.ProcessEvent):
 
     An instance of this class can be registered as a handler to pyinotify and
     then gets called to process an event registered by pyinotify.
-
-    Public Methods
-    --------------
-    process_IN_CREATE()
     """
 
     def my_init(self, queues, dirs):  # pylint: disable-msg=arguments-differ
