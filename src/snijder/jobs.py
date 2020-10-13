@@ -1,13 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Job description class module.
-
-Classes
--------
-
-JobDescription()
-    Parser for job descriptions, works on files or strings.
-"""
+"""Job description class module."""
 
 import ConfigParser
 import StringIO
@@ -27,6 +19,14 @@ class AbstractJobConfigParser(dict):
 
     Read a job description either from a file or a string and parse
     the sections, check them for sane values and store them in a dict.
+
+    Attributes
+    ----------
+    sections : list
+        The sections as returned by the :meth:`ConfigParser.RawConfigParser.sections`
+        call.
+    jobparser : ConfigParser.RawConfigParser
+        The parser object that is used for interpreting the job configuration.
     """
 
     def __init__(self, jobconfig, srctype):
@@ -37,7 +37,7 @@ class AbstractJobConfigParser(dict):
         jobconfig : str
             Either the path to a file, or the job configuration directly.
         srctype : str
-            One of 'file' or 'string', denoting what's in 'jobconfig'.
+            One of [``"file"``, ``"string"``], denoting what's in :attr:`jobconfig`.
         """
         super(AbstractJobConfigParser, self).__init__()
         self.sections = []
@@ -139,15 +139,19 @@ class AbstractJobConfigParser(dict):
             The name of the section to parse.
         mapping : list of tuples
             A list of tuples containing the mapping from the option names in
-            the config file to the key names in the JobDescription object, e.g.
+            the config file to the key names in the JobDescription object. See the
+            example below for details.
 
-            mapping = [
-                ['version', 'ver'],
-                ['username', 'user'],
-                ['useremail', 'email'],
-                ['timestamp', 'timestamp'],
-                ['jobtype', 'type']
-            ]
+        Example
+        -------
+        >>> mapping = [
+        ...     ['version', 'ver'],
+        ...     ['username', 'user'],
+        ...     ['useremail', 'email'],
+        ...     ['timestamp', 'timestamp'],
+        ...     ['jobtype', 'type']
+        ... ]
+        >>> parse_section_entries("snijderjob", mapping)
         """
         if not self.jobparser.has_section(section):
             raise ValueError("Section '%s' missing in job config!" % section)
@@ -192,12 +196,7 @@ class SnijderJobConfigParser(AbstractJobConfigParser):
     def __init__(self, jobconfig, srctype):
         """Call the parent class constructor with the appropriate arguments.
 
-        Parameters
-        ----------
-        jobconfig : str
-            Either the path to a file, or the job configuration directly.
-        srctype : str
-            One of 'file' or 'string', denoting what's in 'jobconfig'.
+        See :meth:`AbstractJobConfigParser.__init__` for the parameter details.
         """
         super(SnijderJobConfigParser, self).__init__(jobconfig, srctype)
 
@@ -300,34 +299,40 @@ class SnijderJobConfigParser(AbstractJobConfigParser):
 class JobDescription(dict):
     """Abstraction class for handling snijder job descriptions.
 
-    Class Variables
-    ---------------
-    spooldirs : dict
-        The spooldirs dict is supposed to be set explicitly before the first instance of
-        a JobDescription is created, this way giving all objects access to the same
-        dict. Can be left at its default 'None', but this only makes sense for testing,
-        probably not in a real scenario.
+    One notable property of this class, making it different from a "regular" Python
+    `dict`, is the behaviour when setting specific keys. Refer to the description of
+    :meth:`__setitem__` for the details.
 
-    Instance Variables
-    ------------------
+    Attributes
+    ----------
+    spooldirs : dict
+        **CLASS ATTRIBUTE**
+            See the :attr:`spooldirs` attribute description below for details.
     fname : str
-        The file name from where the job configuration has been parsed, or 'None' in
+        The file name from where the job configuration has been parsed, or ``None`` in
         case the job was supplied in a string directly.
     """
 
     spooldirs = None
+    """dict :
+    CLASS ATTRIBUTE
+            The `spooldirs` dict is supposed to be set explicitly before the first
+            instance of a JobDescription is created, this way giving all objects access
+            to the same dict. Can be left at its default ``None``, but this only makes
+            sense for testing, probably not in a real scenario.
+    """
 
     def __init__(self, job, srctype):
         """Initialize depending on the type of description source.
 
         Parameters
         ----------
-        job : string
+        job : str
             The actual job configuration. Can be either a filename pointing to a job
-            config file, or a configuration (plain-text) itself, requires 'srctype' to
+            config file, or a configuration (plain-text) itself, requires `srctype` to
             be set accordingly!
-        srctype : string
-            One of ['file', 'string'], determines whether 'job' should be
+        srctype : str
+            One of [``"file"``, ``"string"``], determines whether :attr:`job` should be
             interpreted as a filename or as a job description string.
 
         Example
@@ -362,6 +367,16 @@ class JobDescription(dict):
         logd(pprint.pformat(self))
 
     def __setitem__(self, key, value):
+        """Wrapper method for adding / updating a dict item.
+
+        Besides the ``__setitem__`` method of a regular `dict`, this issues a log
+        message in case the ``key`` has not been present before or in case the ``value``
+        has changed.
+
+        In addition, for the special key ``"status"`` it will also trigger the
+        :meth:`store_job` method, as a job should always be stored upon any status
+        change.
+        """
         if self.has_key(key) and self[key] == value:
             return
         logd("Setting JobDescription '%s' to '%s'", key, value)
@@ -388,7 +403,7 @@ class JobDescription(dict):
         ----------
         target : str
             The key for the spooldirs-dict denoting the target directory.
-        suffix : str (optional)
+        suffix : str, optional
             An optional suffix, by default ".jobfile" will be used if empty.
         """
         # make sure to only move "file" job descriptions, return otherwise:
@@ -413,5 +428,14 @@ class JobDescription(dict):
         self.fname = target
 
     def get_category(self):
-        """Get the category of this job, in our case the value of 'user'."""
+        """Get the category of this job.
+
+        In this (default) implementation, this is simply the value stored for the key
+        ``user``. This could be different for alternative implementations, hence the
+        separate method (to have an abstraction layer already in place).
+
+        Returns
+        -------
+        str
+        """
         return self["user"]

@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Queue class module for SNIJDER.
-
-Classes
--------
-
-JobQueue()
-    Job handling and scheduling.
-"""
+"""Queue class module for SNIJDER."""
 
 import itertools
 import json
@@ -20,38 +13,39 @@ from .logger import LOGGER, LEVEL_MAPPING
 
 
 class JobQueue(object):
-    """Class to store a list of jobs that need to be processed.
+    """Main class for Job handling and scheduling.
+
+    Provides a class to store a list of jobs that need to be processed.
 
     An instance of this class can be used to keep track of lists of jobs of
     different categories (e.g. individual users). The instance will contain a
     scheduler so that it is possible for the caller to simply request the next
     job from this queue without having to care about priorities or anything
     else.
+
+    Attributes
+    ----------
+    statusfile : str
+        See :attr:`statusfile` below for the details.
+    categories : collections.deque
+        The categories (users), used by the scheduler.
+    jobs : dict(JobDescription)
+        A dict holding job descriptions (with key ``uid``).
+    processing : list
+        UID's of jobs being processed currently.
+    queue : dict(collections.deque)
+        A dict with queues for each category (user).
+    deletion_list : list
+        UID's of jobs to be deleted from the queue (NOTE: this list may
+        contain UID's from other queues as well!).
+    status_changed : bool
+        Flag indicating whether the queue status has changed since the
+        status file has been written the last time and the status has been
+        reported to the log files.
     """
 
     def __init__(self):
-        """Initialize an empty job queue.
-
-        Instance Variables
-        ------------------
-        statusfile : str (default=None)
-            file name used to write the JSON formatted queue status to
-        categories : deque
-            categories (users), used by the scheduler
-        jobs : dict(JobDescription)
-            holding job descriptions (key: UID)
-        processing : list
-            UID's of jobs being processed currently
-        queue : dict(deque)
-            queues of each category (user)
-        deletion_list : list
-            UID's of jobs to be deleted from the queue (NOTE: this list may
-            contain UID's from other queues as well!)
-        status_changed : bool
-            Flag indicating whether the queue status has changed since the
-            status file has been written the last time and the status has been
-            reported to the log files.
-        """
+        """Constructor for an empty job queue."""
         self._statusfile = None
         self.categories = deque("")
         self.jobs = dict()  # TODO: this should probably be private
@@ -69,17 +63,17 @@ class JobQueue(object):
 
     @property
     def statusfile(self):
-        """Get the `statusfile` attribute."""
+        """The file name used to write the ``JSON`` formatted queue status to.
+
+        Defaults to ``None`` until set explicitly.
+        """
+        # NOTE: properties should NOT have docstrings, but sphinx is generating an empty
+        # entry if we don't put one here - remove the docstring once this is fixed in
+        # sphinx (and pylint, which is also complaining...).
         return self._statusfile
 
     @statusfile.setter
     def statusfile(self, statusfile):
-        """Set the file used to place the (JSON formatted) queue status in.
-
-        Parameters
-        ----------
-        statusfile : str
-        """
         logi("Setting job queue status report file: %s", statusfile)
         self._statusfile = statusfile
 
@@ -190,7 +184,7 @@ class JobQueue(object):
 
         Returns
         -------
-        job : JobDescription
+        JobDescription
             The JobDescription dict of the job that was removed (on success).
         """
         logd("Trying to remove job [uid:%.7s].", uid)
@@ -282,30 +276,35 @@ class JobQueue(object):
         return self.queue_details_json()
 
     def queue_details_json(self):
-        """Generate a JSON representation of the queue details.
+        """Generate a ``JSON`` representation of the queue details.
 
         Returns
         -------
         str
-            A JSON-formatted dict with the details of the current queue status
-            in the following form:
+            A ``JSON``-formatted dict with the details of the current queue status. See
+            the example below for the format of the returned ``JSON`` string.
 
-        details = { "jobs" :
-            [
-                {
-                    "username" : "user00",
-                    "status"   : "N/A",
-                    "queued"   : 1437152020.751692,
-                    "file"     : [ "data/example.h5" ],
-                    "start"    : "N/A",
-                    "progress" : "N/A",
-                    "pid"      : "N/A",
-                    "id"       : "8cd0d80f36dd8f7655bde8679b192f526f9541bb",
-                    "jobType"  : "hucore",
-                    "server"   : "N/A"
-               },
-            ]
-        }
+        Example
+        -------
+
+        >>> example_queue.queue_json()
+        ... { "jobs" :
+        ...     [
+        ...         {
+        ...             "username" : "user00",
+        ...             "status"   : "N/A",
+        ...             "queued"   : 1437152020.751692,
+        ...             "file"     : [ "data/example.h5" ],
+        ...             "start"    : "N/A",
+        ...             "progress" : "N/A",
+        ...             "pid"      : "N/A",
+        ...             "id"       : "8cd0d80f36dd8f7655bde8679b192f526f9541bb",
+        ...             "jobType"  : "hucore",
+        ...             "server"   : "N/A"
+        ...        },
+        ...     ]
+        ... }
+
         """
 
         def format_job(job):
@@ -418,28 +417,33 @@ class JobQueue(object):
         Example
         -------
         Given the following queue status:
-            self.queue = {
-                'user00': deque(['u00_j0', 'u00_j1', 'u00_j2', 'u00_j3']),
-                'user01': deque(['u01_j0', 'u01_j1', 'u01_j2']),
-                'user02': deque(['u02_j0', 'u02_j1'])
-            }
 
-        will result in a list of job dicts in the following order:
-            ['u02_j0', 'u01_j0', 'u00_j0',
-             'u02_j1', 'u01_j1', 'u00_j1'
-             'u01_j2', 'u00_j2'
-             'u00_j3']
+        >>> example_queue.queue = {
+        ...     'user_AAA': deque(['uAAA_j0', 'uAAA_j1', 'uAAA_j2', 'uAAA_j3']),
+        ...     'user_PPP': deque(['uPPP_j0', 'uPPP_j1', 'uPPP_j2']),
+        ...     'user_ZZZ': deque(['uZZZ_j0', 'uZZZ_j1'])
+        ... }
 
-        where each of the dicts will be of this format:
-            {'ver': '5',
-             'infiles': ['tests/jobfiles/sandbox/faba128.h5'],
-             'exec': '/usr/local/bin/hucore',
-             'timestamp': 1437123471.579627,
-             'user': 'user00',
-             'template': 'decon_faba128_it-3_q-0.5.hgsb',
-             'type': 'hucore',
-             'email': 'user00@mail.xy',
-             'uid': '2f53d7f50c22285a92c7fcda74994a69f72e1bf1'}
+        calling :func:`joblist` will give a list of job ``UIDs`` in the following order:
+
+        >>> example_queue.joblist()
+        ... [
+        ...     "uZZZ_j0",  # user_ZZZ - job 0
+        ...     "uPPP_j0",  # user_PPP - job 0
+        ...     "uAAA_j0",  # user_AAA - job 0
+        ...     ############################## end of round 1
+        ...     "uZZZ_j1",  # user_ZZZ - job 1
+        ...     "uPPP_j1",  # user_PPP - job 1
+        ...     "uAAA_j1",  # user_AAA - job 1
+        ...     ############################## end of round 2
+        ...     # user_ZZZ has no jobs left
+        ...     "uPPP_j2",  # user_PPP - job 2
+        ...     "uAAA_j2",  # user_AAA - job 2
+        ...     ############################## end of round 3
+        ...     # user_ZZZ has no jobs left
+        ...     # user_PPP has no jobs left
+        ...     "uAAA_j3",  # user_AAA - job 3
+        ... ]
 
         """
         joblist = []

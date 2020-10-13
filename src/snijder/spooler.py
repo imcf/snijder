@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Job spooler class module.
-
-Classes
--------
-
-JobSpooler()
-    Spooler processing jobs.
-"""
+"""Job spooler class module."""
 
 # TODO: don't transfer the image files, create a symlink or put their path
 #       into the HuCore Tcl script
@@ -34,21 +27,23 @@ class JobSpooler(object):
 
     """Spooler class processing the queue, dispatching jobs, etc.
 
-        Instance Attributes
-        -------------------
+        Attributes
+        ----------
         apps : list(snijder.apps.AbstractApp)
-            A list containing the app objects to be processed.
+            The app objects to be processed.
         dirs : dict
-            A dict with runtime dirs as returned by JobSpooler.setup_rundirs().
+            The runtime directories as returned by :meth:`setup_rundirs`.
         queue : JobQueue
             The queue for this spooler.
-        queues : dict(snijder.JobQueue)  # TODO: multi-queue logic (#136, #272)
+        queues : dict(snijder.queue.JobQueue)
+            A dict with one or more job queues. **WARNING**: the multi-queue logic is
+            not yet implemented, see issues #136 and #272 for details.
         gc3cfg : dict
-            A dict with gc3 config paths as returned by JobSpooler.check_gc3conf().
+            The gc3 configuration paths as returned by :meth:`check_gc3conf`.
         engine : gc3libs.core.Engine
             The gc3 engine object to be used for this spooler.
         status : str
-            The current spooler status.
+            See :attr:`status` below for the details.
     """
 
     __allowed_status_values__ = ["shutdown", "refresh", "pause", "run"]
@@ -63,7 +58,7 @@ class JobSpooler(object):
         ----------
         spooldir : str
             Spooling directory base path.
-        queue : snijder.JobQueue
+        queue : snijder.queue.JobQueue
         gc3conf : str
             The path to a gc3pie configuration file.
         """
@@ -81,7 +76,7 @@ class JobSpooler(object):
 
     @property
     def status(self):
-        """Get the 'status' variable."""
+        """The current spooler status."""
         return self._status
 
     @status.setter
@@ -178,17 +173,6 @@ class JobSpooler(object):
     def setup_rundirs(base_dir):
         """Check if all runtime dirs exist or try to create them otherwise.
 
-        Assuming base_dir is '/run', the expected structure is like this:
-
-        /run
-            |-- queue
-            |   |-- requests
-            |   `-- status
-            `-- spool
-                |-- cur
-                |-- done
-                `-- new
-
         Parameters
         ----------
         base_dir : str
@@ -196,15 +180,37 @@ class JobSpooler(object):
 
         Returns
         -------
-        full_subdirs : {
-            'new'      : '/run/spool/new',
-            'cur'      : '/run/spool/cur',
-            'done'     : '/run/spool/done',
-            'requests' : '/run/queue/requests',
-            'status'   : '/run/queue/status',
-            'newfiles' : list of existing files in the 'new' directory,
-            'curfiles' : list of existing files in the 'cur' directory
-        }
+        dict
+
+        Example
+        -------
+
+        Assuming ``base_dir`` is ``/run``, the expected directory structure would like
+        this:
+
+        >>> import os
+        >>> os.system('tree /run')
+        ... /run
+        ... ├── queue
+        ... │   ├── requests
+        ... │   └── status
+        ... └── spool
+        ...     ├── cur
+        ...     ├── done
+        ...     └── new
+
+        Now a call to this method results in:
+
+        >>> spooler.setup_rundirs("/run")
+        ... {
+        ...     'new'      : '/run/spool/new',
+        ...     'cur'      : '/run/spool/cur',
+        ...     'done'     : '/run/spool/done',
+        ...     'requests' : '/run/queue/requests',
+        ...     'status'   : '/run/queue/status',
+        ...     'newfiles' : [],  # list of existing files in the 'new' directory
+        ...     'curfiles' : [],  # list of existing files in the 'cur' directory
+        ... }
         """
         full_subdirs = dict()
         tree = {"spool": ["new", "cur", "done"], "queue": ["status", "requests"]}
@@ -465,7 +471,7 @@ class JobSpooler(object):
             self.cleanup()
 
     def _spool(self):
-        """Spooler function dispatching jobs from the queues. BLOCKING!"""
+        """The *actual* spooler function dispatching jobs etc. **BLOCKING!**"""
         print "*" * 80
         print "snijder-queue spooler running, press ctrl-c to shut it down"
         print "*" * 80
