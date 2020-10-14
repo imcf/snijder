@@ -10,6 +10,29 @@ from .jobs import JobDescription
 from . import logi, logd, logw, logc, loge  # pylint: disable-msg=unused-import
 
 
+DEFAULT_QUEUE_MAPPING = {
+    # jobtype "hucore"
+    "hucore": {
+        # tasktype "decon"
+        "decon": "hucore",
+        # tasktype "preview"
+        "preview": "hucore",
+    },
+    #
+    # jobtype "dummy"
+    "dummy": {
+        # tasktype "sleep"
+        "sleep": "hucore"
+    },
+}
+"""dict: The default mapping translating jobtype and tasktype to a queue name.
+
+In the current implementation, all combinations of job- and tasktype will map to the
+same (only) queue ``hucore``. This needs to be adapted once the multi-queue logic has
+been implemented.
+"""
+
+
 def select_queue_for_job(job, mapping=None):
     """Select a queue for a job, depending on its job- and tasktype.
 
@@ -17,14 +40,11 @@ def select_queue_for_job(job, mapping=None):
     ----------
     job : snijder.jobs.JobDescription
     mapping : dict, optional
-        A mapping translating jobtype and tasktype to a queue name, by default `None`
-        which gets expanded to the built-in mapping (see code below).
+        A mapping translating jobtype and tasktype to a queue name, by default ``None``
+        which gets expanded to :attr:`DEFAULT_QUEUE_MAPPING`.
     """
     if mapping is None:
-        mapping = {
-            "hucore": {"decon": "hucore", "preview": "hucore"},
-            "dummy": {"sleep": "hucore"},
-        }
+        mapping = DEFAULT_QUEUE_MAPPING
     if job["type"] not in mapping:
         logc("No queue found for jobtype '%s'!", job["type"])
         return None
