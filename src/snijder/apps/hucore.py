@@ -48,7 +48,7 @@ class HuCoreApp(AbstractApp):
         # for the execution on the remote host, we need to strip all paths from
         # this string as the template file will end up in the temporary
         # processing directory together with all the images:
-        templ_on_tgt = job["template"].split("/")[-1]
+        template_on_target = job["template"].split("/")[-1]
         gc3_output_dir = os.path.join(output_dir, "results_%s" % job["uid"])
         appconfig = dict(
             arguments=[
@@ -58,7 +58,7 @@ class HuCoreApp(AbstractApp):
                 "-checkForUpdates",
                 "disable",
                 "-template",
-                templ_on_tgt,
+                template_on_target,
             ],
             inputs=job["infiles"],
             outputs=["resultdir", "previews"],
