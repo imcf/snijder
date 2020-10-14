@@ -48,10 +48,13 @@ def select_queue_for_job(job, mapping=None):
     if job["type"] not in mapping:
         logc("No queue found for jobtype '%s'!", job["type"])
         return None
-    if job["tasktype"] not in mapping[job["type"]]:
+
+    jobtype = mapping[job["type"]]
+    if job["tasktype"] not in jobtype:
         logc("No queue found for tasktype '%s'!", job["tasktype"])
         return None
-    queuetype = mapping[job["type"]][job["tasktype"]]
+
+    queuetype = jobtype[job["tasktype"]]
     logd(
         "Selected queue for jobtype (%s) and tasktype (%s): %s",
         job["type"],
