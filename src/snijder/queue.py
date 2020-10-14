@@ -150,7 +150,8 @@ class JobQueue(object):
 
         Returns
         -------
-        job : JobDescription
+        JobDescription
+            The next job to be processed.
         """
         if not self.categories:
             return None
@@ -185,7 +186,8 @@ class JobQueue(object):
         Returns
         -------
         JobDescription
-            The JobDescription dict of the job that was removed (on success).
+            The :class:`snijder.jobs.JobDescription` object of the job that was removed
+            (on success) or ``None`` in case the job was not found.
         """
         logd("Trying to remove job [uid:%.7s].", uid)
         if uid not in self.jobs:
@@ -254,7 +256,7 @@ class JobQueue(object):
         logd(self.update_status())
 
     def update_status(self, force=False):
-        """Update the queue status information (JSON and logs)
+        """Update the queue status information (``JSON`` and logs)
 
         Parameters
         ----------
@@ -265,9 +267,9 @@ class JobQueue(object):
         Returns
         -------
         str
-            The JSON-formatted dict as returned by queue_details_json() or `None` in
-            case the status hasn't changed and the `force` parameter isn't set to
-            `True`.
+            The ``JSON``-formatted dict as returned by :meth:`queue_details_json` or ``None``
+            in case the status hasn't changed and the ``force`` parameter is **not** set
+            to ``True``.
         """
         if not self.status_changed and not force:
             return None

@@ -36,12 +36,20 @@ been implemented.
 def select_queue_for_job(job, mapping=None):
     """Select a queue for a job, depending on its job- and tasktype.
 
+    Inspect the keys ``type`` and ``tasktype`` of the given job and map them to a
+    defined queue name.
+
     Parameters
     ----------
-    job : snijder.jobs.JobDescription
+    job : JobDescription
     mapping : dict, optional
         A mapping translating jobtype and tasktype to a queue name, by default ``None``
         which gets expanded to :attr:`DEFAULT_QUEUE_MAPPING`.
+
+    Returns
+    -------
+    str
+        A string to be used as the identifier of a queue.
     """
     if mapping is None:
         mapping = DEFAULT_QUEUE_MAPPING
@@ -72,10 +80,11 @@ def process_jobfile(fname, queues, mapping=None):
     fname : str
         The name of the job file to parse.
     queues : dict
-        Containing the JobQueue objects for the different queues, using the
-        corresponding 'type' keyword as identifier.
+        Containing the :class:`~snijder.queue.JobQueue` objects for the different
+        queues, having the keys match the possible return values of a call to
+        :func:`select_queue_for_job`.
     mapping : dict, optional
-        A mapping being passed on to select_queue_for_job(), by default `None`.
+        A mapping being passed on to :func:`select_queue_for_job`, by default ``None``.
     """
     try:
         job = JobDescription(fname, "file")

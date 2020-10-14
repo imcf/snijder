@@ -16,9 +16,10 @@ class JobFileHandler(object):  # pylint: disable-msg=too-few-public-methods
         Parameters
         ----------
         queues : dict(snijder.queue.JobQueue)
-            Dict with JobQueue objects.
+            A dict with queue objects.
         dirs : dict
-            Spooling dirs, as returned by JobSpooler.setup_rundirs().
+            A dict with spooling dirs, as returned by
+            :meth:`~snijder.spooler.JobSpooler.setup_rundirs`.
         """
         self.watch_mgr = pyinotify.WatchManager()
         # mask which events to watch: pyinotify.IN_CREATE
@@ -48,11 +49,13 @@ class EventHandler(pyinotify.ProcessEvent):
 
         Parameters
         ----------
-        queues : dict
-            Containing the JobQueue objects for the different queues, using the
-            corresponding 'type' keyword as identifier.
+        queues : dict(snijder.queue.JobQueue)
+            A dict with queue objects., using the corresponding ``type`` keyword as
+            identifier that matches the possible values returned by
+            :func:`~snijder.daemon.select_queue_for_job`.
         dirs : dict
-            Spooling dirs, as returned by JobSpooler.setup_rundirs().
+            A dict with spooling dirs, as returned by
+            :meth:`~snijder.spooler.JobSpooler.setup_rundirs`.
         """
         self.queues = queues
         self.dirs = dirs
