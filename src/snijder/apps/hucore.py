@@ -9,15 +9,37 @@ from .. import logi
 
 class HuCoreApp(AbstractApp):
 
-    """App object for generic 'hucore' jobs.
+    """Abstract app object for generic ``hucore`` jobs.
 
-    This virtual application calls `hucore` with a given template file and
-    retrives the stdout/stderr in a file named `stdout.txt` plus the
-    directories `resultdir` and `previews` into a directory `reults_<UID>`
+    This virtual application calls ``hucore`` with a given template file and
+    retrives the stdout/stderr in a file named ``stdout.txt`` plus the
+    directories ``resultdir`` and ``previews`` into a directory ``results_<UID>``
     inside the current directory.
     """
 
     def __init__(self, job, output_dir):
+        """Assemble the details for a ``hucore`` based application object.
+
+        The required information to launch a ``hucore`` process through ``gc3libs``
+        consists of roughly those items:
+
+        * The `template` (a ``hucore`` specific file describing the actual task).
+        * The command line arguments for the ``hucore`` call.
+        * The input files to be processed.
+
+        Parameters
+        ----------
+        job : snijder.jobs.JobDescription
+            The snijder job configuration object.
+        output_dir : str
+            A directory where the output files should be collected by GC3Pie.
+
+        Raises
+        ------
+        TypeError
+            Raised in case this class is attempted to be instantiated directly, as it is
+            an abstract class.
+        """
         if self.__class__.__name__ == "HuCoreApp":
             raise TypeError("Not instantiating the virtual class 'HuCoreApp'!")
         # we need to add the template (with the local path) to the list of
@@ -75,7 +97,7 @@ class HuCoreApp(AbstractApp):
 
 class HuDeconApp(HuCoreApp):
 
-    """App object for 'hucore' deconvolution jobs."""
+    """App object for ``hucore`` deconvolution jobs."""
 
     def __init__(self, job, gc3_output):
         super(HuDeconApp, self).__init__(job, gc3_output)
@@ -83,7 +105,7 @@ class HuDeconApp(HuCoreApp):
 
 class HuPreviewApp(HuCoreApp):
 
-    """App object for 'hucore' image preview generation jobs."""
+    """App object for ``hucore`` image preview generation jobs."""
 
     def __init__(self, job, gc3_output):
         super(HuPreviewApp, self).__init__(job, gc3_output)
@@ -91,7 +113,7 @@ class HuPreviewApp(HuCoreApp):
 
 class HuSNRApp(HuCoreApp):
 
-    """App object for 'hucore' SNR estimation jobs."""
+    """App object for ``hucore`` SNR estimation jobs."""
 
     def __init__(self, job, gc3_output):
         super(HuSNRApp, self).__init__(job, gc3_output)

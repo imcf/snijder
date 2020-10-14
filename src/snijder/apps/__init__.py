@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-GC3lib based abstract application class.
-
-Classes
--------
-
-AbstractApp()
-"""
+"""GC3lib based abstract application class."""
 
 import os
 import gc3libs
@@ -32,7 +25,7 @@ class AbstractApp(gc3libs.Application):
             object.
         appconfig : dict
             A dict with at least all mandatory parameters for a
-            gc3libs.Application, plus possibly extra parameters.
+            :class:`gc3libs.Application`, plus possibly extra parameters.
         """
         if self.__class__.__name__ == "AbstractApp":
             raise TypeError("Refusing to instantiate class 'AbstractApp'!")
@@ -50,20 +43,20 @@ class AbstractApp(gc3libs.Application):
         # FIXME FIXME FIXME: job status has to be updated!!
 
     def new(self):
-        """Called when the job state is (re)set to NEW.
+        """Called when the job state is (re)set to ``NEW``.
 
         Note this will not be called when the application object is created,
-        rather if the state is reset to NEW after it has already been
+        rather if the state is reset to ``NEW`` after it has already been
         submitted.
         """
         self.status_changed()
 
     def running(self):
-        """Called when the job state transitions to RUNNING."""
+        """Called when the job state transitions to ``RUNNING``."""
         self.status_changed()
 
     def stopped(self):
-        """Called when the job state transitions to STOPPED."""
+        """Called when the job state transitions to ``STOPPED``."""
         self.status_changed()
         logc(
             "Job [uid:%.7s] has been suspended for an unknown reason!!!",
@@ -71,7 +64,7 @@ class AbstractApp(gc3libs.Application):
         )
 
     def submitted(self):
-        """Called when the job state transitions to SUBMITTED."""
+        """Called when the job state transitions to ``SUBMITTED``."""
         self.status_changed()
 
     def terminated(self):
@@ -103,7 +96,7 @@ class AbstractApp(gc3libs.Application):
             )
 
     def terminating(self):
-        """Called when the job state transitions to TERMINATING."""
+        """Called when the job state transitions to ``TERMINATING``."""
         self.status_changed()
 
     def status_changed(self):
@@ -115,7 +108,7 @@ class AbstractApp(gc3libs.Application):
         Returns
         -------
         gc3libs.Application.Run.state
-            The new state of the app in case it has changed, None otherwise.
+            The new state of the app in case it has changed, ``None`` otherwise.
         """
         newstate = self.execution.state
         if newstate == self.laststate:

@@ -40,23 +40,26 @@ class AbstractJobConfigParser(dict):
             One of [``"file"``, ``"string"``], denoting what's in :attr:`jobconfig`.
         """
         super(AbstractJobConfigParser, self).__init__()
+        # first, we set the default keys:
+        self._set_defaults()
+
+        # now initialize attributes:
         self.sections = []
-        self["infiles"] = []
+        self.jobparser = ConfigParser.RawConfigParser()
+
+        # see if we need to read the configuration from a file:
         if srctype == "file":
             jobconfig = self.read_jobfile(jobconfig)
         elif srctype == "string":
             pass
         else:
             raise TypeError("Unknown source type '%s'" % srctype)
-        # store the SHA1 digest of this job, serving as the UID:
+
+        # now use the SHA1 digest of this job as the UID for this instance:
         self["uid"] = sha1(jobconfig).hexdigest()
+
+        # finally parse the configuration
         self.parse_jobconfig(jobconfig)
-        # fill in keys without a reasonable value, they'll be updated later:
-        self["status"] = "N/A"
-        self["start"] = "N/A"
-        self["progress"] = "N/A"
-        self["pid"] = "N/A"
-        self["server"] = "N/A"
 
     @staticmethod
     def read_jobfile(jobfile):
@@ -104,6 +107,16 @@ class AbstractJobConfigParser(dict):
             raise IOError("Unable to read job config file '%s'!" % jobfile)
 
         return config_raw
+
+    def _set_defaults(self):
+        """Helper method to set defaults for the dict-style part of the object."""
+        self["infiles"] = []
+        self["uid"] = ""
+        self["status"] = "N/A"
+        self["start"] = "N/A"
+        self["progress"] = "N/A"
+        self["pid"] = "N/A"
+        self["server"] = "N/A"
 
     def get_option(self, section, option):
         """Helper method to get an option and remove it from the section.
@@ -167,8 +180,6 @@ class AbstractJobConfigParser(dict):
 
     def parse_jobconfig(self, cfg_raw):
         """Initialize ConfigParser and run parsing method."""
-        # we only initialize the ConfigParser object now, not in __init__():
-        self.jobparser = ConfigParser.RawConfigParser()
         try:
             self.jobparser.readfp(StringIO.StringIO(cfg_raw))
             logd("Read job configuration file / string.")

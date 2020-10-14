@@ -594,8 +594,8 @@ class JobSpooler(object):
     def check_for_stuck_jobs(self, engine_status, max_cycles=3):
         """Check for jobs submitted but not picked up for processing by the engine.
 
-        This is required as gc3pie only logs an 'UnrecoverableDataStagingError' in case
-        one of the input files for a job can't be found - we need to detect this
+        This is required as gc3pie only logs an ``UnrecoverableDataStagingError`` in
+        case one of the input files for a job can't be found - we need to detect this
         situation ourselves as it doesn't raise an exception and therefore simply will
         result in a stuck queue (as the current job is neither processed nor removed).
 
@@ -603,7 +603,7 @@ class JobSpooler(object):
         ----------
         engine_status : dict
             The dict with the current engine status as returned by
-            `gc3libs.core.Engine.counts()`
+            :meth:`gc3libs.core.Engine.counts`
         max_cycles : int, optional
             The maximum number of cycles to wait before a stuck job will be removed from
             the queue, by default 3.
